@@ -5,6 +5,8 @@
 
 package com.mycompany.rpl;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Arif
@@ -12,6 +14,9 @@ package com.mycompany.rpl;
 public class RPL {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Erwin");
+        
+        homepage home = new homepage();
+        home.setVisible(true);
     }
 }
