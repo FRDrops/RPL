@@ -4,6 +4,12 @@
  */
 package com.mycompany.rpl;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
+import java.sql.SQLException;
+
 /**
  *
  * @author ASUS
@@ -15,6 +21,7 @@ public class lowonganpage extends javax.swing.JFrame {
      */
     public lowonganpage() {
         initComponents();
+        getContentPane().setBackground(Color.decode("0x312D22"));
     }
 
     /**

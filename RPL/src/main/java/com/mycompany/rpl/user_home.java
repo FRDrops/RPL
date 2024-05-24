@@ -4,6 +4,12 @@
  */
 package com.mycompany.rpl;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
+import java.sql.SQLException;
+
 /**
  *
  * @author ASUS
@@ -15,6 +21,7 @@ public class user_home extends javax.swing.JFrame {
      */
     public user_home() {
         initComponents();
+        getContentPane().setBackground(Color.decode("0xFFFFFF"));
     }
 
     /**
@@ -27,6 +34,7 @@ public class user_home extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
 

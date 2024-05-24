@@ -4,6 +4,12 @@
  */
 package com.mycompany.rpl;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
+import java.sql.SQLException;
+
 /**
  *
  * @author ASUS
@@ -15,6 +21,7 @@ public class signuppage extends javax.swing.JFrame {
      */
     public signuppage() {
         initComponents();
+        getContentPane().setBackground(Color.decode("0xF9F8F2"));
     }
 
     /**
@@ -26,19 +33,29 @@ public class signuppage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+
+        jPanel2.setBackground(new java.awt.Color(49, 45, 34));
+        jPanel2.setMaximumSize(new java.awt.Dimension(640, 720));
+        jPanel2.setMinimumSize(new java.awt.Dimension(640, 720));
+        jPanel2.setPreferredSize(new java.awt.Dimension(640, 720));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 640, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -80,5 +97,6 @@ public class signuppage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

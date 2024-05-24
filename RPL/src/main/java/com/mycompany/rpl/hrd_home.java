@@ -4,6 +4,12 @@
  */
 package com.mycompany.rpl;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
+import java.sql.SQLException;
+
 /**
  *
  * @author ASUS
@@ -15,6 +21,7 @@ public class hrd_home extends javax.swing.JFrame {
      */
     public hrd_home() {
         initComponents();
+        getContentPane().setBackground(Color.decode("0xFFFFFF"));
     }
 
     /**
