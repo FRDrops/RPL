@@ -16,7 +16,7 @@ public class RPL {
     public static void main(String[] args) {
         System.out.println("Erwin");
         
-        lowonganpage home = new lowonganpage();
+        faqpage home = new faqpage();
         home.setVisible(true);
     }
 }

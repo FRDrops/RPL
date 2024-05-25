@@ -5,10 +5,23 @@
 package com.mycompany.rpl;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import java.awt.geom.*;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.border.*;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
@@ -22,6 +35,20 @@ public class faqpage extends javax.swing.JFrame {
     public faqpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0x312D22"));
+        
+        satu.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/satu.png")));
+        dua.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/dua.png")));
+        tiga.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/tiga.png")));
+        empat.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/empat.png")));
+        panah1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/panah.png")));
+        panah2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/panah.png")));
+        panah3.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/panah.png")));
+        burung.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/burung.png")));
+        logoKecil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/logoGRKecil.png")));
+        ig.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/instagram.png")));
+        blog.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/blog.png")));
+        wa.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/whatsapp.png")));
+        
     }
 
     /**
@@ -33,23 +60,398 @@ public class faqpage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        homeButton = new javax.swing.JLabel();
+        namaGr = new javax.swing.JLabel();
+        masukButton = new javax.swing.JLabel();
+        lowonganButton = new javax.swing.JLabel();
+        faqButton = new javax.swing.JLabel();
+        hover = new RoundedPanel(50, new Color(249, 248, 242));
+        homeButton1 = new javax.swing.JLabel();
+        masukButton1 = new javax.swing.JLabel();
+        lowonganButton1 = new javax.swing.JLabel();
+        faqButton1 = new javax.swing.JLabel();
+        hover1 = new RoundedPanel(50, new Color(249, 248, 242));
+        jPanel1 = new javax.swing.JPanel();
+        logoKecil = new javax.swing.JLabel();
+        ig = new javax.swing.JLabel();
+        blog = new javax.swing.JLabel();
+        wa = new javax.swing.JLabel();
+        noWA = new javax.swing.JLabel();
+        contactUS = new javax.swing.JLabel();
+        usnIG = new javax.swing.JLabel();
+        blogURL = new javax.swing.JLabel();
+        namaGr2 = new javax.swing.JLabel();
+        penjelasan43 = new javax.swing.JLabel();
+        instruksi4 = new javax.swing.JLabel();
+        empat = new javax.swing.JLabel();
+        satu = new javax.swing.JLabel();
+        dua = new javax.swing.JLabel();
+        tiga = new javax.swing.JLabel();
+        judul2 = new javax.swing.JLabel();
+        judul3 = new javax.swing.JLabel();
+        instruksi2 = new javax.swing.JLabel();
+        instruksi3 = new javax.swing.JLabel();
+        keterangan = new javax.swing.JLabel();
+        penjelasan12 = new javax.swing.JLabel();
+        penjelasan13 = new javax.swing.JLabel();
+        penjelasan21 = new javax.swing.JLabel();
+        penjelasan22 = new javax.swing.JLabel();
+        penjelasan23 = new javax.swing.JLabel();
+        penjelasan31 = new javax.swing.JLabel();
+        penjelasan32 = new javax.swing.JLabel();
+        penjelasan33 = new javax.swing.JLabel();
+        penjelasan41 = new javax.swing.JLabel();
+        penjelasan42 = new javax.swing.JLabel();
+        instruksi1 = new javax.swing.JLabel();
+        penjelasan11 = new javax.swing.JLabel();
+        tanya3 = new javax.swing.JLabel();
+        tanya1 = new javax.swing.JLabel();
+        jawab1 = new javax.swing.JLabel();
+        tanya2 = new javax.swing.JLabel();
+        jawab2 = new javax.swing.JLabel();
+        panah3 = new javax.swing.JLabel();
+        panah1 = new javax.swing.JLabel();
+        panah2 = new javax.swing.JLabel();
+        burung = new javax.swing.JLabel();
+        jawab3 = new javax.swing.JLabel();
+
+        homeButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        homeButton.setForeground(new java.awt.Color(249, 248, 242));
+        homeButton.setText("Home");
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeButtonMouseClicked(evt);
+            }
+        });
+
+        namaGr.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        namaGr.setForeground(new java.awt.Color(249, 248, 242));
+        namaGr.setText("Gendhu Roso");
+
+        masukButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        masukButton.setForeground(new java.awt.Color(249, 248, 242));
+        masukButton.setText("Masuk");
+        masukButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        masukButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                masukButtonMouseClicked(evt);
+            }
+        });
+
+        lowonganButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lowonganButton.setForeground(new java.awt.Color(49, 45, 34));
+        lowonganButton.setText("Lowongan");
+        lowonganButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lowonganButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lowonganButtonMouseClicked(evt);
+            }
+        });
+
+        faqButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        faqButton.setForeground(new java.awt.Color(249, 248, 242));
+        faqButton.setText("FAQ");
+        faqButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        faqButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                faqButtonMouseClicked(evt);
+            }
+        });
+
+        hover.setBackground(new java.awt.Color(49, 45, 34));
+        hover.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-        );
+        homeButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        homeButton1.setForeground(new java.awt.Color(249, 248, 242));
+        homeButton1.setText("Home");
+        homeButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(homeButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, 50));
+
+        masukButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        masukButton1.setForeground(new java.awt.Color(249, 248, 242));
+        masukButton1.setText("Masuk");
+        masukButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        masukButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                masukButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(masukButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, -1, 60));
+
+        lowonganButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lowonganButton1.setForeground(new java.awt.Color(249, 248, 242));
+        lowonganButton1.setText("Lowongan");
+        lowonganButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lowonganButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lowonganButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(lowonganButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(589, 10, 140, 50));
+
+        faqButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        faqButton1.setForeground(new java.awt.Color(49, 45, 34));
+        faqButton1.setText("FAQ");
+        faqButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        faqButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                faqButton1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(faqButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, -1, 50));
+
+        hover1.setBackground(new java.awt.Color(49, 45, 34));
+        hover1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(hover1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 90, 50));
+
+        jPanel1.setBackground(new java.awt.Color(112, 104, 94));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        logoKecil.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGRKecil.png")); // NOI18N
+        jPanel1.add(logoKecil, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 10, 140, 30));
+
+        ig.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\instagram.png")); // NOI18N
+        jPanel1.add(ig, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 140, 30));
+
+        blog.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\blog.png")); // NOI18N
+        jPanel1.add(blog, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, 140, 30));
+
+        wa.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\whatsapp.png")); // NOI18N
+        jPanel1.add(wa, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, 140, 30));
+
+        noWA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        noWA.setForeground(new java.awt.Color(255, 255, 255));
+        noWA.setText("wa.me/+628895411736");
+        jPanel1.add(noWA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 160, 30));
+
+        contactUS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        contactUS.setForeground(new java.awt.Color(255, 255, 255));
+        contactUS.setText("Contact Us:");
+        jPanel1.add(contactUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 80, 30));
+
+        usnIG.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        usnIG.setForeground(new java.awt.Color(255, 255, 255));
+        usnIG.setText("rm.gendhu_roso");
+        jPanel1.add(usnIG, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 120, 30));
+
+        blogURL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        blogURL.setForeground(new java.awt.Color(255, 255, 255));
+        blogURL.setText("rm-gendhu-roso.blogspot.com");
+        jPanel1.add(blogURL, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 200, 30));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 635, 1270, 50));
+
+        namaGr2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        namaGr2.setForeground(new java.awt.Color(249, 248, 242));
+        namaGr2.setText("Gendhu Roso");
+        getContentPane().add(namaGr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 6, -1, 50));
+
+        penjelasan43.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan43.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan43.setText("di aplikasi ini");
+        getContentPane().add(penjelasan43, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, 100, -1));
+
+        instruksi4.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
+        instruksi4.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi4.setText("Pantau");
+        getContentPane().add(instruksi4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 230, -1, -1));
+
+        empat.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\empat.png")); // NOI18N
+        getContentPane().add(empat, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 220, 160, 60));
+
+        satu.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\satu.png")); // NOI18N
+        getContentPane().add(satu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 220, 160, 60));
+
+        dua.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\dua.png")); // NOI18N
+        getContentPane().add(dua, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 160, 60));
+
+        tiga.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\tiga.png")); // NOI18N
+        getContentPane().add(tiga, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 160, 60));
+
+        judul2.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        judul2.setForeground(new java.awt.Color(204, 204, 204));
+        judul2.setText("Cara Melamar");
+        getContentPane().add(judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
+
+        judul3.setFont(new java.awt.Font("Segoe UI Black", 1, 28)); // NOI18N
+        judul3.setForeground(new java.awt.Color(204, 204, 204));
+        judul3.setText("Pertanyaan Lain:");
+        getContentPane().add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
+
+        instruksi2.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
+        instruksi2.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi2.setText("Lengkapi Data");
+        getContentPane().add(instruksi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
+
+        instruksi3.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
+        instruksi3.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi3.setText("Lamar Pekerjaan");
+        getContentPane().add(instruksi3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, -1, -1));
+
+        keterangan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        keterangan.setForeground(new java.awt.Color(204, 204, 204));
+        keterangan.setText("Ayo ikuti cara berikut ini supaya kamu bisa melamar pekerjaan yang sedang tersedia");
+        getContentPane().add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 530, -1));
+
+        penjelasan12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan12.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan12.setText("menggunakan akun gmail");
+        getContentPane().add(penjelasan12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 200, -1));
+
+        penjelasan13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan13.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan13.setText("yang biasa kamu gunakan");
+        getContentPane().add(penjelasan13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 190, -1));
+
+        penjelasan21.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan21.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan21.setText("Isi data-data yang dibutuhkan");
+        getContentPane().add(penjelasan21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 230, -1));
+
+        penjelasan22.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan22.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan22.setText("siapin dokumen-dokumen,");
+        getContentPane().add(penjelasan22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 200, -1));
+
+        penjelasan23.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan23.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan23.setText("lalu simpan data kamu");
+        getContentPane().add(penjelasan23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 180, -1));
+
+        penjelasan31.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan31.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan31.setText("Cari lowongan yang sedang");
+        getContentPane().add(penjelasan31, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 210, -1));
+
+        penjelasan32.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan32.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan32.setText("dibuka, pilih lowongan yang sesuai,");
+        getContentPane().add(penjelasan32, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 270, -1));
+
+        penjelasan33.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan33.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan33.setText("lalu klik lamar");
+        getContentPane().add(penjelasan33, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 110, -1));
+
+        penjelasan41.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan41.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan41.setText("Pantau terus perkembangan");
+        getContentPane().add(penjelasan41, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 280, 210, -1));
+
+        penjelasan42.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan42.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan42.setText("dari status lamaran kamu");
+        getContentPane().add(penjelasan42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 300, 190, -1));
+
+        instruksi1.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
+        instruksi1.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi1.setText("Masuk");
+        getContentPane().add(instruksi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
+
+        penjelasan11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        penjelasan11.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan11.setText("Simpel banget masuk");
+        getContentPane().add(penjelasan11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 170, -1));
+
+        tanya3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        tanya3.setForeground(new java.awt.Color(204, 204, 204));
+        tanya3.setText("Saya lulusan SMA/SMK, apakah bisa saya mendaftar?");
+        getContentPane().add(tanya3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 480, -1));
+
+        tanya1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        tanya1.setForeground(new java.awt.Color(204, 204, 204));
+        tanya1.setText("Apakah boleh mendaftar tanpa menggunakan email pribadi?");
+        getContentPane().add(tanya1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 550, -1));
+
+        jawab1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jawab1.setForeground(new java.awt.Color(204, 204, 204));
+        jawab1.setText("Boleh, tetapi kamu tidak akan mendapatkan info apapun dari kami :(");
+        getContentPane().add(jawab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 560, 30));
+
+        tanya2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        tanya2.setForeground(new java.awt.Color(204, 204, 204));
+        tanya2.setText("Apakah bisa jika melamar tanpa login atau mendaftar terlebih dahulu?");
+        getContentPane().add(tanya2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 630, -1));
+
+        jawab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jawab2.setForeground(new java.awt.Color(204, 204, 204));
+        jawab2.setText("Tidak bisa ya :) karena kami memerlukan data kamu untuk proses kualifikasi");
+        getContentPane().add(jawab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 610, 30));
+
+        panah3.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\panah.png")); // NOI18N
+        getContentPane().add(panah3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 150, 30));
+
+        panah1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\panah.png")); // NOI18N
+        getContentPane().add(panah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 150, 30));
+
+        panah2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\panah.png")); // NOI18N
+        getContentPane().add(panah2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 150, 30));
+
+        burung.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\burung.png")); // NOI18N
+        getContentPane().add(burung, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, -1, 250));
+
+        jawab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jawab3.setForeground(new java.awt.Color(204, 204, 204));
+        jawab3.setText("Bisa, untuk lebih jelasnya, silakan lihat pada kualifikasi pekerjaan yang kamu pilih ya");
+        getContentPane().add(jawab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 670, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
+    }//GEN-LAST:event_homeButtonMouseClicked
+
+    private void masukButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new loginpage().setVisible(true);
+    }//GEN-LAST:event_masukButtonMouseClicked
+
+    private void lowonganButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lowonganButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lowonganButtonMouseClicked
+
+    private void faqButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new faqpage().setVisible(true);
+    }//GEN-LAST:event_faqButtonMouseClicked
+
+    private void homeButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButton1MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
+    }//GEN-LAST:event_homeButton1MouseClicked
+
+    private void masukButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButton1MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new loginpage().setVisible(true);
+    }//GEN-LAST:event_masukButton1MouseClicked
+
+    private void lowonganButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lowonganButton1MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new lowonganpage().setVisible(true);
+    }//GEN-LAST:event_lowonganButton1MouseClicked
+
+    private void faqButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_faqButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -84,8 +486,113 @@ public class faqpage extends javax.swing.JFrame {
                 new faqpage().setVisible(true);
             }
         });
+        
+        faqpage faq = new faqpage();
+        faq.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        faq.setResizable(false);   //No resize is possible
+        faq.setSize(1280, 720);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel blog;
+    private javax.swing.JLabel blogURL;
+    private javax.swing.JLabel burung;
+    private javax.swing.JLabel contactUS;
+    private javax.swing.JLabel dua;
+    private javax.swing.JLabel empat;
+    private javax.swing.JLabel faqButton;
+    private javax.swing.JLabel faqButton1;
+    private javax.swing.JLabel homeButton;
+    private javax.swing.JLabel homeButton1;
+    private javax.swing.JPanel hover;
+    private javax.swing.JPanel hover1;
+    private javax.swing.JLabel ig;
+    private javax.swing.JLabel instruksi1;
+    private javax.swing.JLabel instruksi2;
+    private javax.swing.JLabel instruksi3;
+    private javax.swing.JLabel instruksi4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jawab1;
+    private javax.swing.JLabel jawab2;
+    private javax.swing.JLabel jawab3;
+    private javax.swing.JLabel judul2;
+    private javax.swing.JLabel judul3;
+    private javax.swing.JLabel keterangan;
+    private javax.swing.JLabel logoKecil;
+    private javax.swing.JLabel lowonganButton;
+    private javax.swing.JLabel lowonganButton1;
+    private javax.swing.JLabel masukButton;
+    private javax.swing.JLabel masukButton1;
+    private javax.swing.JLabel namaGr;
+    private javax.swing.JLabel namaGr2;
+    private javax.swing.JLabel noWA;
+    private javax.swing.JLabel panah1;
+    private javax.swing.JLabel panah2;
+    private javax.swing.JLabel panah3;
+    private javax.swing.JLabel penjelasan11;
+    private javax.swing.JLabel penjelasan12;
+    private javax.swing.JLabel penjelasan13;
+    private javax.swing.JLabel penjelasan21;
+    private javax.swing.JLabel penjelasan22;
+    private javax.swing.JLabel penjelasan23;
+    private javax.swing.JLabel penjelasan31;
+    private javax.swing.JLabel penjelasan32;
+    private javax.swing.JLabel penjelasan33;
+    private javax.swing.JLabel penjelasan41;
+    private javax.swing.JLabel penjelasan42;
+    private javax.swing.JLabel penjelasan43;
+    private javax.swing.JLabel satu;
+    private javax.swing.JLabel tanya1;
+    private javax.swing.JLabel tanya2;
+    private javax.swing.JLabel tanya3;
+    private javax.swing.JLabel tiga;
+    private javax.swing.JLabel usnIG;
+    private javax.swing.JLabel wa;
     // End of variables declaration//GEN-END:variables
+
+class RoundedPanel extends JPanel
+    {
+        private Color backgroundColor;
+        private int cornerRadius = 15;
+        public RoundedPanel(LayoutManager layout, int radius) {
+            super(layout);
+            cornerRadius = radius;
+        }
+        public RoundedPanel(LayoutManager layout, int radius, Color bgColor) {
+            super(layout);
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        public RoundedPanel(int radius) {
+            super();
+            cornerRadius = radius;
+            
+        }
+        public RoundedPanel(int radius, Color bgColor) {
+            super();
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+            int width = getWidth();
+            int height = getHeight();
+            Graphics2D graphics = (Graphics2D) g;
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            //Draws the rounded panel with borders.
+            if (backgroundColor != null) {
+                graphics.setColor(backgroundColor);
+            } else {
+                graphics.setColor(getBackground());
+            }
+            graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+            graphics.setColor(getForeground());
+//            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+//             
+        }
+    }
+    
 }

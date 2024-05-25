@@ -5,7 +5,6 @@
 package com.mycompany.rpl;
 
 import java.awt.Color;
-
 import java.awt.*;
 import java.sql.SQLException;
 import java.awt.geom.*;
