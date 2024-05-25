@@ -42,132 +42,119 @@ public class homepage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        namaGr = new javax.swing.JLabel();
         hover = new RoundedPanel(50, new Color(249, 248, 242));
         homeButton = new javax.swing.JLabel();
-        faqButton = new javax.swing.JLabel();
+        namaGr = new javax.swing.JLabel();
         masukButton = new javax.swing.JLabel();
         logoGr = new javax.swing.JLabel();
         keterangan = new javax.swing.JLabel();
         keterangan2 = new javax.swing.JLabel();
         namaGr2 = new javax.swing.JLabel();
         lowonganButton = new javax.swing.JLabel();
+        faqButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-
-        namaGr.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        namaGr.setForeground(new java.awt.Color(249, 248, 242));
-        namaGr.setText("Gendhu Roso");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         hover.setBackground(new java.awt.Color(49, 45, 34));
+        hover.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         homeButton.setForeground(new java.awt.Color(49, 45, 34));
         homeButton.setText("Home");
         homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeButtonMouseClicked(evt);
+            }
+        });
+        hover.add(homeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, -1, 60));
 
-        javax.swing.GroupLayout hoverLayout = new javax.swing.GroupLayout(hover);
-        hover.setLayout(hoverLayout);
-        hoverLayout.setHorizontalGroup(
-            hoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hoverLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        hoverLayout.setVerticalGroup(
-            hoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(hoverLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(homeButton)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
+        getContentPane().add(hover, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 130, 50));
 
-        faqButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        faqButton.setForeground(new java.awt.Color(249, 248, 242));
-        faqButton.setText("FAQ");
-        faqButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        namaGr.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        namaGr.setForeground(new java.awt.Color(249, 248, 242));
+        namaGr.setText("Gendhu Roso");
+        getContentPane().add(namaGr, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 6, -1, 50));
 
         masukButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         masukButton.setForeground(new java.awt.Color(249, 248, 242));
         masukButton.setText("Masuk");
         masukButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        masukButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                masukButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(masukButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 0, -1, 60));
 
         logoGr.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGR.png")); // NOI18N
+        getContentPane().add(logoGr, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, -1, -1));
 
         keterangan.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         keterangan.setForeground(new java.awt.Color(249, 248, 242));
         keterangan.setText("RM Gendhu Roso merupakan warung makan prasmanan yang berlokasi di Kabupaten Wonosobo, Jawa Tengah. Dengan tema masakan Jawa,");
+        getContentPane().add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, 24));
 
         keterangan2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         keterangan2.setForeground(new java.awt.Color(249, 248, 242));
         keterangan2.setText("Di sini menyediakan berbagai macam masakan rumahan, seperti sayuran dan lauk pauk serta minuman khas Jawa.");
+        getContentPane().add(keterangan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 570, -1, 24));
 
         namaGr2.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
         namaGr2.setForeground(new java.awt.Color(249, 248, 242));
         namaGr2.setText("Gendhu Roso");
+        getContentPane().add(namaGr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, -1, -1));
 
         lowonganButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         lowonganButton.setForeground(new java.awt.Color(249, 248, 242));
         lowonganButton.setText("Lowongan");
         lowonganButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lowonganButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lowonganButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(lowonganButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, 50));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(namaGr)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(hover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lowonganButton)
-                .addGap(27, 27, 27)
-                .addComponent(faqButton)
-                .addGap(354, 354, 354)
-                .addComponent(masukButton)
-                .addGap(21, 21, 21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(360, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(keterangan, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(keterangan2)
-                        .addGap(103, 103, 103))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(logoGr)
-                            .addComponent(namaGr2))
-                        .addGap(323, 323, 323)))
-                .addGap(151, 151, 151))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(masukButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(hover, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lowonganButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(namaGr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(faqButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(101, 101, 101)
-                .addComponent(logoGr)
-                .addGap(18, 18, 18)
-                .addComponent(namaGr2)
-                .addGap(18, 18, 18)
-                .addComponent(keterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(keterangan2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
-        );
+        faqButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        faqButton.setForeground(new java.awt.Color(249, 248, 242));
+        faqButton.setText("FAQ");
+        faqButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        faqButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                faqButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(faqButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, -1, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_homeButtonMouseClicked
+
+    private void lowonganButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lowonganButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new lowonganpage().setVisible(true);
+    }//GEN-LAST:event_lowonganButtonMouseClicked
+
+    private void faqButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new faqpage().setVisible(true);
+    }//GEN-LAST:event_faqButtonMouseClicked
+
+    private void masukButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new loginpage().setVisible(true);
+    }//GEN-LAST:event_masukButtonMouseClicked
 
     /**
      * @param args the command line arguments
