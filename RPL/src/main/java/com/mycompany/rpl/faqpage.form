@@ -321,7 +321,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Contact Us:"/>
+            <Property name="text" type="java.lang.String" value="Contact Us :"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -385,7 +385,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="di aplikasi ini"/>
       </Properties>
@@ -401,7 +401,7 @@
           <Font name="Segoe UI Black" size="25" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pantau"/>
       </Properties>
@@ -465,7 +465,7 @@
           <Font name="Segoe UI Black" size="48" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cara Melamar"/>
       </Properties>
@@ -481,7 +481,7 @@
           <Font name="Segoe UI Black" size="28" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="b9" green="cc" red="d7" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pertanyaan Lain:"/>
       </Properties>
@@ -497,7 +497,7 @@
           <Font name="Segoe UI Black" size="25" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Lengkapi Data"/>
       </Properties>
@@ -513,7 +513,7 @@
           <Font name="Segoe UI Black" size="25" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Lamar Pekerjaan"/>
       </Properties>
@@ -529,7 +529,7 @@
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ayo ikuti cara berikut ini supaya kamu bisa melamar pekerjaan yang sedang tersedia"/>
       </Properties>
@@ -545,7 +545,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="menggunakan akun gmail"/>
       </Properties>
@@ -561,7 +561,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="yang biasa kamu gunakan"/>
       </Properties>
@@ -577,7 +577,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Isi data-data yang dibutuhkan"/>
       </Properties>
@@ -593,7 +593,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="siapin dokumen-dokumen,"/>
       </Properties>
@@ -609,7 +609,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="lalu simpan data kamu"/>
       </Properties>
@@ -625,7 +625,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cari lowongan yang sedang"/>
       </Properties>
@@ -641,7 +641,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="dibuka, pilih lowongan yang sesuai,"/>
       </Properties>
@@ -657,7 +657,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="lalu klik lamar"/>
       </Properties>
@@ -673,7 +673,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pantau terus perkembangan"/>
       </Properties>
@@ -689,7 +689,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="dari status lamaran kamu"/>
       </Properties>
@@ -705,7 +705,7 @@
           <Font name="Segoe UI Black" size="25" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Masuk"/>
       </Properties>
@@ -721,7 +721,7 @@
           <Font name="Segoe UI" size="16" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Simpel banget masuk"/>
       </Properties>
@@ -737,7 +737,7 @@
           <Font name="Segoe UI Black" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Saya lulusan SMA/SMK, apakah bisa saya mendaftar?"/>
       </Properties>
@@ -753,7 +753,7 @@
           <Font name="Segoe UI Black" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Apakah boleh mendaftar tanpa menggunakan email pribadi?"/>
       </Properties>
@@ -769,7 +769,7 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Boleh, tetapi kamu tidak akan mendapatkan info apapun dari kami :("/>
       </Properties>
@@ -785,7 +785,7 @@
           <Font name="Segoe UI Black" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Apakah bisa jika melamar tanpa login atau mendaftar terlebih dahulu?"/>
       </Properties>
@@ -801,7 +801,7 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Tidak bisa ya :) karena kami memerlukan data kamu untuk proses kualifikasi"/>
       </Properties>
@@ -865,7 +865,7 @@
           <Font name="Segoe UI" size="18" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="f2" green="f8" red="f9" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Bisa, untuk lebih jelasnya, silakan lihat pada kualifikasi pekerjaan yang kamu pilih ya"/>
       </Properties>

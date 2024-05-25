@@ -237,7 +237,7 @@ public class faqpage extends javax.swing.JFrame {
 
         contactUS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         contactUS.setForeground(new java.awt.Color(255, 255, 255));
-        contactUS.setText("Contact Us:");
+        contactUS.setText("Contact Us :");
         jPanel1.add(contactUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 80, 30));
 
         usnIG.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -258,12 +258,12 @@ public class faqpage extends javax.swing.JFrame {
         getContentPane().add(namaGr2, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 6, -1, 50));
 
         penjelasan43.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan43.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan43.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan43.setText("di aplikasi ini");
         getContentPane().add(penjelasan43, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 320, 100, -1));
 
         instruksi4.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
-        instruksi4.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi4.setForeground(new java.awt.Color(249, 248, 242));
         instruksi4.setText("Pantau");
         getContentPane().add(instruksi4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 230, -1, -1));
 
@@ -280,112 +280,112 @@ public class faqpage extends javax.swing.JFrame {
         getContentPane().add(tiga, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 160, 60));
 
         judul2.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
-        judul2.setForeground(new java.awt.Color(204, 204, 204));
+        judul2.setForeground(new java.awt.Color(249, 248, 242));
         judul2.setText("Cara Melamar");
         getContentPane().add(judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, -1, -1));
 
         judul3.setFont(new java.awt.Font("Segoe UI Black", 1, 28)); // NOI18N
-        judul3.setForeground(new java.awt.Color(204, 204, 204));
+        judul3.setForeground(new java.awt.Color(215, 204, 185));
         judul3.setText("Pertanyaan Lain:");
         getContentPane().add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 390, -1, -1));
 
         instruksi2.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
-        instruksi2.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi2.setForeground(new java.awt.Color(249, 248, 242));
         instruksi2.setText("Lengkapi Data");
         getContentPane().add(instruksi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, -1, -1));
 
         instruksi3.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
-        instruksi3.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi3.setForeground(new java.awt.Color(249, 248, 242));
         instruksi3.setText("Lamar Pekerjaan");
         getContentPane().add(instruksi3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, -1, -1));
 
         keterangan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        keterangan.setForeground(new java.awt.Color(204, 204, 204));
+        keterangan.setForeground(new java.awt.Color(249, 248, 242));
         keterangan.setText("Ayo ikuti cara berikut ini supaya kamu bisa melamar pekerjaan yang sedang tersedia");
         getContentPane().add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 530, -1));
 
         penjelasan12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan12.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan12.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan12.setText("menggunakan akun gmail");
         getContentPane().add(penjelasan12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 200, -1));
 
         penjelasan13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan13.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan13.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan13.setText("yang biasa kamu gunakan");
         getContentPane().add(penjelasan13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 190, -1));
 
         penjelasan21.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan21.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan21.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan21.setText("Isi data-data yang dibutuhkan");
         getContentPane().add(penjelasan21, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 230, -1));
 
         penjelasan22.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan22.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan22.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan22.setText("siapin dokumen-dokumen,");
         getContentPane().add(penjelasan22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 200, -1));
 
         penjelasan23.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan23.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan23.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan23.setText("lalu simpan data kamu");
         getContentPane().add(penjelasan23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 180, -1));
 
         penjelasan31.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan31.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan31.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan31.setText("Cari lowongan yang sedang");
         getContentPane().add(penjelasan31, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 210, -1));
 
         penjelasan32.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan32.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan32.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan32.setText("dibuka, pilih lowongan yang sesuai,");
         getContentPane().add(penjelasan32, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 270, -1));
 
         penjelasan33.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan33.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan33.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan33.setText("lalu klik lamar");
         getContentPane().add(penjelasan33, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 320, 110, -1));
 
         penjelasan41.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan41.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan41.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan41.setText("Pantau terus perkembangan");
         getContentPane().add(penjelasan41, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 280, 210, -1));
 
         penjelasan42.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan42.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan42.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan42.setText("dari status lamaran kamu");
         getContentPane().add(penjelasan42, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 300, 190, -1));
 
         instruksi1.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
-        instruksi1.setForeground(new java.awt.Color(204, 204, 204));
+        instruksi1.setForeground(new java.awt.Color(249, 248, 242));
         instruksi1.setText("Masuk");
         getContentPane().add(instruksi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, -1));
 
         penjelasan11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        penjelasan11.setForeground(new java.awt.Color(204, 204, 204));
+        penjelasan11.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan11.setText("Simpel banget masuk");
         getContentPane().add(penjelasan11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 170, -1));
 
         tanya3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        tanya3.setForeground(new java.awt.Color(204, 204, 204));
+        tanya3.setForeground(new java.awt.Color(249, 248, 242));
         tanya3.setText("Saya lulusan SMA/SMK, apakah bisa saya mendaftar?");
         getContentPane().add(tanya3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 480, -1));
 
         tanya1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        tanya1.setForeground(new java.awt.Color(204, 204, 204));
+        tanya1.setForeground(new java.awt.Color(249, 248, 242));
         tanya1.setText("Apakah boleh mendaftar tanpa menggunakan email pribadi?");
         getContentPane().add(tanya1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 550, -1));
 
         jawab1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jawab1.setForeground(new java.awt.Color(204, 204, 204));
+        jawab1.setForeground(new java.awt.Color(249, 248, 242));
         jawab1.setText("Boleh, tetapi kamu tidak akan mendapatkan info apapun dari kami :(");
         getContentPane().add(jawab1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 560, 30));
 
         tanya2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        tanya2.setForeground(new java.awt.Color(204, 204, 204));
+        tanya2.setForeground(new java.awt.Color(249, 248, 242));
         tanya2.setText("Apakah bisa jika melamar tanpa login atau mendaftar terlebih dahulu?");
         getContentPane().add(tanya2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 630, -1));
 
         jawab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jawab2.setForeground(new java.awt.Color(204, 204, 204));
+        jawab2.setForeground(new java.awt.Color(249, 248, 242));
         jawab2.setText("Tidak bisa ya :) karena kami memerlukan data kamu untuk proses kualifikasi");
         getContentPane().add(jawab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 500, 610, 30));
 
@@ -402,7 +402,7 @@ public class faqpage extends javax.swing.JFrame {
         getContentPane().add(burung, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 360, -1, 250));
 
         jawab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jawab3.setForeground(new java.awt.Color(204, 204, 204));
+        jawab3.setForeground(new java.awt.Color(249, 248, 242));
         jawab3.setText("Bisa, untuk lebih jelasnya, silakan lihat pada kualifikasi pekerjaan yang kamu pilih ya");
         getContentPane().add(jawab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 670, 30));
 
