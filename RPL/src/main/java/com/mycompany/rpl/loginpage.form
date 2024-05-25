@@ -171,7 +171,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="22" green="2d" red="31" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Masuk"/>
+        <Property name="text" type="java.lang.String" value="MASUK"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -306,7 +306,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="740" y="630" width="-1" height="-1"/>
+          <AbsoluteConstraints x="720" y="630" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -334,7 +334,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="590" y="620" width="150" height="40"/>
+          <AbsoluteConstraints x="570" y="620" width="150" height="40"/>
         </Constraint>
       </Constraints>
     </Component>

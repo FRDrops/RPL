@@ -121,7 +121,7 @@ public class loginpage extends javax.swing.JFrame {
 
         masukLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
         masukLabel.setForeground(new java.awt.Color(49, 45, 34));
-        masukLabel.setText("Masuk");
+        masukLabel.setText("MASUK");
         getContentPane().add(masukLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 150, -1, -1));
 
         usnLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -173,7 +173,7 @@ public class loginpage extends javax.swing.JFrame {
         info.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         info.setForeground(new java.awt.Color(49, 45, 34));
         info.setText("Masuk diperlukan untuk melamar pekerjaan dan melihat hasil lamaran kerja");
-        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 630, -1, -1));
+        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 630, -1, -1));
 
         tanya.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tanya.setForeground(new java.awt.Color(49, 45, 34));
@@ -181,7 +181,7 @@ public class loginpage extends javax.swing.JFrame {
         getContentPane().add(tanya, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 360, -1, -1));
 
         infoLabel.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\infoBlack.png")); // NOI18N
-        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 620, 150, 40));
+        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 620, 150, 40));
 
         aksara2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\aksaraBlack.png")); // NOI18N
         getContentPane().add(aksara2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, -1));

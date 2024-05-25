@@ -5,10 +5,23 @@
 package com.mycompany.rpl;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import java.awt.geom.*;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.border.*;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
@@ -22,6 +35,12 @@ public class signuppage extends javax.swing.JFrame {
     public signuppage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xF9F8F2"));
+        
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/logoGR.png")));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back.png")));
+        infoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlack.png")));
+        aksara1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/aksaraWhite.png")));
+        aksara2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/aksaraBlack.png")));
     }
 
     /**
@@ -34,10 +53,32 @@ public class signuppage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
+        logo = new javax.swing.JLabel();
+        backButton = new javax.swing.JLabel();
+        penjelasan2 = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
+        penjelasan1 = new javax.swing.JLabel();
+        aksara1 = new javax.swing.JLabel();
+        usnLabel = new javax.swing.JLabel();
+        daftarLabel = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
+        usnInput = new javax.swing.JTextField();
+        emailInput = new javax.swing.JTextField();
+        daftarButton = new javax.swing.JButton();
+        masuk = new javax.swing.JLabel();
+        info = new javax.swing.JLabel();
+        tanya = new javax.swing.JLabel();
+        infoLabel = new javax.swing.JLabel();
+        aksara2 = new javax.swing.JLabel();
+        pwLabel = new javax.swing.JLabel();
+        pwInput = new javax.swing.JTextField();
+        namaLabel = new javax.swing.JLabel();
+        namaInput = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(49, 45, 34));
         jPanel2.setMaximumSize(new java.awt.Dimension(640, 720));
@@ -45,21 +86,154 @@ public class signuppage extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(640, 720));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 640, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        logo.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGR.png")); // NOI18N
+        jPanel2.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
+
+        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back.png")); // NOI18N
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButtonMouseClicked(evt);
+            }
+        });
+        jPanel2.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 20, 150, 50));
+
+        penjelasan2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        penjelasan2.setForeground(new java.awt.Color(249, 248, 242));
+        penjelasan2.setText("yang khas dengan nuansa dan masakan Jawanya.");
+        jPanel2.add(penjelasan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, -1, -1));
+
+        judul.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        judul.setForeground(new java.awt.Color(249, 248, 242));
+        judul.setText("Gendhu Roso");
+        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, -1, -1));
+
+        penjelasan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        penjelasan1.setForeground(new java.awt.Color(249, 248, 242));
+        penjelasan1.setText("RM Gendhu Roso, warung makan prasmanan di Wonosobo Jawa Tengah");
+        jPanel2.add(penjelasan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, -1, -1));
+
+        aksara1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\aksaraWhite.png")); // NOI18N
+        jPanel2.add(aksara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 683));
+
+        usnLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        usnLabel.setForeground(new java.awt.Color(49, 45, 34));
+        usnLabel.setText("Username");
+        getContentPane().add(usnLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 170, 40));
+
+        daftarLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        daftarLabel.setForeground(new java.awt.Color(49, 45, 34));
+        daftarLabel.setText("DAFTAR");
+        getContentPane().add(daftarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 130, -1, -1));
+
+        emailLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        emailLabel.setForeground(new java.awt.Color(49, 45, 34));
+        emailLabel.setText("Email");
+        getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 160, 40));
+
+        usnInput.setBackground(new java.awt.Color(215, 204, 185));
+        usnInput.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        usnInput.setForeground(new java.awt.Color(255, 255, 255));
+        usnInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usnInput.setBorder(null);
+        getContentPane().add(usnInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, 330, 40));
+
+        emailInput.setBackground(new java.awt.Color(215, 204, 185));
+        emailInput.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        emailInput.setForeground(new java.awt.Color(255, 255, 255));
+        emailInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        emailInput.setBorder(null);
+        emailInput.setOpaque(true);
+        getContentPane().add(emailInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 260, 330, 40));
+
+        daftarButton.setBackground(new java.awt.Color(215, 204, 185));
+        daftarButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        daftarButton.setForeground(new java.awt.Color(49, 45, 34));
+        daftarButton.setText("Daftar");
+        daftarButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        daftarButton.setBorderPainted(false);
+        daftarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        daftarButton.setFocusable(false);
+        daftarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                daftarButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(daftarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 480, 170, 40));
+
+        masuk.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        masuk.setForeground(new java.awt.Color(49, 45, 34));
+        masuk.setText("Masuk");
+        masuk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        masuk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                masukMouseClicked(evt);
+            }
+        });
+        getContentPane().add(masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 420, 60, -1));
+
+        info.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        info.setForeground(new java.awt.Color(49, 45, 34));
+        info.setText("Daftar diperlukan agar dapat masuk dan melamar pekerjaan serta melihat hasil lamaran kerja");
+        getContentPane().add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 630, -1, -1));
+
+        tanya.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tanya.setForeground(new java.awt.Color(49, 45, 34));
+        tanya.setText("Sudah punya akun?");
+        getContentPane().add(tanya, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 420, -1, -1));
+
+        infoLabel.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\infoBlack.png")); // NOI18N
+        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 620, 150, 40));
+
+        aksara2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\aksaraBlack.png")); // NOI18N
+        getContentPane().add(aksara2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, -1));
+
+        pwLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        pwLabel.setForeground(new java.awt.Color(49, 45, 34));
+        pwLabel.setText("Kata Sandi");
+        getContentPane().add(pwLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 360, 170, 40));
+
+        pwInput.setBackground(new java.awt.Color(215, 204, 185));
+        pwInput.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        pwInput.setForeground(new java.awt.Color(255, 255, 255));
+        pwInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pwInput.setBorder(null);
+        getContentPane().add(pwInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 360, 330, 40));
+
+        namaLabel.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        namaLabel.setForeground(new java.awt.Color(49, 45, 34));
+        namaLabel.setText("Nama Lengkap");
+        getContentPane().add(namaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 190, 40));
+
+        namaInput.setBackground(new java.awt.Color(215, 204, 185));
+        namaInput.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        namaInput.setForeground(new java.awt.Color(255, 255, 255));
+        namaInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        namaInput.setBorder(null);
+        getContentPane().add(namaInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 210, 330, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
+    }//GEN-LAST:event_backButtonMouseClicked
+
+    private void daftarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new loginpage().setVisible(true);
+    }//GEN-LAST:event_daftarButtonActionPerformed
+
+    private void masukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new loginpage().setVisible(true);
+    }//GEN-LAST:event_masukMouseClicked
 
     /**
      * @param args the command line arguments
@@ -97,6 +271,98 @@ public class signuppage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel aksara1;
+    private javax.swing.JLabel aksara2;
+    private javax.swing.JLabel backButton;
+    private javax.swing.JButton daftarButton;
+    private javax.swing.JLabel daftarLabel;
+    private javax.swing.JTextField emailInput;
+    private javax.swing.JLabel emailLabel;
+    private javax.swing.JLabel info;
+    private javax.swing.JLabel infoLabel;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel judul;
+    private javax.swing.JLabel logo;
+    private javax.swing.JLabel masuk;
+    private javax.swing.JTextField namaInput;
+    private javax.swing.JLabel namaLabel;
+    private javax.swing.JLabel penjelasan1;
+    private javax.swing.JLabel penjelasan2;
+    private javax.swing.JTextField pwInput;
+    private javax.swing.JLabel pwLabel;
+    private javax.swing.JLabel tanya;
+    private javax.swing.JTextField usnInput;
+    private javax.swing.JLabel usnLabel;
     // End of variables declaration//GEN-END:variables
+
+class RoundedPanel extends JPanel
+    {
+        private Color backgroundColor;
+        private int cornerRadius = 15;
+        public RoundedPanel(LayoutManager layout, int radius) {
+            super(layout);
+            cornerRadius = radius;
+        }
+        public RoundedPanel(LayoutManager layout, int radius, Color bgColor) {
+            super(layout);
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        public RoundedPanel(int radius) {
+            super();
+            cornerRadius = radius;
+            
+        }
+        public RoundedPanel(int radius, Color bgColor) {
+            super();
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+            int width = getWidth();
+            int height = getHeight();
+            Graphics2D graphics = (Graphics2D) g;
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            //Draws the rounded panel with borders.
+            if (backgroundColor != null) {
+                graphics.setColor(backgroundColor);
+            } else {
+                graphics.setColor(getBackground());
+            }
+            graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+            graphics.setColor(getForeground());
+//            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+//             
+        }
+    }
+
+class RoundJTextField extends JTextField {
+    private Shape shape;
+    public RoundJTextField(int size) {
+        super(size);
+        setOpaque(false); // As suggested by @AVD in comment.
+    }
+    @Override
+    protected void paintComponent(Graphics g) {
+         g.setColor(getBackground());
+         g.fillRoundRect(0, 0, getWidth()-1, getHeight()-1, 15, 15);
+         super.paintComponent(g);
+    }
+    @Override
+    protected void paintBorder(Graphics g) {
+         g.setColor(getForeground());
+         g.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 15, 15);
+    }
+    @Override
+    public boolean contains(int x, int y) {
+         if (shape == null || !shape.getBounds().equals(getBounds())) {
+             shape = new RoundRectangle2D.Float(0, 0, getWidth()-1, getHeight()-1, 15, 15);
+         }
+         return shape.contains(x, y);
+    }
+}
+
 }
