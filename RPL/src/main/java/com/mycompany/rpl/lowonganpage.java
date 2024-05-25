@@ -84,6 +84,11 @@ public class lowonganpage extends javax.swing.JFrame {
                 new lowonganpage().setVisible(true);
             }
         });
+        
+        lowonganpage lowongan = new lowonganpage();
+        lowongan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        lowongan.setResizable(false);   //No resize is possible
+        lowongan.setSize(1280, 720);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

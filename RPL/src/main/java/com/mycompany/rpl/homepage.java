@@ -9,6 +9,13 @@ import javax.swing.ImageIcon;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import java.awt.geom.*;
+import javax.swing.border.*;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
+import javax.swing.JPanel;
 
 /**
  *
@@ -36,14 +43,15 @@ public class homepage extends javax.swing.JFrame {
     private void initComponents() {
 
         namaGr = new javax.swing.JLabel();
-        lowonganButton = new javax.swing.JLabel();
+        hover = new RoundedPanel(50, new Color(249, 248, 242));
+        homeButton = new javax.swing.JLabel();
         faqButton = new javax.swing.JLabel();
         masukButton = new javax.swing.JLabel();
-        homeButton = new javax.swing.JLabel();
         logoGr = new javax.swing.JLabel();
         keterangan = new javax.swing.JLabel();
         keterangan2 = new javax.swing.JLabel();
         namaGr2 = new javax.swing.JLabel();
+        lowonganButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -54,10 +62,29 @@ public class homepage extends javax.swing.JFrame {
         namaGr.setForeground(new java.awt.Color(249, 248, 242));
         namaGr.setText("Gendhu Roso");
 
-        lowonganButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        lowonganButton.setForeground(new java.awt.Color(249, 248, 242));
-        lowonganButton.setText("Lowongan   |");
-        lowonganButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hover.setBackground(new java.awt.Color(49, 45, 34));
+
+        homeButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        homeButton.setForeground(new java.awt.Color(49, 45, 34));
+        homeButton.setText("Home");
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout hoverLayout = new javax.swing.GroupLayout(hover);
+        hover.setLayout(hoverLayout);
+        hoverLayout.setHorizontalGroup(
+            hoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, hoverLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(homeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        hoverLayout.setVerticalGroup(
+            hoverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(hoverLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(homeButton)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
 
         faqButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         faqButton.setForeground(new java.awt.Color(249, 248, 242));
@@ -68,11 +95,6 @@ public class homepage extends javax.swing.JFrame {
         masukButton.setForeground(new java.awt.Color(249, 248, 242));
         masukButton.setText("Masuk");
         masukButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        homeButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        homeButton.setForeground(new java.awt.Color(249, 248, 242));
-        homeButton.setText("Home   |");
-        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         logoGr.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGR.png")); // NOI18N
 
@@ -88,20 +110,25 @@ public class homepage extends javax.swing.JFrame {
         namaGr2.setForeground(new java.awt.Color(249, 248, 242));
         namaGr2.setText("Gendhu Roso");
 
+        lowonganButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lowonganButton.setForeground(new java.awt.Color(249, 248, 242));
+        lowonganButton.setText("Lowongan");
+        lowonganButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addComponent(namaGr)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(homeButton)
-                .addGap(18, 18, 18)
+                .addComponent(hover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lowonganButton)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(faqButton)
-                .addGap(353, 353, 353)
+                .addGap(354, 354, 354)
                 .addComponent(masukButton)
                 .addGap(21, 21, 21))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -121,14 +148,14 @@ public class homepage extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(namaGr)
-                    .addComponent(lowonganButton)
-                    .addComponent(faqButton)
-                    .addComponent(masukButton)
-                    .addComponent(homeButton))
-                .addGap(103, 103, 103)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(masukButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hover, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lowonganButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(namaGr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(faqButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(101, 101, 101)
                 .addComponent(logoGr)
                 .addGap(18, 18, 18)
                 .addComponent(namaGr2)
@@ -136,7 +163,7 @@ public class homepage extends javax.swing.JFrame {
                 .addComponent(keterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(keterangan2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(51, 51, 51))
         );
 
         pack();
@@ -173,6 +200,7 @@ public class homepage extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new homepage().setVisible(true);
+                
             }
         });
         
@@ -186,6 +214,7 @@ public class homepage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel faqButton;
     private javax.swing.JLabel homeButton;
+    private javax.swing.JPanel hover;
     private javax.swing.JLabel keterangan;
     private javax.swing.JLabel keterangan2;
     private javax.swing.JLabel logoGr;
@@ -194,4 +223,49 @@ public class homepage extends javax.swing.JFrame {
     private javax.swing.JLabel namaGr;
     private javax.swing.JLabel namaGr2;
     // End of variables declaration//GEN-END:variables
+
+    
+class RoundedPanel extends JPanel
+    {
+        private Color backgroundColor;
+        private int cornerRadius = 15;
+        public RoundedPanel(LayoutManager layout, int radius) {
+            super(layout);
+            cornerRadius = radius;
+        }
+        public RoundedPanel(LayoutManager layout, int radius, Color bgColor) {
+            super(layout);
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        public RoundedPanel(int radius) {
+            super();
+            cornerRadius = radius;
+            
+        }
+        public RoundedPanel(int radius, Color bgColor) {
+            super();
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+            int width = getWidth();
+            int height = getHeight();
+            Graphics2D graphics = (Graphics2D) g;
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            //Draws the rounded panel with borders.
+            if (backgroundColor != null) {
+                graphics.setColor(backgroundColor);
+            } else {
+                graphics.setColor(getBackground());
+            }
+            graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+            graphics.setColor(getForeground());
+//            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+//             
+        }
+    }
 }
