@@ -22,6 +22,8 @@ public class homepage extends javax.swing.JFrame {
     public homepage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0x312D22"));
+        
+        logoGr.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/logoGR.png")));
     }
 
     /**
@@ -33,19 +35,108 @@ public class homepage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        namaGr = new javax.swing.JLabel();
+        lowonganButton = new javax.swing.JLabel();
+        faqButton = new javax.swing.JLabel();
+        masukButton = new javax.swing.JLabel();
+        homeButton = new javax.swing.JLabel();
+        logoGr = new javax.swing.JLabel();
+        keterangan = new javax.swing.JLabel();
+        keterangan2 = new javax.swing.JLabel();
+        namaGr2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+
+        namaGr.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        namaGr.setForeground(new java.awt.Color(249, 248, 242));
+        namaGr.setText("Gendhu Roso");
+
+        lowonganButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lowonganButton.setForeground(new java.awt.Color(249, 248, 242));
+        lowonganButton.setText("Lowongan   |");
+        lowonganButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        faqButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        faqButton.setForeground(new java.awt.Color(249, 248, 242));
+        faqButton.setText("FAQ");
+        faqButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        masukButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        masukButton.setForeground(new java.awt.Color(249, 248, 242));
+        masukButton.setText("Masuk");
+        masukButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        homeButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        homeButton.setForeground(new java.awt.Color(249, 248, 242));
+        homeButton.setText("Home   |");
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        logoGr.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGR.png")); // NOI18N
+
+        keterangan.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        keterangan.setForeground(new java.awt.Color(249, 248, 242));
+        keterangan.setText("RM Gendhu Roso merupakan warung makan prasmanan yang berlokasi di Kabupaten Wonosobo, Jawa Tengah. Dengan tema masakan Jawa,");
+
+        keterangan2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        keterangan2.setForeground(new java.awt.Color(249, 248, 242));
+        keterangan2.setText("Di sini menyediakan berbagai macam masakan rumahan, seperti sayuran dan lauk pauk serta minuman khas Jawa.");
+
+        namaGr2.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
+        namaGr2.setForeground(new java.awt.Color(249, 248, 242));
+        namaGr2.setText("Gendhu Roso");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(namaGr)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(homeButton)
+                .addGap(18, 18, 18)
+                .addComponent(lowonganButton)
+                .addGap(18, 18, 18)
+                .addComponent(faqButton)
+                .addGap(353, 353, 353)
+                .addComponent(masukButton)
+                .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(360, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(keterangan, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(keterangan2)
+                        .addGap(103, 103, 103))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(logoGr)
+                            .addComponent(namaGr2))
+                        .addGap(323, 323, 323)))
+                .addGap(151, 151, 151))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(namaGr)
+                    .addComponent(lowonganButton)
+                    .addComponent(faqButton)
+                    .addComponent(masukButton)
+                    .addComponent(homeButton))
+                .addGap(103, 103, 103)
+                .addComponent(logoGr)
+                .addGap(18, 18, 18)
+                .addComponent(namaGr2)
+                .addGap(18, 18, 18)
+                .addComponent(keterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(keterangan2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -84,8 +175,23 @@ public class homepage extends javax.swing.JFrame {
                 new homepage().setVisible(true);
             }
         });
+        
+        //custom codes for jform
+        homepage home = new homepage();
+        home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        home.setResizable(false);   //No resize is possible
+        home.setSize(1280, 720);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel faqButton;
+    private javax.swing.JLabel homeButton;
+    private javax.swing.JLabel keterangan;
+    private javax.swing.JLabel keterangan2;
+    private javax.swing.JLabel logoGr;
+    private javax.swing.JLabel lowonganButton;
+    private javax.swing.JLabel masukButton;
+    private javax.swing.JLabel namaGr;
+    private javax.swing.JLabel namaGr2;
     // End of variables declaration//GEN-END:variables
 }
