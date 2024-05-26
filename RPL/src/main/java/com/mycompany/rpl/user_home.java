@@ -5,10 +5,23 @@
 package com.mycompany.rpl;
 
 import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
+import java.awt.geom.*;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.border.*;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 
 /**
  *
@@ -33,24 +46,178 @@ public class user_home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nav = new RoundedPanel(100, new Color(215, 204, 185));
+        homeLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        homeLabel1 = new javax.swing.JLabel();
+        jPanel1 = new RoundedPanel(70, new Color(49, 45, 34));
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        homeLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        homeLabel3 = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
+        keterangan = new javax.swing.JLabel();
+        copyright = new javax.swing.JLabel();
+        about = new javax.swing.JLabel();
+        support = new javax.swing.JLabel();
+        logoutButton = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+        nav.setBackground(new java.awt.Color(255, 255, 255));
+        nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        homeLabel.setForeground(new java.awt.Color(49, 45, 34));
+        homeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeLabel.setText("Loker Kerja");
+        nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeWhite.png")); // NOI18N
+        nav.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 100, 150, 50));
+
+        homeLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        homeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeLabel1.setText("Home");
+        nav.add(homeLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 30));
+
+        jPanel1.setBackground(new java.awt.Color(215, 204, 185));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 90, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
         );
+
+        nav.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 110));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaBlack.png")); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        nav.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaBlack.png")); // NOI18N
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        nav.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 330, 150, 60));
+
+        homeLabel2.setForeground(new java.awt.Color(49, 45, 34));
+        homeLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeLabel2.setText("Data Saya");
+        nav.add(homeLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaBlack.png")); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        nav.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 450, 160, 60));
+
+        homeLabel3.setForeground(new java.awt.Color(49, 45, 34));
+        homeLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeLabel3.setText("Lamaran Saya");
+        nav.add(homeLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 90, 20));
+
+        getContentPane().add(nav, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 620));
+
+        judul.setFont(new java.awt.Font("Segoe UI Black", 1, 95)); // NOI18N
+        judul.setForeground(new java.awt.Color(49, 45, 34));
+        judul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul.setText("Selamat Datang");
+        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, -1, -1));
+
+        keterangan.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        keterangan.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        keterangan.setText("Cek kembali data dan berkas kamu. Kelengkapan datamu sangat penting untuk proses kualifikasi.");
+        getContentPane().add(keterangan, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 770, 30));
+
+        copyright.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        copyright.setForeground(new java.awt.Color(49, 45, 34));
+        copyright.setText("2024© Gendhu Roso");
+        getContentPane().add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 600, -1, -1));
+
+        about.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        about.setForeground(new java.awt.Color(49, 45, 34));
+        about.setText("About     |");
+        about.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        about.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aboutMouseClicked(evt);
+            }
+        });
+        getContentPane().add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 590, -1, -1));
+
+        support.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        support.setForeground(new java.awt.Color(49, 45, 34));
+        support.setText("Support");
+        support.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        support.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supportMouseClicked(evt);
+            }
+        });
+        getContentPane().add(support, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 590, -1, -1));
+
+        logoutButton.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        logoutButton.setForeground(new java.awt.Color(49, 45, 34));
+        logoutButton.setText("Logout");
+        logoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supportMouseClicked
+
+    private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aboutMouseClicked
+
+    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
+    }//GEN-LAST:event_logoutButtonMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -85,8 +252,75 @@ public class user_home extends javax.swing.JFrame {
                 new user_home().setVisible(true);
             }
         });
+        
+        user_home uhome = new user_home();
+        uhome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        uhome.setResizable(false);   //No resize is possible
+        uhome.setSize(1280, 720);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel about;
+    private javax.swing.JLabel copyright;
+    private javax.swing.JLabel homeLabel;
+    private javax.swing.JLabel homeLabel1;
+    private javax.swing.JLabel homeLabel2;
+    private javax.swing.JLabel homeLabel3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel judul;
+    private javax.swing.JLabel keterangan;
+    private javax.swing.JLabel logoutButton;
+    private javax.swing.JPanel nav;
+    private javax.swing.JLabel support;
     // End of variables declaration//GEN-END:variables
+
+class RoundedPanel extends JPanel
+    {
+        private Color backgroundColor;
+        private int cornerRadius = 15;
+        public RoundedPanel(LayoutManager layout, int radius) {
+            super(layout);
+            cornerRadius = radius;
+        }
+        public RoundedPanel(LayoutManager layout, int radius, Color bgColor) {
+            super(layout);
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        public RoundedPanel(int radius) {
+            super();
+            cornerRadius = radius;
+            
+        }
+        public RoundedPanel(int radius, Color bgColor) {
+            super();
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+            int width = getWidth();
+            int height = getHeight();
+            Graphics2D graphics = (Graphics2D) g;
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            //Draws the rounded panel with borders.
+            if (backgroundColor != null) {
+                graphics.setColor(backgroundColor);
+            } else {
+                graphics.setColor(getBackground());
+            }
+            graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+            graphics.setColor(getForeground());
+//            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+//             
+        }
+    }
+
 }
