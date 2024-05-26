@@ -92,6 +92,7 @@ public class lowonganpage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeButton.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -168,7 +169,7 @@ public class lowonganpage extends javax.swing.JFrame {
         dl3.setText("12 Agustus 2024");
         jPanel1.add(dl3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
 
-        rincianButton3.setBackground(new java.awt.Color(49, 45, 34));
+        rincianButton3.setBackground(new java.awt.Color(112, 104, 94));
         rincianButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         rincianButton3.setForeground(new java.awt.Color(249, 248, 242));
         rincianButton3.setText("Rincian");
@@ -202,7 +203,7 @@ public class lowonganpage extends javax.swing.JFrame {
         dl1.setText("12 Agustus 2024");
         jPanel2.add(dl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
 
-        rincianButton1.setBackground(new java.awt.Color(49, 45, 34));
+        rincianButton1.setBackground(new java.awt.Color(112, 104, 94));
         rincianButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         rincianButton1.setForeground(new java.awt.Color(249, 248, 242));
         rincianButton1.setText("Rincian");
@@ -256,7 +257,7 @@ public class lowonganpage extends javax.swing.JFrame {
         dl2.setText("12 Agustus 2024");
         jPanel3.add(dl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
 
-        rincianButton2.setBackground(new java.awt.Color(49, 45, 34));
+        rincianButton2.setBackground(new java.awt.Color(112, 104, 94));
         rincianButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         rincianButton2.setForeground(new java.awt.Color(249, 248, 242));
         rincianButton2.setText("Rincian");
