@@ -73,6 +73,7 @@ public class user_home extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
@@ -84,6 +85,7 @@ public class user_home extends javax.swing.JFrame {
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
 
         homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeWhite.png")); // NOI18N
+        homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nav.add(homeIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 100, 150, 50));
 
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -214,14 +216,20 @@ public class user_home extends javax.swing.JFrame {
 
     private void datasayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datasayaIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new user_data().setVisible(true);
     }//GEN-LAST:event_datasayaIconMouseClicked
 
     private void lamsayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lamsayaIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new user_lamaran().setVisible(true);
     }//GEN-LAST:event_lamsayaIconMouseClicked
 
     private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new user_loker().setVisible(true);
     }//GEN-LAST:event_lokerIconMouseClicked
 
     /**
