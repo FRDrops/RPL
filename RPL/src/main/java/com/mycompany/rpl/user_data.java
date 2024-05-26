@@ -275,7 +275,7 @@ public class user_data extends javax.swing.JFrame {
         getContentPane().add(profilButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 190, 40));
 
         skckButton.setBackground(new java.awt.Color(249, 248, 242));
-        skckButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        skckButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         skckButton.setForeground(new java.awt.Color(112, 104, 94));
         skckButton.setText("Upload SKCK");
         skckButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -425,7 +425,7 @@ public class user_data extends javax.swing.JFrame {
         getContentPane().add(jenisInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 140, 40));
 
         cvButton.setBackground(new java.awt.Color(249, 248, 242));
-        cvButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cvButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         cvButton.setForeground(new java.awt.Color(112, 104, 94));
         cvButton.setText("Upload CV");
         cvButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -440,7 +440,7 @@ public class user_data extends javax.swing.JFrame {
         getContentPane().add(cvButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 190, 40));
 
         ijazahButton.setBackground(new java.awt.Color(249, 248, 242));
-        ijazahButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ijazahButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         ijazahButton.setForeground(new java.awt.Color(112, 104, 94));
         ijazahButton.setText("Upload Ijazah");
         ijazahButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -455,7 +455,7 @@ public class user_data extends javax.swing.JFrame {
         getContentPane().add(ijazahButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, 190, 40));
 
         ktpButton.setBackground(new java.awt.Color(249, 248, 242));
-        ktpButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ktpButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         ktpButton.setForeground(new java.awt.Color(112, 104, 94));
         ktpButton.setText("Upload KTP");
         ktpButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
