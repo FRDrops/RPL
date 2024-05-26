@@ -32,6 +32,9 @@ public class loginpage extends javax.swing.JFrame {
     /**
      * Creates new form loginpage
      */
+    
+    String username;
+    
     public loginpage() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xF9F8F2"));
@@ -41,6 +44,14 @@ public class loginpage extends javax.swing.JFrame {
         infoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlack.png")));
         aksara1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/aksaraWhite.png")));
         aksara2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/aksaraBlack.png")));
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username; // Mengatur nilai dari variabel username
     }
 
     /**
@@ -197,6 +208,23 @@ public class loginpage extends javax.swing.JFrame {
 
     private void masukButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masukButtonActionPerformed
         // TODO add your handling code here:
+        try {
+            LoginClass login = new LoginClass();
+            username = String.valueOf(usnInput.getText());
+            String password = String.valueOf(pwInput.getText());
+            this.username = username;
+            
+            login.login(username, password);
+            if (login.login(username, password)){
+                dispose();
+                setUsername(username);
+                new homepage().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Username atau Password salah!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_masukButtonActionPerformed
 
     private void daftarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseClicked

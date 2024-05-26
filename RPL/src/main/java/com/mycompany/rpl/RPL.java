@@ -13,8 +13,11 @@ import java.sql.SQLException;
  */
 public class RPL {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         System.out.println("Erwin");
+        
+        LoginClass login = new LoginClass();
+        login.input();
         
         user_lamaran home = new user_lamaran();
         home.setVisible(true);
