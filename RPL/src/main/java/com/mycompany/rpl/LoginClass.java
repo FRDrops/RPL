@@ -23,21 +23,69 @@ public class LoginClass {
         System.out.print("Masukkan password: ");
         String inputPassword = scanner.nextLine();
 
-        if (login(inputUsername, inputPassword)) {
-            System.out.println("Login berhasil. Selamat datang!");
+        if (loginAdmin(inputUsername, inputPassword)) {
+            System.out.println("Login sebagai ADMIN berhasil. Selamat datang!");
+        }
+        else if (loginHrd(inputUsername, inputPassword)) {
+            System.out.println("Login sebagai HRD berhasil. Selamat datang!");
+        }
+        else if (loginUser(inputUsername, inputPassword)) {
+            System.out.println("Login sebagai USER berhasil. Selamat datang!");
         } else {
             System.out.println("Username atau password salah.");
         }
     }
 
-    public boolean login(String username, String password) throws SQLException {
+    public boolean loginAdmin(String username, String password) throws SQLException {
         Koneksi konek = new Koneksi();
         Connection koneksi = konek.open();
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
         try {
-            String query = "SELECT * FROM maintanence WHERE username = ? AND password = ?";
+            String query = "SELECT * FROM login_admin WHERE username = ? AND password = ?";
+            preparedStatement = koneksi.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+
+            resultSet = preparedStatement.executeQuery();
+
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean loginHrd(String username, String password) throws SQLException {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            String query = "SELECT * FROM login_hrd WHERE username = ? AND password = ?";
+            preparedStatement = koneksi.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+
+            resultSet = preparedStatement.executeQuery();
+
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public boolean loginUser(String username, String password) throws SQLException {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            String query = "SELECT * FROM login_user WHERE username = ? AND password = ?";
             preparedStatement = koneksi.prepareStatement(query);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);

@@ -214,12 +214,23 @@ public class loginpage extends javax.swing.JFrame {
             String password = String.valueOf(pwInput.getText());
             this.username = username;
             
-            login.login(username, password);
-            if (login.login(username, password)){
+            login.loginAdmin(username, password);
+            login.loginHrd(username, password);
+            login.loginUser(username, password);
+            
+            if (login.loginAdmin(username, password)){
                 dispose();
                 setUsername(username);
                 new homepage().setVisible(true);
-            } else {
+            } else if (login.loginHrd(username, password)){
+                dispose();
+                setUsername(username);
+                new hrd_home().setVisible(true);
+            } else if (login.loginUser(username, password)){
+                dispose();
+                setUsername(username);
+                new user_home().setVisible(true);
+            }else {
                 JOptionPane.showMessageDialog(this, "Username atau Password salah!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             }
         } catch(SQLException e) {
