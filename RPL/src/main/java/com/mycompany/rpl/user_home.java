@@ -35,6 +35,11 @@ public class user_home extends javax.swing.JFrame {
     public user_home() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        
+        homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeWhite.png")));
+        datasayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/datasayaBlack.png")));
+        lamsayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lamsayaBlack.png")));
+        lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaBlack.png")));
     }
 
     /**
@@ -47,15 +52,15 @@ public class user_home extends javax.swing.JFrame {
     private void initComponents() {
 
         nav = new RoundedPanel(100, new Color(215, 204, 185));
+        lokerLabel = new javax.swing.JLabel();
+        homeIcon = new javax.swing.JLabel();
         homeLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        homeLabel1 = new javax.swing.JLabel();
         jPanel1 = new RoundedPanel(70, new Color(49, 45, 34));
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        homeLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        homeLabel3 = new javax.swing.JLabel();
+        datasayaIcon = new javax.swing.JLabel();
+        lamsayaIcon = new javax.swing.JLabel();
+        datasayaLabel = new javax.swing.JLabel();
+        lokerIcon = new javax.swing.JLabel();
+        lamsayaLabel = new javax.swing.JLabel();
         judul = new javax.swing.JLabel();
         keterangan = new javax.swing.JLabel();
         copyright = new javax.swing.JLabel();
@@ -73,18 +78,18 @@ public class user_home extends javax.swing.JFrame {
         nav.setBackground(new java.awt.Color(255, 255, 255));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        homeLabel.setForeground(new java.awt.Color(49, 45, 34));
+        lokerLabel.setForeground(new java.awt.Color(49, 45, 34));
+        lokerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lokerLabel.setText("Loker Kerja");
+        nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
+
+        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeWhite.png")); // NOI18N
+        nav.add(homeIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 100, 150, 50));
+
+        homeLabel.setForeground(new java.awt.Color(255, 255, 255));
         homeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeLabel.setText("Loker Kerja");
-        nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeWhite.png")); // NOI18N
-        nav.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 100, 150, 50));
-
-        homeLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        homeLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeLabel1.setText("Home");
-        nav.add(homeLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 30));
+        homeLabel.setText("Home");
+        nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 30));
 
         jPanel1.setBackground(new java.awt.Color(215, 204, 185));
 
@@ -101,42 +106,42 @@ public class user_home extends javax.swing.JFrame {
 
         nav.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 110));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaBlack.png")); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        datasayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaBlack.png")); // NOI18N
+        datasayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        datasayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                datasayaIconMouseClicked(evt);
             }
         });
-        nav.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
+        nav.add(datasayaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaBlack.png")); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        lamsayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaBlack.png")); // NOI18N
+        lamsayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lamsayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                lamsayaIconMouseClicked(evt);
             }
         });
-        nav.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 330, 150, 60));
+        nav.add(lamsayaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 330, 150, 60));
 
-        homeLabel2.setForeground(new java.awt.Color(49, 45, 34));
-        homeLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeLabel2.setText("Data Saya");
-        nav.add(homeLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
+        datasayaLabel.setForeground(new java.awt.Color(49, 45, 34));
+        datasayaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        datasayaLabel.setText("Data Saya");
+        nav.add(datasayaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaBlack.png")); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaBlack.png")); // NOI18N
+        lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                lokerIconMouseClicked(evt);
             }
         });
-        nav.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 450, 160, 60));
+        nav.add(lokerIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 450, 160, 60));
 
-        homeLabel3.setForeground(new java.awt.Color(49, 45, 34));
-        homeLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        homeLabel3.setText("Lamaran Saya");
-        nav.add(homeLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 90, 20));
+        lamsayaLabel.setForeground(new java.awt.Color(49, 45, 34));
+        lamsayaLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lamsayaLabel.setText("Lamaran Saya");
+        nav.add(lamsayaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 90, 20));
 
         getContentPane().add(nav, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 620));
 
@@ -155,7 +160,7 @@ public class user_home extends javax.swing.JFrame {
         copyright.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         copyright.setForeground(new java.awt.Color(49, 45, 34));
         copyright.setText("2024© Gendhu Roso");
-        getContentPane().add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 600, -1, -1));
+        getContentPane().add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, -1, -1));
 
         about.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         about.setForeground(new java.awt.Color(49, 45, 34));
@@ -166,7 +171,7 @@ public class user_home extends javax.swing.JFrame {
                 aboutMouseClicked(evt);
             }
         });
-        getContentPane().add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 590, -1, -1));
+        getContentPane().add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 600, -1, -1));
 
         support.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         support.setForeground(new java.awt.Color(49, 45, 34));
@@ -177,7 +182,7 @@ public class user_home extends javax.swing.JFrame {
                 supportMouseClicked(evt);
             }
         });
-        getContentPane().add(support, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 590, -1, -1));
+        getContentPane().add(support, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 600, -1, -1));
 
         logoutButton.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
         logoutButton.setForeground(new java.awt.Color(49, 45, 34));
@@ -207,17 +212,17 @@ public class user_home extends javax.swing.JFrame {
         new homepage().setVisible(true);
     }//GEN-LAST:event_logoutButtonMouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void datasayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datasayaIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_datasayaIconMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void lamsayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lamsayaIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_lamsayaIconMouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_lokerIconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -263,18 +268,18 @@ public class user_home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel about;
     private javax.swing.JLabel copyright;
+    private javax.swing.JLabel datasayaIcon;
+    private javax.swing.JLabel datasayaLabel;
+    private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
-    private javax.swing.JLabel homeLabel1;
-    private javax.swing.JLabel homeLabel2;
-    private javax.swing.JLabel homeLabel3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel keterangan;
+    private javax.swing.JLabel lamsayaIcon;
+    private javax.swing.JLabel lamsayaLabel;
     private javax.swing.JLabel logoutButton;
+    private javax.swing.JLabel lokerIcon;
+    private javax.swing.JLabel lokerLabel;
     private javax.swing.JPanel nav;
     private javax.swing.JLabel support;
     // End of variables declaration//GEN-END:variables
