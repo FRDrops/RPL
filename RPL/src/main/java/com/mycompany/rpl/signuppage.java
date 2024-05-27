@@ -225,13 +225,13 @@ public class signuppage extends javax.swing.JFrame {
         new homepage().setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
-    public void create(String username_user, String email, String nama, String password){
+    public boolean create(String username_user, String email, String nama, String password){
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             String query = "INSERT INTO data_user (username_user, password, nama, email) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = koneksi.prepareStatement(query);
-            
+
             ps.setString(1, username_user);
             ps.setString(2, password);
             ps.setString(3, nama);
@@ -241,12 +241,19 @@ public class signuppage extends javax.swing.JFrame {
 
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Data user berhasil dimasukkan.");
+                return true;
             } else {
                 JOptionPane.showMessageDialog(this, "Gagal memasukkan data user baru.");
+                return false;
             }
 
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());  
+            if (ex.getSQLState().equals("23505")) {
+                JOptionPane.showMessageDialog(this, "Username sudah ada. Harap masukkan username lain.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + ex.getMessage());
+            }
+            return false;
         }
     }
     
@@ -257,10 +264,14 @@ public class signuppage extends javax.swing.JFrame {
         String usn = usnInput.getText();
         String pw = pwInput.getText();
         
-        this.create(usn, email, nama, pw);
-        
-        dispose();
-        new loginpage().setVisible(true);
+        boolean signupSuccess = this.create(usn, email, nama, pw);
+
+        if (signupSuccess) {
+            dispose();
+            new loginpage().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Gagal mendaftar. Harap coba lagi.");
+        }
     }//GEN-LAST:event_daftarButtonActionPerformed
 
     private void masukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukMouseClicked

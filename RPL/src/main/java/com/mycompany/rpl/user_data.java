@@ -33,9 +33,6 @@ import javax.swing.JComboBox;
  * @author ASUS
  */
 public class user_data extends javax.swing.JFrame {
-
-    loginpage loginPage = new loginpage();
-    String loggedInUsername = loginPage.getLoggedInUsername();
     /**
      * Creates new form user_data
      */
@@ -51,7 +48,7 @@ public class user_data extends javax.swing.JFrame {
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
         
-        readUser(loggedInUsername);
+        //readUser(loggedInUsername);
     }
     
     
