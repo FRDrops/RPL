@@ -15,6 +15,9 @@ import java.awt.RenderingHints;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -46,6 +49,27 @@ public class hrd_home extends javax.swing.JFrame {
         userProfil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilEmpty.png")));
     }
 
+    private void readHrd(String username) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String sql = "SELECT * FROM data_hrd WHERE username_hrd = ?";
+            PreparedStatement statement = koneksi.prepareStatement(sql);
+            statement.setString(1, username);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                hrdLabel.setText(resultSet.getString("nama"));
+
+            } else {
+                //do nothing wkwk
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

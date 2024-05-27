@@ -17,7 +17,7 @@ public class RPL {
         System.out.println("Erwin");
         loginpage login = new loginpage();
         System.out.println(login.getLoggedInUsername());
-        hrd_pelamar home = new hrd_pelamar();
+        homepage home = new homepage();
         home.setVisible(true);
     }
 }
