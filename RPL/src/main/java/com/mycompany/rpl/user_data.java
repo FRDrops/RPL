@@ -49,8 +49,12 @@ public class user_data extends javax.swing.JFrame {
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
         
-        System.out.println(login.getUsername());
-        readUser(login.getUsername());
+        
+        LoginClass login = new LoginClass();
+        String username = login.logRead();
+        System.out.println(login.logRead());
+        System.out.println(username);
+        readUser(username);
         
         
     }
@@ -64,19 +68,29 @@ public class user_data extends javax.swing.JFrame {
             statement.setString(1, username);
 
             ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                judul2.setText(resultSet.getString("nama"));
-                jenisInput.setSelectedItem(resultSet.getString("jenis_kelamin"));
-                tanggalInput.setText(resultSet.getDate("tanggal_lahir").toString()); // Konversi ke string
-                pendInput.setSelectedItem(resultSet.getString("pendidikan"));
-                nomorInput.setText(String.valueOf(resultSet.getInt("telepon"))); // Konversi ke string
-                keterangan2.setText(resultSet.getString("email"));
-                alamatInput.setText(resultSet.getString("alamat"));
-                nikInput.setText(String.valueOf(resultSet.getInt("nik"))); 
-
-            } else {
-                JOptionPane.showMessageDialog(this, "User not found.");
+            if (!resultSet.next()) {
+                JOptionPane.showMessageDialog(this, "No data found for username: " + username);
+                return;
             }
+
+            String nama = resultSet.getString("nama");
+            String jenisKelamin = resultSet.getString("jenis_kelamin");
+            String tanggalLahir = resultSet.getDate("tanggal_lahir").toString();
+            String pendidikan = resultSet.getString("pendidikan");
+            String telepon = String.valueOf(resultSet.getInt("telepon"));
+            String email = resultSet.getString("email");
+            String alamat = resultSet.getString("alamat");
+            String nik = String.valueOf(resultSet.getInt("nik"));
+
+            judul2.setText(nama);
+            jenisInput.setSelectedItem(jenisKelamin);
+            tanggalInput.setText(tanggalLahir);
+            pendInput.setSelectedItem(pendidikan);
+            nomorInput.setText(telepon);
+            keterangan2.setText(email);
+            alamatInput.setText(alamat);
+            nikInput.setText(nik);
+
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());

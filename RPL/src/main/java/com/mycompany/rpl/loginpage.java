@@ -211,10 +211,12 @@ public class loginpage extends javax.swing.JFrame {
             if (login.loginHrd(username, password)){
                 dispose();
                 setUsername(username);
+                login.logWrite(username);
                 new hrd_home().setVisible(true);
             } else if (login.loginUser(username, password)){
                 dispose();
                 setUsername(username);
+                login.logWrite(username);
                 new user_home().setVisible(true);
             }else {
                 JOptionPane.showMessageDialog(this, "Username atau Password salah!", "Kesalahan", JOptionPane.ERROR_MESSAGE);

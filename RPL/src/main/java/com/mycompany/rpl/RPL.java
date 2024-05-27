@@ -15,10 +15,11 @@ public class RPL {
 
     public static void main(String[] args) throws SQLException {
         System.out.println("Erwin");
-        loginpage login = new loginpage();
-        login.setVisible(true);
-        System.out.println(login.getUsername());
-        //homepage home = new homepage();
-        //home.setVisible(true);
+        homepage home = new homepage();
+        home.setVisible(true);
+        LoginClass log = new LoginClass();
+        log.logDelete();
+        Koneksi konek = new Koneksi();
+        konek.close();
     }
 }
