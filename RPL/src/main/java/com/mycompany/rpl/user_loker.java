@@ -40,6 +40,9 @@ public class user_loker extends javax.swing.JFrame {
         datasayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/datasayaBlack.png")));
         lamsayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lamsayaBlack.png")));
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaWhite.png")));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
+        backButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
+        backButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
     }
 
     /**
@@ -195,9 +198,7 @@ public class user_loker extends javax.swing.JFrame {
         keterangan12 = new javax.swing.JLabel();
         rincianK = new javax.swing.JButton();
 
-        hasilJM.setMaximumSize(new java.awt.Dimension(1100, 650));
         hasilJM.setMinimumSize(new java.awt.Dimension(1100, 650));
-        hasilJM.setPreferredSize(new java.awt.Dimension(1100, 650));
         hasilJM.setResizable(false);
         hasilJM.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -436,9 +437,7 @@ public class user_loker extends javax.swing.JFrame {
         });
         hasilJM.getContentPane().add(lihatHasil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
 
-        hasilP.setMaximumSize(new java.awt.Dimension(1100, 650));
         hasilP.setMinimumSize(new java.awt.Dimension(1100, 650));
-        hasilP.setPreferredSize(new java.awt.Dimension(1100, 650));
         hasilP.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         judul2.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
@@ -664,9 +663,7 @@ public class user_loker extends javax.swing.JFrame {
         });
         hasilP.getContentPane().add(lihatHasil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
 
-        hasilK.setMaximumSize(new java.awt.Dimension(1100, 650));
         hasilK.setMinimumSize(new java.awt.Dimension(1100, 650));
-        hasilK.setPreferredSize(new java.awt.Dimension(1100, 650));
         hasilK.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         judul3.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
