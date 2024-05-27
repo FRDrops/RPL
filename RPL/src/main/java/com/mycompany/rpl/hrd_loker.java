@@ -78,9 +78,31 @@ public class hrd_loker extends javax.swing.JFrame {
         copyright = new javax.swing.JLabel();
         about = new javax.swing.JLabel();
         support = new javax.swing.JLabel();
+        jPanel2 = new RoundedPanel(50, new Color(249, 248, 242));
+        tenggatDISABLE = new javax.swing.JLabel();
+        low4 = new javax.swing.JLabel();
+        keterangan3 = new javax.swing.JLabel();
+        rincianDISABLE = new javax.swing.JButton();
+        jPanel3 = new RoundedPanel(50, new Color(249, 248, 242));
+        tenggat1 = new javax.swing.JLabel();
+        low1 = new javax.swing.JLabel();
+        keterangan6 = new javax.swing.JLabel();
+        editJM = new javax.swing.JButton();
+        jPanel4 = new RoundedPanel(50, new Color(249, 248, 242));
+        tenggat2 = new javax.swing.JLabel();
+        low2 = new javax.swing.JLabel();
+        keterangan9 = new javax.swing.JLabel();
+        EditP = new javax.swing.JButton();
+        jPanel5 = new RoundedPanel(50, new Color(249, 248, 242));
+        tenggat3 = new javax.swing.JLabel();
+        low3 = new javax.swing.JLabel();
+        keterangan12 = new javax.swing.JLabel();
+        EditK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
@@ -91,6 +113,7 @@ public class hrd_loker extends javax.swing.JFrame {
         pegawaiLabel.setText("Daftar Pegawai");
         nav.add(pegawaiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 90, 20));
 
+        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -104,6 +127,7 @@ public class hrd_loker extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 30));
 
+        pelamarIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pelamarBlack.png")); // NOI18N
         pelamarIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pelamarIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,6 +136,7 @@ public class hrd_loker extends javax.swing.JFrame {
         });
         nav.add(pelamarIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 170, 160, 70));
 
+        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokersayaWhite.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -125,6 +150,7 @@ public class hrd_loker extends javax.swing.JFrame {
         pelamarLabel.setText("Daftar Pelamar");
         nav.add(pelamarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 90, 20));
 
+        pegawaiIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pegawaiBlack.png")); // NOI18N
         pegawaiIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pegawaiIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -138,6 +164,7 @@ public class hrd_loker extends javax.swing.JFrame {
         lokerLabel.setText("Loker Saya");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 90, 20));
 
+        saranIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\saranBlack.png")); // NOI18N
         saranIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         saranIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -182,7 +209,7 @@ public class hrd_loker extends javax.swing.JFrame {
         judul.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
         judul.setForeground(new java.awt.Color(112, 104, 94));
         judul.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        judul.setText("Kotak Saran Dari Pelamar");
+        judul.setText("Daftar Lowongan Saya");
         getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 610, -1));
 
         jSeparator2.setForeground(new java.awt.Color(215, 204, 185));
@@ -214,6 +241,158 @@ public class hrd_loker extends javax.swing.JFrame {
             }
         });
         getContentPane().add(support, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 600, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tenggatDISABLE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tenggatDISABLE.setForeground(new java.awt.Color(0, 74, 173));
+        tenggatDISABLE.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggatDISABLE.setText("-");
+        jPanel2.add(tenggatDISABLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, 30));
+
+        low4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        low4.setForeground(new java.awt.Color(49, 45, 34));
+        low4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        low4.setText("Coming Soon");
+        jPanel2.add(low4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 260, 50));
+
+        keterangan3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        keterangan3.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan3.setText("Berakhir pada:");
+        jPanel2.add(keterangan3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 120, 30));
+
+        rincianDISABLE.setBackground(new java.awt.Color(169, 161, 147));
+        rincianDISABLE.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        rincianDISABLE.setForeground(new java.awt.Color(215, 204, 185));
+        rincianDISABLE.setText("Edit");
+        rincianDISABLE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        rincianDISABLE.setBorderPainted(false);
+        rincianDISABLE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rincianDISABLE.setFocusable(false);
+        rincianDISABLE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rincianDISABLEActionPerformed(evt);
+            }
+        });
+        jPanel2.add(rincianDISABLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 190, 40));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 370, 430, 180));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tenggat1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tenggat1.setForeground(new java.awt.Color(0, 74, 173));
+        tenggat1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggat1.setText("12 Agustus 2024");
+        jPanel3.add(tenggat1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, 30));
+
+        low1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        low1.setForeground(new java.awt.Color(49, 45, 34));
+        low1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        low1.setText("Juru Masak");
+        jPanel3.add(low1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, -1));
+
+        keterangan6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        keterangan6.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan6.setText("Berakhir pada:");
+        jPanel3.add(keterangan6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 120, 30));
+
+        editJM.setBackground(new java.awt.Color(112, 104, 94));
+        editJM.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        editJM.setForeground(new java.awt.Color(249, 248, 242));
+        editJM.setText("Edit");
+        editJM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        editJM.setBorderPainted(false);
+        editJM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        editJM.setFocusable(false);
+        editJM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editJMActionPerformed(evt);
+            }
+        });
+        jPanel3.add(editJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 190, 40));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 430, 180));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tenggat2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tenggat2.setForeground(new java.awt.Color(0, 74, 173));
+        tenggat2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggat2.setText("12 Agustus 2024");
+        jPanel4.add(tenggat2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, 30));
+
+        low2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        low2.setForeground(new java.awt.Color(49, 45, 34));
+        low2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        low2.setText("Pelayan");
+        jPanel4.add(low2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 50));
+
+        keterangan9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        keterangan9.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan9.setText("Berakhir pada:");
+        jPanel4.add(keterangan9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 120, 30));
+
+        EditP.setBackground(new java.awt.Color(112, 104, 94));
+        EditP.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        EditP.setForeground(new java.awt.Color(249, 248, 242));
+        EditP.setText("Edit");
+        EditP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EditP.setBorderPainted(false);
+        EditP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditP.setFocusable(false);
+        EditP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditPActionPerformed(evt);
+            }
+        });
+        jPanel4.add(EditP, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 190, 40));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, 430, 180));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tenggat3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tenggat3.setForeground(new java.awt.Color(0, 74, 173));
+        tenggat3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggat3.setText("12 Agustus 2024");
+        jPanel5.add(tenggat3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 150, 30));
+
+        low3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        low3.setForeground(new java.awt.Color(49, 45, 34));
+        low3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        low3.setText("Kasir");
+        jPanel5.add(low3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 50));
+
+        keterangan12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        keterangan12.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan12.setText("Berakhir pada:");
+        jPanel5.add(keterangan12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 120, 30));
+
+        EditK.setBackground(new java.awt.Color(112, 104, 94));
+        EditK.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        EditK.setForeground(new java.awt.Color(249, 248, 242));
+        EditK.setText("Edit");
+        EditK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EditK.setBorderPainted(false);
+        EditK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditK.setFocusable(false);
+        EditK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditKActionPerformed(evt);
+            }
+        });
+        jPanel5.add(EditK, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 190, 40));
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 430, 180));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,6 +439,22 @@ public class hrd_loker extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_supportMouseClicked
 
+    private void rincianDISABLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianDISABLEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rincianDISABLEActionPerformed
+
+    private void editJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editJMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editJMActionPerformed
+
+    private void EditPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditPActionPerformed
+
+    private void EditKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditKActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -296,24 +491,44 @@ public class hrd_loker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EditK;
+    private javax.swing.JButton EditP;
     private javax.swing.JLabel about;
     private javax.swing.JLabel copyright;
+    private javax.swing.JButton editJM;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel judul;
+    private javax.swing.JLabel keterangan12;
+    private javax.swing.JLabel keterangan3;
+    private javax.swing.JLabel keterangan6;
+    private javax.swing.JLabel keterangan9;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
+    private javax.swing.JLabel low1;
+    private javax.swing.JLabel low2;
+    private javax.swing.JLabel low3;
+    private javax.swing.JLabel low4;
     private javax.swing.JPanel nav;
     private javax.swing.JLabel pegawaiIcon;
     private javax.swing.JLabel pegawaiLabel;
     private javax.swing.JLabel pelamarIcon;
     private javax.swing.JLabel pelamarLabel;
+    private javax.swing.JButton rincianDISABLE;
     private javax.swing.JLabel saranIcon;
     private javax.swing.JLabel saranLabel;
     private javax.swing.JLabel support;
+    private javax.swing.JLabel tenggat1;
+    private javax.swing.JLabel tenggat2;
+    private javax.swing.JLabel tenggat3;
+    private javax.swing.JLabel tenggatDISABLE;
     // End of variables declaration//GEN-END:variables
 
 class RoundedPanel extends JPanel

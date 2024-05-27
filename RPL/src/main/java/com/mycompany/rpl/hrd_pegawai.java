@@ -79,7 +79,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         judul = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablePegawai = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -225,10 +225,10 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(215, 204, 185));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 960, 20));
 
-        jTable1.setBackground(new java.awt.Color(249, 248, 242));
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(49, 45, 34));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablePegawai.setBackground(new java.awt.Color(249, 248, 242));
+        tablePegawai.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tablePegawai.setForeground(new java.awt.Color(49, 45, 34));
+        tablePegawai.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"ruth", "perempuan", "20", "mojo9", "juru masak", "12-12-2024"},
                 {null, null, null, null, null, null},
@@ -273,10 +273,10 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(215, 204, 185));
-        jTable1.setRowHeight(30);
-        jTable1.setSelectionBackground(new java.awt.Color(215, 204, 185));
-        jScrollPane1.setViewportView(jTable1);
+        tablePegawai.setGridColor(new java.awt.Color(215, 204, 185));
+        tablePegawai.setRowHeight(30);
+        tablePegawai.setSelectionBackground(new java.awt.Color(215, 204, 185));
+        jScrollPane1.setViewportView(tablePegawai);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 970, -1));
 
@@ -373,7 +373,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
@@ -386,6 +385,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private javax.swing.JLabel saranIcon;
     private javax.swing.JLabel saranLabel;
     private javax.swing.JLabel support;
+    private javax.swing.JTable tablePegawai;
     // End of variables declaration//GEN-END:variables
 
 class RoundedPanel extends JPanel
