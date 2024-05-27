@@ -92,6 +92,23 @@ public class user_data extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        uploadSection = new javax.swing.JDialog();
+        nav1 = new RoundedPanel(10, new Color(249, 248, 242));
+        nav6 = new RoundedPanel(10, new Color(112, 104, 94));
+        cv = new javax.swing.JLabel();
+        nav5 = new RoundedPanel(10, new Color(112, 104, 94));
+        ktp = new javax.swing.JLabel();
+        nav4 = new RoundedPanel(10, new Color(255, 255, 255));
+        save = new javax.swing.JLabel();
+        nav3 = new RoundedPanel(10, new Color(112, 104, 94));
+        skck = new javax.swing.JLabel();
+        nav2 = new RoundedPanel(10, new Color(112, 104, 94));
+        ijazah = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel2 = new RoundedPanel(10, new Color(249, 248, 242));
+        label = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -112,7 +129,6 @@ public class user_data extends javax.swing.JFrame {
         keterangan2 = new javax.swing.JLabel();
         simpanButton = new javax.swing.JButton();
         profilButton = new javax.swing.JButton();
-        skckButton = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         tempatInput = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -131,18 +147,121 @@ public class user_data extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         nomorInput = new javax.swing.JTextField();
         jenisInput = new javax.swing.JComboBox<>();
-        cvButton = new javax.swing.JButton();
-        ijazahButton = new javax.swing.JButton();
-        ktpButton = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jurusanInput = new javax.swing.JTextField();
+        uploadBerkas = new javax.swing.JButton();
         pendInput = new javax.swing.JComboBox<>();
         infoLabel = new javax.swing.JLabel();
         infoIcon = new javax.swing.JLabel();
 
+        uploadSection.setMaximumSize(new java.awt.Dimension(480, 540));
+        uploadSection.setMinimumSize(new java.awt.Dimension(480, 540));
+        uploadSection.setPreferredSize(new java.awt.Dimension(480, 540));
+        uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nav1.setBackground(new java.awt.Color(255, 255, 255));
+        nav1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nav6.setBackground(new java.awt.Color(249, 248, 242));
+        nav6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nav6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cv.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cv.setForeground(new java.awt.Color(255, 255, 255));
+        cv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cv.setText("CV");
+        cv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nav6.add(cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        nav1.add(nav6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 60));
+
+        nav5.setBackground(new java.awt.Color(249, 248, 242));
+        nav5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ktp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ktp.setForeground(new java.awt.Color(255, 255, 255));
+        ktp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ktp.setText("KTP");
+        ktp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nav5.add(ktp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        nav1.add(nav5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 70, 60));
+
+        nav4.setBackground(new java.awt.Color(249, 248, 242));
+        nav4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        save.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        save.setForeground(new java.awt.Color(112, 104, 94));
+        save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        save.setText("SAVE");
+        save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nav4.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        nav1.add(nav4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 70, 60));
+
+        nav3.setBackground(new java.awt.Color(249, 248, 242));
+        nav3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        skck.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        skck.setForeground(new java.awt.Color(255, 255, 255));
+        skck.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        skck.setText("SKCK");
+        skck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nav3.add(skck, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        nav1.add(nav3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 70, 60));
+
+        nav2.setBackground(new java.awt.Color(249, 248, 242));
+        nav2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ijazah.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ijazah.setForeground(new java.awt.Color(255, 255, 255));
+        ijazah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ijazah.setText("IJAZAH");
+        ijazah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nav2.add(ijazah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        nav1.add(nav2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 70, 60));
+
+        uploadSection.getContentPane().add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 440, 80));
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setMaximumSize(new java.awt.Dimension(460, 520));
+        jPanel10.setMinimumSize(new java.awt.Dimension(460, 520));
+        jPanel10.setPreferredSize(new java.awt.Dimension(460, 520));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label.setForeground(new java.awt.Color(215, 204, 185));
+        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label.setText("Jangan lupa klik save");
+        jPanel2.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 190, -1));
+
+        judul.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        judul.setForeground(new java.awt.Color(49, 45, 34));
+        judul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul.setText("Upload Section");
+        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 120, -1));
+
+        jButton1.setBackground(new java.awt.Color(112, 104, 94));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Kembali");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 390));
+
+        uploadSection.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 520));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -154,7 +273,6 @@ public class user_data extends javax.swing.JFrame {
         lokerLabel.setText("Loker Kerja");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
 
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -168,7 +286,6 @@ public class user_data extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 30));
 
-        datasayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaWhite.png")); // NOI18N
         datasayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         datasayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -177,7 +294,6 @@ public class user_data extends javax.swing.JFrame {
         });
         nav.add(datasayaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
 
-        lamsayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaBlack.png")); // NOI18N
         lamsayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lamsayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -191,7 +307,6 @@ public class user_data extends javax.swing.JFrame {
         datasayaLabel.setText("Data Saya");
         nav.add(datasayaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaBlack.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -259,9 +374,7 @@ public class user_data extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
-
-        userProfil.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\profilUser.png")); // NOI18N
-        getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 230, 240));
+        getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 230, 240));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -278,7 +391,7 @@ public class user_data extends javax.swing.JFrame {
         keterangan2.setText("[User_Email] *non-editable");
         jPanel3.add(keterangan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 770, 30));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 1030, 130));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 1030, 130));
 
         simpanButton.setBackground(new java.awt.Color(112, 104, 94));
         simpanButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -293,7 +406,7 @@ public class user_data extends javax.swing.JFrame {
                 simpanButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(simpanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 190, 40));
+        getContentPane().add(simpanButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 190, 40));
 
         profilButton.setBackground(new java.awt.Color(112, 104, 94));
         profilButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -308,22 +421,7 @@ public class user_data extends javax.swing.JFrame {
                 profilButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(profilButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 190, 40));
-
-        skckButton.setBackground(new java.awt.Color(249, 248, 242));
-        skckButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        skckButton.setForeground(new java.awt.Color(112, 104, 94));
-        skckButton.setText("Upload SKCK");
-        skckButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        skckButton.setBorderPainted(false);
-        skckButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        skckButton.setFocusable(false);
-        skckButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                skckButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(skckButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 500, 190, 40));
+        getContentPane().add(profilButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 190, 40));
 
         jPanel4.setBackground(new java.awt.Color(249, 248, 242));
         jPanel4.setToolTipText("");
@@ -346,7 +444,7 @@ public class user_data extends javax.swing.JFrame {
         jLabel5.setText("Tempat Lahir:");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 120, 40));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, 290, 40));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 290, 40));
 
         jPanel6.setBackground(new java.awt.Color(249, 248, 242));
         jPanel6.setToolTipText("");
@@ -369,7 +467,7 @@ public class user_data extends javax.swing.JFrame {
         jLabel7.setText("Alamat:");
         jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 70, 40));
 
-        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 790, -1));
+        getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 790, -1));
 
         jPanel5.setBackground(new java.awt.Color(249, 248, 242));
         jPanel5.setToolTipText("");
@@ -392,7 +490,7 @@ public class user_data extends javax.swing.JFrame {
         jLabel6.setText("Tanggal Lahir:");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 130, 40));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 260, -1, 40));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 270, -1, 40));
 
         jPanel8.setBackground(new java.awt.Color(249, 248, 242));
         jPanel8.setToolTipText("");
@@ -403,7 +501,7 @@ public class user_data extends javax.swing.JFrame {
         jLabel9.setText("Pendidikan:");
         jPanel8.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 110, 40));
 
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, -1, 40));
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, -1, 40));
 
         jPanel7.setBackground(new java.awt.Color(249, 248, 242));
         jPanel7.setToolTipText("");
@@ -426,7 +524,7 @@ public class user_data extends javax.swing.JFrame {
         jLabel8.setText("NIK (sesuai KTP):");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 150, 40));
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 390, 40));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 390, 40));
 
         jPanel11.setBackground(new java.awt.Color(249, 248, 242));
         jPanel11.setToolTipText("");
@@ -449,7 +547,7 @@ public class user_data extends javax.swing.JFrame {
         });
         jPanel11.add(nomorInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 230, 40));
 
-        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 380, -1, 40));
+        getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 390, -1, 40));
 
         jenisInput.setBackground(new java.awt.Color(249, 248, 242));
         jenisInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -458,75 +556,22 @@ public class user_data extends javax.swing.JFrame {
         jenisInput.setBorder(null);
         jenisInput.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jenisInput.setFocusable(false);
-        getContentPane().add(jenisInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 140, 40));
+        getContentPane().add(jenisInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, 140, 40));
 
-        cvButton.setBackground(new java.awt.Color(249, 248, 242));
-        cvButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        cvButton.setForeground(new java.awt.Color(112, 104, 94));
-        cvButton.setText("Upload CV");
-        cvButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        cvButton.setBorderPainted(false);
-        cvButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cvButton.setFocusable(false);
-        cvButton.addActionListener(new java.awt.event.ActionListener() {
+        uploadBerkas.setBackground(new java.awt.Color(249, 248, 242));
+        uploadBerkas.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        uploadBerkas.setForeground(new java.awt.Color(112, 104, 94));
+        uploadBerkas.setText("Upload Berkas");
+        uploadBerkas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        uploadBerkas.setBorderPainted(false);
+        uploadBerkas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        uploadBerkas.setFocusable(false);
+        uploadBerkas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cvButtonActionPerformed(evt);
+                uploadBerkasActionPerformed(evt);
             }
         });
-        getContentPane().add(cvButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 190, 40));
-
-        ijazahButton.setBackground(new java.awt.Color(249, 248, 242));
-        ijazahButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        ijazahButton.setForeground(new java.awt.Color(112, 104, 94));
-        ijazahButton.setText("Upload Ijazah");
-        ijazahButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ijazahButton.setBorderPainted(false);
-        ijazahButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ijazahButton.setFocusable(false);
-        ijazahButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ijazahButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ijazahButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, 190, 40));
-
-        ktpButton.setBackground(new java.awt.Color(249, 248, 242));
-        ktpButton.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        ktpButton.setForeground(new java.awt.Color(112, 104, 94));
-        ktpButton.setText("Upload KTP");
-        ktpButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ktpButton.setBorderPainted(false);
-        ktpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ktpButton.setFocusable(false);
-        ktpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ktpButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ktpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, 190, 40));
-
-        jPanel9.setBackground(new java.awt.Color(249, 248, 242));
-        jPanel9.setToolTipText("");
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(49, 45, 34));
-        jLabel10.setText("Jurusan/background:");
-        jPanel9.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, -1, 40));
-
-        jurusanInput.setBackground(new java.awt.Color(249, 248, 242));
-        jurusanInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jurusanInput.setForeground(new java.awt.Color(112, 104, 94));
-        jurusanInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jurusanInput.setBorder(null);
-        jurusanInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jurusanInputActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jurusanInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 290, 40));
-
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, 490, 40));
+        getContentPane().add(uploadBerkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 450, 190, 40));
 
         pendInput.setBackground(new java.awt.Color(249, 248, 242));
         pendInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -536,15 +581,13 @@ public class user_data extends javax.swing.JFrame {
         pendInput.setBorder(null);
         pendInput.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pendInput.setFocusable(false);
-        getContentPane().add(pendInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 170, 40));
+        getContentPane().add(pendInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, 170, 40));
 
         infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         infoLabel.setForeground(new java.awt.Color(0, 74, 173));
         infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         infoLabel.setText("Klik untuk mengganti data kamu");
-        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 210, 40));
-
-        infoIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\infoBlue.png")); // NOI18N
+        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 210, 40));
         getContentPane().add(infoIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 140, 40));
 
         pack();
@@ -604,10 +647,6 @@ public class user_data extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_profilButtonActionPerformed
 
-    private void skckButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_skckButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_skckButtonActionPerformed
-
     private void tempatInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tempatInputActionPerformed
@@ -624,25 +663,23 @@ public class user_data extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nikInputActionPerformed
 
-    private void jurusanInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jurusanInputActionPerformed
+    private void uploadBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBerkasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jurusanInputActionPerformed
-
-    private void cvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cvButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cvButtonActionPerformed
-
-    private void ijazahButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ijazahButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ijazahButtonActionPerformed
-
-    private void ktpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ktpButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ktpButtonActionPerformed
+        dispose();
+        uploadSection.setSize(480, 540);
+        uploadSection.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        uploadSection.setVisible(true);
+    }//GEN-LAST:event_uploadBerkasActionPerformed
 
     private void nomorInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomorInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomorInputActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new user_data().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -690,15 +727,15 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JLabel about;
     private javax.swing.JTextField alamatInput;
     private javax.swing.JLabel copyright;
-    private javax.swing.JButton cvButton;
+    private javax.swing.JLabel cv;
     private javax.swing.JLabel datasayaIcon;
     private javax.swing.JLabel datasayaLabel;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
-    private javax.swing.JButton ijazahButton;
+    private javax.swing.JLabel ijazah;
     private javax.swing.JLabel infoIcon;
     private javax.swing.JLabel infoLabel;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -706,34 +743,45 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JComboBox<String> jenisInput;
+    private javax.swing.JLabel judul;
     private javax.swing.JLabel judul2;
-    private javax.swing.JTextField jurusanInput;
     private javax.swing.JLabel keterangan2;
-    private javax.swing.JButton ktpButton;
+    private javax.swing.JLabel ktp;
+    private javax.swing.JLabel label;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
     private javax.swing.JPanel nav;
+    private javax.swing.JPanel nav1;
+    private javax.swing.JPanel nav2;
+    private javax.swing.JPanel nav3;
+    private javax.swing.JPanel nav4;
+    private javax.swing.JPanel nav5;
+    private javax.swing.JPanel nav6;
     private javax.swing.JTextField nikInput;
     private javax.swing.JTextField nomorInput;
     private javax.swing.JComboBox<String> pendInput;
     private javax.swing.JButton profilButton;
+    private javax.swing.JLabel save;
     private javax.swing.JButton simpanButton;
-    private javax.swing.JButton skckButton;
+    private javax.swing.JLabel skck;
     private javax.swing.JLabel support;
     private javax.swing.JTextField tanggalInput;
     private javax.swing.JTextField tempatInput;
+    private javax.swing.JButton uploadBerkas;
+    private javax.swing.JDialog uploadSection;
     private javax.swing.JLabel userProfil;
     // End of variables declaration//GEN-END:variables
 
