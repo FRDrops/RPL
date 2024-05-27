@@ -15,6 +15,8 @@ import java.awt.RenderingHints;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -223,8 +225,40 @@ public class signuppage extends javax.swing.JFrame {
         new homepage().setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
+    public void create(String username_user, String email, String nama, String password){
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "INSERT INTO data_user (username_user, password, nama, email) VALUES (?, ?, ?, ?)";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+            
+            ps.setString(1, username_user);
+            ps.setString(2, password);
+            ps.setString(3, nama);
+            ps.setString(4, email);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Data user berhasil dimasukkan.");
+            } else {
+                JOptionPane.showMessageDialog(this, "Gagal memasukkan data user baru.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+    }
+    
     private void daftarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarButtonActionPerformed
         // TODO add your handling code here:
+        String nama = namaInput.getText();
+        String email = emailInput.getText();
+        String usn = usnInput.getText();
+        String pw = pwInput.getText();
+        
+        this.create(usn, email, nama, pw);
+        
         dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_daftarButtonActionPerformed

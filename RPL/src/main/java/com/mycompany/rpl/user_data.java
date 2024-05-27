@@ -588,6 +588,16 @@ public class user_data extends javax.swing.JFrame {
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
+        String usn = judul2.getText();
+        String tempat = tempatInput.getText();
+        String alamat = alamatInput.getText();
+        String nikText = nikInput.getText();
+        int nik = Integer.parseInt(nikText);
+        String nomorText = nomorInput.getText();
+        int nomor = Integer.parseInt(nikText);
+        String jenis = (String) jenisInput.getSelectedItem();
+        String pend = (String) pendInput.getSelectedItem();
+        
     }//GEN-LAST:event_simpanButtonActionPerformed
 
     private void profilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilButtonActionPerformed
