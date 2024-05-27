@@ -16,6 +16,9 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.CardLayout;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -45,6 +48,35 @@ public class user_data extends javax.swing.JFrame {
         infoIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlue.png")));
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
+    }
+    
+    private void readUser(String username) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String sql = "SELECT * FROM data_user WHERE username = ?";
+            PreparedStatement statement = koneksi.prepareStatement(sql);
+            statement.setString(1, username);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                judul2.setText("Nama: " + resultSet.getString("nama"));
+                jenisInput.setSelectedItem(resultSet.getString("jenis_kelamin"));
+                //umurLabel.setText("Umur: " + resultSet.getInt("umur"));//
+                tanggalInput.setText("Tanggal Lahir: " + resultSet.getDate("tanggal_lahir"));
+                pendInput.setSelectedItem(resultSet.getString("pendidikan"));
+                nomorInput.setText("Telepon: " + resultSet.getInt("telepon"));
+                keterangan2.setText("Email: " + resultSet.getString("email"));
+                alamatInput.setText("Alamat: " + resultSet.getString("alamat"));
+                nikInput.setText("NIK: " + resultSet.getInt("nik"));
+
+            } else {
+                JOptionPane.showMessageDialog(this, "User not found.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
     }
 
     /**
