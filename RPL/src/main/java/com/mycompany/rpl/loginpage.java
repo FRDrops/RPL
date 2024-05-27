@@ -87,7 +87,6 @@ public class loginpage extends javax.swing.JFrame {
         aksara2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -96,8 +95,6 @@ public class loginpage extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(640, 720));
         jPanel2.setPreferredSize(new java.awt.Dimension(640, 720));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        logo.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGR.png")); // NOI18N
         jPanel2.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
 
         backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back.png")); // NOI18N
@@ -123,8 +120,6 @@ public class loginpage extends javax.swing.JFrame {
         penjelasan1.setForeground(new java.awt.Color(249, 248, 242));
         penjelasan1.setText("RM Gendhu Roso, warung makan prasmanan di Wonosobo Jawa Tengah");
         jPanel2.add(penjelasan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, -1, -1));
-
-        aksara1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\aksaraWhite.png")); // NOI18N
         jPanel2.add(aksara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 683));
@@ -194,11 +189,7 @@ public class loginpage extends javax.swing.JFrame {
         tanya.setForeground(new java.awt.Color(49, 45, 34));
         tanya.setText("Belum punya akun?");
         getContentPane().add(tanya, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 360, -1, -1));
-
-        infoLabel.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\infoBlack.png")); // NOI18N
         getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 620, 150, 40));
-
-        aksara2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\aksaraBlack.png")); // NOI18N
         getContentPane().add(aksara2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, -1, -1));
 
         pack();

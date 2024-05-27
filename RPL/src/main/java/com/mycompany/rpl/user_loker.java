@@ -51,6 +51,113 @@ public class user_loker extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        hasilJM = new javax.swing.JDialog();
+        judul1 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jPanel7 = new RoundedPanel(50, new Color(249, 248, 242));
+        kualifikasiJM = new javax.swing.JLabel();
+        kJM6 = new javax.swing.JLabel();
+        tJM1 = new javax.swing.JLabel();
+        tJM2 = new javax.swing.JLabel();
+        tJM3 = new javax.swing.JLabel();
+        tJM4 = new javax.swing.JLabel();
+        tJM5 = new javax.swing.JLabel();
+        tJM6 = new javax.swing.JLabel();
+        tJM7 = new javax.swing.JLabel();
+        tJM8 = new javax.swing.JLabel();
+        tanggungJawabJM = new javax.swing.JLabel();
+        kJM1 = new javax.swing.JLabel();
+        kJM2 = new javax.swing.JLabel();
+        kJM3 = new javax.swing.JLabel();
+        kJM4 = new javax.swing.JLabel();
+        kJM5 = new javax.swing.JLabel();
+        jPanel8 = new RoundedPanel(50, new Color(249, 248, 242));
+        desJM = new javax.swing.JLabel();
+        dJM1 = new javax.swing.JLabel();
+        tenggat4 = new javax.swing.JLabel();
+        keterangan21 = new javax.swing.JLabel();
+        dJM2 = new javax.swing.JLabel();
+        dJM3 = new javax.swing.JLabel();
+        dJM4 = new javax.swing.JLabel();
+        dJM5 = new javax.swing.JLabel();
+        dJM6 = new javax.swing.JLabel();
+        dJM7 = new javax.swing.JLabel();
+        lamarButtonJM = new javax.swing.JButton();
+        posisi1 = new javax.swing.JLabel();
+        backButton = new javax.swing.JLabel();
+        bingung1 = new javax.swing.JButton();
+        lihatHasil1 = new javax.swing.JButton();
+        hasilP = new javax.swing.JDialog();
+        judul2 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jPanel9 = new RoundedPanel(50, new Color(249, 248, 242));
+        kualifikasiP = new javax.swing.JLabel();
+        kP6 = new javax.swing.JLabel();
+        tP1 = new javax.swing.JLabel();
+        tP2 = new javax.swing.JLabel();
+        tP3 = new javax.swing.JLabel();
+        tP4 = new javax.swing.JLabel();
+        tP5 = new javax.swing.JLabel();
+        tP6 = new javax.swing.JLabel();
+        tP7 = new javax.swing.JLabel();
+        tP8 = new javax.swing.JLabel();
+        tanggungJawabP = new javax.swing.JLabel();
+        kP1 = new javax.swing.JLabel();
+        kP2 = new javax.swing.JLabel();
+        kP3 = new javax.swing.JLabel();
+        kP4 = new javax.swing.JLabel();
+        kP5 = new javax.swing.JLabel();
+        jPanel10 = new RoundedPanel(50, new Color(249, 248, 242));
+        desP = new javax.swing.JLabel();
+        dP1 = new javax.swing.JLabel();
+        tenggat5 = new javax.swing.JLabel();
+        keterangan46 = new javax.swing.JLabel();
+        dP2 = new javax.swing.JLabel();
+        dP3 = new javax.swing.JLabel();
+        dP4 = new javax.swing.JLabel();
+        dP5 = new javax.swing.JLabel();
+        lamarButton2 = new javax.swing.JButton();
+        posisi2 = new javax.swing.JLabel();
+        backButton1 = new javax.swing.JLabel();
+        bingung2 = new javax.swing.JButton();
+        lihatHasil2 = new javax.swing.JButton();
+        hasilK = new javax.swing.JDialog();
+        judul3 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jPanel11 = new RoundedPanel(50, new Color(249, 248, 242));
+        kualifikasiK = new javax.swing.JLabel();
+        kK6 = new javax.swing.JLabel();
+        tK1 = new javax.swing.JLabel();
+        tK2 = new javax.swing.JLabel();
+        tK3 = new javax.swing.JLabel();
+        tK4 = new javax.swing.JLabel();
+        tK5 = new javax.swing.JLabel();
+        tK6 = new javax.swing.JLabel();
+        tK7 = new javax.swing.JLabel();
+        tK8 = new javax.swing.JLabel();
+        tanggungJawabK = new javax.swing.JLabel();
+        kK1 = new javax.swing.JLabel();
+        kK2 = new javax.swing.JLabel();
+        kK3 = new javax.swing.JLabel();
+        kK4 = new javax.swing.JLabel();
+        kK5 = new javax.swing.JLabel();
+        jPanel12 = new RoundedPanel(50, new Color(249, 248, 242));
+        desK = new javax.swing.JLabel();
+        dK1 = new javax.swing.JLabel();
+        tenggat6 = new javax.swing.JLabel();
+        keterangan68 = new javax.swing.JLabel();
+        dK2 = new javax.swing.JLabel();
+        dK3 = new javax.swing.JLabel();
+        dK4 = new javax.swing.JLabel();
+        dK5 = new javax.swing.JLabel();
+        dK6 = new javax.swing.JLabel();
+        lamarButton3 = new javax.swing.JButton();
+        posisi3 = new javax.swing.JLabel();
+        backButton2 = new javax.swing.JLabel();
+        bingung3 = new javax.swing.JButton();
+        lihatHasil3 = new javax.swing.JButton();
+        faqUser = new javax.swing.JDialog();
+        supportUser = new javax.swing.JDialog();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -87,6 +194,731 @@ public class user_loker extends javax.swing.JFrame {
         low3 = new javax.swing.JLabel();
         keterangan12 = new javax.swing.JLabel();
         rincianK = new javax.swing.JButton();
+
+        hasilJM.setMaximumSize(new java.awt.Dimension(1100, 650));
+        hasilJM.setMinimumSize(new java.awt.Dimension(1100, 650));
+        hasilJM.setPreferredSize(new java.awt.Dimension(1100, 650));
+        hasilJM.setResizable(false);
+        hasilJM.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        judul1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        judul1.setForeground(new java.awt.Color(112, 104, 94));
+        judul1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul1.setText("Lowongan di Gendhu Roso");
+        hasilJM.getContentPane().add(judul1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 530, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(215, 204, 185));
+        hasilJM.getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 960, 20));
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kualifikasiJM.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        kualifikasiJM.setForeground(new java.awt.Color(49, 45, 34));
+        kualifikasiJM.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kualifikasiJM.setText("Kualifikasi Pekerjaan");
+        jPanel7.add(kualifikasiJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 370, -1));
+
+        kJM6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kJM6.setForeground(new java.awt.Color(49, 45, 34));
+        kJM6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kJM6.setText("6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
+        jPanel7.add(kJM6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 570, 20));
+
+        tJM1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM1.setForeground(new java.awt.Color(49, 45, 34));
+        tJM1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM1.setText("1. Merencanakan dan menyiapkan item menu masakan");
+        jPanel7.add(tJM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 20));
+
+        tJM2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM2.setForeground(new java.awt.Color(49, 45, 34));
+        tJM2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM2.setText("2. Menyiapkan dan memasak makanan sesuai pesanan dan mengikuti resep masakan");
+        jPanel7.add(tJM2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 20));
+
+        tJM3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM3.setForeground(new java.awt.Color(49, 45, 34));
+        tJM3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM3.setText("3. Mengawasi operasional dapur, termasuk menjaga peralatan dapur tetap bersih");
+        jPanel7.add(tJM3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 590, 20));
+
+        tJM4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM4.setForeground(new java.awt.Color(49, 45, 34));
+        tJM4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM4.setText("4. Memantau kualitas dan presentasi makanan");
+        jPanel7.add(tJM4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 20));
+
+        tJM5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM5.setForeground(new java.awt.Color(49, 45, 34));
+        tJM5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM5.setText("5. Mengelola persediaan dan bahan-bahan sesuai kebutuhan ");
+        jPanel7.add(tJM5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 20));
+
+        tJM6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM6.setForeground(new java.awt.Color(49, 45, 34));
+        tJM6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM6.setText("6. Mengawasi pengendalian porsi dan limbah untuk meminimalkan pemborosan");
+        jPanel7.add(tJM6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 570, 20));
+
+        tJM7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM7.setForeground(new java.awt.Color(49, 45, 34));
+        tJM7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM7.setText("7. Berkomunikasi dengan manajer untuk memperbaiki menu dan operasi dapur");
+        jPanel7.add(tJM7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 570, 20));
+
+        tJM8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tJM8.setForeground(new java.awt.Color(49, 45, 34));
+        tJM8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tJM8.setText("8. Mengembangkan resep baru sesuai permintaan pelanggan");
+        jPanel7.add(tJM8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 570, 20));
+
+        tanggungJawabJM.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        tanggungJawabJM.setForeground(new java.awt.Color(49, 45, 34));
+        tanggungJawabJM.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tanggungJawabJM.setText("Tanggung Jawab Utama");
+        jPanel7.add(tanggungJawabJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
+
+        kJM1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kJM1.setForeground(new java.awt.Color(49, 45, 34));
+        kJM1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kJM1.setText("1. Laki-laki/ Perempuan");
+        jPanel7.add(kJM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 20));
+
+        kJM2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kJM2.setForeground(new java.awt.Color(49, 45, 34));
+        kJM2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kJM2.setText("2. Minimal usia 22 tahun");
+        jPanel7.add(kJM2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 20));
+
+        kJM3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kJM3.setForeground(new java.awt.Color(49, 45, 34));
+        kJM3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kJM3.setText("3. Memiliki pengalaman di bidang memasak, minimal 2 tahun");
+        jPanel7.add(kJM3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
+
+        kJM4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kJM4.setForeground(new java.awt.Color(49, 45, 34));
+        kJM4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kJM4.setText("4. Menguasai dasar-dasar memasak (bahan, bumbu, dan proses memasak)");
+        jPanel7.add(kJM4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 570, 20));
+
+        kJM5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kJM5.setForeground(new java.awt.Color(49, 45, 34));
+        kJM5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kJM5.setText("5. Jujur, disiplin, dan bertanggung jawab");
+        jPanel7.add(kJM5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 570, 20));
+
+        hasilJM.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 640, 470));
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        desJM.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        desJM.setForeground(new java.awt.Color(49, 45, 34));
+        desJM.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        desJM.setText("Deskripsi Pekerjaan");
+        jPanel8.add(desJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 200, 30));
+
+        dJM1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM1.setForeground(new java.awt.Color(49, 45, 34));
+        dJM1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM1.setText("Sebagai juru masak, Anda akan ");
+        jPanel8.add(dJM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 250, 30));
+
+        tenggat4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tenggat4.setForeground(new java.awt.Color(0, 74, 173));
+        tenggat4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggat4.setText("12 Agustus 2024");
+        jPanel8.add(tenggat4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 20));
+
+        keterangan21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        keterangan21.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan21.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan21.setText("Berakhir pada:");
+        jPanel8.add(keterangan21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, -1));
+
+        dJM2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM2.setForeground(new java.awt.Color(49, 45, 34));
+        dJM2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM2.setText("bertanggung jawab untuk menyiapkan");
+        jPanel8.add(dJM2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 250, 30));
+
+        dJM3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM3.setForeground(new java.awt.Color(49, 45, 34));
+        dJM3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM3.setText("dan memasak hidangan sesuai dengan");
+        jPanel8.add(dJM3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 250, 30));
+
+        dJM4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM4.setForeground(new java.awt.Color(49, 45, 34));
+        dJM4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM4.setText("standar rumah makan kami. Anda akan");
+        jPanel8.add(dJM4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 250, 30));
+
+        dJM5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM5.setForeground(new java.awt.Color(49, 45, 34));
+        dJM5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM5.setText("bekerja sama dengan tim dapur untuk");
+        jPanel8.add(dJM5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, 30));
+
+        dJM6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM6.setForeground(new java.awt.Color(49, 45, 34));
+        dJM6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM6.setText("memastikan semua makanan disajikan ");
+        jPanel8.add(dJM6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 250, 30));
+
+        dJM7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dJM7.setForeground(new java.awt.Color(49, 45, 34));
+        dJM7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dJM7.setText("dengan rasa dan presentasi konsisten");
+        jPanel8.add(dJM7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 250, 30));
+
+        lamarButtonJM.setBackground(new java.awt.Color(112, 104, 94));
+        lamarButtonJM.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lamarButtonJM.setForeground(new java.awt.Color(249, 248, 242));
+        lamarButtonJM.setText("Lamar");
+        lamarButtonJM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lamarButtonJM.setBorderPainted(false);
+        lamarButtonJM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lamarButtonJM.setFocusable(false);
+        lamarButtonJM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lamarButtonJMActionPerformed(evt);
+            }
+        });
+        jPanel8.add(lamarButtonJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
+
+        posisi1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        posisi1.setForeground(new java.awt.Color(49, 45, 34));
+        posisi1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        posisi1.setText("Juru Masak");
+        jPanel8.add(posisi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 200, -1));
+
+        hasilJM.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
+
+        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButtonMouseClicked(evt);
+            }
+        });
+        hasilJM.getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 20, 160, 70));
+
+        bingung1.setBackground(new java.awt.Color(249, 248, 242));
+        bingung1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        bingung1.setForeground(new java.awt.Color(49, 45, 34));
+        bingung1.setText("Masih Bingung?");
+        bingung1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bingung1.setBorderPainted(false);
+        bingung1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bingung1.setFocusable(false);
+        bingung1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bingung1ActionPerformed(evt);
+            }
+        });
+        hasilJM.getContentPane().add(bingung1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 190, 40));
+
+        lihatHasil1.setBackground(new java.awt.Color(169, 161, 147));
+        lihatHasil1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatHasil1.setForeground(new java.awt.Color(215, 204, 185));
+        lihatHasil1.setText("Lihat Hasil Saya");
+        lihatHasil1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatHasil1.setBorderPainted(false);
+        lihatHasil1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatHasil1.setFocusable(false);
+        lihatHasil1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatHasil1ActionPerformed(evt);
+            }
+        });
+        hasilJM.getContentPane().add(lihatHasil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
+
+        hasilP.setMaximumSize(new java.awt.Dimension(1100, 650));
+        hasilP.setMinimumSize(new java.awt.Dimension(1100, 650));
+        hasilP.setPreferredSize(new java.awt.Dimension(1100, 650));
+        hasilP.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        judul2.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        judul2.setForeground(new java.awt.Color(112, 104, 94));
+        judul2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul2.setText("Lowongan di Gendhu Roso");
+        hasilP.getContentPane().add(judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 530, -1));
+
+        jSeparator4.setForeground(new java.awt.Color(215, 204, 185));
+        hasilP.getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 960, 20));
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kualifikasiP.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        kualifikasiP.setForeground(new java.awt.Color(49, 45, 34));
+        kualifikasiP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kualifikasiP.setText("Kualifikasi Pekerjaan");
+        jPanel9.add(kualifikasiP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 370, -1));
+
+        kP6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kP6.setForeground(new java.awt.Color(49, 45, 34));
+        kP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kP6.setText("6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
+        jPanel9.add(kP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 570, 20));
+
+        tP1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP1.setForeground(new java.awt.Color(49, 45, 34));
+        tP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP1.setText("1. Mengambil pesanan secara akurat dan sampaikan ke staf dapur ");
+        jPanel9.add(tP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 20));
+
+        tP2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP2.setForeground(new java.awt.Color(49, 45, 34));
+        tP2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP2.setText("2. Menyajikan makanan dan minuman ke pelanggan secara tepat waktu dan efisien");
+        jPanel9.add(tP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 20));
+
+        tP3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP3.setForeground(new java.awt.Color(49, 45, 34));
+        tP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP3.setText("3. Menyapa dan melayani pelanggan dengan cara yang ramah dan profesional");
+        jPanel9.add(tP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 590, 20));
+
+        tP4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP4.setForeground(new java.awt.Color(49, 45, 34));
+        tP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP4.setText("4. Mengelola dan menata meja agar tetap rapi dan bersih");
+        jPanel9.add(tP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 20));
+
+        tP5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP5.setForeground(new java.awt.Color(49, 45, 34));
+        tP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP5.setText("5. Memastikan kebutuhan tamu terpenuhi sepanjang waktu makan");
+        jPanel9.add(tP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 480, 20));
+
+        tP6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP6.setForeground(new java.awt.Color(49, 45, 34));
+        tP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP6.setText("6. Menangani keluhan tamu dengan profesional dan segera mencari solusi");
+        jPanel9.add(tP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 570, 20));
+
+        tP7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP7.setForeground(new java.awt.Color(49, 45, 34));
+        tP7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP7.setText("7. Menjelaskan menu dan menjawab pertanyaan tentang hidangan dan minuman.");
+        jPanel9.add(tP7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 570, 20));
+
+        tP8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tP8.setForeground(new java.awt.Color(49, 45, 34));
+        tP8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tP8.setText("8. Mengantar tamu ke meja yang tersedia dan memberikan menu");
+        jPanel9.add(tP8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 570, 20));
+
+        tanggungJawabP.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        tanggungJawabP.setForeground(new java.awt.Color(49, 45, 34));
+        tanggungJawabP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tanggungJawabP.setText("Tanggung Jawab Utama");
+        jPanel9.add(tanggungJawabP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
+
+        kP1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kP1.setForeground(new java.awt.Color(49, 45, 34));
+        kP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kP1.setText("1. Laki-laki/ Perempuan");
+        jPanel9.add(kP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 20));
+
+        kP2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kP2.setForeground(new java.awt.Color(49, 45, 34));
+        kP2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kP2.setText("2. Minimal usia 18 tahun");
+        jPanel9.add(kP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 20));
+
+        kP3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kP3.setForeground(new java.awt.Color(49, 45, 34));
+        kP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kP3.setText("3. Memiliki pengalaman sebagai pramusaji, minimal 1 tahun/tanpa pengalaman");
+        jPanel9.add(kP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
+
+        kP4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kP4.setForeground(new java.awt.Color(49, 45, 34));
+        kP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kP4.setText("4. Memiliki kemampuan untuk beradaptasi dan bekerja secara efektif");
+        jPanel9.add(kP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 570, 20));
+
+        kP5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kP5.setForeground(new java.awt.Color(49, 45, 34));
+        kP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kP5.setText("5. Jujur, disiplin, dan bertanggung jawab, serta berpenampilan yang rapi dan sopan");
+        jPanel9.add(kP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 570, 20));
+
+        hasilP.getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 640, 470));
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        desP.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        desP.setForeground(new java.awt.Color(49, 45, 34));
+        desP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        desP.setText("Deskripsi Pekerjaan");
+        jPanel10.add(desP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 200, 30));
+
+        dP1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dP1.setForeground(new java.awt.Color(49, 45, 34));
+        dP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dP1.setText("Sebagai pelayan/pramusaji, Anda akan ");
+        jPanel10.add(dP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 250, 30));
+
+        tenggat5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tenggat5.setForeground(new java.awt.Color(0, 74, 173));
+        tenggat5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggat5.setText("12 Agustus 2024");
+        jPanel10.add(tenggat5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 20));
+
+        keterangan46.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        keterangan46.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan46.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan46.setText("Berakhir pada:");
+        jPanel10.add(keterangan46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, -1));
+
+        dP2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dP2.setForeground(new java.awt.Color(49, 45, 34));
+        dP2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dP2.setText("bertanggung jawab untuk memberikan");
+        jPanel10.add(dP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 250, 30));
+
+        dP3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dP3.setForeground(new java.awt.Color(49, 45, 34));
+        dP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dP3.setText("layanan pelanggan dan memastikan");
+        jPanel10.add(dP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 250, 30));
+
+        dP4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dP4.setForeground(new java.awt.Color(49, 45, 34));
+        dP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dP4.setText("setiap tamu untuk memiliki pengalaman");
+        jPanel10.add(dP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, 30));
+
+        dP5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dP5.setForeground(new java.awt.Color(49, 45, 34));
+        dP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dP5.setText("makan yang menyenangkan");
+        jPanel10.add(dP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 250, 30));
+
+        lamarButton2.setBackground(new java.awt.Color(112, 104, 94));
+        lamarButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lamarButton2.setForeground(new java.awt.Color(249, 248, 242));
+        lamarButton2.setText("Lamar");
+        lamarButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lamarButton2.setBorderPainted(false);
+        lamarButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lamarButton2.setFocusable(false);
+        lamarButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lamarButton2ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(lamarButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
+
+        posisi2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        posisi2.setForeground(new java.awt.Color(49, 45, 34));
+        posisi2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        posisi2.setText("Pelayan");
+        jPanel10.add(posisi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 200, -1));
+
+        hasilP.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
+
+        backButton1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
+        backButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButton1MouseClicked(evt);
+            }
+        });
+        hasilP.getContentPane().add(backButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 20, 160, 70));
+
+        bingung2.setBackground(new java.awt.Color(249, 248, 242));
+        bingung2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        bingung2.setForeground(new java.awt.Color(49, 45, 34));
+        bingung2.setText("Masih Bingung?");
+        bingung2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bingung2.setBorderPainted(false);
+        bingung2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bingung2.setFocusable(false);
+        bingung2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bingung2ActionPerformed(evt);
+            }
+        });
+        hasilP.getContentPane().add(bingung2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 190, 40));
+
+        lihatHasil2.setBackground(new java.awt.Color(169, 161, 147));
+        lihatHasil2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatHasil2.setForeground(new java.awt.Color(215, 204, 185));
+        lihatHasil2.setText("Lihat Hasil Saya");
+        lihatHasil2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatHasil2.setBorderPainted(false);
+        lihatHasil2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatHasil2.setFocusable(false);
+        lihatHasil2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatHasil2ActionPerformed(evt);
+            }
+        });
+        hasilP.getContentPane().add(lihatHasil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
+
+        hasilK.setMaximumSize(new java.awt.Dimension(1100, 650));
+        hasilK.setMinimumSize(new java.awt.Dimension(1100, 650));
+        hasilK.setPreferredSize(new java.awt.Dimension(1100, 650));
+        hasilK.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        judul3.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        judul3.setForeground(new java.awt.Color(112, 104, 94));
+        judul3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul3.setText("Lowongan di Gendhu Roso");
+        hasilK.getContentPane().add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 530, -1));
+
+        jSeparator5.setForeground(new java.awt.Color(215, 204, 185));
+        hasilK.getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 960, 20));
+
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kualifikasiK.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        kualifikasiK.setForeground(new java.awt.Color(49, 45, 34));
+        kualifikasiK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kualifikasiK.setText("Kualifikasi Pekerjaan");
+        jPanel11.add(kualifikasiK, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 370, -1));
+
+        kK6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kK6.setForeground(new java.awt.Color(49, 45, 34));
+        kK6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kK6.setText("6. Kemampuan mengelola transaksi uang dengan tepat dan operasi kasir");
+        jPanel11.add(kK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 570, 20));
+
+        tK1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK1.setForeground(new java.awt.Color(49, 45, 34));
+        tK1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK1.setText("1. Mengelola transaksi pelanggan dengan tepat dan cepat");
+        jPanel11.add(tK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 20));
+
+        tK2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK2.setForeground(new java.awt.Color(49, 45, 34));
+        tK2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK2.setText("2. Memberikan pelayanan pelanggan yang baik, termasuk menangani keluhan");
+        jPanel11.add(tK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 20));
+
+        tK3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK3.setForeground(new java.awt.Color(49, 45, 34));
+        tK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK3.setText("3. Mengoperasikan kasir dengan efisiensi, mengelola transaksi cash dan kartu kredit");
+        jPanel11.add(tK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 590, 20));
+
+        tK4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK4.setForeground(new java.awt.Color(49, 45, 34));
+        tK4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK4.setText("4. Mengelola kas dengan menghitung dan melaporkan uang cash dan suplai");
+        jPanel11.add(tK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 20));
+
+        tK5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK5.setForeground(new java.awt.Color(49, 45, 34));
+        tK5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK5.setText("5. Bekerja sama dengan tim lain untuk memastikan pelayanan ");
+        jPanel11.add(tK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 20));
+
+        tK6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK6.setForeground(new java.awt.Color(49, 45, 34));
+        tK6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK6.setText("6. Menjaga tempat kerja yang bersih dan terorganisir");
+        jPanel11.add(tK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 570, 20));
+
+        tK7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK7.setForeground(new java.awt.Color(49, 45, 34));
+        tK7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK7.setText("7. Mengeluarkan struk pembayaran dan memberikan kembalian dengan tepat");
+        jPanel11.add(tK7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 570, 20));
+
+        tK8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        tK8.setForeground(new java.awt.Color(49, 45, 34));
+        tK8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tK8.setText("8. Menyambut tamu dengan ramah saat mereka tiba di kasir");
+        jPanel11.add(tK8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 570, 20));
+
+        tanggungJawabK.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        tanggungJawabK.setForeground(new java.awt.Color(49, 45, 34));
+        tanggungJawabK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tanggungJawabK.setText("Tanggung Jawab Utama");
+        jPanel11.add(tanggungJawabK, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
+
+        kK1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kK1.setForeground(new java.awt.Color(49, 45, 34));
+        kK1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kK1.setText("1. Laki-laki/ Perempuan");
+        jPanel11.add(kK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 20));
+
+        kK2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kK2.setForeground(new java.awt.Color(49, 45, 34));
+        kK2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kK2.setText("2. Minimal usia 22 tahun");
+        jPanel11.add(kK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 20));
+
+        kK3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kK3.setForeground(new java.awt.Color(49, 45, 34));
+        kK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kK3.setText("3. Memiliki pengalaman di bidang memasak, minimal 2 tahun");
+        jPanel11.add(kK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
+
+        kK4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kK4.setForeground(new java.awt.Color(49, 45, 34));
+        kK4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kK4.setText("4. Memiliki pengetahuan dasar operasi komputer dan menggunakan sistem kasir");
+        jPanel11.add(kK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 570, 20));
+
+        kK5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        kK5.setForeground(new java.awt.Color(49, 45, 34));
+        kK5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        kK5.setText("5. Jujur, disiplin, dan bertanggung jawab dan memiliki komunikasi yang baik");
+        jPanel11.add(kK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 570, 20));
+
+        hasilK.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 640, 470));
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        desK.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        desK.setForeground(new java.awt.Color(49, 45, 34));
+        desK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        desK.setText("Deskripsi Pekerjaan");
+        jPanel12.add(desK, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 200, 30));
+
+        dK1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dK1.setForeground(new java.awt.Color(49, 45, 34));
+        dK1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dK1.setText("Sebagai kasir, Anda akan bertanggung");
+        jPanel12.add(dK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 250, 30));
+
+        tenggat6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tenggat6.setForeground(new java.awt.Color(0, 74, 173));
+        tenggat6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tenggat6.setText("12 Agustus 2024");
+        jPanel12.add(tenggat6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 150, 20));
+
+        keterangan68.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        keterangan68.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan68.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan68.setText("Berakhir pada:");
+        jPanel12.add(keterangan68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 120, -1));
+
+        dK2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dK2.setForeground(new java.awt.Color(49, 45, 34));
+        dK2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dK2.setText("jawab untuk menangani transaksi");
+        jPanel12.add(dK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 250, 30));
+
+        dK3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dK3.setForeground(new java.awt.Color(49, 45, 34));
+        dK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dK3.setText("pembayaran dengan akurat dan efisien,");
+        jPanel12.add(dK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 250, 30));
+
+        dK4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dK4.setForeground(new java.awt.Color(49, 45, 34));
+        dK4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dK4.setText("serta memberikan layanan kepada");
+        jPanel12.add(dK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 250, 30));
+
+        dK5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dK5.setForeground(new java.awt.Color(49, 45, 34));
+        dK5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dK5.setText("pelanggan dengan ramah dan");
+        jPanel12.add(dK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 250, 30));
+
+        dK6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        dK6.setForeground(new java.awt.Color(49, 45, 34));
+        dK6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dK6.setText("profesional");
+        jPanel12.add(dK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, 30));
+
+        lamarButton3.setBackground(new java.awt.Color(112, 104, 94));
+        lamarButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lamarButton3.setForeground(new java.awt.Color(249, 248, 242));
+        lamarButton3.setText("Lamar");
+        lamarButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lamarButton3.setBorderPainted(false);
+        lamarButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lamarButton3.setFocusable(false);
+        lamarButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lamarButton3ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(lamarButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
+
+        posisi3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        posisi3.setForeground(new java.awt.Color(49, 45, 34));
+        posisi3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        posisi3.setText("Kasir");
+        jPanel12.add(posisi3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 200, -1));
+
+        hasilK.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
+
+        backButton2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
+        backButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButton2MouseClicked(evt);
+            }
+        });
+        hasilK.getContentPane().add(backButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 20, 160, 70));
+
+        bingung3.setBackground(new java.awt.Color(249, 248, 242));
+        bingung3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        bingung3.setForeground(new java.awt.Color(49, 45, 34));
+        bingung3.setText("Masih Bingung?");
+        bingung3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bingung3.setBorderPainted(false);
+        bingung3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bingung3.setFocusable(false);
+        bingung3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bingung3ActionPerformed(evt);
+            }
+        });
+        hasilK.getContentPane().add(bingung3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 190, 40));
+
+        lihatHasil3.setBackground(new java.awt.Color(169, 161, 147));
+        lihatHasil3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatHasil3.setForeground(new java.awt.Color(215, 204, 185));
+        lihatHasil3.setText("Lihat Hasil Saya");
+        lihatHasil3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatHasil3.setBorderPainted(false);
+        lihatHasil3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatHasil3.setFocusable(false);
+        lihatHasil3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatHasil3ActionPerformed(evt);
+            }
+        });
+        hasilK.getContentPane().add(lihatHasil3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
+
+        javax.swing.GroupLayout faqUserLayout = new javax.swing.GroupLayout(faqUser.getContentPane());
+        faqUser.getContentPane().setLayout(faqUserLayout);
+        faqUserLayout.setHorizontalGroup(
+            faqUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        faqUserLayout.setVerticalGroup(
+            faqUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout supportUserLayout = new javax.swing.GroupLayout(supportUser.getContentPane());
+        supportUser.getContentPane().setLayout(supportUserLayout);
+        supportUserLayout.setHorizontalGroup(
+            supportUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        supportUserLayout.setVerticalGroup(
+            supportUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -414,15 +1246,81 @@ public class user_loker extends javax.swing.JFrame {
 
     private void rincianJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianJMActionPerformed
         // TODO add your handling code here:
+        dispose();
+        hasilJM.setSize(1100, 650);
+        hasilJM.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        hasilJM.setVisible(true);
     }//GEN-LAST:event_rincianJMActionPerformed
 
     private void rincianPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianPActionPerformed
         // TODO add your handling code here:
+        dispose();
+        hasilP.setSize(1100, 650);
+        hasilP.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        hasilP.setVisible(true);
     }//GEN-LAST:event_rincianPActionPerformed
 
     private void rincianKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianKActionPerformed
         // TODO add your handling code here:
+        dispose();
+        hasilK.setSize(1100, 650);
+        hasilK.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        hasilK.setVisible(true);
     }//GEN-LAST:event_rincianKActionPerformed
+
+    private void bingung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bingung1ActionPerformed
+
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new user_loker().setVisible(true);
+    }//GEN-LAST:event_backButtonMouseClicked
+
+    private void lamarButtonJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButtonJMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lamarButtonJMActionPerformed
+
+    private void lihatHasil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lihatHasil1ActionPerformed
+
+    private void lamarButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lamarButton2ActionPerformed
+
+    private void backButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton1MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new user_loker().setVisible(true);
+    }//GEN-LAST:event_backButton1MouseClicked
+
+    private void bingung2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bingung2ActionPerformed
+
+    private void lihatHasil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lihatHasil2ActionPerformed
+
+    private void lamarButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lamarButton3ActionPerformed
+
+    private void backButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton2MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new user_loker().setVisible(true);
+    }//GEN-LAST:event_backButton2MouseClicked
+
+    private void bingung3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bingung3ActionPerformed
+
+    private void lihatHasil3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lihatHasil3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -462,28 +1360,102 @@ public class user_loker extends javax.swing.JFrame {
         uloker.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         uloker.setResizable(false);   //No resize is possible
         uloker.setSize(1280, 720);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel about;
+    private javax.swing.JLabel backButton;
+    private javax.swing.JLabel backButton1;
+    private javax.swing.JLabel backButton2;
+    private javax.swing.JButton bingung1;
+    private javax.swing.JButton bingung2;
+    private javax.swing.JButton bingung3;
     private javax.swing.JLabel copyright;
+    private javax.swing.JLabel dJM1;
+    private javax.swing.JLabel dJM2;
+    private javax.swing.JLabel dJM3;
+    private javax.swing.JLabel dJM4;
+    private javax.swing.JLabel dJM5;
+    private javax.swing.JLabel dJM6;
+    private javax.swing.JLabel dJM7;
+    private javax.swing.JLabel dK1;
+    private javax.swing.JLabel dK2;
+    private javax.swing.JLabel dK3;
+    private javax.swing.JLabel dK4;
+    private javax.swing.JLabel dK5;
+    private javax.swing.JLabel dK6;
+    private javax.swing.JLabel dP1;
+    private javax.swing.JLabel dP2;
+    private javax.swing.JLabel dP3;
+    private javax.swing.JLabel dP4;
+    private javax.swing.JLabel dP5;
     private javax.swing.JLabel datasayaIcon;
     private javax.swing.JLabel datasayaLabel;
+    private javax.swing.JLabel desJM;
+    private javax.swing.JLabel desK;
+    private javax.swing.JLabel desP;
+    private javax.swing.JDialog faqUser;
+    private javax.swing.JDialog hasilJM;
+    private javax.swing.JDialog hasilK;
+    private javax.swing.JDialog hasilP;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel judul;
+    private javax.swing.JLabel judul1;
+    private javax.swing.JLabel judul2;
+    private javax.swing.JLabel judul3;
+    private javax.swing.JLabel kJM1;
+    private javax.swing.JLabel kJM2;
+    private javax.swing.JLabel kJM3;
+    private javax.swing.JLabel kJM4;
+    private javax.swing.JLabel kJM5;
+    private javax.swing.JLabel kJM6;
+    private javax.swing.JLabel kK1;
+    private javax.swing.JLabel kK2;
+    private javax.swing.JLabel kK3;
+    private javax.swing.JLabel kK4;
+    private javax.swing.JLabel kK5;
+    private javax.swing.JLabel kK6;
+    private javax.swing.JLabel kP1;
+    private javax.swing.JLabel kP2;
+    private javax.swing.JLabel kP3;
+    private javax.swing.JLabel kP4;
+    private javax.swing.JLabel kP5;
+    private javax.swing.JLabel kP6;
     private javax.swing.JLabel keterangan12;
+    private javax.swing.JLabel keterangan21;
     private javax.swing.JLabel keterangan3;
+    private javax.swing.JLabel keterangan46;
     private javax.swing.JLabel keterangan6;
+    private javax.swing.JLabel keterangan68;
     private javax.swing.JLabel keterangan9;
+    private javax.swing.JLabel kualifikasiJM;
+    private javax.swing.JLabel kualifikasiK;
+    private javax.swing.JLabel kualifikasiP;
+    private javax.swing.JButton lamarButton2;
+    private javax.swing.JButton lamarButton3;
+    private javax.swing.JButton lamarButtonJM;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
+    private javax.swing.JButton lihatHasil1;
+    private javax.swing.JButton lihatHasil2;
+    private javax.swing.JButton lihatHasil3;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
@@ -492,14 +1464,48 @@ public class user_loker extends javax.swing.JFrame {
     private javax.swing.JLabel low3;
     private javax.swing.JLabel low4;
     private javax.swing.JPanel nav;
+    private javax.swing.JLabel posisi1;
+    private javax.swing.JLabel posisi2;
+    private javax.swing.JLabel posisi3;
     private javax.swing.JButton rincianDISABLE;
     private javax.swing.JButton rincianJM;
     private javax.swing.JButton rincianK;
     private javax.swing.JButton rincianP;
     private javax.swing.JLabel support;
+    private javax.swing.JDialog supportUser;
+    private javax.swing.JLabel tJM1;
+    private javax.swing.JLabel tJM2;
+    private javax.swing.JLabel tJM3;
+    private javax.swing.JLabel tJM4;
+    private javax.swing.JLabel tJM5;
+    private javax.swing.JLabel tJM6;
+    private javax.swing.JLabel tJM7;
+    private javax.swing.JLabel tJM8;
+    private javax.swing.JLabel tK1;
+    private javax.swing.JLabel tK2;
+    private javax.swing.JLabel tK3;
+    private javax.swing.JLabel tK4;
+    private javax.swing.JLabel tK5;
+    private javax.swing.JLabel tK6;
+    private javax.swing.JLabel tK7;
+    private javax.swing.JLabel tK8;
+    private javax.swing.JLabel tP1;
+    private javax.swing.JLabel tP2;
+    private javax.swing.JLabel tP3;
+    private javax.swing.JLabel tP4;
+    private javax.swing.JLabel tP5;
+    private javax.swing.JLabel tP6;
+    private javax.swing.JLabel tP7;
+    private javax.swing.JLabel tP8;
+    private javax.swing.JLabel tanggungJawabJM;
+    private javax.swing.JLabel tanggungJawabK;
+    private javax.swing.JLabel tanggungJawabP;
     private javax.swing.JLabel tenggat1;
     private javax.swing.JLabel tenggat2;
     private javax.swing.JLabel tenggat3;
+    private javax.swing.JLabel tenggat4;
+    private javax.swing.JLabel tenggat5;
+    private javax.swing.JLabel tenggat6;
     private javax.swing.JLabel tenggatDISABLE;
     // End of variables declaration//GEN-END:variables
 
