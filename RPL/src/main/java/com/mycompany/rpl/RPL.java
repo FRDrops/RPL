@@ -16,8 +16,9 @@ public class RPL {
     public static void main(String[] args) throws SQLException {
         System.out.println("Erwin");
         loginpage login = new loginpage();
-        System.out.println(login.getLoggedInUsername());
-        homepage home = new homepage();
-        home.setVisible(true);
+        login.setVisible(true);
+        System.out.println(login.getUsername());
+        //homepage home = new homepage();
+        //home.setVisible(true);
     }
 }

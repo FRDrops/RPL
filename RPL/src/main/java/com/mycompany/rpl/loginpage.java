@@ -53,10 +53,6 @@ public class loginpage extends javax.swing.JFrame {
     public void setUsername(String username) {
         this.username = username; // Mengatur nilai dari variabel username
     }
-
-    public String getLoggedInUsername() {
-        return username;
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -235,6 +231,7 @@ public class loginpage extends javax.swing.JFrame {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(this.getUsername());
     }//GEN-LAST:event_masukButtonActionPerformed
 
     private void daftarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseClicked

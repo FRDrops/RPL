@@ -36,6 +36,7 @@ public class user_data extends javax.swing.JFrame {
     /**
      * Creates new form user_data
      */
+    loginpage login = new loginpage();
     public user_data() {
         initComponents();
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -48,9 +49,11 @@ public class user_data extends javax.swing.JFrame {
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
         
-        //readUser(loggedInUsername);
+        System.out.println(login.getUsername());
+        readUser(login.getUsername());
+        
+        
     }
-    
     
     private void readUser(String username) {
         try {
