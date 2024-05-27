@@ -1572,7 +1572,7 @@
                   <Color blue="22" green="2d" red="31" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="3. Memiliki pengalaman di bidang memasak, minimal 2 tahun"/>
+                <Property name="text" type="java.lang.String" value="3. Memiliki pengalaman bekerja dalam tim dan berlogika"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

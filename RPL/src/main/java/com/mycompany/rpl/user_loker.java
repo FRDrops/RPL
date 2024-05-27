@@ -759,7 +759,7 @@ public class user_loker extends javax.swing.JFrame {
         kK3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         kK3.setForeground(new java.awt.Color(49, 45, 34));
         kK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK3.setText("3. Memiliki pengalaman di bidang memasak, minimal 2 tahun");
+        kK3.setText("3. Memiliki pengalaman bekerja dalam tim dan berlogika");
         jPanel11.add(kK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
 
         kK4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
