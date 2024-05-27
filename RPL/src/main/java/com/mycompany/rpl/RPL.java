@@ -15,10 +15,8 @@ public class RPL {
 
     public static void main(String[] args) throws SQLException {
         System.out.println("Erwin");
-        
-        LoginClass login = new LoginClass();
-        login.input();
-        
+        loginpage login = new loginpage();
+        System.out.println(login.getLoggedInUsername());
         hrd_pelamar home = new hrd_pelamar();
         home.setVisible(true);
     }

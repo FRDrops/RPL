@@ -34,6 +34,8 @@ import javax.swing.JComboBox;
  */
 public class user_data extends javax.swing.JFrame {
 
+    loginpage loginPage = new loginpage();
+    String loggedInUsername = loginPage.getLoggedInUsername();
     /**
      * Creates new form user_data
      */
@@ -48,27 +50,29 @@ public class user_data extends javax.swing.JFrame {
         infoIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlue.png")));
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
+        
+        readUser(loggedInUsername);
     }
+    
     
     private void readUser(String username) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-            String sql = "SELECT * FROM data_user WHERE username = ?";
+            String sql = "SELECT * FROM data_user WHERE username_user = ?";
             PreparedStatement statement = koneksi.prepareStatement(sql);
             statement.setString(1, username);
 
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
-                judul2.setText("Nama: " + resultSet.getString("nama"));
+                judul2.setText(resultSet.getString("nama"));
                 jenisInput.setSelectedItem(resultSet.getString("jenis_kelamin"));
-                //umurLabel.setText("Umur: " + resultSet.getInt("umur"));//
-                tanggalInput.setText("Tanggal Lahir: " + resultSet.getDate("tanggal_lahir"));
+                tanggalInput.setText(resultSet.getDate("tanggal_lahir").toString()); // Konversi ke string
                 pendInput.setSelectedItem(resultSet.getString("pendidikan"));
-                nomorInput.setText("Telepon: " + resultSet.getInt("telepon"));
-                keterangan2.setText("Email: " + resultSet.getString("email"));
-                alamatInput.setText("Alamat: " + resultSet.getString("alamat"));
-                nikInput.setText("NIK: " + resultSet.getInt("nik"));
+                nomorInput.setText(String.valueOf(resultSet.getInt("telepon"))); // Konversi ke string
+                keterangan2.setText(resultSet.getString("email"));
+                alamatInput.setText(resultSet.getString("alamat"));
+                nikInput.setText(String.valueOf(resultSet.getInt("nik"))); 
 
             } else {
                 JOptionPane.showMessageDialog(this, "User not found.");

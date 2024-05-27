@@ -54,6 +54,10 @@ public class loginpage extends javax.swing.JFrame {
         this.username = username; // Mengatur nilai dari variabel username
     }
 
+    public String getLoggedInUsername() {
+        return username;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -214,15 +218,10 @@ public class loginpage extends javax.swing.JFrame {
             String password = String.valueOf(pwInput.getText());
             this.username = username;
             
-            login.loginAdmin(username, password);
             login.loginHrd(username, password);
             login.loginUser(username, password);
             
-            if (login.loginAdmin(username, password)){
-                dispose();
-                setUsername(username);
-                new homepage().setVisible(true);
-            } else if (login.loginHrd(username, password)){
+            if (login.loginHrd(username, password)){
                 dispose();
                 setUsername(username);
                 new hrd_home().setVisible(true);
