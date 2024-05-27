@@ -104,6 +104,7 @@ public class hrd_home extends javax.swing.JFrame {
         nav.add(pegawaiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 90, 20));
 
         homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeWhite.png")); // NOI18N
+        homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nav.add(homeIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 60, 150, 50));
 
         homeLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -316,14 +317,20 @@ public class hrd_home extends javax.swing.JFrame {
 
     private void pelamarIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pelamarIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new hrd_pelamar().setVisible(true);
     }//GEN-LAST:event_pelamarIconMouseClicked
 
     private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new hrd_loker().setVisible(true);
     }//GEN-LAST:event_lokerIconMouseClicked
 
     private void pegawaiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pegawaiIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new hrd_pegawai().setVisible(true);
     }//GEN-LAST:event_pegawaiIconMouseClicked
 
     private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
@@ -342,6 +349,8 @@ public class hrd_home extends javax.swing.JFrame {
 
     private void saranIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saranIconMouseClicked
         // TODO add your handling code here:
+        dispose();
+        new hrd_saran().setVisible(true);
     }//GEN-LAST:event_saranIconMouseClicked
 
     /**

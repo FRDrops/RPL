@@ -19,7 +19,7 @@ public class RPL {
         LoginClass login = new LoginClass();
         login.input();
         
-        user_lamaran home = new user_lamaran();
+        hrd_pelamar home = new hrd_pelamar();
         home.setVisible(true);
     }
 }

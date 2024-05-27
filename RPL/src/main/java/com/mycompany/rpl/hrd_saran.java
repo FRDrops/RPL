@@ -4,6 +4,33 @@
  */
 package com.mycompany.rpl;
 
+import java.awt.Color;
+import java.awt.*;
+import java.sql.SQLException;
+import java.awt.geom.*;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.border.*;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.time.LocalDate;
+import javax.swing.table.TableCellRenderer;
+
 /**
  *
  * @author ASUS
@@ -15,6 +42,13 @@ public class hrd_saran extends javax.swing.JFrame {
      */
     public hrd_saran() {
         initComponents();
+        getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        
+        homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));
+        pelamarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pelamarBlack.png")));
+        lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokersayaBlack.png")));
+        pegawaiIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pegawaiBlack.png")));
+        saranIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/saranWhite.png")));
     }
 
     /**
@@ -26,13 +60,269 @@ public class hrd_saran extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        nav = new RoundedPanel(100, new Color(215, 204, 185));
+        pegawaiLabel = new javax.swing.JLabel();
+        homeIcon = new javax.swing.JLabel();
+        homeLabel = new javax.swing.JLabel();
+        pelamarIcon = new javax.swing.JLabel();
+        lokerIcon = new javax.swing.JLabel();
+        pelamarLabel = new javax.swing.JLabel();
+        pegawaiIcon = new javax.swing.JLabel();
+        lokerLabel = new javax.swing.JLabel();
+        saranIcon = new javax.swing.JLabel();
+        saranLabel = new javax.swing.JLabel();
+        jPanel1 = new RoundedPanel(70, new Color(49, 45, 34));
+        copyright = new javax.swing.JLabel();
+        about = new javax.swing.JLabel();
+        support = new javax.swing.JLabel();
+        logoutButton = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nav.setBackground(new java.awt.Color(255, 255, 255));
+        nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pegawaiLabel.setForeground(new java.awt.Color(49, 45, 34));
+        pegawaiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pegawaiLabel.setText("Daftar Pegawai");
+        nav.add(pegawaiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 90, 20));
+
+        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
+        homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeIconMouseClicked(evt);
+            }
+        });
+        nav.add(homeIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 60, 150, 50));
+
+        homeLabel.setForeground(new java.awt.Color(49, 45, 34));
+        homeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        homeLabel.setText("Home");
+        nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 30));
+
+        pelamarIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pelamarBlack.png")); // NOI18N
+        pelamarIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pelamarIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pelamarIconMouseClicked(evt);
+            }
+        });
+        nav.add(pelamarIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 170, 160, 70));
+
+        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokersayaBlack.png")); // NOI18N
+        lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lokerIconMouseClicked(evt);
+            }
+        });
+        nav.add(lokerIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 280, 160, 60));
+
+        pelamarLabel.setForeground(new java.awt.Color(49, 45, 34));
+        pelamarLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pelamarLabel.setText("Daftar Pelamar");
+        nav.add(pelamarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 90, 20));
+
+        pegawaiIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pegawaiBlack.png")); // NOI18N
+        pegawaiIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pegawaiIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pegawaiIconMouseClicked(evt);
+            }
+        });
+        nav.add(pegawaiIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 390, 160, 60));
+
+        lokerLabel.setForeground(new java.awt.Color(49, 45, 34));
+        lokerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lokerLabel.setText("Loker Saya");
+        nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 90, 20));
+
+        saranIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\saranWhite.png")); // NOI18N
+        saranIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        saranIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saranIconMouseClicked(evt);
+            }
+        });
+        nav.add(saranIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 490, 160, 60));
+
+        saranLabel.setForeground(new java.awt.Color(255, 255, 255));
+        saranLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        saranLabel.setText("Kotak Saran");
+        nav.add(saranLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 90, 20));
+
+        jPanel1.setBackground(new java.awt.Color(215, 204, 185));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 90, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
+        nav.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 90, 110));
+
+        getContentPane().add(nav, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 110, 620));
+
+        copyright.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        copyright.setForeground(new java.awt.Color(49, 45, 34));
+        copyright.setText("2024© Gendhu Roso");
+        getContentPane().add(copyright, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, -1, -1));
+
+        about.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        about.setForeground(new java.awt.Color(49, 45, 34));
+        about.setText("About     |");
+        about.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        about.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aboutMouseClicked(evt);
+            }
+        });
+        getContentPane().add(about, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 600, -1, -1));
+
+        support.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        support.setForeground(new java.awt.Color(49, 45, 34));
+        support.setText("Support");
+        support.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        support.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                supportMouseClicked(evt);
+            }
+        });
+        getContentPane().add(support, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 600, -1, -1));
+
+        logoutButton.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        logoutButton.setForeground(new java.awt.Color(49, 45, 34));
+        logoutButton.setText("Logout");
+        logoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
+
+        judul.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        judul.setForeground(new java.awt.Color(112, 104, 94));
+        judul.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        judul.setText("Kotak Saran Dari Pelamar");
+        getContentPane().add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 610, -1));
+
+        jSeparator2.setForeground(new java.awt.Color(215, 204, 185));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 960, 20));
+
+        jTable1.setBackground(new java.awt.Color(249, 248, 242));
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(49, 45, 34));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"ruth", "Hiyatt"},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nama", "Saran dan Kritik"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.setGridColor(new java.awt.Color(215, 204, 185));
+        jTable1.setRowHeight(30);
+        jTable1.setSelectionBackground(new java.awt.Color(215, 204, 185));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 970, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void homeIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeIconMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new hrd_home().setVisible(true);
+    }//GEN-LAST:event_homeIconMouseClicked
+
+    private void pelamarIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pelamarIconMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new hrd_pelamar().setVisible(true);
+    }//GEN-LAST:event_pelamarIconMouseClicked
+
+    private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new hrd_loker().setVisible(true);
+    }//GEN-LAST:event_lokerIconMouseClicked
+
+    private void pegawaiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pegawaiIconMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new hrd_pegawai().setVisible(true);
+    }//GEN-LAST:event_pegawaiIconMouseClicked
+
+    private void saranIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saranIconMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saranIconMouseClicked
+
+    private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_aboutMouseClicked
+
+    private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_supportMouseClicked
+
+    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
+        // TODO add your handling code here:
+        dispose();
+        new homepage().setVisible(true);
+    }//GEN-LAST:event_logoutButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -67,8 +357,78 @@ public class hrd_saran extends javax.swing.JFrame {
                 new hrd_saran().setVisible(true);
             }
         });
+        
+        hrd_pegawai hpegawai = new hrd_pegawai();
+        hpegawai.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        hpegawai.setResizable(false);   //No resize is possible
+        hpegawai.setSize(1280, 720);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel about;
+    private javax.swing.JLabel copyright;
+    private javax.swing.JLabel homeIcon;
+    private javax.swing.JLabel homeLabel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel judul;
+    private javax.swing.JLabel logoutButton;
+    private javax.swing.JLabel lokerIcon;
+    private javax.swing.JLabel lokerLabel;
+    private javax.swing.JPanel nav;
+    private javax.swing.JLabel pegawaiIcon;
+    private javax.swing.JLabel pegawaiLabel;
+    private javax.swing.JLabel pelamarIcon;
+    private javax.swing.JLabel pelamarLabel;
+    private javax.swing.JLabel saranIcon;
+    private javax.swing.JLabel saranLabel;
+    private javax.swing.JLabel support;
     // End of variables declaration//GEN-END:variables
+
+class RoundedPanel extends JPanel
+    {
+        private Color backgroundColor;
+        private int cornerRadius = 15;
+        public RoundedPanel(LayoutManager layout, int radius) {
+            super(layout);
+            cornerRadius = radius;
+        }
+        public RoundedPanel(LayoutManager layout, int radius, Color bgColor) {
+            super(layout);
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        public RoundedPanel(int radius) {
+            super();
+            cornerRadius = radius;
+            
+        }
+        public RoundedPanel(int radius, Color bgColor) {
+            super();
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+            int width = getWidth();
+            int height = getHeight();
+            Graphics2D graphics = (Graphics2D) g;
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            //Draws the rounded panel with borders.
+            if (backgroundColor != null) {
+                graphics.setColor(backgroundColor);
+            } else {
+                graphics.setColor(getBackground());
+            }
+            graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+            graphics.setColor(getForeground());
+//            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+//             
+        }
+}
+
 }
