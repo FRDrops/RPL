@@ -72,6 +72,7 @@ public class user_data extends javax.swing.JFrame {
             // Retrieve data, set default if null
             String nama = resultSet.getString("nama") != null ? resultSet.getString("nama") : "";
             String jenisKelamin = resultSet.getString("jenis_kelamin") != null ? resultSet.getString("jenis_kelamin") : "";
+            String tempatLahir = resultSet.getString("tempat_lahir") != null ? resultSet.getString("tempat_lahir") : "";
             String tanggalLahir = resultSet.getDate("tanggal_lahir") != null ? resultSet.getDate("tanggal_lahir").toString() : "";
             String pendidikan = resultSet.getString("pendidikan") != null ? resultSet.getString("pendidikan") : "";
             String telepon = resultSet.getString("telepon") != null ? resultSet.getString("telepon") : "";
@@ -82,6 +83,7 @@ public class user_data extends javax.swing.JFrame {
             // Set text fields
             judul2.setText(nama);
             jenisInput.setSelectedItem(jenisKelamin);
+            tempatInput.setText(tempatLahir);
             tanggalInput.setText(tanggalLahir);
             pendInput.setSelectedItem(pendidikan);
             nomorInput.setText(telepon);
@@ -175,9 +177,7 @@ public class user_data extends javax.swing.JFrame {
         infoLabel = new javax.swing.JLabel();
         infoIcon = new javax.swing.JLabel();
 
-        uploadSection.setMaximumSize(new java.awt.Dimension(480, 540));
         uploadSection.setMinimumSize(new java.awt.Dimension(480, 540));
-        uploadSection.setPreferredSize(new java.awt.Dimension(480, 540));
         uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav1.setBackground(new java.awt.Color(255, 255, 255));
@@ -397,6 +397,12 @@ public class user_data extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
+
+        userProfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userProfilMouseClicked(evt);
+            }
+        });
         getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 230, 240));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -660,7 +666,7 @@ public class user_data extends javax.swing.JFrame {
         String nikText = nikInput.getText();
         int nik = Integer.parseInt(nikText);
         String nomorText = nomorInput.getText();
-        int nomor = Integer.parseInt(nikText);
+        int nomor = Integer.parseInt(nomorText);
         String jenis = (String) jenisInput.getSelectedItem();
         String pend = (String) pendInput.getSelectedItem();
         
@@ -732,6 +738,11 @@ public class user_data extends javax.swing.JFrame {
         dispose();
         new user_data().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void userProfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userProfilMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_userProfilMouseClicked
 
     /**
      * @param args the command line arguments
