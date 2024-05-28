@@ -17,8 +17,6 @@ public class RPL {
         System.out.println("Erwin");
         homepage home = new homepage();
         home.setVisible(true);
-        LoginClass log = new LoginClass();
-        log.logDelete();
         Koneksi konek = new Koneksi();
         konek.close();
     }

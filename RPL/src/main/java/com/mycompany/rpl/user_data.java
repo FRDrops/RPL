@@ -49,7 +49,6 @@ public class user_data extends javax.swing.JFrame {
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
         String username = Session.getInstance().getUsername();
-        System.out.println(username);
         readUser(username);
         
     }
@@ -66,18 +65,21 @@ public class user_data extends javax.swing.JFrame {
             ResultSet resultSet = statement.executeQuery();
             if (!resultSet.next()) {
                 JOptionPane.showMessageDialog(this, "No data found for username: " + username);
+                clearFields(); // Clear fields if no data found
                 return;
             }
 
-            String nama = resultSet.getString("nama");
-            String jenisKelamin = resultSet.getString("jenis_kelamin");
-            String tanggalLahir = resultSet.getDate("tanggal_lahir").toString();
-            String pendidikan = resultSet.getString("pendidikan");
-            String telepon = String.valueOf(resultSet.getInt("telepon"));
-            String email = resultSet.getString("email");
-            String alamat = resultSet.getString("alamat");
-            String nik = String.valueOf(resultSet.getInt("nik"));
+            // Retrieve data, set default if null
+            String nama = resultSet.getString("nama") != null ? resultSet.getString("nama") : "";
+            String jenisKelamin = resultSet.getString("jenis_kelamin") != null ? resultSet.getString("jenis_kelamin") : "";
+            String tanggalLahir = resultSet.getDate("tanggal_lahir") != null ? resultSet.getDate("tanggal_lahir").toString() : "";
+            String pendidikan = resultSet.getString("pendidikan") != null ? resultSet.getString("pendidikan") : "";
+            String telepon = resultSet.getString("telepon") != null ? resultSet.getString("telepon") : "";
+            String email = resultSet.getString("email") != null ? resultSet.getString("email") : "";
+            String alamat = resultSet.getString("alamat") != null ? resultSet.getString("alamat") : "";
+            String nik = resultSet.getString("nik") != null ? resultSet.getString("nik") : "";
 
+            // Set text fields
             judul2.setText(nama);
             jenisInput.setSelectedItem(jenisKelamin);
             tanggalInput.setText(tanggalLahir);
@@ -93,6 +95,17 @@ public class user_data extends javax.swing.JFrame {
         }
     }
 
+    private void clearFields() {
+        judul2.setText("");
+        jenisInput.setSelectedItem("");
+        tanggalInput.setText("");
+        pendInput.setSelectedItem("");
+        nomorInput.setText("");
+        keterangan2.setText("");
+        alamatInput.setText("");
+        nikInput.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -641,7 +654,7 @@ public class user_data extends javax.swing.JFrame {
 
     private void simpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanButtonActionPerformed
         // TODO add your handling code here:
-        String usn = judul2.getText();
+        String username = Session.getInstance().getUsername();
         String tempat = tempatInput.getText();
         String alamat = alamatInput.getText();
         String nikText = nikInput.getText();
@@ -651,8 +664,37 @@ public class user_data extends javax.swing.JFrame {
         String jenis = (String) jenisInput.getSelectedItem();
         String pend = (String) pendInput.getSelectedItem();
         
+        updateData(username, jenis, tempat, pend, alamat, nik, nomor);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
+    public void updateData(String username, String jenis, String tempat, String pend, String alamat, int nik, int nomor) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            
+            String updateQuery = "UPDATE data_user SET jenis_kelamin = ?, tempat_lahir = ?, pendidikan = ?, telepon = ?, alamat = ?, nik = ? WHERE username_user = ?";
+            PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
+            updateStatement.setString(1, jenis);
+            updateStatement.setString(2, tempat);
+            updateStatement.setString(3, pend);
+            updateStatement.setInt(4, nomor);
+            updateStatement.setString(5, alamat);
+            updateStatement.setInt(6, nik);
+            updateStatement.setString(7, username);
+
+            int rowsAffected = updateStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(rootPane, "Perubahan berhasil disimpan.");
+            } else {
+            }
+
+            updateStatement.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());  
+        }
+    }
+    
     private void profilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_profilButtonActionPerformed
