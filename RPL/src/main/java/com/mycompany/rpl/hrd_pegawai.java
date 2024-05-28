@@ -50,6 +50,9 @@ public class hrd_pegawai extends javax.swing.JFrame {
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokersayaBlack.png")));
         pegawaiIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pegawaiWhite.png")));
         saranIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/saranBlack.png")));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
+        change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
     }
 
     /**
@@ -61,6 +64,37 @@ public class hrd_pegawai extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rincianPegawai = new javax.swing.JDialog();
+        judul1 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        backButton = new javax.swing.JLabel();
+        userProfil = new javax.swing.JLabel();
+        jPanel3 = new RoundedPanel(50, new Color(215, 204, 185));
+        judul2 = new javax.swing.JLabel();
+        keterangan2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        tempatInput = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        alamatInput = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        tanggalInput = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        nikInput = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        nomorInput = new javax.swing.JTextField();
+        jenisInput = new javax.swing.JComboBox<>();
+        lihatBerkas = new javax.swing.JButton();
+        pendInput = new javax.swing.JComboBox<>();
+        posisiUser = new javax.swing.JLabel();
+        change = new javax.swing.JLabel();
+        delete = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         pegawaiLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -81,6 +115,226 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePegawai = new javax.swing.JTable();
+
+        rincianPegawai.setBackground(new java.awt.Color(255, 255, 255));
+        rincianPegawai.setMaximumSize(new java.awt.Dimension(1100, 650));
+        rincianPegawai.setMinimumSize(new java.awt.Dimension(1100, 650));
+        rincianPegawai.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        judul1.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
+        judul1.setForeground(new java.awt.Color(112, 104, 94));
+        judul1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul1.setText("Daftar Pegawai di Gendhu Roso");
+        rincianPegawai.getContentPane().add(judul1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 610, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(215, 204, 185));
+        rincianPegawai.getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 960, 20));
+
+        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButtonMouseClicked(evt);
+            }
+        });
+        rincianPegawai.getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 20, 160, 60));
+
+        userProfil.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\profilUser.png")); // NOI18N
+        userProfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userProfilMouseClicked(evt);
+            }
+        });
+        rincianPegawai.getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 230, 240));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        judul2.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        judul2.setForeground(new java.awt.Color(49, 45, 34));
+        judul2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        judul2.setText("[User_Name]");
+        jPanel3.add(judul2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 770, -1));
+
+        keterangan2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        keterangan2.setForeground(new java.awt.Color(49, 45, 34));
+        keterangan2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        keterangan2.setText("[User_Email] *non-editable");
+        jPanel3.add(keterangan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 770, 30));
+
+        rincianPegawai.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 1030, 130));
+
+        jPanel4.setBackground(new java.awt.Color(249, 248, 242));
+        jPanel4.setToolTipText("");
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tempatInput.setBackground(new java.awt.Color(249, 248, 242));
+        tempatInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tempatInput.setForeground(new java.awt.Color(112, 104, 94));
+        tempatInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        tempatInput.setBorder(null);
+        tempatInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tempatInputActionPerformed(evt);
+            }
+        });
+        jPanel4.add(tempatInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 160, 40));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(49, 45, 34));
+        jLabel5.setText("Tempat Lahir:");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 120, 40));
+
+        rincianPegawai.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 290, 40));
+
+        jPanel6.setBackground(new java.awt.Color(249, 248, 242));
+        jPanel6.setToolTipText("");
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        alamatInput.setBackground(new java.awt.Color(249, 248, 242));
+        alamatInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        alamatInput.setForeground(new java.awt.Color(112, 104, 94));
+        alamatInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        alamatInput.setBorder(null);
+        alamatInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alamatInputActionPerformed(evt);
+            }
+        });
+        jPanel6.add(alamatInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 710, 40));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(49, 45, 34));
+        jLabel7.setText("Alamat:");
+        jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 70, 40));
+
+        rincianPegawai.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 790, -1));
+
+        jPanel5.setBackground(new java.awt.Color(249, 248, 242));
+        jPanel5.setToolTipText("");
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tanggalInput.setBackground(new java.awt.Color(249, 248, 242));
+        tanggalInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tanggalInput.setForeground(new java.awt.Color(112, 104, 94));
+        tanggalInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        tanggalInput.setBorder(null);
+        tanggalInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tanggalInputActionPerformed(evt);
+            }
+        });
+        jPanel5.add(tanggalInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 200, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(49, 45, 34));
+        jLabel6.setText("Tanggal Lahir:");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 130, 40));
+
+        rincianPegawai.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 300, -1, 40));
+
+        jPanel8.setBackground(new java.awt.Color(249, 248, 242));
+        jPanel8.setToolTipText("");
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(49, 45, 34));
+        jLabel9.setText("Pendidikan:");
+        jPanel8.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 110, 40));
+
+        rincianPegawai.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, 40));
+
+        jPanel7.setBackground(new java.awt.Color(249, 248, 242));
+        jPanel7.setToolTipText("");
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nikInput.setBackground(new java.awt.Color(249, 248, 242));
+        nikInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nikInput.setForeground(new java.awt.Color(112, 104, 94));
+        nikInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nikInput.setBorder(null);
+        nikInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nikInputActionPerformed(evt);
+            }
+        });
+        jPanel7.add(nikInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 230, 40));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(49, 45, 34));
+        jLabel8.setText("NIK (sesuai KTP):");
+        jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 150, 40));
+
+        rincianPegawai.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 390, 40));
+
+        jPanel11.setBackground(new java.awt.Color(249, 248, 242));
+        jPanel11.setToolTipText("");
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(49, 45, 34));
+        jLabel12.setText("Nomor Telepon:");
+        jPanel11.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 140, 40));
+
+        nomorInput.setBackground(new java.awt.Color(249, 248, 242));
+        nomorInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        nomorInput.setForeground(new java.awt.Color(112, 104, 94));
+        nomorInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nomorInput.setBorder(null);
+        nomorInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomorInputActionPerformed(evt);
+            }
+        });
+        jPanel11.add(nomorInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 230, 40));
+
+        rincianPegawai.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, -1, 40));
+
+        jenisInput.setBackground(new java.awt.Color(249, 248, 242));
+        jenisInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jenisInput.setForeground(new java.awt.Color(49, 45, 34));
+        jenisInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki-laki", "Perempuan" }));
+        jenisInput.setBorder(null);
+        jenisInput.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jenisInput.setFocusable(false);
+        rincianPegawai.getContentPane().add(jenisInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 140, 40));
+
+        lihatBerkas.setBackground(new java.awt.Color(112, 104, 94));
+        lihatBerkas.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatBerkas.setForeground(new java.awt.Color(255, 255, 255));
+        lihatBerkas.setText("Lihat Berkas");
+        lihatBerkas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatBerkas.setBorderPainted(false);
+        lihatBerkas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatBerkas.setFocusable(false);
+        lihatBerkas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatBerkasActionPerformed(evt);
+            }
+        });
+        rincianPegawai.getContentPane().add(lihatBerkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 190, 40));
+
+        pendInput.setBackground(new java.awt.Color(249, 248, 242));
+        pendInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pendInput.setForeground(new java.awt.Color(112, 104, 94));
+        pendInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SMP", "SMA", "Diploma", "Sarjana", "Magister" }));
+        pendInput.setSelectedIndex(-1);
+        pendInput.setBorder(null);
+        pendInput.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pendInput.setFocusable(false);
+        rincianPegawai.getContentPane().add(pendInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 170, 40));
+
+        posisiUser.setFont(new java.awt.Font("Segoe UI Black", 0, 30)); // NOI18N
+        posisiUser.setForeground(new java.awt.Color(0, 74, 173));
+        posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        posisiUser.setText("[Posisi]");
+        rincianPegawai.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 130, -1));
+
+        change.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdUpdate.png")); // NOI18N
+        rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 160, 60));
+
+        delete.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdDelete.png")); // NOI18N
+        rincianPegawai.getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 160, 60));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -326,6 +580,41 @@ public class hrd_pegawai extends javax.swing.JFrame {
         new homepage().setVisible(true);
     }//GEN-LAST:event_logoutButtonMouseClicked
 
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        // TODO add your handling code here:
+        rincianPegawai.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_backButtonMouseClicked
+
+    private void userProfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userProfilMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userProfilMouseClicked
+
+    private void tempatInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tempatInputActionPerformed
+
+    private void alamatInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alamatInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alamatInputActionPerformed
+
+    private void tanggalInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanggalInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tanggalInputActionPerformed
+
+    private void nikInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nikInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nikInputActionPerformed
+
+    private void nomorInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomorInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomorInputActionPerformed
+
+    private void lihatBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatBerkasActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_lihatBerkasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -368,25 +657,56 @@ public class hrd_pegawai extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel about;
+    private javax.swing.JTextField alamatInput;
+    private javax.swing.JLabel backButton;
+    private javax.swing.JLabel change;
     private javax.swing.JLabel copyright;
+    private javax.swing.JLabel delete;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JComboBox<String> jenisInput;
     private javax.swing.JLabel judul;
+    private javax.swing.JLabel judul1;
+    private javax.swing.JLabel judul2;
+    private javax.swing.JLabel keterangan2;
+    private javax.swing.JButton lihatBerkas;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
     private javax.swing.JPanel nav;
+    private javax.swing.JTextField nikInput;
+    private javax.swing.JTextField nomorInput;
     private javax.swing.JLabel pegawaiIcon;
     private javax.swing.JLabel pegawaiLabel;
     private javax.swing.JLabel pelamarIcon;
     private javax.swing.JLabel pelamarLabel;
+    private javax.swing.JComboBox<String> pendInput;
+    private javax.swing.JLabel posisiUser;
+    private javax.swing.JDialog rincianPegawai;
     private javax.swing.JLabel saranIcon;
     private javax.swing.JLabel saranLabel;
     private javax.swing.JLabel support;
     private javax.swing.JTable tablePegawai;
+    private javax.swing.JTextField tanggalInput;
+    private javax.swing.JTextField tempatInput;
+    private javax.swing.JLabel userProfil;
     // End of variables declaration//GEN-END:variables
 
 class RoundedPanel extends JPanel
