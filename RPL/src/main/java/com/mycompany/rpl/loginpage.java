@@ -201,24 +201,18 @@ public class loginpage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             LoginClass login = new LoginClass();
-            username = String.valueOf(usnInput.getText());
-            String password = String.valueOf(pwInput.getText());
-            this.username = username;
-            
-            login.loginHrd(username, password);
-            login.loginUser(username, password);
-            
+            String username = usnInput.getText();
+            String password = new String(pwInput.getText());
+
             if (login.loginHrd(username, password)){
+                Session.getInstance().setUsername(username);
                 dispose();
-                setUsername(username);
-                login.logWrite(username);
                 new hrd_home().setVisible(true);
             } else if (login.loginUser(username, password)){
+                Session.getInstance().setUsername(username);
                 dispose();
-                setUsername(username);
-                login.logWrite(username);
                 new user_home().setVisible(true);
-            }else {
+            } else {
                 JOptionPane.showMessageDialog(this, "Username atau Password salah!", "Kesalahan", JOptionPane.ERROR_MESSAGE);
             }
         } catch(SQLException e) {

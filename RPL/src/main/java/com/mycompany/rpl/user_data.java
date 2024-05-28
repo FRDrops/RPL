@@ -48,19 +48,15 @@ public class user_data extends javax.swing.JFrame {
         infoIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlue.png")));
         userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
-        
-        
-        LoginClass login = new LoginClass();
-        String username = login.logRead();
-        System.out.println(login.logRead());
+        String username = Session.getInstance().getUsername();
         System.out.println(username);
         readUser(username);
-        
         
     }
     
     private void readUser(String username) {
         try {
+            System.out.println(username);
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             String sql = "SELECT * FROM data_user WHERE username_user = ?";
