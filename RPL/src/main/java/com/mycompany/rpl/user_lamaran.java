@@ -32,14 +32,20 @@ public class user_lamaran extends javax.swing.JFrame {
     /**
      * Creates new form user_lamaran
      */
+    private user_home userHome;
+    
     public user_lamaran() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));
         datasayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/datasayaBlack.png")));
         lamsayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lamsayaWhite.png")));
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaBlack.png")));
+    
+        //memanggil user_home
+        userHome = new user_home();
     }
 
     /**
@@ -337,6 +343,16 @@ public class user_lamaran extends javax.swing.JFrame {
 
     private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
         // TODO add your handling code here:
+        dispose();
+        // Assuming supportButton is the button to trigger the action
+        if (userHome == null) {
+            userHome = new user_home(); // Initialize FormB if not already done
+            //userHome.setVisible(true); // Show FormB
+        }
+
+        // Call FormB's method to show kotakSaran dialog
+        userHome.showKotakSaran();
+        
     }//GEN-LAST:event_supportMouseClicked
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked

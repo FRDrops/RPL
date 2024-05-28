@@ -42,6 +42,7 @@ public class hrd_loker extends javax.swing.JFrame {
      */
     public hrd_loker() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));

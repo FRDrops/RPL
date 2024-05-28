@@ -37,6 +37,7 @@ public class hrd_home extends javax.swing.JFrame {
      */
     public hrd_home() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeWhite.png")));

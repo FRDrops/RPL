@@ -37,8 +37,13 @@ public class user_data extends javax.swing.JFrame {
      * Creates new form user_data
      */
     loginpage login = new loginpage();
+    private user_home userHome;
+    
     public user_data() {
         initComponents();
+        setLocationRelativeTo(null);
+        uploadSection.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));
@@ -51,6 +56,7 @@ public class user_data extends javax.swing.JFrame {
         String username = Session.getInstance().getUsername();
         readUser(username);
         
+        userHome = new user_home();
     }
     
     private void readUser(String username) {
@@ -176,6 +182,7 @@ public class user_data extends javax.swing.JFrame {
         pendInput = new javax.swing.JComboBox<>();
         infoLabel = new javax.swing.JLabel();
         infoIcon = new javax.swing.JLabel();
+        infoLabel1 = new javax.swing.JLabel();
 
         uploadSection.setMinimumSize(new java.awt.Dimension(480, 540));
         uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -612,12 +619,19 @@ public class user_data extends javax.swing.JFrame {
         pendInput.setFocusable(false);
         getContentPane().add(pendInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, 170, 40));
 
-        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        infoLabel.setForeground(new java.awt.Color(0, 74, 173));
+        infoLabel.setBackground(new java.awt.Color(0, 0, 0));
+        infoLabel.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        infoLabel.setForeground(new java.awt.Color(49, 45, 34));
         infoLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        infoLabel.setText("Klik untuk mengganti data kamu");
-        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 210, 40));
-        getContentPane().add(infoIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 140, 40));
+        infoLabel.setText("*Upload berkas seperti CV, KTP, Ijazah, dan SKCK");
+        getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 450, 260, 20));
+        getContentPane().add(infoIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 140, 40));
+
+        infoLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        infoLabel1.setForeground(new java.awt.Color(0, 74, 173));
+        infoLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        infoLabel1.setText("Klik untuk mengganti data kamu");
+        getContentPane().add(infoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 210, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -644,6 +658,15 @@ public class user_data extends javax.swing.JFrame {
 
     private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
         // TODO add your handling code here:
+        dispose();
+        // Assuming supportButton is the button to trigger the action
+        if (userHome == null) {
+            userHome = new user_home(); // Initialize FormB if not already done
+            //userHome.setVisible(true); // Show FormB
+        }
+
+        // Call FormB's method to show kotakSaran dialog
+        userHome.showKotakSaran();
     }//GEN-LAST:event_supportMouseClicked
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
@@ -724,6 +747,7 @@ public class user_data extends javax.swing.JFrame {
     private void uploadBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBerkasActionPerformed
         // TODO add your handling code here:
         dispose();
+        uploadSection.setLocationRelativeTo(null);
         uploadSection.setSize(480, 540);
         uploadSection.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         uploadSection.setVisible(true);
@@ -735,8 +759,8 @@ public class user_data extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new user_data().setVisible(true);
+        uploadSection.dispose();
+        this.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void userProfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userProfilMouseClicked
@@ -798,6 +822,7 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JLabel ijazah;
     private javax.swing.JLabel infoIcon;
     private javax.swing.JLabel infoLabel;
+    private javax.swing.JLabel infoLabel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;

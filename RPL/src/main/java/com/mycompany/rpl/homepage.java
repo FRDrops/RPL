@@ -28,6 +28,7 @@ public class homepage extends javax.swing.JFrame {
      */
     public homepage() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0x312D22"));
         
         logoGr.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/logoGR.png")));

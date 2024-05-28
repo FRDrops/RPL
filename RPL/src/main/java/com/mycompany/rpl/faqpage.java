@@ -34,6 +34,7 @@ public class faqpage extends javax.swing.JFrame {
      */
     public faqpage() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0x312D22"));
         
         satu.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/satu.png")));

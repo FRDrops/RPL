@@ -44,6 +44,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
      */
     public hrd_pelamar() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));

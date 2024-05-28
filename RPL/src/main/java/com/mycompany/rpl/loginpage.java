@@ -37,6 +37,7 @@ public class loginpage extends javax.swing.JFrame {
     
     public loginpage() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xF9F8F2"));
         
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/logoGR.png")));

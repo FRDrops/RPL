@@ -32,16 +32,29 @@ public class user_home extends javax.swing.JFrame {
     /**
      * Creates new form user_home
      */
+    
     public user_home() {
         initComponents();
+        setLocationRelativeTo(null);
+        kotakSaran.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeWhite.png")));
         datasayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/datasayaBlack.png")));
         lamsayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lamsayaBlack.png")));
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaBlack.png")));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
+        
     }
 
+    public void showKotakSaran() {
+        kotakSaran.setLocationRelativeTo(null);
+        kotakSaran.setSize(505, 365);
+        kotakSaran.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        kotakSaran.setVisible(true);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,6 +64,13 @@ public class user_home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        kotakSaran = new javax.swing.JDialog();
+        jPanel2 = new RoundedPanel(50, new Color(215, 204, 185));
+        kirimButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        backButton = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -68,12 +88,61 @@ public class user_home extends javax.swing.JFrame {
         support = new javax.swing.JLabel();
         logoutButton = new javax.swing.JLabel();
 
+        kotakSaran.setBackground(new java.awt.Color(255, 255, 255));
+        kotakSaran.setMaximumSize(new java.awt.Dimension(505, 365));
+        kotakSaran.setMinimumSize(new java.awt.Dimension(505, 365));
+        kotakSaran.setPreferredSize(new java.awt.Dimension(505, 365));
+        kotakSaran.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kirimButton.setBackground(new java.awt.Color(112, 104, 94));
+        kirimButton.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        kirimButton.setForeground(new java.awt.Color(255, 255, 255));
+        kirimButton.setText("Kirim");
+        kirimButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        kirimButton.setFocusable(false);
+        kirimButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kirimButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(kirimButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 120, 30));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        jLabel1.setText("Kotak Saran");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        jTextArea1.setBackground(new java.awt.Color(249, 248, 242));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(49, 45, 34));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jTextArea1.setMaximumSize(new java.awt.Dimension(232, 84));
+        jTextArea1.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 400, 130));
+
+        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
+        backButton.setText("jLabel2");
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backButtonMouseClicked(evt);
+            }
+        });
+        jPanel2.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 10, 160, 60));
+
+        kotakSaran.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 460, 300));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
@@ -84,7 +153,6 @@ public class user_home extends javax.swing.JFrame {
         lokerLabel.setText("Loker Kerja");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
 
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeWhite.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nav.add(homeIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 100, 150, 50));
 
@@ -108,7 +176,6 @@ public class user_home extends javax.swing.JFrame {
 
         nav.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 110));
 
-        datasayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaBlack.png")); // NOI18N
         datasayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         datasayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -117,7 +184,6 @@ public class user_home extends javax.swing.JFrame {
         });
         nav.add(datasayaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
 
-        lamsayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaBlack.png")); // NOI18N
         lamsayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lamsayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -131,7 +197,6 @@ public class user_home extends javax.swing.JFrame {
         datasayaLabel.setText("Data Saya");
         nav.add(datasayaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaBlack.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -202,6 +267,8 @@ public class user_home extends javax.swing.JFrame {
 
     private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
         // TODO add your handling code here:
+        dispose();
+        showKotakSaran();
     }//GEN-LAST:event_supportMouseClicked
 
     private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
@@ -231,6 +298,18 @@ public class user_home extends javax.swing.JFrame {
         dispose();
         new user_loker().setVisible(true);
     }//GEN-LAST:event_lokerIconMouseClicked
+
+    private void kirimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kirimButtonActionPerformed
+        // TODO add your handling code here:
+        // IF terkirim,kembali ke home. ElSE, pop up
+        
+    }//GEN-LAST:event_kirimButtonActionPerformed
+
+    private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
+        // TODO add your handling code here:
+        kotakSaran.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_backButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -275,14 +354,21 @@ public class user_home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel about;
+    private javax.swing.JLabel backButton;
     private javax.swing.JLabel copyright;
     private javax.swing.JLabel datasayaIcon;
     private javax.swing.JLabel datasayaLabel;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel keterangan;
+    private javax.swing.JButton kirimButton;
+    private javax.swing.JDialog kotakSaran;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
     private javax.swing.JLabel logoutButton;

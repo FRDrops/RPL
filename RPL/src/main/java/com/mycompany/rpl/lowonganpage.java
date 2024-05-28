@@ -34,6 +34,7 @@ public class lowonganpage extends javax.swing.JFrame {
      */
     public lowonganpage() {
         initComponents();
+        setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0x312D22"));
         
         jurumasakIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/juruMasak.png")));
