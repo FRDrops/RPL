@@ -204,9 +204,7 @@ public class lowonganpage extends javax.swing.JFrame {
         judul = new javax.swing.JLabel();
         deskripsi = new javax.swing.JLabel();
 
-        rincianJM.setMaximumSize(new java.awt.Dimension(1280, 720));
         rincianJM.setMinimumSize(new java.awt.Dimension(1280, 720));
-        rincianJM.setPreferredSize(new java.awt.Dimension(1280, 720));
         rincianJM.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -479,9 +477,7 @@ public class lowonganpage extends javax.swing.JFrame {
         });
         rincianJM.getContentPane().add(lihatHasil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, 190, 40));
 
-        rincianP.setMaximumSize(new java.awt.Dimension(1280, 720));
         rincianP.setMinimumSize(new java.awt.Dimension(1280, 720));
-        rincianP.setPreferredSize(new java.awt.Dimension(1280, 720));
         rincianP.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeButton2.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -742,9 +738,7 @@ public class lowonganpage extends javax.swing.JFrame {
         });
         rincianP.getContentPane().add(lihatHasil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 540, 190, 40));
 
-        rincianK.setMaximumSize(new java.awt.Dimension(1280, 720));
         rincianK.setMinimumSize(new java.awt.Dimension(1280, 720));
-        rincianK.setPreferredSize(new java.awt.Dimension(1280, 720));
         rincianK.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         homeButton3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
@@ -1217,7 +1211,7 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void homeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButtonMouseClicked
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
         new homepage().setVisible(true);
     }//GEN-LAST:event_homeButtonMouseClicked
 
@@ -1227,19 +1221,19 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void faqButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButtonMouseClicked
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_faqButtonMouseClicked
 
     private void masukButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButtonMouseClicked
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_masukButtonMouseClicked
 
     private void rincianButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianButton3ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
         rincianK.setSize(1280, 720);
         rincianK.getContentPane().setBackground(Color.decode("0x312D22"));
         rincianK.setVisible(true);
@@ -1247,7 +1241,7 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void rincianButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianButton2ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
         rincianP.setSize(1280, 720);
         rincianP.getContentPane().setBackground(Color.decode("0x312D22"));
         rincianP.setVisible(true);
@@ -1255,7 +1249,7 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void rincianButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        this.dispose();
         rincianJM.setSize(1280, 720);
         rincianJM.getContentPane().setBackground(Color.decode("0x312D22"));
         rincianJM.setVisible(true);
@@ -1263,37 +1257,37 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void homeButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButton1MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianJM.dispose();
         new homepage().setVisible(true);
     }//GEN-LAST:event_homeButton1MouseClicked
 
     private void masukButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButton1MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianJM.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_masukButton1MouseClicked
 
     private void lowonganButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lowonganButton1MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianJM.dispose();
         new lowonganpage().setVisible(true);
     }//GEN-LAST:event_lowonganButton1MouseClicked
 
     private void faqButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButton1MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianJM.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_faqButton1MouseClicked
 
     private void lamarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        rincianJM.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_lamarButton1ActionPerformed
 
     private void bingung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung1ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        rincianJM.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_bingung1ActionPerformed
 
@@ -1303,37 +1297,37 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void homeButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButton2MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianP.dispose();
         new homepage().setVisible(true);
     }//GEN-LAST:event_homeButton2MouseClicked
 
     private void masukButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButton2MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianP.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_masukButton2MouseClicked
 
     private void lowonganButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lowonganButton2MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianP.dispose();
         new lowonganpage().setVisible(true);
     }//GEN-LAST:event_lowonganButton2MouseClicked
 
     private void faqButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButton2MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianP.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_faqButton2MouseClicked
 
     private void lamarButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton2ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        rincianP.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_lamarButton2ActionPerformed
 
     private void bingung2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung2ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        rincianP.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_bingung2ActionPerformed
 
@@ -1343,37 +1337,37 @@ public class lowonganpage extends javax.swing.JFrame {
 
     private void homeButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeButton3MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianK.dispose();
         new homepage().setVisible(true);
     }//GEN-LAST:event_homeButton3MouseClicked
 
     private void masukButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masukButton3MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianK.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_masukButton3MouseClicked
 
     private void lowonganButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lowonganButton3MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianK.dispose();
         new lowonganpage().setVisible(true);
     }//GEN-LAST:event_lowonganButton3MouseClicked
 
     private void faqButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButton3MouseClicked
         // TODO add your handling code here:
-        dispose();
+        rincianK.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_faqButton3MouseClicked
 
     private void lamarButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton3ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        rincianK.dispose();
         new loginpage().setVisible(true);
     }//GEN-LAST:event_lamarButton3ActionPerformed
 
     private void bingung3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung3ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        rincianK.dispose();
         new faqpage().setVisible(true);
     }//GEN-LAST:event_bingung3ActionPerformed
 
