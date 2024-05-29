@@ -48,6 +48,10 @@ public class hrd_home extends javax.swing.JFrame {
         hrdProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilHRD.png")));
         userProfil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilEmpty.png")));
         userProfil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilEmpty.png")));
+        
+        String username = Session.getInstance().getUsername();
+        readHrd(username);
+                
     }
 
     private void readHrd(String username) {
@@ -59,17 +63,25 @@ public class hrd_home extends javax.swing.JFrame {
             statement.setString(1, username);
 
             ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                hrdLabel.setText(resultSet.getString("nama"));
-
-            } else {
-                //do nothing wkwk
+            if (!resultSet.next()) {
+                JOptionPane.showMessageDialog(this, "No data found for username: " + username);
+                clearFields(); // Clear fields if no data found
+                return;
             }
+            
+            String nama = resultSet.getString("nama") != null ? resultSet.getString("nama") : "";
+            hrdLabel.setText(nama);
+            
         } catch (SQLException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }
+    
+    private void clearFields() {
+        hrdLabel.setText("");
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.

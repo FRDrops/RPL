@@ -16,9 +16,19 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.CardLayout;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Blob;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -36,10 +46,18 @@ public class user_data extends javax.swing.JFrame {
     /**
      * Creates new form user_data
      */
+    private JLabel imageLabel;
+    private JButton selectButton;
+    private JButton uploadButton;
+    private File selectedFile;
     loginpage login = new loginpage();
     private user_home userHome;
+    private JFrame frame;
+    private static final String URL = "jdbc:mysql://localhost:3306/gendhu_roso";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
     
-    public user_data() {
+    public user_data() throws IOException {
         initComponents();
         setLocationRelativeTo(null);
         uploadSection.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,7 +77,7 @@ public class user_data extends javax.swing.JFrame {
         userHome = new user_home();
     }
     
-    private void readUser(String username) {
+    private void readUser(String username) throws IOException {
         try {
             System.out.println(username);
             Koneksi konek = new Koneksi();
@@ -85,8 +103,8 @@ public class user_data extends javax.swing.JFrame {
             String email = resultSet.getString("email") != null ? resultSet.getString("email") : "";
             String alamat = resultSet.getString("alamat") != null ? resultSet.getString("alamat") : "";
             String nik = resultSet.getString("nik") != null ? resultSet.getString("nik") : "";
-
-            // Set text fields
+            Blob fotoBlob = resultSet.getBlob("foto");
+            
             judul2.setText(nama);
             jenisInput.setSelectedItem(jenisKelamin);
             tempatInput.setText(tempatLahir);
@@ -96,6 +114,15 @@ public class user_data extends javax.swing.JFrame {
             keterangan2.setText(email);
             alamatInput.setText(alamat);
             nikInput.setText(nik);
+
+            if (fotoBlob != null) {
+                byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
+                Image image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
+                ImageIcon fotoIcon = new ImageIcon();
+                userProfil.setIcon(fotoIcon);
+            } else {
+                //apa
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -726,8 +753,115 @@ public class user_data extends javax.swing.JFrame {
     
     private void profilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilButtonActionPerformed
         // TODO add your handling code here:
+        this.inputImage();
     }//GEN-LAST:event_profilButtonActionPerformed
 
+    public void inputImage() {
+        JFrame frame = new JFrame("Image Uploader");
+        frame.setSize(400, 100);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLayout(new BorderLayout());
+
+        JLabel imageLabel = new JLabel("No image selected", SwingConstants.CENTER);
+        JButton selectButton = new JButton("Select Image");
+        JButton uploadButton = new JButton("Upload Image");
+        uploadButton.setEnabled(false);
+
+        selectButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                int result = fileChooser.showOpenDialog(null);
+                if (result == JFileChooser.APPROVE_OPTION) {
+                    selectedFile = fileChooser.getSelectedFile(); // Menyimpan file terpilih di variabel instance
+                    ImageIcon icon = new ImageIcon(new ImageIcon(selectedFile.getAbsolutePath()).getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                    imageLabel.setIcon(icon);
+                    imageLabel.setText(null);
+                    uploadButton.setEnabled(true);
+                }
+            }
+        });
+
+        uploadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (selectedFile != null) {
+                    uploadImageToDatabase(selectedFile);
+                } else {
+                    JOptionPane.showMessageDialog(user_data.this, "Please select an image to upload.");
+                }
+            }
+        });
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(selectButton);
+        buttonPanel.add(uploadButton);
+
+        frame.setLocationRelativeTo(null);
+        frame.add(imageLabel, BorderLayout.CENTER);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
+
+        // Menampilkan JFrame baru
+        frame.setVisible(true);
+    }
+    
+    public void closeUploaderFrame() {
+        frame.dispose();
+    }
+    
+    private void uploadImageToDatabase(File file) {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            String sql = "UPDATE data_user SET foto = ? WHERE username_user = ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+
+            FileInputStream inputStream = new FileInputStream(file);
+            statement.setBlob(1, inputStream);
+
+            
+            String username = Session.getInstance().getUsername();
+            statement.setString(2, username);
+
+            int row = statement.executeUpdate();
+            if (row > 0) {
+                JOptionPane.showMessageDialog(this, "File has been saved.");
+                this.displayImageFromDatabase(username);
+                closeUploaderFrame();
+            }
+            inputStream.close();
+        } catch (SQLException | FileNotFoundException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    private void displayImageFromDatabase(String username) {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            String sql = "SELECT foto FROM data_user WHERE username_user = ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, username);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                byte[] imgBytes = resultSet.getBytes("foto");
+                if (imgBytes != null) {
+                    ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
+                    ImageIcon icon = new ImageIcon(new ImageIcon(bis.readAllBytes()).getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                    imageLabel.setIcon(icon);
+                    imageLabel.setText(null);
+                } else {
+                    imageLabel.setText("Error.");
+                }
+            } else {
+                imageLabel.setText("Error.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            imageLabel.setText("Error loading image: " + e.getMessage());
+        }
+    }
+    
     private void tempatInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tempatInputActionPerformed
@@ -771,7 +905,7 @@ public class user_data extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -798,7 +932,11 @@ public class user_data extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new user_data().setVisible(true);
+                try {
+                    new user_data().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(user_data.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         
