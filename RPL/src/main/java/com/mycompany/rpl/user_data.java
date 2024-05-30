@@ -116,6 +116,7 @@ public class user_data extends javax.swing.JFrame {
                 Image image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
                 ImageIcon fotoIcon = new ImageIcon();
                 userProfil.setIcon(fotoIcon);
+                
             } else {
                 //apa hayo
             }
@@ -168,6 +169,7 @@ public class user_data extends javax.swing.JFrame {
         ketCV = new javax.swing.JLabel();
         ketKTP = new javax.swing.JLabel();
         ketIJAZAH = new javax.swing.JLabel();
+        userProfil = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -182,7 +184,6 @@ public class user_data extends javax.swing.JFrame {
         about = new javax.swing.JLabel();
         support = new javax.swing.JLabel();
         logoutButton = new javax.swing.JLabel();
-        userProfil = new javax.swing.JLabel();
         jPanel3 = new RoundedPanel(50, new Color(215, 204, 185));
         judul2 = new javax.swing.JLabel();
         keterangan2 = new javax.swing.JLabel();
@@ -212,9 +213,7 @@ public class user_data extends javax.swing.JFrame {
         infoIcon = new javax.swing.JLabel();
         infoLabel1 = new javax.swing.JLabel();
 
-        uploadSection.setMaximumSize(new java.awt.Dimension(475, 325));
         uploadSection.setMinimumSize(new java.awt.Dimension(475, 325));
-        uploadSection.setPreferredSize(new java.awt.Dimension(475, 325));
         uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -271,6 +270,11 @@ public class user_data extends javax.swing.JFrame {
         cv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cv.setText("CV");
         cv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cvMouseClicked(evt);
+            }
+        });
         nav6.add(cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 60));
@@ -283,6 +287,11 @@ public class user_data extends javax.swing.JFrame {
         ktp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ktp.setText("KTP");
         ktp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ktp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ktpMouseClicked(evt);
+            }
+        });
         nav5.add(ktp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 70, 60));
@@ -307,6 +316,11 @@ public class user_data extends javax.swing.JFrame {
         skck.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         skck.setText("SKCK");
         skck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        skck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                skckMouseClicked(evt);
+            }
+        });
         nav3.add(skck, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 70, 60));
@@ -319,6 +333,11 @@ public class user_data extends javax.swing.JFrame {
         ijazah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ijazah.setText("IJAZAH");
         ijazah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ijazah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ijazahMouseClicked(evt);
+            }
+        });
         nav2.add(ijazah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 70, 60));
@@ -354,6 +373,13 @@ public class user_data extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        userProfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userProfilMouseClicked(evt);
+            }
+        });
+        getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 220, 210));
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -464,13 +490,6 @@ public class user_data extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
-
-        userProfil.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                userProfilMouseClicked(evt);
-            }
-        });
-        getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 230, 240));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -931,6 +950,22 @@ public class user_data extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_userProfilMouseClicked
+
+    private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cvMouseClicked
+
+    private void ktpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ktpMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ktpMouseClicked
+
+    private void ijazahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ijazahMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ijazahMouseClicked
+
+    private void skckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skckMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_skckMouseClicked
 
     /**
      * @param args the command line arguments
