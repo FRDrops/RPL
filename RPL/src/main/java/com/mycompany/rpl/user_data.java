@@ -21,6 +21,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -304,6 +307,11 @@ public class user_data extends javax.swing.JFrame {
         save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         save.setText("SAVE");
         save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveMouseClicked(evt);
+            }
+        });
         nav4.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 70, 60));
@@ -951,21 +959,95 @@ public class user_data extends javax.swing.JFrame {
         
     }//GEN-LAST:event_userProfilMouseClicked
 
+    public void selectFile(JLabel label) {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("JPG & PNG Images", "jpg", "png"));
+
+        int returnValue = fileChooser.showOpenDialog(null);
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            selectedFile = fileChooser.getSelectedFile();
+            try {
+                // Simpan sementara di folder temp
+                Path tempDir = Files.createTempDirectory("uploaded_images");
+                Path tempFile = Paths.get(tempDir.toString(), selectedFile.getName());
+                Files.copy(selectedFile.toPath(), tempFile);
+                selectedFile = tempFile.toFile();
+
+                // Konfirmasi sukses upload
+                label.setText("Ada");
+            } catch (IOException e) {
+                e.printStackTrace();
+                label.setText("Tidak ada");
+            }
+        } else {
+            label.setText("Tidak ada dokumen dipilih");
+        }
+    }
+
+    public File getSelectedFile() {
+        return selectedFile;
+    }
+    
+    public void uploadFileToDatabase(String username, String kolom) {
+        if (selectedFile == null) {
+            System.out.println("Tidak ada file yang dipilih.");
+            return;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(selectedFile);
+            byte[] fileBytes = fis.readAllBytes();
+            fis.close();
+
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String sql = "UPDATE data_user SET " + kolom + " = ? WHERE username_user = ?";
+            PreparedStatement statement = koneksi.prepareStatement(sql);
+            statement.setBytes(1, fileBytes);
+            statement.setString(2, username);
+
+            int rowsAffected = statement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("File berhasil diunggah ke database.");
+            } else {
+                System.out.println("Gagal mengunggah file ke database.");
+            }
+
+            statement.close();
+            koneksi.close();
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Kesalahan saat membaca file: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
     private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
         // TODO add your handling code here:
+        selectFile(ketCV);
     }//GEN-LAST:event_cvMouseClicked
 
     private void ktpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ktpMouseClicked
         // TODO add your handling code here:
+        selectFile(ketKTP);
     }//GEN-LAST:event_ktpMouseClicked
 
     private void ijazahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ijazahMouseClicked
         // TODO add your handling code here:
+        selectFile(ketIJAZAH);
     }//GEN-LAST:event_ijazahMouseClicked
 
     private void skckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skckMouseClicked
         // TODO add your handling code here:
+        selectFile(ketSKCK);
     }//GEN-LAST:event_skckMouseClicked
+
+    private void saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveMouseClicked
 
     /**
      * @param args the command line arguments
