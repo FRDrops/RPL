@@ -29,6 +29,7 @@ import javax.swing.border.*;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -57,6 +58,16 @@ public class user_lamaran extends javax.swing.JFrame {
         userHome = new user_home();
     }
 
+    // buat konten tabel rata tengah :)
+    private void centerAlignTableCells() {
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+    for (int i = 0; i < tableLamaran.getColumnCount(); i++) {
+        tableLamaran.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -356,6 +367,9 @@ public class user_lamaran extends javax.swing.JFrame {
         String username = Session.getInstance().getUsername();
         DefaultTableModel model = readPelamar(username);
         tableLamaran.setModel(model);
+        
+        // Set renderer to center align
+        centerAlignTableCells();
     }
     
     private void datasayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datasayaIconMouseClicked

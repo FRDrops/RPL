@@ -41,8 +41,7 @@ import javax.swing.table.TableCellRenderer;
  * @author ASUS
  */
 public class hrd_pelamar extends javax.swing.JFrame {
-    public TableCellRenderer centerAlight = new Texttablecenter();
-
+    
     /**
      * Creates new form hrd_pelamar
      */
@@ -61,6 +60,16 @@ public class hrd_pelamar extends javax.swing.JFrame {
         decline.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
         
         readToTable();
+    }
+    
+    // buat konten tabel rata tengah :)
+    private void centerAlignTableCells() {
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+    for (int i = 0; i < tablePelamar.getColumnCount(); i++) {
+        tablePelamar.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
     }
 
     public DefaultTableModel readPelamar(){
@@ -112,6 +121,9 @@ public class hrd_pelamar extends javax.swing.JFrame {
         ));
         DefaultTableModel model = readPelamar();
         tablePelamar.setModel(model);
+        
+        // Set renderer to center align
+        centerAlignTableCells();
     }
     
     /**
