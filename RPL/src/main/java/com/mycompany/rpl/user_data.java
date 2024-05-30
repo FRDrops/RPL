@@ -16,6 +16,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.CardLayout;
+import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -115,9 +116,15 @@ public class user_data extends javax.swing.JFrame {
             nikInput.setText(nik);
 
             if (fotoBlob != null) {
-                byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
+               /* byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
                 Image image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
                 ImageIcon fotoIcon = new ImageIcon();
+                userProfil.setIcon(fotoIcon);*/
+                byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
+                BufferedImage image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
+                int diameter = 200; // Atur diameter sesuai keinginan
+                BufferedImage roundedImage = makeRoundedCorner(image, diameter);
+                ImageIcon fotoIcon = new ImageIcon(roundedImage);
                 userProfil.setIcon(fotoIcon);
                 
             } else {
@@ -162,16 +169,17 @@ public class user_data extends javax.swing.JFrame {
         cv = new javax.swing.JLabel();
         nav5 = new RoundedPanel(10, new Color(112, 104, 94));
         ktp = new javax.swing.JLabel();
-        nav4 = new RoundedPanel(10, new Color(255, 255, 255));
-        save = new javax.swing.JLabel();
+        nav4 = new RoundedPanel(10, new Color(112, 104, 94));
+        kk = new javax.swing.JLabel();
         nav3 = new RoundedPanel(10, new Color(112, 104, 94));
         skck = new javax.swing.JLabel();
         nav2 = new RoundedPanel(10, new Color(112, 104, 94));
         ijazah = new javax.swing.JLabel();
-        ketSKCK = new javax.swing.JLabel();
+        ketKK = new javax.swing.JLabel();
         ketCV = new javax.swing.JLabel();
         ketKTP = new javax.swing.JLabel();
         ketIJAZAH = new javax.swing.JLabel();
+        ketSKCK = new javax.swing.JLabel();
         userProfil = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
@@ -215,6 +223,7 @@ public class user_data extends javax.swing.JFrame {
         infoLabel = new javax.swing.JLabel();
         infoIcon = new javax.swing.JLabel();
         infoLabel1 = new javax.swing.JLabel();
+        infoLabel3 = new javax.swing.JLabel();
 
         uploadSection.setMinimumSize(new java.awt.Dimension(475, 325));
         uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -302,17 +311,17 @@ public class user_data extends javax.swing.JFrame {
         nav4.setBackground(new java.awt.Color(249, 248, 242));
         nav4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        save.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        save.setForeground(new java.awt.Color(112, 104, 94));
-        save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        save.setText("SAVE");
-        save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        save.addMouseListener(new java.awt.event.MouseAdapter() {
+        kk.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        kk.setForeground(new java.awt.Color(255, 255, 255));
+        kk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kk.setText("KK");
+        kk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        kk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                saveMouseClicked(evt);
+                kkMouseClicked(evt);
             }
         });
-        nav4.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+        nav4.add(kk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 70, 60));
 
@@ -350,29 +359,35 @@ public class user_data extends javax.swing.JFrame {
 
         nav1.add(nav2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 70, 60));
 
-        ketSKCK.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        ketSKCK.setForeground(new java.awt.Color(49, 45, 34));
-        ketSKCK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ketSKCK.setText("Tidak Ada");
-        nav1.add(ketSKCK, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 70, 20));
+        ketKK.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        ketKK.setForeground(new java.awt.Color(49, 45, 34));
+        ketKK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ketKK.setText("Tidak Ada");
+        nav1.add(ketKK, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 70, 20));
 
-        ketCV.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketCV.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         ketCV.setForeground(new java.awt.Color(49, 45, 34));
         ketCV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ketCV.setText("Tidak Ada");
         nav1.add(ketCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 70, 20));
 
-        ketKTP.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketKTP.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         ketKTP.setForeground(new java.awt.Color(49, 45, 34));
         ketKTP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ketKTP.setText("Tidak Ada");
         nav1.add(ketKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 70, 20));
 
-        ketIJAZAH.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketIJAZAH.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         ketIJAZAH.setForeground(new java.awt.Color(49, 45, 34));
         ketIJAZAH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ketIJAZAH.setText("Tidak Ada");
         nav1.add(ketIJAZAH, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 70, 20));
+
+        ketSKCK.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        ketSKCK.setForeground(new java.awt.Color(49, 45, 34));
+        ketSKCK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ketSKCK.setText("Tidak Ada");
+        nav1.add(ketSKCK, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 70, 20));
 
         jPanel10.add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 440, 100));
 
@@ -714,11 +729,17 @@ public class user_data extends javax.swing.JFrame {
         getContentPane().add(infoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 450, 260, 20));
         getContentPane().add(infoIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 140, 40));
 
-        infoLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        infoLabel1.setForeground(new java.awt.Color(0, 74, 173));
+        infoLabel1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        infoLabel1.setForeground(new java.awt.Color(169, 42, 13));
         infoLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        infoLabel1.setText("Klik untuk mengganti data kamu");
-        getContentPane().add(infoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 210, 40));
+        infoLabel1.setText("*Format yy//mm/dd. Contoh, 1 Februari 2024, jadi 2024-02-01");
+        getContentPane().add(infoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, 280, 20));
+
+        infoLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        infoLabel3.setForeground(new java.awt.Color(0, 74, 173));
+        infoLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        infoLabel3.setText("Klik untuk mengganti data kamu. Dan selalu klik simpan setelah mengubah data kamu.");
+        getContentPane().add(infoLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 540, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -910,8 +931,14 @@ public class user_data extends javax.swing.JFrame {
             if (resultSet.next()) {
                 byte[] imgBytes = resultSet.getBytes("foto");
                 if (imgBytes != null) {
-                    ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
+                    /*ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
                     ImageIcon icon = new ImageIcon(new ImageIcon(bis.readAllBytes()).getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                    userProfil.setIcon(icon);*/
+                    ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
+                    BufferedImage image = ImageIO.read(bis);
+                    int diameter = 200; // Atur diameter sesuai keinginan
+                    BufferedImage roundedImage = makeRoundedCorner(image, diameter);
+                    ImageIcon icon = new ImageIcon(roundedImage);
                     userProfil.setIcon(icon);
                     userProfil.setText(null);
                 } else {
@@ -922,6 +949,36 @@ public class user_data extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+    
+    private BufferedImage makeRoundedCorner(BufferedImage image, int diameter) {
+        int size = Math.min(image.getWidth(), image.getHeight());
+        BufferedImage squareImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = squareImage.createGraphics();
+        applyQualityRenderingHints(g2);
+        g2.drawImage(image, 0, 0, size, size, null);
+        g2.dispose();
+
+        BufferedImage roundedImage = new BufferedImage(diameter, diameter, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = roundedImage.createGraphics();
+        applyQualityRenderingHints(g2d);
+
+        g2d.setClip(new Ellipse2D.Double(0, 0, diameter, diameter));
+        g2d.drawImage(squareImage, 0, 0, diameter, diameter, null);
+        g2d.dispose();
+
+        return roundedImage;
+    }
+
+    private void applyQualityRenderingHints(Graphics2D g2d) {
+        g2d.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING, RenderingHints.VALUE_COLOR_RENDER_QUALITY);
+        g2d.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_ENABLE);
+        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+    }
+
+
     
     private void tempatInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempatInputActionPerformed
         // TODO add your handling code here:
@@ -1049,9 +1106,10 @@ public class user_data extends javax.swing.JFrame {
         selectFile(ketSKCK);
     }//GEN-LAST:event_skckMouseClicked
 
-    private void saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveMouseClicked
+    private void kkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kkMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_saveMouseClicked
+        selectFile(ketKK);
+    }//GEN-LAST:event_kkMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1112,6 +1170,7 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JLabel infoIcon;
     private javax.swing.JLabel infoLabel;
     private javax.swing.JLabel infoLabel1;
+    private javax.swing.JLabel infoLabel3;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;
@@ -1134,9 +1193,11 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JLabel judul2;
     private javax.swing.JLabel ketCV;
     private javax.swing.JLabel ketIJAZAH;
+    private javax.swing.JLabel ketKK;
     private javax.swing.JLabel ketKTP;
     private javax.swing.JLabel ketSKCK;
     private javax.swing.JLabel keterangan2;
+    private javax.swing.JLabel kk;
     private javax.swing.JLabel ktp;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label2;
@@ -1156,7 +1217,6 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JTextField nomorInput;
     private javax.swing.JComboBox<String> pendInput;
     private javax.swing.JButton profilButton;
-    private javax.swing.JLabel save;
     private javax.swing.JButton simpanButton;
     private javax.swing.JLabel skck;
     private javax.swing.JLabel support;
