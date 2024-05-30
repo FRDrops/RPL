@@ -1740,8 +1740,68 @@ public class user_loker extends javax.swing.JFrame {
 
     private void lamarButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton3ActionPerformed
         // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin melanjutkan?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        String username = Session.getInstance().getUsername();
+        if (response == JOptionPane.YES_OPTION) {
+            System.out.println(username);
+            try {
+                if (cekDataUser(username)) {
+                    System.out.println(username);
+                    createLamaranK(username);
+                } else {
+                    System.out.println("gagal ges");
+                    JOptionPane.showMessageDialog(user_loker.this, "Lengkapi dulu data kamu dan pastikan tidak ada yang kosong.");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+        }
     }//GEN-LAST:event_lamarButton3ActionPerformed
 
+    public void createLamaranK(String username_user){
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement ps = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "INSERT INTO lowongan_k (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            ps = koneksi.prepareStatement(query);
+            ps.setString(1, username_user);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Lamaran berhasil dibuat untuk user: " + username_user);
+            } else {
+                System.out.println("Lamaran gagal dibuat untuk user: " + username_user);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+
+            if (ex.getSQLState().equals("23505")) {
+                System.out.println("Kesalahan: Data duplikat ditemukan untuk user: " + username_user);
+            } else {
+                System.out.println("Kesalahan SQLState: " + ex.getSQLState());
+            }
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     private void backButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton2MouseClicked
         // TODO add your handling code here:
         hasilK.dispose();
