@@ -117,7 +117,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         tablePegawai = new javax.swing.JTable();
 
         rincianPegawai.setBackground(new java.awt.Color(255, 255, 255));
-        rincianPegawai.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianPegawai.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianPegawai.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

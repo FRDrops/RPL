@@ -120,7 +120,7 @@ public class user_data extends javax.swing.JFrame {
                 ImageIcon fotoIcon = new ImageIcon();
                 userProfil.setIcon(fotoIcon);
             } else {
-                //apa
+                //apa hayo
             }
 
         } catch (SQLException e) {
@@ -150,6 +150,12 @@ public class user_data extends javax.swing.JFrame {
     private void initComponents() {
 
         uploadSection = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel2 = new RoundedPanel(10, new Color(249, 248, 242));
+        label = new javax.swing.JLabel();
+        judul = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        label2 = new javax.swing.JLabel();
         nav1 = new RoundedPanel(10, new Color(249, 248, 242));
         nav6 = new RoundedPanel(10, new Color(112, 104, 94));
         cv = new javax.swing.JLabel();
@@ -161,11 +167,10 @@ public class user_data extends javax.swing.JFrame {
         skck = new javax.swing.JLabel();
         nav2 = new RoundedPanel(10, new Color(112, 104, 94));
         ijazah = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel2 = new RoundedPanel(10, new Color(249, 248, 242));
-        label = new javax.swing.JLabel();
-        judul = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        ketSKCK = new javax.swing.JLabel();
+        ketCV = new javax.swing.JLabel();
+        ketKTP = new javax.swing.JLabel();
+        ketIJAZAH = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -210,8 +215,52 @@ public class user_data extends javax.swing.JFrame {
         infoIcon = new javax.swing.JLabel();
         infoLabel1 = new javax.swing.JLabel();
 
-        uploadSection.setMinimumSize(new java.awt.Dimension(480, 540));
+        uploadSection.setMaximumSize(new java.awt.Dimension(475, 325));
+        uploadSection.setMinimumSize(new java.awt.Dimension(475, 325));
+        uploadSection.setPreferredSize(new java.awt.Dimension(475, 325));
         uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setMaximumSize(new java.awt.Dimension(467, 272));
+        jPanel10.setMinimumSize(new java.awt.Dimension(467, 272));
+        jPanel10.setPreferredSize(new java.awt.Dimension(467, 272));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label.setForeground(new java.awt.Color(215, 204, 185));
+        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label.setText("Pastikan semua berkas dalam bentuk file JPG/PNG");
+        jPanel2.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 320, -1));
+
+        judul.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        judul.setForeground(new java.awt.Color(49, 45, 34));
+        judul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul.setText("Upload Section");
+        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 210, 50));
+
+        jButton1.setBackground(new java.awt.Color(112, 104, 94));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Kembali");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusable(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        label2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label2.setForeground(new java.awt.Color(215, 204, 185));
+        label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label2.setText("Jangan lupa klik save");
+        jPanel2.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 190, -1));
+
+        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 130));
 
         nav1.setBackground(new java.awt.Color(255, 255, 255));
         nav1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -277,45 +326,33 @@ public class user_data extends javax.swing.JFrame {
 
         nav1.add(nav2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 70, 60));
 
-        uploadSection.getContentPane().add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 440, 80));
+        ketSKCK.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketSKCK.setForeground(new java.awt.Color(49, 45, 34));
+        ketSKCK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ketSKCK.setText("Tidak Ada");
+        nav1.add(ketSKCK, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 70, 20));
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel10.setMaximumSize(new java.awt.Dimension(460, 520));
-        jPanel10.setMinimumSize(new java.awt.Dimension(460, 520));
-        jPanel10.setPreferredSize(new java.awt.Dimension(460, 520));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        ketCV.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketCV.setForeground(new java.awt.Color(49, 45, 34));
+        ketCV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ketCV.setText("Tidak Ada");
+        nav1.add(ketCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 70, 20));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        ketKTP.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketKTP.setForeground(new java.awt.Color(49, 45, 34));
+        ketKTP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ketKTP.setText("Tidak Ada");
+        nav1.add(ketKTP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 70, 20));
 
-        label.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        label.setForeground(new java.awt.Color(215, 204, 185));
-        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label.setText("Jangan lupa klik save");
-        jPanel2.add(label, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 190, -1));
+        ketIJAZAH.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        ketIJAZAH.setForeground(new java.awt.Color(49, 45, 34));
+        ketIJAZAH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ketIJAZAH.setText("Tidak Ada");
+        nav1.add(ketIJAZAH, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 70, 20));
 
-        judul.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        judul.setForeground(new java.awt.Color(49, 45, 34));
-        judul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        judul.setText("Upload Section");
-        jPanel2.add(judul, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 120, -1));
+        jPanel10.add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 440, 100));
 
-        jButton1.setBackground(new java.awt.Color(112, 104, 94));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Kembali");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFocusable(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 390));
-
-        uploadSection.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 520));
+        uploadSection.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 310));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -882,7 +919,7 @@ public class user_data extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         uploadSection.setLocationRelativeTo(null);
-        uploadSection.setSize(480, 540);
+        uploadSection.setSize(467, 272);
         uploadSection.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         uploadSection.setVisible(true);
     }//GEN-LAST:event_uploadBerkasActionPerformed
@@ -981,9 +1018,14 @@ public class user_data extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jenisInput;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel judul2;
+    private javax.swing.JLabel ketCV;
+    private javax.swing.JLabel ketIJAZAH;
+    private javax.swing.JLabel ketKTP;
+    private javax.swing.JLabel ketSKCK;
     private javax.swing.JLabel keterangan2;
     private javax.swing.JLabel ktp;
     private javax.swing.JLabel label;
+    private javax.swing.JLabel label2;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
     private javax.swing.JLabel logoutButton;

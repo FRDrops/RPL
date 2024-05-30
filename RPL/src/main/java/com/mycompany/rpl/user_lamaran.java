@@ -75,27 +75,11 @@ public class user_lamaran extends javax.swing.JFrame {
         about = new javax.swing.JLabel();
         support = new javax.swing.JLabel();
         logoutButton = new javax.swing.JLabel();
-        jPanel2 = new RoundedPanel(50, new Color(249, 248, 242));
-        status2 = new javax.swing.JLabel();
-        keterangan1 = new javax.swing.JLabel();
-        keterangan2 = new javax.swing.JLabel();
-        keterangan3 = new javax.swing.JLabel();
-        loker1 = new javax.swing.JLabel();
-        loker2 = new javax.swing.JLabel();
-        tanggal1 = new javax.swing.JLabel();
-        tanggal2 = new javax.swing.JLabel();
-        status1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        loker3 = new javax.swing.JLabel();
-        tanggal3 = new javax.swing.JLabel();
-        status3 = new javax.swing.JLabel();
-        loker4 = new javax.swing.JLabel();
-        tanggal4 = new javax.swing.JLabel();
-        status4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableLamaran = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -107,7 +91,6 @@ public class user_lamaran extends javax.swing.JFrame {
         lokerLabel.setText("Loker Kerja");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
 
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -121,7 +104,6 @@ public class user_lamaran extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 30));
 
-        datasayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaBlack.png")); // NOI18N
         datasayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         datasayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,7 +112,6 @@ public class user_lamaran extends javax.swing.JFrame {
         });
         nav.add(datasayaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
 
-        lamsayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaWhite.png")); // NOI18N
         lamsayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lamsayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -144,7 +125,6 @@ public class user_lamaran extends javax.swing.JFrame {
         datasayaLabel.setText("Data Saya");
         nav.add(datasayaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaBlack.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -219,106 +199,55 @@ public class user_lamaran extends javax.swing.JFrame {
         });
         getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 30, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        status2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        status2.setForeground(new java.awt.Color(112, 104, 94));
-        status2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status2.setText("-");
-        jPanel2.add(status2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 200, 30));
-
-        keterangan1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        keterangan1.setForeground(new java.awt.Color(49, 45, 34));
-        keterangan1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        keterangan1.setText("Loker");
-        jPanel2.add(keterangan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 80, 30));
-
-        keterangan2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        keterangan2.setForeground(new java.awt.Color(49, 45, 34));
-        keterangan2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        keterangan2.setText("Tanggal Melamar");
-        jPanel2.add(keterangan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 210, 30));
-
-        keterangan3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        keterangan3.setForeground(new java.awt.Color(49, 45, 34));
-        keterangan3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        keterangan3.setText("Status");
-        jPanel2.add(keterangan3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 20, 80, 30));
-
-        loker1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        loker1.setForeground(new java.awt.Color(112, 104, 94));
-        loker1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loker1.setText("-");
-        jPanel2.add(loker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 180, 30));
-
-        loker2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        loker2.setForeground(new java.awt.Color(112, 104, 94));
-        loker2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loker2.setText("-");
-        jPanel2.add(loker2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 180, 30));
-
-        tanggal1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        tanggal1.setForeground(new java.awt.Color(112, 104, 94));
-        tanggal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tanggal1.setText("-");
-        jPanel2.add(tanggal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 230, 30));
-
-        tanggal2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        tanggal2.setForeground(new java.awt.Color(112, 104, 94));
-        tanggal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tanggal2.setText("-");
-        jPanel2.add(tanggal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 230, 30));
-
-        status1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        status1.setForeground(new java.awt.Color(112, 104, 94));
-        status1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status1.setText("-");
-        jPanel2.add(status1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 200, 30));
-
-        jSeparator1.setForeground(new java.awt.Color(112, 104, 94));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 960, 20));
-
-        loker3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        loker3.setForeground(new java.awt.Color(112, 104, 94));
-        loker3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loker3.setText("-");
-        jPanel2.add(loker3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 180, 30));
-
-        tanggal3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        tanggal3.setForeground(new java.awt.Color(112, 104, 94));
-        tanggal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tanggal3.setText("-");
-        jPanel2.add(tanggal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 230, 30));
-
-        status3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        status3.setForeground(new java.awt.Color(112, 104, 94));
-        status3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status3.setText("-");
-        jPanel2.add(status3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 200, 30));
-
-        loker4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        loker4.setForeground(new java.awt.Color(112, 104, 94));
-        loker4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loker4.setText("-");
-        jPanel2.add(loker4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 180, 30));
-
-        tanggal4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        tanggal4.setForeground(new java.awt.Color(112, 104, 94));
-        tanggal4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tanggal4.setText("-");
-        jPanel2.add(tanggal4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, 230, 30));
-
-        status4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        status4.setForeground(new java.awt.Color(112, 104, 94));
-        status4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        status4.setText("-");
-        jPanel2.add(status4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 200, 30));
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 960, 380));
-
         jSeparator2.setForeground(new java.awt.Color(215, 204, 185));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 960, 20));
+
+        tableLamaran.setBackground(new java.awt.Color(249, 248, 242));
+        tableLamaran.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tableLamaran.setForeground(new java.awt.Color(49, 45, 34));
+        tableLamaran.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Juru Masak", "25-05-24 12:12:45", ""},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Loker", "Tanggal Melamar", "Status"
+            }
+        ));
+        tableLamaran.setGridColor(new java.awt.Color(215, 204, 185));
+        tableLamaran.setRowHeight(30);
+        tableLamaran.setSelectionBackground(new java.awt.Color(215, 204, 185));
+        jScrollPane1.setViewportView(tableLamaran);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 970, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -422,32 +351,17 @@ public class user_lamaran extends javax.swing.JFrame {
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel judul;
-    private javax.swing.JLabel keterangan1;
-    private javax.swing.JLabel keterangan2;
-    private javax.swing.JLabel keterangan3;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
     private javax.swing.JLabel logoutButton;
-    private javax.swing.JLabel loker1;
-    private javax.swing.JLabel loker2;
-    private javax.swing.JLabel loker3;
-    private javax.swing.JLabel loker4;
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
     private javax.swing.JPanel nav;
-    private javax.swing.JLabel status1;
-    private javax.swing.JLabel status2;
-    private javax.swing.JLabel status3;
-    private javax.swing.JLabel status4;
     private javax.swing.JLabel support;
-    private javax.swing.JLabel tanggal1;
-    private javax.swing.JLabel tanggal2;
-    private javax.swing.JLabel tanggal3;
-    private javax.swing.JLabel tanggal4;
+    private javax.swing.JTable tableLamaran;
     // End of variables declaration//GEN-END:variables
 
 class RoundedPanel extends JPanel
