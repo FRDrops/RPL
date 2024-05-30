@@ -76,6 +76,44 @@ public class user_loker extends javax.swing.JFrame {
         userHome = new user_home();
     }
 
+    public boolean cekDataUser(String username) throws SQLException {
+        boolean allFilled = false;
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        String[] columns = {"nama", "jenis_kelamin", "tempat_lahir", "tanggal_lahir", "pendidikan", "telepon", "email", "alamat", "nik", "ijazah", "cv", "kk", "ktp", "skck", "foto"};
+
+        try {
+            Statement statement = koneksi.createStatement();
+            String query = "SELECT * FROM data_user WHERE username_user = '" + username + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                allFilled = true;
+                for (String column : columns) {
+                    if (resultSet.getString(column) == null || resultSet.getString(column).isEmpty()) {
+                        allFilled = false;
+                        break;
+                    }
+                }
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return allFilled;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1558,9 +1596,10 @@ public class user_loker extends javax.swing.JFrame {
             try {
                 if (cekDataUser(username)) {
                     System.out.println(username);
-                    createLamaran(username);
+                    createLamaranJM(username);
                 } else {
                     System.out.println("gagal ges");
+                    JOptionPane.showMessageDialog(user_loker.this, "Lengkapi dulu data kamu dan pastikan tidak ada yang kosong.");
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
@@ -1569,64 +1608,47 @@ public class user_loker extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lamarButtonJMActionPerformed
 
-    public void createLamaran(String username_user){
-        try {
-            Koneksi konek = new Koneksi();
-            Connection koneksi = konek.open();
-            String query = "INSERT INTO lowongan_jm (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
-            PreparedStatement ps = koneksi.prepareStatement(query);
+    public void createLamaranJM(String username_user){
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement ps = null;
 
+        try {
+            koneksi = konek.open();
+            String query = "INSERT INTO lowongan_jm (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            ps = koneksi.prepareStatement(query);
             ps.setString(1, username_user);
 
             int rowsAffected = ps.executeUpdate();
 
             if (rowsAffected > 0) {
+                System.out.println("Lamaran berhasil dibuat untuk user: " + username_user);
             } else {
+                System.out.println("Lamaran gagal dibuat untuk user: " + username_user);
             }
 
         } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+
             if (ex.getSQLState().equals("23505")) {
+                System.out.println("Kesalahan: Data duplikat ditemukan untuk user: " + username_user);
             } else {
+                System.out.println("Kesalahan SQLState: " + ex.getSQLState());
             }
-        }
-    }
-    
-    public boolean cekDataUser(String username) throws SQLException {
-        boolean allFilled = false;
-        Koneksi konek = new Koneksi();
-        Connection koneksi = konek.open();
-        String[] columns = {"nama", "jenis_kelamin", "tempat_lahir", "tanggal_lahir", "pendidikan", "telepon", "email", "alamat", "nik", "ijazah", "cv", "kk", "ktp", "skck", "foto"};
-
-        try {
-            Statement statement = koneksi.createStatement();
-            String query = "SELECT * FROM data_user WHERE username_user = '" + username + "'";
-            ResultSet resultSet = statement.executeQuery(query);
-
-            if (resultSet.next()) {
-                allFilled = true;
-                for (String column : columns) {
-                    if (resultSet.getString(column) == null || resultSet.getString(column).isEmpty()) {
-                        allFilled = false;
-                        break;
-                    }
-                }
-            }
-
-            resultSet.close();
-            statement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             try {
+                if (ps != null) {
+                    ps.close();
+                }
                 if (koneksi != null && !koneksi.isClosed()) {
                     koneksi.close();
                 }
             } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
                 e.printStackTrace();
             }
         }
-
-        return allFilled;
     }
     
     private void lihatHasil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil1ActionPerformed
@@ -1635,8 +1657,68 @@ public class user_loker extends javax.swing.JFrame {
 
     private void lamarButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton2ActionPerformed
         // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin melanjutkan?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        String username = Session.getInstance().getUsername();
+        if (response == JOptionPane.YES_OPTION) {
+            System.out.println(username);
+            try {
+                if (cekDataUser(username)) {
+                    System.out.println(username);
+                    createLamaranP(username);
+                } else {
+                    System.out.println("gagal ges");
+                    JOptionPane.showMessageDialog(user_loker.this, "Lengkapi dulu data kamu dan pastikan tidak ada yang kosong.");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+        }
     }//GEN-LAST:event_lamarButton2ActionPerformed
 
+    public void createLamaranP(String username_user){
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement ps = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "INSERT INTO lowongan_p (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            ps = koneksi.prepareStatement(query);
+            ps.setString(1, username_user);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Lamaran berhasil dibuat untuk user: " + username_user);
+            } else {
+                System.out.println("Lamaran gagal dibuat untuk user: " + username_user);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+
+            if (ex.getSQLState().equals("23505")) {
+                System.out.println("Kesalahan: Data duplikat ditemukan untuk user: " + username_user);
+            } else {
+                System.out.println("Kesalahan SQLState: " + ex.getSQLState());
+            }
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     private void backButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton1MouseClicked
         // TODO add your handling code here:
         hasilP.dispose();

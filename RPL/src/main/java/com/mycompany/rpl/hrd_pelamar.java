@@ -28,7 +28,11 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDate;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
 
@@ -55,8 +59,61 @@ public class hrd_pelamar extends javax.swing.JFrame {
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
         accept.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdAccept.png")));
         decline.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
+        
+        readToTable();
     }
 
+    public DefaultTableModel readPelamar(){
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Nama");
+        tableModel.addColumn("Jenis Kelamin");
+        tableModel.addColumn("Tanggal lahir");
+        tableModel.addColumn("Alamat");
+        tableModel.addColumn("Tanggal Diajukan");
+
+        try {
+            tableModel.setRowCount(0);
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+
+            String query = "SELECT lowongan_jm.*, data_user.* " +
+                            "FROM lowongan_jm " +
+                            "INNER JOIN data_user ON lowongan_jm.username_user = data_user.username_user";
+
+             Statement statement = koneksi.createStatement();
+             ResultSet resultSet = statement.executeQuery(query);
+
+             while (resultSet.next()) {
+                 Object[] rowData = {
+                     resultSet.getString("nama"),
+                     resultSet.getString("jenis_kelamin"),
+                     resultSet.getDate("tanggal_lahir"),
+                     resultSet.getString("alamat"),
+                     resultSet.getDate("tanggal_diajukan")
+                 };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+            statement.close();
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return tableModel;
+    }
+    
+    public void readToTable() {
+        tablePelamar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"Nama", "jenis Kelamin", "Tanggal Lahir", "Alamat", "Tanggal Diajukan"}
+        ));
+        DefaultTableModel model = readPelamar();
+        tablePelamar.setModel(model);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,7 +176,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar = new javax.swing.JTable();
 
         rincianPelamar.setBackground(new java.awt.Color(255, 255, 255));
-        rincianPelamar.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -132,7 +188,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(215, 204, 185));
         rincianPelamar.getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 960, 20));
 
-        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -141,7 +196,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         });
         rincianPelamar.getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 20, 160, 60));
 
-        userProfil.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\profilUser.png")); // NOI18N
         userProfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userProfilMouseClicked(evt);
@@ -331,17 +385,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
         rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 130, -1));
-
-        decline.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdDelete.png")); // NOI18N
         rincianPelamar.getContentPane().add(decline, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 160, 60));
-
-        accept.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdAccept.png")); // NOI18N
         rincianPelamar.getContentPane().add(accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 160, 60));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
@@ -352,7 +400,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         pegawaiLabel.setText("Daftar Pegawai");
         nav.add(pegawaiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 90, 20));
 
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -366,7 +413,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 30));
 
-        pelamarIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pelamarWhite.png")); // NOI18N
         pelamarIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pelamarIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -375,7 +421,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         });
         nav.add(pelamarIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 170, 160, 70));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokersayaBlack.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -389,7 +434,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         pelamarLabel.setText("Daftar Pelamar");
         nav.add(pelamarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 90, 20));
 
-        pegawaiIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pegawaiBlack.png")); // NOI18N
         pegawaiIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pegawaiIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -403,7 +447,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         lokerLabel.setText("Loker Saya");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 90, 20));
 
-        saranIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\saranBlack.png")); // NOI18N
         saranIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         saranIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -534,7 +577,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar.setSelectionBackground(new java.awt.Color(215, 204, 185));
         jScrollPane1.setViewportView(tablePelamar);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 970, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 970, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
