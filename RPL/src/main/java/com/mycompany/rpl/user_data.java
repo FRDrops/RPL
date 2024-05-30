@@ -839,10 +839,6 @@ public class user_data extends javax.swing.JFrame {
         frame.setVisible(true);
     }
     
-    public void closeUploaderFrame() {
-        frame.dispose();
-    }
-    
     private void uploadImageToDatabase(File file) {
         try {
             Koneksi konek = new Koneksi();
@@ -861,7 +857,6 @@ public class user_data extends javax.swing.JFrame {
             if (row > 0) {
                 JOptionPane.showMessageDialog(this, "File has been saved.");
                 this.displayImageFromDatabase(username);
-                closeUploaderFrame();
             }
             inputStream.close();
         } catch (SQLException | FileNotFoundException ex) {
