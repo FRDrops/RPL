@@ -297,7 +297,11 @@ public class user_home extends javax.swing.JFrame {
     private void lamsayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lamsayaIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new user_lamaran().setVisible(true);
+        try {
+            new user_lamaran().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(user_home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_lamsayaIconMouseClicked
 
     private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked

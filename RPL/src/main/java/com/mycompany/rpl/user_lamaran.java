@@ -16,6 +16,10 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,6 +29,7 @@ import javax.swing.border.*;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -37,7 +42,7 @@ public class user_lamaran extends javax.swing.JFrame {
      */
     private user_home userHome;
     
-    public user_lamaran() {
+    public user_lamaran() throws SQLException {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -48,6 +53,7 @@ public class user_lamaran extends javax.swing.JFrame {
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaBlack.png")));
     
         //memanggil user_home
+        readToTable();
         userHome = new user_home();
     }
 
@@ -252,6 +258,106 @@ public class user_lamaran extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public DefaultTableModel readPelamar(String username) throws SQLException{
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Loker");
+        tableModel.addColumn("Tanggal Diajukan");
+        tableModel.addColumn("Status");
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement statementJM = null;
+        PreparedStatement statementK = null;
+        PreparedStatement statementP = null;
+        ResultSet resultSet = null;
+        try {
+            tableModel.setRowCount(0);
+
+            String queryJM = "SELECT * FROM lowongan_jm WHERE username_user = ?";
+            String queryK = "SELECT * FROM lowongan_k WHERE username_user = ?";
+            String queryP = "SELECT * FROM lowongan_p WHERE username_user = ?";
+
+            statementJM = koneksi.prepareStatement(queryJM);
+            statementJM.setString(1, username);
+            resultSet = statementJM.executeQuery();
+            while (resultSet.next()) {
+                String kolom = "Juru Masak";
+                Object[] rowData = {
+                    kolom,
+                    resultSet.getDate("tanggal_diajukan"),
+                    resultSet.getString("status")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementK = koneksi.prepareStatement(queryK);
+            statementK.setString(1, username);
+            resultSet = statementK.executeQuery();
+            while (resultSet.next()) {
+                String kolom = "Kasir";
+                Object[] rowData = {
+                    kolom,
+                    resultSet.getDate("tanggal_diajukan"),
+                    resultSet.getString("status")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementP = koneksi.prepareStatement(queryP);
+            statementP.setString(1, username);
+            resultSet = statementP.executeQuery();
+            while (resultSet.next()) {
+                String kolom = "Pelayan";
+                Object[] rowData = {
+                    kolom,
+                    resultSet.getDate("tanggal_diajukan"),
+                    resultSet.getString("status")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statementJM != null) {
+                    statementJM.close();
+                }
+                if (statementK != null) {
+                    statementK.close();
+                }
+                if (statementP != null) {
+                    statementP.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        return tableModel;
+    }
+    
+    public void readToTable() throws SQLException {
+        tableLamaran.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"Loker", "Tanggal Diajukan", "Status"}
+        ));
+        String username = Session.getInstance().getUsername();
+        DefaultTableModel model = readPelamar(username);
+        tableLamaran.setModel(model);
+    }
+    
     private void datasayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datasayaIconMouseClicked
         // TODO add your handling code here:
         dispose();
@@ -333,7 +439,11 @@ public class user_lamaran extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new user_lamaran().setVisible(true);
+                try {
+                    new user_lamaran().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(user_lamaran.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         

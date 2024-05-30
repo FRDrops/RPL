@@ -230,7 +230,8 @@ public class signuppage extends javax.swing.JFrame {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-            String query = "INSERT INTO data_user (username_user, password, nama, email) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO data_user (username_user, "
+                    + "password, nama, email) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = koneksi.prepareStatement(query);
 
             ps.setString(1, username_user);

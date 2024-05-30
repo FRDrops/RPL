@@ -1510,7 +1510,11 @@ public class user_loker extends javax.swing.JFrame {
     private void lamsayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lamsayaIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new user_lamaran().setVisible(true);
+        try {
+            new user_lamaran().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_lamsayaIconMouseClicked
 
     private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked
@@ -1615,7 +1619,8 @@ public class user_loker extends javax.swing.JFrame {
 
         try {
             koneksi = konek.open();
-            String query = "INSERT INTO lowongan_jm (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            String query = "INSERT INTO lowongan_jm (username_user, "
+                    + "tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
             ps = koneksi.prepareStatement(query);
             ps.setString(1, username_user);
 
@@ -1683,7 +1688,8 @@ public class user_loker extends javax.swing.JFrame {
 
         try {
             koneksi = konek.open();
-            String query = "INSERT INTO lowongan_p (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            String query = "INSERT INTO lowongan_p (username_user, "
+                    + "tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
             ps = koneksi.prepareStatement(query);
             ps.setString(1, username_user);
 
@@ -1766,7 +1772,8 @@ public class user_loker extends javax.swing.JFrame {
 
         try {
             koneksi = konek.open();
-            String query = "INSERT INTO lowongan_k (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            String query = "INSERT INTO lowongan_k (username_user, "
+                    + "tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
             ps = koneksi.prepareStatement(query);
             ps.setString(1, username_user);
 
