@@ -27,9 +27,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Blob;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -89,11 +92,9 @@ public class user_data extends javax.swing.JFrame {
             ResultSet resultSet = statement.executeQuery();
             if (!resultSet.next()) {
                 JOptionPane.showMessageDialog(this, "No data found for username: " + username);
-                clearFields(); // Clear fields if no data found
+                clearFields();
                 return;
             }
-
-            // Retrieve data, set default if null
             String nama = resultSet.getString("nama") != null ? resultSet.getString("nama") : "";
             String jenisKelamin = resultSet.getString("jenis_kelamin") != null ? resultSet.getString("jenis_kelamin") : "";
             String tempatLahir = resultSet.getString("tempat_lahir") != null ? resultSet.getString("tempat_lahir") : "";
@@ -114,7 +115,7 @@ public class user_data extends javax.swing.JFrame {
             keterangan2.setText(email);
             alamatInput.setText(alamat);
             nikInput.setText(nik);
-
+            
             if (fotoBlob != null) {
                /* byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
                 Image image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
@@ -148,6 +149,254 @@ public class user_data extends javax.swing.JFrame {
         nikInput.setText("");
     }
     
+    public void cekCV(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT cv FROM data_user WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                byte[] data = resultSet.getBytes("cv");
+                if (data == null || data.length == 0) {
+                    ketCV.setText("Tidak ada");
+                } else {
+                    ketCV.setText("Ada");
+                }
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public void cekKTP(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT ktp FROM data_user WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                byte[] data = resultSet.getBytes("ktp");
+                if (data == null || data.length == 0) {
+                    ketKTP.setText("Tidak ada");
+                } else {
+                    ketKTP.setText("Ada");
+                }
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public void cekKK(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT kk FROM data_user WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                byte[] data = resultSet.getBytes("kk");
+                if (data == null || data.length == 0) {
+                    ketKK.setText("Tidak ada");
+                } else {
+                    ketKK.setText("Ada");
+                }
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public void cekIJAZAH(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT ijazah FROM data_user WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                byte[] data = resultSet.getBytes("ijazah");
+                if (data == null || data.length == 0) {
+                    ketIJAZAH.setText("Tidak ada");
+                } else {
+                    ketIJAZAH.setText("Ada");
+                }
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public void cekSKCK(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT skck FROM data_user WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                byte[] data = resultSet.getBytes("skck");
+                if (data == null || data.length == 0) {
+                    ketSKCK.setText("Tidak ada");
+                } else {
+                    ketSKCK.setText("Ada");
+                }
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    public void cekBerkas() {
+        String username = Session.getInstance().getUsername();
+        this.cekCV(username);
+        this.cekIJAZAH(username);
+        this.cekKK(username);
+        this.cekKTP(username);
+        this.cekSKCK(username);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -265,7 +514,7 @@ public class user_data extends javax.swing.JFrame {
         label2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label2.setForeground(new java.awt.Color(215, 204, 185));
         label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label2.setText("Jangan lupa klik save");
+        label2.setText("Autosave");
         jPanel2.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 190, -1));
 
         jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 130));
@@ -732,7 +981,7 @@ public class user_data extends javax.swing.JFrame {
         infoLabel1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         infoLabel1.setForeground(new java.awt.Color(169, 42, 13));
         infoLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        infoLabel1.setText("*Format yy//mm/dd. Contoh, 1 Februari 2024, jadi 2024-02-01");
+        infoLabel1.setText("*Format yyyy-mm-dd. Contoh, 1 Februari 2024, jadi 2024-02-01");
         getContentPane().add(infoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 310, 280, 20));
 
         infoLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -797,6 +1046,7 @@ public class user_data extends javax.swing.JFrame {
         // TODO add your handling code here:
         String username = Session.getInstance().getUsername();
         String tempat = tempatInput.getText();
+        String tanggal = tanggalInput.getText();
         String alamat = alamatInput.getText();
         String nikText = nikInput.getText();
         int nik = Integer.parseInt(nikText);
@@ -805,23 +1055,25 @@ public class user_data extends javax.swing.JFrame {
         String jenis = (String) jenisInput.getSelectedItem();
         String pend = (String) pendInput.getSelectedItem();
         
-        updateData(username, jenis, tempat, pend, alamat, nik, nomor);
+        updateData(username, jenis, tempat, tanggal, pend, alamat, nik, nomor);
     }//GEN-LAST:event_simpanButtonActionPerformed
 
-    public void updateData(String username, String jenis, String tempat, String pend, String alamat, int nik, int nomor) {
+    public void updateData(String username, String jenis, String tempat, String yyyymmdd, String pend, String alamat, int nik, int nomor) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             
-            String updateQuery = "UPDATE data_user SET jenis_kelamin = ?, tempat_lahir = ?, pendidikan = ?, telepon = ?, alamat = ?, nik = ? WHERE username_user = ?";
+            String updateQuery = "UPDATE data_user SET jenis_kelamin = ?, tempat_lahir = ?, tanggal_lahir = ?, pendidikan = ?, telepon = ?, alamat = ?, nik = ? WHERE username_user = ?";
             PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
             updateStatement.setString(1, jenis);
             updateStatement.setString(2, tempat);
-            updateStatement.setString(3, pend);
-            updateStatement.setInt(4, nomor);
-            updateStatement.setString(5, alamat);
-            updateStatement.setInt(6, nik);
-            updateStatement.setString(7, username);
+            Date tanggal = convertIntToDate(yyyymmdd);
+            updateStatement.setDate(3, tanggal);
+            updateStatement.setString(4, pend);
+            updateStatement.setInt(5, nomor);
+            updateStatement.setString(6, alamat);
+            updateStatement.setInt(7, nik);
+            updateStatement.setString(8, username);
 
             int rowsAffected = updateStatement.executeUpdate();
 
@@ -835,6 +1087,32 @@ public class user_data extends javax.swing.JFrame {
             System.out.println(ex.getMessage());  
         }
     }
+    
+    public static Date convertIntToDate(String yyyymmdd) {
+        LocalDate localDate = LocalDate.parse(yyyymmdd);
+        return Date.valueOf(localDate);
+    }
+    
+    public static void insertDateToDatabase(String yyyymmdd) {
+        
+
+        String query = "INSERT INTO data_user (tanggal_lahir) VALUES (?)";
+
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            PreparedStatement pstmt = koneksi.prepareStatement(query);
+            Date date = convertIntToDate(yyyymmdd);
+            pstmt.setDate(1, date);
+
+            pstmt.executeUpdate();
+            System.out.println("Date inserted successfully");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     
     private void profilButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilButtonActionPerformed
         // TODO add your handling code here:
@@ -999,6 +1277,8 @@ public class user_data extends javax.swing.JFrame {
     private void uploadBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBerkasActionPerformed
         // TODO add your handling code here:
         dispose();
+        String username = Session.getInstance().getUsername();
+        cekBerkas();
         uploadSection.setLocationRelativeTo(null);
         uploadSection.setSize(467, 272);
         uploadSection.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -1089,26 +1369,36 @@ public class user_data extends javax.swing.JFrame {
     private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
         // TODO add your handling code here:
         selectFile(ketCV);
+        String username = Session.getInstance().getUsername();
+        uploadFileToDatabase(username, "cv");
     }//GEN-LAST:event_cvMouseClicked
 
     private void ktpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ktpMouseClicked
         // TODO add your handling code here:
         selectFile(ketKTP);
+        String username = Session.getInstance().getUsername();
+        uploadFileToDatabase(username, "ktp");
     }//GEN-LAST:event_ktpMouseClicked
 
     private void ijazahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ijazahMouseClicked
         // TODO add your handling code here:
         selectFile(ketIJAZAH);
+        String username = Session.getInstance().getUsername();
+        uploadFileToDatabase(username, "ijazah");
     }//GEN-LAST:event_ijazahMouseClicked
 
     private void skckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skckMouseClicked
         // TODO add your handling code here:
         selectFile(ketSKCK);
+        String username = Session.getInstance().getUsername();
+        uploadFileToDatabase(username, "skck");
     }//GEN-LAST:event_skckMouseClicked
 
     private void kkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kkMouseClicked
         // TODO add your handling code here:
         selectFile(ketKK);
+        String username = Session.getInstance().getUsername();
+        uploadFileToDatabase(username, "kk");
     }//GEN-LAST:event_kkMouseClicked
 
     /**

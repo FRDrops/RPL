@@ -126,7 +126,7 @@
                       <Color blue="b9" green="cc" red="d7" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Jangan lupa klik save"/>
+                    <Property name="text" type="java.lang.String" value="Autosave"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1348,7 +1348,7 @@
           <Color blue="d" green="2a" red="a9" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="*Format yy//mm/dd. Contoh, 1 Februari 2024, jadi 2024-02-01"/>
+        <Property name="text" type="java.lang.String" value="*Format yyyy-mm-dd. Contoh, 1 Februari 2024, jadi 2024-02-01"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
