@@ -16,6 +16,10 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -1547,8 +1551,84 @@ public class user_loker extends javax.swing.JFrame {
 
     private void lamarButtonJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButtonJMActionPerformed
         // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin melanjutkan?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        String username = Session.getInstance().getUsername();
+        if (response == JOptionPane.YES_OPTION) {
+            System.out.println(username);
+            try {
+                if (cekDataUser(username)) {
+                    System.out.println(username);
+                    createLamaran(username);
+                } else {
+                    System.out.println("gagal ges");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+        }
     }//GEN-LAST:event_lamarButtonJMActionPerformed
 
+    public void createLamaran(String username_user){
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String query = "INSERT INTO lowongan_jm (username_user, tanggal_diajukan) VALUES (?, CURRENT_TIMESTAMP)";
+            PreparedStatement ps = koneksi.prepareStatement(query);
+
+            ps.setString(1, username_user);
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+            } else {
+            }
+
+        } catch (SQLException ex) {
+            if (ex.getSQLState().equals("23505")) {
+            } else {
+            }
+        }
+    }
+    
+    public boolean cekDataUser(String username) throws SQLException {
+        boolean allFilled = false;
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        String[] columns = {"nama", "jenis_kelamin", "tempat_lahir", "tanggal_lahir", "pendidikan", "telepon", "email", "alamat", "nik", "ijazah", "cv", "kk", "ktp", "skck", "foto"};
+
+        try {
+            Statement statement = koneksi.createStatement();
+            String query = "SELECT * FROM data_user WHERE username_user = '" + username + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+
+            if (resultSet.next()) {
+                allFilled = true;
+                for (String column : columns) {
+                    if (resultSet.getString(column) == null || resultSet.getString(column).isEmpty()) {
+                        allFilled = false;
+                        break;
+                    }
+                }
+            }
+
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return allFilled;
+    }
+    
     private void lihatHasil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_lihatHasil1ActionPerformed

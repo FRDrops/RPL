@@ -79,7 +79,6 @@ public class user_data extends javax.swing.JFrame {
     
     private void readUser(String username) throws IOException {
         try {
-            System.out.println(username);
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
             String sql = "SELECT * FROM data_user WHERE username_user = ?";
