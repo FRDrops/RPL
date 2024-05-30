@@ -53,9 +53,6 @@ public class user_data extends javax.swing.JFrame {
     loginpage login = new loginpage();
     private user_home userHome;
     private JFrame frame;
-    private static final String URL = "jdbc:mysql://localhost:3306/gendhu_roso";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
     
     public user_data() throws IOException {
         initComponents();
@@ -73,7 +70,7 @@ public class user_data extends javax.swing.JFrame {
 
         String username = Session.getInstance().getUsername();
         readUser(username);
-        
+        displayImageFromDatabase(username);
         userHome = new user_home();
     }
     
@@ -847,9 +844,11 @@ public class user_data extends javax.swing.JFrame {
     }
     
     private void uploadImageToDatabase(File file) {
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
             String sql = "UPDATE data_user SET foto = ? WHERE username_user = ?";
-            PreparedStatement statement = conn.prepareStatement(sql);
+            PreparedStatement statement = koneksi.prepareStatement(sql);
 
             FileInputStream inputStream = new FileInputStream(file);
             statement.setBlob(1, inputStream);
@@ -874,9 +873,11 @@ public class user_data extends javax.swing.JFrame {
     }
     
     private void displayImageFromDatabase(String username) {
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
             String sql = "SELECT foto FROM data_user WHERE username_user = ?";
-            PreparedStatement statement = conn.prepareStatement(sql);
+            PreparedStatement statement = koneksi.prepareStatement(sql);
             statement.setString(1, username);
 
             ResultSet resultSet = statement.executeQuery();
@@ -885,17 +886,14 @@ public class user_data extends javax.swing.JFrame {
                 if (imgBytes != null) {
                     ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
                     ImageIcon icon = new ImageIcon(new ImageIcon(bis.readAllBytes()).getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-                    imageLabel.setIcon(icon);
-                    imageLabel.setText(null);
+                    userProfil.setIcon(icon);
+                    userProfil.setText(null);
                 } else {
-                    imageLabel.setText("Error.");
                 }
             } else {
-                imageLabel.setText("Error.");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            imageLabel.setText("Error loading image: " + e.getMessage());
         }
     }
     
