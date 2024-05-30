@@ -212,9 +212,7 @@ public class user_data extends javax.swing.JFrame {
         infoIcon = new javax.swing.JLabel();
         infoLabel1 = new javax.swing.JLabel();
 
-        uploadSection.setMaximumSize(new java.awt.Dimension(475, 325));
         uploadSection.setMinimumSize(new java.awt.Dimension(475, 325));
-        uploadSection.setPreferredSize(new java.awt.Dimension(475, 325));
         uploadSection.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -271,6 +269,11 @@ public class user_data extends javax.swing.JFrame {
         cv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cv.setText("CV");
         cv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cvMouseClicked(evt);
+            }
+        });
         nav6.add(cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
 
         nav1.add(nav6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 60));
@@ -931,6 +934,15 @@ public class user_data extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_userProfilMouseClicked
+
+    public void inputBerkas() {
+        
+    }
+    
+    private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cvMouseClicked
 
     /**
      * @param args the command line arguments
