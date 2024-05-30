@@ -15,6 +15,9 @@ import java.awt.RenderingHints;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -323,7 +326,11 @@ public class user_lamaran extends javax.swing.JFrame {
     private void datasayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datasayaIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new user_data().setVisible(true);
+        try {
+            new user_data().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(user_lamaran.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_datasayaIconMouseClicked
 
     private void lamsayaIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lamsayaIconMouseClicked

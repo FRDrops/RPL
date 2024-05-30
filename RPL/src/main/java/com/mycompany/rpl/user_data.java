@@ -758,7 +758,7 @@ public class user_data extends javax.swing.JFrame {
 
     public void inputImage() {
         JFrame frame = new JFrame("Image Uploader");
-        frame.setSize(400, 100);
+        frame.setSize(400, 200);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
@@ -773,9 +773,10 @@ public class user_data extends javax.swing.JFrame {
                 JFileChooser fileChooser = new JFileChooser();
                 int result = fileChooser.showOpenDialog(null);
                 if (result == JFileChooser.APPROVE_OPTION) {
-                    selectedFile = fileChooser.getSelectedFile(); // Menyimpan file terpilih di variabel instance
-                    ImageIcon icon = new ImageIcon(new ImageIcon(selectedFile.getAbsolutePath()).getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+                    selectedFile = fileChooser.getSelectedFile();
+                    ImageIcon icon = new ImageIcon(new ImageIcon(selectedFile.getAbsolutePath()).getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
                     imageLabel.setIcon(icon);
+                    userProfil.setIcon(icon);
                     imageLabel.setText(null);
                     uploadButton.setEnabled(true);
                 }
