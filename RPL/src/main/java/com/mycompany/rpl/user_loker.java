@@ -72,7 +72,7 @@ public class user_loker extends javax.swing.JFrame {
         ig.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/instagram.png")));
         blog.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/blog.png")));
         wa.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/whatsapp.png")));
-    
+        
         userHome = new user_home();
     }
 
@@ -158,7 +158,7 @@ public class user_loker extends javax.swing.JFrame {
         posisi1 = new javax.swing.JLabel();
         backButton = new javax.swing.JLabel();
         bingung1 = new javax.swing.JButton();
-        lihatHasil1 = new javax.swing.JButton();
+        lihatHasilJM = new javax.swing.JButton();
         hasilP = new javax.swing.JDialog();
         judul2 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -309,9 +309,7 @@ public class user_loker extends javax.swing.JFrame {
         keterangan12 = new javax.swing.JLabel();
         rincianK = new javax.swing.JButton();
 
-        hasilJM.setMaximumSize(new java.awt.Dimension(1100, 650));
         hasilJM.setMinimumSize(new java.awt.Dimension(1100, 650));
-        hasilJM.setPreferredSize(new java.awt.Dimension(1100, 650));
         hasilJM.setResizable(false);
         hasilJM.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -511,7 +509,6 @@ public class user_loker extends javax.swing.JFrame {
 
         hasilJM.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
-        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -535,20 +532,20 @@ public class user_loker extends javax.swing.JFrame {
         });
         hasilJM.getContentPane().add(bingung1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 190, 40));
 
-        lihatHasil1.setBackground(new java.awt.Color(169, 161, 147));
-        lihatHasil1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        lihatHasil1.setForeground(new java.awt.Color(215, 204, 185));
-        lihatHasil1.setText("Lihat Hasil Saya");
-        lihatHasil1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lihatHasil1.setBorderPainted(false);
-        lihatHasil1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lihatHasil1.setFocusable(false);
-        lihatHasil1.addActionListener(new java.awt.event.ActionListener() {
+        lihatHasilJM.setBackground(new java.awt.Color(169, 161, 147));
+        lihatHasilJM.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatHasilJM.setForeground(new java.awt.Color(215, 204, 185));
+        lihatHasilJM.setText("Lihat Hasil Saya");
+        lihatHasilJM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatHasilJM.setBorderPainted(false);
+        lihatHasilJM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatHasilJM.setFocusable(false);
+        lihatHasilJM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lihatHasil1ActionPerformed(evt);
+                lihatHasilJMActionPerformed(evt);
             }
         });
-        hasilJM.getContentPane().add(lihatHasil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
+        hasilJM.getContentPane().add(lihatHasilJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
 
         hasilP.setMinimumSize(new java.awt.Dimension(1100, 650));
         hasilP.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -737,7 +734,6 @@ public class user_loker extends javax.swing.JFrame {
 
         hasilP.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
-        backButton1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -969,7 +965,6 @@ public class user_loker extends javax.swing.JFrame {
 
         hasilK.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
-        backButton2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1008,23 +1003,14 @@ public class user_loker extends javax.swing.JFrame {
         });
         hasilK.getContentPane().add(lihatHasil3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
 
-        faqUser.setMaximumSize(new java.awt.Dimension(1100, 650));
         faqUser.setMinimumSize(new java.awt.Dimension(1100, 650));
         faqUser.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(112, 104, 94));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        logoKecil.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\logoGRKecil.png")); // NOI18N
         jPanel6.add(logoKecil, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 10, 140, 30));
-
-        ig.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\instagram.png")); // NOI18N
         jPanel6.add(ig, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 140, 30));
-
-        blog.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\blog.png")); // NOI18N
         jPanel6.add(blog, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 140, 30));
-
-        wa.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\whatsapp.png")); // NOI18N
         jPanel6.add(wa, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 140, 30));
 
         noWA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1058,17 +1044,9 @@ public class user_loker extends javax.swing.JFrame {
         instruksi4.setForeground(new java.awt.Color(49, 45, 34));
         instruksi4.setText("Pantau");
         faqUser.getContentPane().add(instruksi4, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
-
-        empat.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\empat.png")); // NOI18N
         faqUser.getContentPane().add(empat, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 160, 60));
-
-        satu.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\satu.png")); // NOI18N
         faqUser.getContentPane().add(satu, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 140, 160, 60));
-
-        dua.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\dua.png")); // NOI18N
         faqUser.getContentPane().add(dua, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 160, 60));
-
-        tiga.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\tiga.png")); // NOI18N
         faqUser.getContentPane().add(tiga, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 160, 60));
 
         judul4.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
@@ -1180,17 +1158,9 @@ public class user_loker extends javax.swing.JFrame {
         jawab2.setForeground(new java.awt.Color(49, 45, 34));
         jawab2.setText("Tidak bisa ya :) karena kami memerlukan data kamu untuk proses kualifikasi");
         faqUser.getContentPane().add(jawab2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 610, 30));
-
-        panah3.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\panah.png")); // NOI18N
         faqUser.getContentPane().add(panah3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 480, 150, 30));
-
-        panah1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\panah.png")); // NOI18N
         faqUser.getContentPane().add(panah1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 380, 150, 30));
-
-        panah2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\panah.png")); // NOI18N
         faqUser.getContentPane().add(panah2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 430, 150, 30));
-
-        burung.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\burung.png")); // NOI18N
         faqUser.getContentPane().add(burung, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 290, -1, 250));
 
         jawab3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -1198,7 +1168,6 @@ public class user_loker extends javax.swing.JFrame {
         jawab3.setText("Bisa, untuk lebih jelasnya, silakan lihat pada kualifikasi pekerjaan yang kamu pilih ya");
         faqUser.getContentPane().add(jawab3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 670, 30));
 
-        backButton3.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton3.setText("jLabel2");
         backButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1209,7 +1178,6 @@ public class user_loker extends javax.swing.JFrame {
         faqUser.getContentPane().add(backButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 10, 160, 60));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1221,7 +1189,6 @@ public class user_loker extends javax.swing.JFrame {
         lokerLabel.setText("Loker Kerja");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 90, 20));
 
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1235,7 +1202,6 @@ public class user_loker extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 30));
 
-        datasayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\datasayaBlack.png")); // NOI18N
         datasayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         datasayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1244,7 +1210,6 @@ public class user_loker extends javax.swing.JFrame {
         });
         nav.add(datasayaIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 210, 150, 70));
 
-        lamsayaIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lamsayaBlack.png")); // NOI18N
         lamsayaIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lamsayaIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1258,7 +1223,6 @@ public class user_loker extends javax.swing.JFrame {
         datasayaLabel.setText("Data Saya");
         nav.add(datasayaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, 20));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokerkerjaWhite.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1552,30 +1516,183 @@ public class user_loker extends javax.swing.JFrame {
     private void rincianJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianJMActionPerformed
         // TODO add your handling code here:
         dispose();
+        String username = Session.getInstance().getUsername();
+        cekDataLowonganJM(username);
         hasilJM.setLocationRelativeTo(null);
         hasilJM.setSize(1100, 650);
         hasilJM.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         hasilJM.setVisible(true);
     }//GEN-LAST:event_rincianJMActionPerformed
 
+    public void cekDataLowonganJM(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT COUNT(*) FROM lowongan_jm WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                if (count > 0) {
+                    lamarButtonJM.setEnabled(false);
+                    lihatHasilJM.setEnabled(true);
+                } else {
+                    lamarButtonJM.setEnabled(true);
+                    lihatHasilJM.setEnabled(false);
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     private void rincianPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianPActionPerformed
         // TODO add your handling code here:
         dispose();
+        String username = Session.getInstance().getUsername();
+        cekDataLowonganP(username);
         hasilP.setLocationRelativeTo(null);
         hasilP.setSize(1100, 650);
         hasilP.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         hasilP.setVisible(true);
     }//GEN-LAST:event_rincianPActionPerformed
 
+    public void cekDataLowonganP(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT COUNT(*) FROM lowongan_p WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                if (count > 0) {
+                    lamarButtonJM.setEnabled(false);
+                    lihatHasilJM.setEnabled(true);
+                } else {
+                    lamarButtonJM.setEnabled(true);
+                    lihatHasilJM.setEnabled(false);
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     private void rincianKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianKActionPerformed
         // TODO add your handling code here:
         dispose();
+        String username = Session.getInstance().getUsername();
+        cekDataLowonganK(username);
         hasilK.setLocationRelativeTo(null);
         hasilK.setSize(1100, 650);
         hasilK.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         hasilK.setVisible(true);
     }//GEN-LAST:event_rincianKActionPerformed
 
+    public void cekDataLowonganK(String username) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "SELECT COUNT(*) FROM lowongan_k WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                if (count > 0) {
+                    lamarButtonJM.setEnabled(false);
+                    lihatHasilJM.setEnabled(true);
+                } else {
+                    lamarButtonJM.setEnabled(true);
+                    lihatHasilJM.setEnabled(false);
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     private void bingung1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bingung1ActionPerformed
         // TODO add your handling code here:
         hasilJM.dispose();
@@ -1656,9 +1773,9 @@ public class user_loker extends javax.swing.JFrame {
         }
     }
     
-    private void lihatHasil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil1ActionPerformed
+    private void lihatHasilJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasilJMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lihatHasil1ActionPerformed
+    }//GEN-LAST:event_lihatHasilJMActionPerformed
 
     private void lamarButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton2ActionPerformed
         // TODO add your handling code here:
@@ -1984,9 +2101,9 @@ public class user_loker extends javax.swing.JFrame {
     private javax.swing.JButton lamarButtonJM;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
-    private javax.swing.JButton lihatHasil1;
     private javax.swing.JButton lihatHasil2;
     private javax.swing.JButton lihatHasil3;
+    private javax.swing.JButton lihatHasilJM;
     private javax.swing.JLabel logoKecil;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
