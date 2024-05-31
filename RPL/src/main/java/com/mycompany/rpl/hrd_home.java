@@ -396,7 +396,7 @@ public class hrd_home extends javax.swing.JFrame {
         hrdLabel.setForeground(new java.awt.Color(49, 45, 34));
         hrdLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hrdLabel.setText("[HRD_Name]");
-        jPanel3.add(hrdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+        jPanel3.add(hrdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, -1, -1));
 
         keterangan1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         keterangan1.setForeground(new java.awt.Color(49, 45, 34));
@@ -407,7 +407,7 @@ public class hrd_home extends javax.swing.JFrame {
         judul3.setFont(new java.awt.Font("Segoe UI Black", 1, 40)); // NOI18N
         judul3.setForeground(new java.awt.Color(49, 45, 34));
         judul3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        judul3.setText("Selamat Datang");
+        judul3.setText("Selamat Datang,");
         jPanel3.add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 890, 160));

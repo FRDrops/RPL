@@ -131,7 +131,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(215, 204, 185));
         rincianPegawai.getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 960, 20));
 
-        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -140,7 +139,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         });
         rincianPegawai.getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 20, 160, 60));
 
-        userProfil.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\profilUser.png")); // NOI18N
         userProfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 userProfilMouseClicked(evt);
@@ -331,16 +329,22 @@ public class hrd_pegawai extends javax.swing.JFrame {
         posisiUser.setText("[Posisi]");
         rincianPegawai.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 130, -1));
 
-        change.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdUpdate.png")); // NOI18N
+        change.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changeMouseClicked(evt);
+            }
+        });
         rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 160, 60));
 
-        delete.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdDelete.png")); // NOI18N
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteMouseClicked(evt);
+            }
+        });
         rincianPegawai.getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 160, 60));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
@@ -352,7 +356,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         nav.add(pegawaiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 90, 20));
 
         homeIcon.setForeground(new java.awt.Color(49, 45, 34));
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -366,7 +369,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 30));
 
-        pelamarIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pelamarBlack.png")); // NOI18N
         pelamarIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pelamarIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -375,7 +377,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         });
         nav.add(pelamarIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 170, 160, 70));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokersayaBlack.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -389,7 +390,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         pelamarLabel.setText("Daftar Pelamar");
         nav.add(pelamarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 90, 20));
 
-        pegawaiIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pegawaiWhite.png")); // NOI18N
         pegawaiIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pegawaiIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -403,7 +403,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         lokerLabel.setText("Loker Saya");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 90, 20));
 
-        saranIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\saranBlack.png")); // NOI18N
         saranIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         saranIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -619,6 +618,14 @@ public class hrd_pegawai extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_lihatBerkasActionPerformed
+
+    private void changeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_changeMouseClicked
+
+    private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteMouseClicked
 
     /**
      * @param args the command line arguments

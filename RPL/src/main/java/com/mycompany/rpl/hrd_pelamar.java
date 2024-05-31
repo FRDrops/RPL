@@ -465,7 +465,19 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
         rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 130, -1));
+
+        decline.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                declineMouseClicked(evt);
+            }
+        });
         rincianPelamar.getContentPane().add(decline, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 160, 60));
+
+        accept.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                acceptMouseClicked(evt);
+            }
+        });
         rincianPelamar.getContentPane().add(accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 160, 60));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -752,6 +764,14 @@ public class hrd_pelamar extends javax.swing.JFrame {
         String nama = sourceModel.getValueAt(MyIndex, 0).toString();
         String posisi = sourceModel.getValueAt(MyIndex, 1).toString();
     }//GEN-LAST:event_tablePelamarMouseClicked
+
+    private void declineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_declineMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_declineMouseClicked
+
+    private void acceptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_acceptMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_acceptMouseClicked
 
     //table bisa di select per-kotak, terus nanti diarahin ke rincianPelamar dan data pelamar (user) muncul di sana
     
