@@ -114,7 +114,7 @@ public class hrd_home extends javax.swing.JFrame {
         keterangan1 = new javax.swing.JLabel();
         judul3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        pelamarBaru = new javax.swing.JTable();
         judul2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -263,10 +263,10 @@ public class hrd_home extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 890, 160));
 
-        jTable1.setBackground(new java.awt.Color(249, 248, 242));
-        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(112, 104, 94));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        pelamarBaru.setBackground(new java.awt.Color(249, 248, 242));
+        pelamarBaru.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        pelamarBaru.setForeground(new java.awt.Color(112, 104, 94));
+        pelamarBaru.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Erwin", "Juru masak", "25-05-2024", "10:35:52"},
                 {null, null, null, null},
@@ -277,10 +277,10 @@ public class hrd_home extends javax.swing.JFrame {
                 "Nama Pelamar", "Posisis yang Dilamar", "Tanggal Melamar", "Waktu Melamar"
             }
         ));
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(249, 248, 242));
-        jTable1.setRowHeight(50);
-        jScrollPane1.setViewportView(jTable1);
+        pelamarBaru.setFocusable(false);
+        pelamarBaru.setGridColor(new java.awt.Color(249, 248, 242));
+        pelamarBaru.setRowHeight(50);
+        jScrollPane1.setViewportView(pelamarBaru);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 980, 170));
 
@@ -381,7 +381,6 @@ public class hrd_home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel judul2;
     private javax.swing.JLabel judul3;
     private javax.swing.JLabel keterangan1;
@@ -391,6 +390,7 @@ public class hrd_home extends javax.swing.JFrame {
     private javax.swing.JPanel nav;
     private javax.swing.JLabel pegawaiIcon;
     private javax.swing.JLabel pegawaiLabel;
+    private javax.swing.JTable pelamarBaru;
     private javax.swing.JLabel pelamarIcon;
     private javax.swing.JLabel pelamarLabel;
     private javax.swing.JLabel saranIcon;
