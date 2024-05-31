@@ -188,11 +188,11 @@ public class user_loker extends javax.swing.JFrame {
         dP3 = new javax.swing.JLabel();
         dP4 = new javax.swing.JLabel();
         dP5 = new javax.swing.JLabel();
-        lamarButton2 = new javax.swing.JButton();
+        lamarButtonP = new javax.swing.JButton();
         posisi2 = new javax.swing.JLabel();
         backButton1 = new javax.swing.JLabel();
         bingung2 = new javax.swing.JButton();
-        lihatHasil2 = new javax.swing.JButton();
+        lihatHasilP = new javax.swing.JButton();
         hasilK = new javax.swing.JDialog();
         judul3 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -223,11 +223,11 @@ public class user_loker extends javax.swing.JFrame {
         dK4 = new javax.swing.JLabel();
         dK5 = new javax.swing.JLabel();
         dK6 = new javax.swing.JLabel();
-        lamarButton3 = new javax.swing.JButton();
+        lamarButtonK = new javax.swing.JButton();
         posisi3 = new javax.swing.JLabel();
         backButton2 = new javax.swing.JLabel();
         bingung3 = new javax.swing.JButton();
-        lihatHasil3 = new javax.swing.JButton();
+        lihatHasilK = new javax.swing.JButton();
         faqUser = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         logoKecil = new javax.swing.JLabel();
@@ -711,20 +711,20 @@ public class user_loker extends javax.swing.JFrame {
         dP5.setText("makan yang menyenangkan");
         jPanel10.add(dP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 250, 30));
 
-        lamarButton2.setBackground(new java.awt.Color(112, 104, 94));
-        lamarButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        lamarButton2.setForeground(new java.awt.Color(249, 248, 242));
-        lamarButton2.setText("Lamar");
-        lamarButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lamarButton2.setBorderPainted(false);
-        lamarButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lamarButton2.setFocusable(false);
-        lamarButton2.addActionListener(new java.awt.event.ActionListener() {
+        lamarButtonP.setBackground(new java.awt.Color(112, 104, 94));
+        lamarButtonP.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lamarButtonP.setForeground(new java.awt.Color(249, 248, 242));
+        lamarButtonP.setText("Lamar");
+        lamarButtonP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lamarButtonP.setBorderPainted(false);
+        lamarButtonP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lamarButtonP.setFocusable(false);
+        lamarButtonP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lamarButton2ActionPerformed(evt);
+                lamarButtonPActionPerformed(evt);
             }
         });
-        jPanel10.add(lamarButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
+        jPanel10.add(lamarButtonP, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
 
         posisi2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         posisi2.setForeground(new java.awt.Color(49, 45, 34));
@@ -757,20 +757,20 @@ public class user_loker extends javax.swing.JFrame {
         });
         hasilP.getContentPane().add(bingung2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 190, 40));
 
-        lihatHasil2.setBackground(new java.awt.Color(169, 161, 147));
-        lihatHasil2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        lihatHasil2.setForeground(new java.awt.Color(215, 204, 185));
-        lihatHasil2.setText("Lihat Hasil Saya");
-        lihatHasil2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lihatHasil2.setBorderPainted(false);
-        lihatHasil2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lihatHasil2.setFocusable(false);
-        lihatHasil2.addActionListener(new java.awt.event.ActionListener() {
+        lihatHasilP.setBackground(new java.awt.Color(169, 161, 147));
+        lihatHasilP.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatHasilP.setForeground(new java.awt.Color(215, 204, 185));
+        lihatHasilP.setText("Lihat Hasil Saya");
+        lihatHasilP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatHasilP.setBorderPainted(false);
+        lihatHasilP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatHasilP.setFocusable(false);
+        lihatHasilP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lihatHasil2ActionPerformed(evt);
+                lihatHasilPActionPerformed(evt);
             }
         });
-        hasilP.getContentPane().add(lihatHasil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
+        hasilP.getContentPane().add(lihatHasilP, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
 
         hasilK.setMinimumSize(new java.awt.Dimension(1100, 650));
         hasilK.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -942,20 +942,20 @@ public class user_loker extends javax.swing.JFrame {
         dK6.setText("profesional");
         jPanel12.add(dK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, 30));
 
-        lamarButton3.setBackground(new java.awt.Color(112, 104, 94));
-        lamarButton3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        lamarButton3.setForeground(new java.awt.Color(249, 248, 242));
-        lamarButton3.setText("Lamar");
-        lamarButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lamarButton3.setBorderPainted(false);
-        lamarButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lamarButton3.setFocusable(false);
-        lamarButton3.addActionListener(new java.awt.event.ActionListener() {
+        lamarButtonK.setBackground(new java.awt.Color(112, 104, 94));
+        lamarButtonK.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lamarButtonK.setForeground(new java.awt.Color(249, 248, 242));
+        lamarButtonK.setText("Lamar");
+        lamarButtonK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lamarButtonK.setBorderPainted(false);
+        lamarButtonK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lamarButtonK.setFocusable(false);
+        lamarButtonK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lamarButton3ActionPerformed(evt);
+                lamarButtonKActionPerformed(evt);
             }
         });
-        jPanel12.add(lamarButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
+        jPanel12.add(lamarButtonK, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 190, 40));
 
         posisi3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         posisi3.setForeground(new java.awt.Color(49, 45, 34));
@@ -988,20 +988,20 @@ public class user_loker extends javax.swing.JFrame {
         });
         hasilK.getContentPane().add(bingung3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 540, 190, 40));
 
-        lihatHasil3.setBackground(new java.awt.Color(169, 161, 147));
-        lihatHasil3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        lihatHasil3.setForeground(new java.awt.Color(215, 204, 185));
-        lihatHasil3.setText("Lihat Hasil Saya");
-        lihatHasil3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lihatHasil3.setBorderPainted(false);
-        lihatHasil3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lihatHasil3.setFocusable(false);
-        lihatHasil3.addActionListener(new java.awt.event.ActionListener() {
+        lihatHasilK.setBackground(new java.awt.Color(169, 161, 147));
+        lihatHasilK.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        lihatHasilK.setForeground(new java.awt.Color(215, 204, 185));
+        lihatHasilK.setText("Lihat Hasil Saya");
+        lihatHasilK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lihatHasilK.setBorderPainted(false);
+        lihatHasilK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lihatHasilK.setFocusable(false);
+        lihatHasilK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lihatHasil3ActionPerformed(evt);
+                lihatHasilKActionPerformed(evt);
             }
         });
-        hasilK.getContentPane().add(lihatHasil3, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
+        hasilK.getContentPane().add(lihatHasilK, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 190, 40));
 
         faqUser.setMinimumSize(new java.awt.Dimension(1100, 650));
         faqUser.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1602,11 +1602,11 @@ public class user_loker extends javax.swing.JFrame {
             if (resultSet.next()) {
                 int count = resultSet.getInt(1);
                 if (count > 0) {
-                    lamarButtonJM.setEnabled(false);
-                    lihatHasilJM.setEnabled(true);
+                    lamarButtonP.setEnabled(false);
+                    lihatHasilP.setEnabled(true);
                 } else {
-                    lamarButtonJM.setEnabled(true);
-                    lihatHasilJM.setEnabled(false);
+                    lamarButtonP.setEnabled(true);
+                    lihatHasilP.setEnabled(false);
                 }
             }
         } catch (SQLException ex) {
@@ -1662,11 +1662,11 @@ public class user_loker extends javax.swing.JFrame {
             if (resultSet.next()) {
                 int count = resultSet.getInt(1);
                 if (count > 0) {
-                    lamarButtonJM.setEnabled(false);
-                    lihatHasilJM.setEnabled(true);
+                    lamarButtonK.setEnabled(false);
+                    lihatHasilK.setEnabled(true);
                 } else {
-                    lamarButtonJM.setEnabled(true);
-                    lihatHasilJM.setEnabled(false);
+                    lamarButtonK.setEnabled(true);
+                    lihatHasilK.setEnabled(false);
                 }
             }
         } catch (SQLException ex) {
@@ -1775,9 +1775,15 @@ public class user_loker extends javax.swing.JFrame {
     
     private void lihatHasilJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasilJMActionPerformed
         // TODO add your handling code here:
+        dispose();
+        try {
+            new user_lamaran().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_lihatHasilJMActionPerformed
 
-    private void lamarButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton2ActionPerformed
+    private void lamarButtonPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButtonPActionPerformed
         // TODO add your handling code here:
         int response = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin melanjutkan?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
         String username = Session.getInstance().getUsername();
@@ -1796,7 +1802,7 @@ public class user_loker extends javax.swing.JFrame {
             }
         } else {
         }
-    }//GEN-LAST:event_lamarButton2ActionPerformed
+    }//GEN-LAST:event_lamarButtonPActionPerformed
 
     public void createLamaranP(String username_user){
         Koneksi konek = new Koneksi();
@@ -1857,11 +1863,17 @@ public class user_loker extends javax.swing.JFrame {
         faqUser.setVisible(true);
     }//GEN-LAST:event_bingung2ActionPerformed
 
-    private void lihatHasil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil2ActionPerformed
+    private void lihatHasilPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasilPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lihatHasil2ActionPerformed
+        dispose();
+        try {
+            new user_lamaran().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_lihatHasilPActionPerformed
 
-    private void lamarButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButton3ActionPerformed
+    private void lamarButtonKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamarButtonKActionPerformed
         // TODO add your handling code here:
         int response = JOptionPane.showConfirmDialog(null, "Apakah Anda yakin ingin melanjutkan?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
         String username = Session.getInstance().getUsername();
@@ -1880,7 +1892,7 @@ public class user_loker extends javax.swing.JFrame {
             }
         } else {
         }
-    }//GEN-LAST:event_lamarButton3ActionPerformed
+    }//GEN-LAST:event_lamarButtonKActionPerformed
 
     public void createLamaranK(String username_user){
         Koneksi konek = new Koneksi();
@@ -1941,9 +1953,15 @@ public class user_loker extends javax.swing.JFrame {
         faqUser.setVisible(true);
     }//GEN-LAST:event_bingung3ActionPerformed
 
-    private void lihatHasil3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasil3ActionPerformed
+    private void lihatHasilKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatHasilKActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lihatHasil3ActionPerformed
+        dispose();
+        try {
+            new user_lamaran().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(user_loker.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_lihatHasilKActionPerformed
 
     private void backButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton3MouseClicked
         // TODO add your handling code here:
@@ -2096,14 +2114,14 @@ public class user_loker extends javax.swing.JFrame {
     private javax.swing.JLabel kualifikasiJM;
     private javax.swing.JLabel kualifikasiK;
     private javax.swing.JLabel kualifikasiP;
-    private javax.swing.JButton lamarButton2;
-    private javax.swing.JButton lamarButton3;
     private javax.swing.JButton lamarButtonJM;
+    private javax.swing.JButton lamarButtonK;
+    private javax.swing.JButton lamarButtonP;
     private javax.swing.JLabel lamsayaIcon;
     private javax.swing.JLabel lamsayaLabel;
-    private javax.swing.JButton lihatHasil2;
-    private javax.swing.JButton lihatHasil3;
     private javax.swing.JButton lihatHasilJM;
+    private javax.swing.JButton lihatHasilK;
+    private javax.swing.JButton lihatHasilP;
     private javax.swing.JLabel logoKecil;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
