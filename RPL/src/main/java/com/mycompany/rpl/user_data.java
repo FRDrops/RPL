@@ -73,7 +73,7 @@ public class user_data extends javax.swing.JFrame {
         lamsayaIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lamsayaBlack.png")));
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaBlack.png")));
         infoIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlue.png")));
-        userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
+        //userProfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilUser.png")));
 
         String username = Session.getInstance().getUsername();
         readUser(username);
