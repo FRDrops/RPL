@@ -53,6 +53,17 @@ public class hrd_loker extends javax.swing.JFrame {
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
         backButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
         backButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
+    
+        // remove border ngayeli di text area
+        jScrollPane1.setBorder(null);
+        jScrollPane2.setBorder(null);
+        jScrollPane3.setBorder(null);
+        jScrollPane4.setBorder(null);
+        jScrollPane5.setBorder(null);
+        jScrollPane6.setBorder(null);
+        jScrollPane7.setBorder(null);
+        jScrollPane8.setBorder(null);
+        jScrollPane9.setBorder(null);
     }
 
     /**
@@ -69,34 +80,19 @@ public class hrd_loker extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jPanel7 = new RoundedPanel(50, new Color(249, 248, 242));
         kualifikasiJM = new javax.swing.JLabel();
-        kJM6 = new javax.swing.JLabel();
-        tJM1 = new javax.swing.JLabel();
-        tJM2 = new javax.swing.JLabel();
-        tJM3 = new javax.swing.JLabel();
-        tJM4 = new javax.swing.JLabel();
-        tJM5 = new javax.swing.JLabel();
-        tJM6 = new javax.swing.JLabel();
-        tJM7 = new javax.swing.JLabel();
-        tJM8 = new javax.swing.JLabel();
         tanggungJawabJM = new javax.swing.JLabel();
-        kJM1 = new javax.swing.JLabel();
-        kJM2 = new javax.swing.JLabel();
-        kJM3 = new javax.swing.JLabel();
-        kJM4 = new javax.swing.JLabel();
-        kJM5 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ketjJM = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ketkualJM = new javax.swing.JTextArea();
         jPanel8 = new RoundedPanel(50, new Color(249, 248, 242));
         desJM = new javax.swing.JLabel();
-        dJM1 = new javax.swing.JLabel();
         tenggat4 = new javax.swing.JLabel();
         keterangan21 = new javax.swing.JLabel();
-        dJM2 = new javax.swing.JLabel();
-        dJM3 = new javax.swing.JLabel();
-        dJM4 = new javax.swing.JLabel();
-        dJM5 = new javax.swing.JLabel();
-        dJM6 = new javax.swing.JLabel();
-        dJM7 = new javax.swing.JLabel();
         posisi1 = new javax.swing.JLabel();
         keterangan24 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ketdesJM = new javax.swing.JTextArea();
         backButton = new javax.swing.JLabel();
         simpanJM = new javax.swing.JButton();
         rincianLokerP = new javax.swing.JDialog();
@@ -104,32 +100,19 @@ public class hrd_loker extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jPanel9 = new RoundedPanel(50, new Color(249, 248, 242));
         kualifikasiP = new javax.swing.JLabel();
-        kP6 = new javax.swing.JLabel();
-        tP1 = new javax.swing.JLabel();
-        tP2 = new javax.swing.JLabel();
-        tP3 = new javax.swing.JLabel();
-        tP4 = new javax.swing.JLabel();
-        tP5 = new javax.swing.JLabel();
-        tP6 = new javax.swing.JLabel();
-        tP7 = new javax.swing.JLabel();
-        tP8 = new javax.swing.JLabel();
         tanggungJawabP = new javax.swing.JLabel();
-        kP1 = new javax.swing.JLabel();
-        kP2 = new javax.swing.JLabel();
-        kP3 = new javax.swing.JLabel();
-        kP4 = new javax.swing.JLabel();
-        kP5 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ketjP = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ketkualP = new javax.swing.JTextArea();
         jPanel10 = new RoundedPanel(50, new Color(249, 248, 242));
         desP = new javax.swing.JLabel();
-        dP1 = new javax.swing.JLabel();
         tenggat5 = new javax.swing.JLabel();
         keterangan46 = new javax.swing.JLabel();
-        dP2 = new javax.swing.JLabel();
-        dP3 = new javax.swing.JLabel();
-        dP4 = new javax.swing.JLabel();
-        dP5 = new javax.swing.JLabel();
         posisi2 = new javax.swing.JLabel();
         keterangan22 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        ketdesP = new javax.swing.JTextArea();
         backButton1 = new javax.swing.JLabel();
         simpanP = new javax.swing.JButton();
         rincianLokerK = new javax.swing.JDialog();
@@ -137,33 +120,19 @@ public class hrd_loker extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jPanel11 = new RoundedPanel(50, new Color(249, 248, 242));
         kualifikasiK = new javax.swing.JLabel();
-        kK6 = new javax.swing.JLabel();
-        tK1 = new javax.swing.JLabel();
-        tK2 = new javax.swing.JLabel();
-        tK3 = new javax.swing.JLabel();
-        tK4 = new javax.swing.JLabel();
-        tK5 = new javax.swing.JLabel();
-        tK6 = new javax.swing.JLabel();
-        tK7 = new javax.swing.JLabel();
-        tK8 = new javax.swing.JLabel();
         tanggungJawabK = new javax.swing.JLabel();
-        kK1 = new javax.swing.JLabel();
-        kK2 = new javax.swing.JLabel();
-        kK3 = new javax.swing.JLabel();
-        kK4 = new javax.swing.JLabel();
-        kK5 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        ketjK = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ketkualK = new javax.swing.JTextArea();
         jPanel12 = new RoundedPanel(50, new Color(249, 248, 242));
         desK = new javax.swing.JLabel();
-        dK1 = new javax.swing.JLabel();
         tenggat6 = new javax.swing.JLabel();
         keterangan68 = new javax.swing.JLabel();
-        dK2 = new javax.swing.JLabel();
-        dK3 = new javax.swing.JLabel();
-        dK4 = new javax.swing.JLabel();
-        dK5 = new javax.swing.JLabel();
-        dK6 = new javax.swing.JLabel();
         posisi3 = new javax.swing.JLabel();
         keterangan25 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        ketdesK = new javax.swing.JTextArea();
         backButton2 = new javax.swing.JLabel();
         simpanK = new javax.swing.JButton();
         keterangan23 = new javax.swing.JLabel();
@@ -228,95 +197,47 @@ public class hrd_loker extends javax.swing.JFrame {
         kualifikasiJM.setText("Kualifikasi Pekerjaan");
         jPanel7.add(kualifikasiJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 370, -1));
 
-        kJM6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kJM6.setForeground(new java.awt.Color(49, 45, 34));
-        kJM6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kJM6.setText("6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
-        jPanel7.add(kJM6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 570, 20));
-
-        tJM1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM1.setForeground(new java.awt.Color(49, 45, 34));
-        tJM1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM1.setText("1. Merencanakan dan menyiapkan item menu masakan");
-        jPanel7.add(tJM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 20));
-
-        tJM2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM2.setForeground(new java.awt.Color(49, 45, 34));
-        tJM2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM2.setText("2. Menyiapkan dan memasak makanan sesuai pesanan dan mengikuti resep masakan");
-        jPanel7.add(tJM2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 20));
-
-        tJM3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM3.setForeground(new java.awt.Color(49, 45, 34));
-        tJM3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM3.setText("3. Mengawasi operasional dapur, termasuk menjaga peralatan dapur tetap bersih");
-        jPanel7.add(tJM3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 590, 20));
-
-        tJM4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM4.setForeground(new java.awt.Color(49, 45, 34));
-        tJM4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM4.setText("4. Memantau kualitas dan presentasi makanan");
-        jPanel7.add(tJM4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 20));
-
-        tJM5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM5.setForeground(new java.awt.Color(49, 45, 34));
-        tJM5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM5.setText("5. Mengelola persediaan dan bahan-bahan sesuai kebutuhan ");
-        jPanel7.add(tJM5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 20));
-
-        tJM6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM6.setForeground(new java.awt.Color(49, 45, 34));
-        tJM6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM6.setText("6. Mengawasi pengendalian porsi dan limbah untuk meminimalkan pemborosan");
-        jPanel7.add(tJM6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 570, 20));
-
-        tJM7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM7.setForeground(new java.awt.Color(49, 45, 34));
-        tJM7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM7.setText("7. Berkomunikasi dengan manajer untuk memperbaiki menu dan operasi dapur");
-        jPanel7.add(tJM7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 570, 20));
-
-        tJM8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tJM8.setForeground(new java.awt.Color(49, 45, 34));
-        tJM8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tJM8.setText("8. Mengembangkan resep baru sesuai permintaan pelanggan");
-        jPanel7.add(tJM8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 570, 20));
-
         tanggungJawabJM.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tanggungJawabJM.setForeground(new java.awt.Color(49, 45, 34));
         tanggungJawabJM.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         tanggungJawabJM.setText("Tanggung Jawab Utama");
         jPanel7.add(tanggungJawabJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
 
-        kJM1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kJM1.setForeground(new java.awt.Color(49, 45, 34));
-        kJM1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kJM1.setText("1. Laki-laki/ Perempuan");
-        jPanel7.add(kJM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 20));
+        ketjJM.setBackground(new java.awt.Color(249, 248, 242));
+        ketjJM.setColumns(20);
+        ketjJM.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        ketjJM.setForeground(new java.awt.Color(49, 45, 34));
+        ketjJM.setLineWrap(true);
+        ketjJM.setRows(5);
+        ketjJM.setText("1. Merencanakan dan menyiapkan item menu masakan\n2. Menyiapkan, memasak makanan sesuai pesanan dan mengikuti resep masakan\n3. Mengawasi operasional dapur, termasuk menjaga peralatan dapur tetap bersih\n4. Memantau kualitas dan presentasi makanan\n5. Mengelola persediaan dan bahan-bahan sesuai kebutuhan \n6. Mengawasi pengendalian porsi dan limbah untuk meminimalkan pemborosan\n7. Berkomunikasi dengan manajer untuk memperbaiki menu dan operasi dapur\n8. Mengembangkan resep baru sesuai permintaan pelanggan");
+        ketjJM.setAutoscrolls(false);
+        ketjJM.setBorder(null);
+        ketjJM.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketjJM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketjJM.setFocusable(false);
+        ketjJM.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketjJM.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane3.setViewportView(ketjJM);
 
-        kJM2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kJM2.setForeground(new java.awt.Color(49, 45, 34));
-        kJM2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kJM2.setText("2. Minimal usia 22 tahun");
-        jPanel7.add(kJM2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 20));
+        jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 190));
 
-        kJM3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kJM3.setForeground(new java.awt.Color(49, 45, 34));
-        kJM3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kJM3.setText("3. Memiliki pengalaman di bidang memasak, minimal 2 tahun");
-        jPanel7.add(kJM3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
+        ketkualJM.setBackground(new java.awt.Color(249, 248, 242));
+        ketkualJM.setColumns(20);
+        ketkualJM.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        ketkualJM.setForeground(new java.awt.Color(49, 45, 34));
+        ketkualJM.setLineWrap(true);
+        ketkualJM.setRows(5);
+        ketkualJM.setText("1. Laki-laki/ Perempuan\n2. Minimal usia 22 tahun\n3. Memiliki pengalaman di bidang memasak, minimal 2 tahun\n4. Menguasai dasar-dasar memasak (bahan, bumbu, dan proses memasak)\n5. Jujur, disiplin, dan bertanggung jawab\n6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
+        ketkualJM.setAutoscrolls(false);
+        ketkualJM.setBorder(null);
+        ketkualJM.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketkualJM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketkualJM.setFocusable(false);
+        ketkualJM.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketkualJM.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane1.setViewportView(ketkualJM);
 
-        kJM4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kJM4.setForeground(new java.awt.Color(49, 45, 34));
-        kJM4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kJM4.setText("4. Menguasai dasar-dasar memasak (bahan, bumbu, dan proses memasak)");
-        jPanel7.add(kJM4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 570, 20));
-
-        kJM5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kJM5.setForeground(new java.awt.Color(49, 45, 34));
-        kJM5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kJM5.setText("5. Jujur, disiplin, dan bertanggung jawab");
-        jPanel7.add(kJM5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 570, 20));
+        jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 150));
 
         rincianLokerJM.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 640, 470));
 
@@ -328,12 +249,6 @@ public class hrd_loker extends javax.swing.JFrame {
         desJM.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         desJM.setText("Deskripsi Pekerjaan");
         jPanel8.add(desJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 200, 30));
-
-        dJM1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM1.setForeground(new java.awt.Color(49, 45, 34));
-        dJM1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM1.setText("Sebagai juru masak, Anda akan ");
-        jPanel8.add(dJM1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 250, 30));
 
         tenggat4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tenggat4.setForeground(new java.awt.Color(0, 74, 173));
@@ -347,42 +262,6 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan21.setText("*Klik untuk mengganti data kamu");
         jPanel8.add(keterangan21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 150, -1));
 
-        dJM2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM2.setForeground(new java.awt.Color(49, 45, 34));
-        dJM2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM2.setText("bertanggung jawab untuk menyiapkan");
-        jPanel8.add(dJM2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 250, 30));
-
-        dJM3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM3.setForeground(new java.awt.Color(49, 45, 34));
-        dJM3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM3.setText("dan memasak hidangan sesuai dengan");
-        jPanel8.add(dJM3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 250, 30));
-
-        dJM4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM4.setForeground(new java.awt.Color(49, 45, 34));
-        dJM4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM4.setText("standar rumah makan kami. Anda akan");
-        jPanel8.add(dJM4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 250, 30));
-
-        dJM5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM5.setForeground(new java.awt.Color(49, 45, 34));
-        dJM5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM5.setText("bekerja sama dengan tim dapur untuk");
-        jPanel8.add(dJM5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, 30));
-
-        dJM6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM6.setForeground(new java.awt.Color(49, 45, 34));
-        dJM6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM6.setText("memastikan semua makanan disajikan ");
-        jPanel8.add(dJM6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 250, 30));
-
-        dJM7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dJM7.setForeground(new java.awt.Color(49, 45, 34));
-        dJM7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dJM7.setText("dengan rasa dan presentasi konsisten");
-        jPanel8.add(dJM7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 250, 30));
-
         posisi1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         posisi1.setForeground(new java.awt.Color(49, 45, 34));
         posisi1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -394,6 +273,23 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan24.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         keterangan24.setText("Berakhir pada:");
         jPanel8.add(keterangan24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, -1));
+
+        ketdesJM.setBackground(new java.awt.Color(249, 248, 242));
+        ketdesJM.setColumns(20);
+        ketdesJM.setForeground(new java.awt.Color(49, 45, 34));
+        ketdesJM.setLineWrap(true);
+        ketdesJM.setRows(5);
+        ketdesJM.setText("Sebagai juru masak, Anda akan bertanggung \njawab untuk menyiapkan dan memasak\nhidangan sesuai dengan standar rumah \nmakan kami. Anda akan bekerja sama dengan \ntim dapur untuk memastikan semua makanan \ndisajikan dengan rasa dan presentasi \nkonsisten");
+        ketdesJM.setAutoscrolls(false);
+        ketdesJM.setBorder(null);
+        ketdesJM.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketdesJM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketdesJM.setFocusable(false);
+        ketdesJM.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketdesJM.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane2.setViewportView(ketdesJM);
+
+        jPanel8.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 130));
 
         rincianLokerJM.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
@@ -443,95 +339,47 @@ public class hrd_loker extends javax.swing.JFrame {
         kualifikasiP.setText("Kualifikasi Pekerjaan");
         jPanel9.add(kualifikasiP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 370, -1));
 
-        kP6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kP6.setForeground(new java.awt.Color(49, 45, 34));
-        kP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kP6.setText("6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
-        jPanel9.add(kP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 570, 20));
-
-        tP1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP1.setForeground(new java.awt.Color(49, 45, 34));
-        tP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP1.setText("1. Mengambil pesanan secara akurat dan sampaikan ke staf dapur ");
-        jPanel9.add(tP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 20));
-
-        tP2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP2.setForeground(new java.awt.Color(49, 45, 34));
-        tP2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP2.setText("2. Menyajikan makanan dan minuman ke pelanggan secara tepat waktu dan efisien");
-        jPanel9.add(tP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 20));
-
-        tP3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP3.setForeground(new java.awt.Color(49, 45, 34));
-        tP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP3.setText("3. Menyapa dan melayani pelanggan dengan cara yang ramah dan profesional");
-        jPanel9.add(tP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 590, 20));
-
-        tP4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP4.setForeground(new java.awt.Color(49, 45, 34));
-        tP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP4.setText("4. Mengelola dan menata meja agar tetap rapi dan bersih");
-        jPanel9.add(tP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 20));
-
-        tP5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP5.setForeground(new java.awt.Color(49, 45, 34));
-        tP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP5.setText("5. Memastikan kebutuhan tamu terpenuhi sepanjang waktu makan");
-        jPanel9.add(tP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 480, 20));
-
-        tP6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP6.setForeground(new java.awt.Color(49, 45, 34));
-        tP6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP6.setText("6. Menangani keluhan tamu dengan profesional dan segera mencari solusi");
-        jPanel9.add(tP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 570, 20));
-
-        tP7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP7.setForeground(new java.awt.Color(49, 45, 34));
-        tP7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP7.setText("7. Menjelaskan menu dan menjawab pertanyaan tentang hidangan dan minuman.");
-        jPanel9.add(tP7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 570, 20));
-
-        tP8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tP8.setForeground(new java.awt.Color(49, 45, 34));
-        tP8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tP8.setText("8. Mengantar tamu ke meja yang tersedia dan memberikan menu");
-        jPanel9.add(tP8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 570, 20));
-
         tanggungJawabP.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tanggungJawabP.setForeground(new java.awt.Color(49, 45, 34));
         tanggungJawabP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         tanggungJawabP.setText("Tanggung Jawab Utama");
         jPanel9.add(tanggungJawabP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
 
-        kP1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kP1.setForeground(new java.awt.Color(49, 45, 34));
-        kP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kP1.setText("1. Laki-laki/ Perempuan");
-        jPanel9.add(kP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 20));
+        ketjP.setBackground(new java.awt.Color(249, 248, 242));
+        ketjP.setColumns(20);
+        ketjP.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        ketjP.setForeground(new java.awt.Color(49, 45, 34));
+        ketjP.setLineWrap(true);
+        ketjP.setRows(5);
+        ketjP.setText("1. Mengambil pesanan secara akurat dan sampaikan ke staf dapur \n2. Menyajikan makanan dan minuman ke pelanggan secara tepat waktu dan efisien\n3. Menyapa dan melayani pelanggan dengan cara yang ramah dan profesional\n4. Mengelola dan menata meja agar tetap rapi dan bersih\n5. Memastikan kebutuhan tamu terpenuhi sepanjang waktu makan\n6. Menangani keluhan tamu dengan profesional dan segera mencari solusi\n7. Menjelaskan menu dan menjawab pertanyaan tentang hidangan dan minuman.\n8. Mengantar tamu ke meja yang tersedia dan memberikan menu");
+        ketjP.setAutoscrolls(false);
+        ketjP.setBorder(null);
+        ketjP.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketjP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketjP.setFocusable(false);
+        ketjP.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketjP.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane5.setViewportView(ketjP);
 
-        kP2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kP2.setForeground(new java.awt.Color(49, 45, 34));
-        kP2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kP2.setText("2. Minimal usia 18 tahun");
-        jPanel9.add(kP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 20));
+        jPanel9.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 190));
 
-        kP3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kP3.setForeground(new java.awt.Color(49, 45, 34));
-        kP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kP3.setText("3. Memiliki pengalaman sebagai pramusaji, minimal 1 tahun/tanpa pengalaman");
-        jPanel9.add(kP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
+        ketkualP.setBackground(new java.awt.Color(249, 248, 242));
+        ketkualP.setColumns(20);
+        ketkualP.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        ketkualP.setForeground(new java.awt.Color(49, 45, 34));
+        ketkualP.setLineWrap(true);
+        ketkualP.setRows(5);
+        ketkualP.setText("1. Laki-laki/ Perempuan\n2. Minimal usia 18 tahun\n3. Memiliki pengalaman sebagai pramusaji, minimal 1 tahun/tanpa pengalaman\n4. Memiliki kemampuan untuk beradaptasi dan bekerja secara efektif\n5. Jujur, disiplin, bertanggung jawab, dan berpenampilan yang rapi dan sopan\n6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
+        ketkualP.setAutoscrolls(false);
+        ketkualP.setBorder(null);
+        ketkualP.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketkualP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketkualP.setFocusable(false);
+        ketkualP.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketkualP.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane6.setViewportView(ketkualP);
 
-        kP4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kP4.setForeground(new java.awt.Color(49, 45, 34));
-        kP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kP4.setText("4. Memiliki kemampuan untuk beradaptasi dan bekerja secara efektif");
-        jPanel9.add(kP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 570, 20));
-
-        kP5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kP5.setForeground(new java.awt.Color(49, 45, 34));
-        kP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kP5.setText("5. Jujur, disiplin, dan bertanggung jawab, serta berpenampilan yang rapi dan sopan");
-        jPanel9.add(kP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 570, 20));
+        jPanel9.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 150));
 
         rincianLokerP.getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 640, 470));
 
@@ -543,12 +391,6 @@ public class hrd_loker extends javax.swing.JFrame {
         desP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         desP.setText("Deskripsi Pekerjaan");
         jPanel10.add(desP, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 200, 30));
-
-        dP1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dP1.setForeground(new java.awt.Color(49, 45, 34));
-        dP1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dP1.setText("Sebagai pelayan/pramusaji, Anda akan ");
-        jPanel10.add(dP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 250, 30));
 
         tenggat5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tenggat5.setForeground(new java.awt.Color(0, 74, 173));
@@ -562,30 +404,6 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan46.setText("Berakhir pada:");
         jPanel10.add(keterangan46, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, -1));
 
-        dP2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dP2.setForeground(new java.awt.Color(49, 45, 34));
-        dP2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dP2.setText("bertanggung jawab untuk memberikan");
-        jPanel10.add(dP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 250, 30));
-
-        dP3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dP3.setForeground(new java.awt.Color(49, 45, 34));
-        dP3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dP3.setText("layanan pelanggan dan memastikan");
-        jPanel10.add(dP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 250, 30));
-
-        dP4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dP4.setForeground(new java.awt.Color(49, 45, 34));
-        dP4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dP4.setText("setiap tamu untuk memiliki pengalaman");
-        jPanel10.add(dP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 250, 30));
-
-        dP5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dP5.setForeground(new java.awt.Color(49, 45, 34));
-        dP5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dP5.setText("makan yang menyenangkan");
-        jPanel10.add(dP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 250, 30));
-
         posisi2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         posisi2.setForeground(new java.awt.Color(49, 45, 34));
         posisi2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -597,6 +415,23 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         keterangan22.setText("*Klik untuk mengganti data kamu");
         jPanel10.add(keterangan22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 150, 20));
+
+        ketdesP.setBackground(new java.awt.Color(249, 248, 242));
+        ketdesP.setColumns(20);
+        ketdesP.setForeground(new java.awt.Color(49, 45, 34));
+        ketdesP.setLineWrap(true);
+        ketdesP.setRows(5);
+        ketdesP.setText("Sebagai pelayan/pramusaji, Anda akan \nbertanggung jawab untuk memberikan layanan \npelanggan dan memastikan setiap tamu untuk \nmemiliki pengalaman makan yang \nmenyenangkan");
+        ketdesP.setAutoscrolls(false);
+        ketdesP.setBorder(null);
+        ketdesP.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketdesP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketdesP.setFocusable(false);
+        ketdesP.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketdesP.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane4.setViewportView(ketdesP);
+
+        jPanel10.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 260, 130));
 
         rincianLokerP.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
@@ -646,95 +481,47 @@ public class hrd_loker extends javax.swing.JFrame {
         kualifikasiK.setText("Kualifikasi Pekerjaan");
         jPanel11.add(kualifikasiK, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 370, -1));
 
-        kK6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kK6.setForeground(new java.awt.Color(49, 45, 34));
-        kK6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK6.setText("6. Kemampuan mengelola transaksi uang dengan tepat dan operasi kasir");
-        jPanel11.add(kK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 570, 20));
-
-        tK1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK1.setForeground(new java.awt.Color(49, 45, 34));
-        tK1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK1.setText("1. Mengelola transaksi pelanggan dengan tepat dan cepat");
-        jPanel11.add(tK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 20));
-
-        tK2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK2.setForeground(new java.awt.Color(49, 45, 34));
-        tK2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK2.setText("2. Memberikan pelayanan pelanggan yang baik, termasuk menangani keluhan");
-        jPanel11.add(tK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 590, 20));
-
-        tK3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK3.setForeground(new java.awt.Color(49, 45, 34));
-        tK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK3.setText("3. Mengoperasikan kasir dengan efisiensi, mengelola transaksi cash dan kartu kredit");
-        jPanel11.add(tK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 590, 20));
-
-        tK4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK4.setForeground(new java.awt.Color(49, 45, 34));
-        tK4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK4.setText("4. Mengelola kas dengan menghitung dan melaporkan uang cash dan suplai");
-        jPanel11.add(tK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 570, 20));
-
-        tK5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK5.setForeground(new java.awt.Color(49, 45, 34));
-        tK5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK5.setText("5. Bekerja sama dengan tim lain untuk memastikan pelayanan ");
-        jPanel11.add(tK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 440, 20));
-
-        tK6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK6.setForeground(new java.awt.Color(49, 45, 34));
-        tK6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK6.setText("6. Menjaga tempat kerja yang bersih dan terorganisir");
-        jPanel11.add(tK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 570, 20));
-
-        tK7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK7.setForeground(new java.awt.Color(49, 45, 34));
-        tK7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK7.setText("7. Mengeluarkan struk pembayaran dan memberikan kembalian dengan tepat");
-        jPanel11.add(tK7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 570, 20));
-
-        tK8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        tK8.setForeground(new java.awt.Color(49, 45, 34));
-        tK8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tK8.setText("8. Menyambut tamu dengan ramah saat mereka tiba di kasir");
-        jPanel11.add(tK8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 570, 20));
-
         tanggungJawabK.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tanggungJawabK.setForeground(new java.awt.Color(49, 45, 34));
         tanggungJawabK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         tanggungJawabK.setText("Tanggung Jawab Utama");
         jPanel11.add(tanggungJawabK, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
 
-        kK1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kK1.setForeground(new java.awt.Color(49, 45, 34));
-        kK1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK1.setText("1. Laki-laki/ Perempuan");
-        jPanel11.add(kK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 20));
+        ketjK.setBackground(new java.awt.Color(249, 248, 242));
+        ketjK.setColumns(20);
+        ketjK.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        ketjK.setForeground(new java.awt.Color(49, 45, 34));
+        ketjK.setLineWrap(true);
+        ketjK.setRows(5);
+        ketjK.setText("1. Mengambil pesanan secara akurat dan sampaikan ke staf dapur \n2. Menyajikan makanan minuman ke pelanggan secara tepat waktu dan efisien\n3. Menyapa dan melayani pelanggan dengan cara yang ramah dan profesional\n4. Mengelola dan menata meja agar tetap rapi dan bersih\n5. Memastikan kebutuhan tamu terpenuhi sepanjang waktu makan\n6. Menangani keluhan tamu dengan profesional dan segera mencari solusi\n7. Menjelaskan menu dan menjawab pertanyaan tentang hidangan dan minuman.\n8. Mengantar tamu ke meja yang tersedia dan memberikan menu");
+        ketjK.setAutoscrolls(false);
+        ketjK.setBorder(null);
+        ketjK.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketjK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketjK.setFocusable(false);
+        ketjK.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketjK.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane7.setViewportView(ketjK);
 
-        kK2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kK2.setForeground(new java.awt.Color(49, 45, 34));
-        kK2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK2.setText("2. Minimal usia 22 tahun");
-        jPanel11.add(kK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 570, 20));
+        jPanel11.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 190));
 
-        kK3.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kK3.setForeground(new java.awt.Color(49, 45, 34));
-        kK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK3.setText("3. Memiliki pengalaman bekerja dalam tim dan berlogika");
-        jPanel11.add(kK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 570, 20));
+        ketkualK.setBackground(new java.awt.Color(249, 248, 242));
+        ketkualK.setColumns(20);
+        ketkualK.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        ketkualK.setForeground(new java.awt.Color(49, 45, 34));
+        ketkualK.setLineWrap(true);
+        ketkualK.setRows(5);
+        ketkualK.setText("1. Laki-laki/ Perempuan\n2. Minimal usia 18 tahun\n3. Memiliki pengalaman sebagai pramusaji, minimal 1 tahun/tanpa pengalaman\n4. Memiliki kemampuan untuk beradaptasi dan bekerja secara efektif\n5. Jujur, disiplin, bertanggung jawab, dan berpenampilan yang rapi dan sopan\n6. Mempunyai skill leadership, teamwork, dan komunikasi yang baik");
+        ketkualK.setAutoscrolls(false);
+        ketkualK.setBorder(null);
+        ketkualK.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketkualK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketkualK.setFocusable(false);
+        ketkualK.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketkualK.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane8.setViewportView(ketkualK);
 
-        kK4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kK4.setForeground(new java.awt.Color(49, 45, 34));
-        kK4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK4.setText("4. Memiliki pengetahuan dasar operasi komputer dan menggunakan sistem kasir");
-        jPanel11.add(kK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 570, 20));
-
-        kK5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        kK5.setForeground(new java.awt.Color(49, 45, 34));
-        kK5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        kK5.setText("5. Jujur, disiplin, dan bertanggung jawab dan memiliki komunikasi yang baik");
-        jPanel11.add(kK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 570, 20));
+        jPanel11.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 150));
 
         rincianLokerK.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 640, 470));
 
@@ -746,12 +533,6 @@ public class hrd_loker extends javax.swing.JFrame {
         desK.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         desK.setText("Deskripsi Pekerjaan");
         jPanel12.add(desK, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 200, 30));
-
-        dK1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dK1.setForeground(new java.awt.Color(49, 45, 34));
-        dK1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dK1.setText("Sebagai kasir, Anda akan bertanggung");
-        jPanel12.add(dK1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 250, 30));
 
         tenggat6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tenggat6.setForeground(new java.awt.Color(0, 74, 173));
@@ -765,36 +546,6 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan68.setText("Berakhir pada:");
         jPanel12.add(keterangan68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 120, -1));
 
-        dK2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dK2.setForeground(new java.awt.Color(49, 45, 34));
-        dK2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dK2.setText("jawab untuk menangani transaksi");
-        jPanel12.add(dK2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 250, 30));
-
-        dK3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dK3.setForeground(new java.awt.Color(49, 45, 34));
-        dK3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dK3.setText("pembayaran dengan akurat dan efisien,");
-        jPanel12.add(dK3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, 30));
-
-        dK4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dK4.setForeground(new java.awt.Color(49, 45, 34));
-        dK4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dK4.setText("serta memberikan layanan kepada");
-        jPanel12.add(dK4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 250, 30));
-
-        dK5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dK5.setForeground(new java.awt.Color(49, 45, 34));
-        dK5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dK5.setText("pelanggan dengan ramah dan");
-        jPanel12.add(dK5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 250, 30));
-
-        dK6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        dK6.setForeground(new java.awt.Color(49, 45, 34));
-        dK6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dK6.setText("profesional");
-        jPanel12.add(dK6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 250, 30));
-
         posisi3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         posisi3.setForeground(new java.awt.Color(49, 45, 34));
         posisi3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -806,6 +557,23 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         keterangan25.setText("*Klik untuk mengganti data kamu");
         jPanel12.add(keterangan25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 150, 20));
+
+        ketdesK.setBackground(new java.awt.Color(249, 248, 242));
+        ketdesK.setColumns(20);
+        ketdesK.setForeground(new java.awt.Color(49, 45, 34));
+        ketdesK.setLineWrap(true);
+        ketdesK.setRows(5);
+        ketdesK.setText("Sebagai kasir, Anda akan bertanggung jawab \nuntuk menangani transaksi pembayaran \ndengan akurat dan efisien, serta memberikan \nlayanan kepada pelanggan dengan \nramah dan profesional");
+        ketdesK.setAutoscrolls(false);
+        ketdesK.setBorder(null);
+        ketdesK.setCaretColor(new java.awt.Color(249, 248, 242));
+        ketdesK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        ketdesK.setFocusable(false);
+        ketdesK.setMaximumSize(new java.awt.Dimension(232, 84));
+        ketdesK.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane9.setViewportView(ketdesK);
+
+        jPanel12.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 260, 130));
 
         rincianLokerK.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
@@ -1282,24 +1050,6 @@ public class hrd_loker extends javax.swing.JFrame {
     private javax.swing.JLabel backButton1;
     private javax.swing.JLabel backButton2;
     private javax.swing.JLabel copyright;
-    private javax.swing.JLabel dJM1;
-    private javax.swing.JLabel dJM2;
-    private javax.swing.JLabel dJM3;
-    private javax.swing.JLabel dJM4;
-    private javax.swing.JLabel dJM5;
-    private javax.swing.JLabel dJM6;
-    private javax.swing.JLabel dJM7;
-    private javax.swing.JLabel dK1;
-    private javax.swing.JLabel dK2;
-    private javax.swing.JLabel dK3;
-    private javax.swing.JLabel dK4;
-    private javax.swing.JLabel dK5;
-    private javax.swing.JLabel dK6;
-    private javax.swing.JLabel dP1;
-    private javax.swing.JLabel dP2;
-    private javax.swing.JLabel dP3;
-    private javax.swing.JLabel dP4;
-    private javax.swing.JLabel dP5;
     private javax.swing.JLabel desJM;
     private javax.swing.JLabel desK;
     private javax.swing.JLabel desP;
@@ -1317,6 +1067,15 @@ public class hrd_loker extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -1325,24 +1084,9 @@ public class hrd_loker extends javax.swing.JFrame {
     private javax.swing.JLabel judul1;
     private javax.swing.JLabel judul2;
     private javax.swing.JLabel judul3;
-    private javax.swing.JLabel kJM1;
-    private javax.swing.JLabel kJM2;
-    private javax.swing.JLabel kJM3;
-    private javax.swing.JLabel kJM4;
-    private javax.swing.JLabel kJM5;
-    private javax.swing.JLabel kJM6;
-    private javax.swing.JLabel kK1;
-    private javax.swing.JLabel kK2;
-    private javax.swing.JLabel kK3;
-    private javax.swing.JLabel kK4;
-    private javax.swing.JLabel kK5;
-    private javax.swing.JLabel kK6;
-    private javax.swing.JLabel kP1;
-    private javax.swing.JLabel kP2;
-    private javax.swing.JLabel kP3;
-    private javax.swing.JLabel kP4;
-    private javax.swing.JLabel kP5;
-    private javax.swing.JLabel kP6;
+    private javax.swing.JTextArea ketdesJM;
+    private javax.swing.JTextArea ketdesK;
+    private javax.swing.JTextArea ketdesP;
     private javax.swing.JLabel keterangan12;
     private javax.swing.JLabel keterangan21;
     private javax.swing.JLabel keterangan22;
@@ -1354,6 +1098,12 @@ public class hrd_loker extends javax.swing.JFrame {
     private javax.swing.JLabel keterangan6;
     private javax.swing.JLabel keterangan68;
     private javax.swing.JLabel keterangan9;
+    private javax.swing.JTextArea ketjJM;
+    private javax.swing.JTextArea ketjK;
+    private javax.swing.JTextArea ketjP;
+    private javax.swing.JTextArea ketkualJM;
+    private javax.swing.JTextArea ketkualK;
+    private javax.swing.JTextArea ketkualP;
     private javax.swing.JLabel kualifikasiJM;
     private javax.swing.JLabel kualifikasiK;
     private javax.swing.JLabel kualifikasiP;
@@ -1382,30 +1132,6 @@ public class hrd_loker extends javax.swing.JFrame {
     private javax.swing.JButton simpanK;
     private javax.swing.JButton simpanP;
     private javax.swing.JLabel support;
-    private javax.swing.JLabel tJM1;
-    private javax.swing.JLabel tJM2;
-    private javax.swing.JLabel tJM3;
-    private javax.swing.JLabel tJM4;
-    private javax.swing.JLabel tJM5;
-    private javax.swing.JLabel tJM6;
-    private javax.swing.JLabel tJM7;
-    private javax.swing.JLabel tJM8;
-    private javax.swing.JLabel tK1;
-    private javax.swing.JLabel tK2;
-    private javax.swing.JLabel tK3;
-    private javax.swing.JLabel tK4;
-    private javax.swing.JLabel tK5;
-    private javax.swing.JLabel tK6;
-    private javax.swing.JLabel tK7;
-    private javax.swing.JLabel tK8;
-    private javax.swing.JLabel tP1;
-    private javax.swing.JLabel tP2;
-    private javax.swing.JLabel tP3;
-    private javax.swing.JLabel tP4;
-    private javax.swing.JLabel tP5;
-    private javax.swing.JLabel tP6;
-    private javax.swing.JLabel tP7;
-    private javax.swing.JLabel tP8;
     private javax.swing.JLabel tanggungJawabJM;
     private javax.swing.JLabel tanggungJawabK;
     private javax.swing.JLabel tanggungJawabP;
