@@ -45,7 +45,38 @@ public class loginpage extends javax.swing.JFrame {
         infoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/infoBlack.png")));
         aksara1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/aksaraWhite.png")));
         aksara2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/aksaraBlack.png")));
+    
+        //setRoundButton(masukButton, 50); 
     }
+    
+/*private void setRoundButton(javax.swing.JButton button, int radius) {
+    button.setOpaque(false);
+    button.setContentAreaFilled(true);
+    button.setBorderPainted(true);
+    button.setForeground(Color.BLACK); // Set the text color to ensure visibility
+
+    button.setBorder(new javax.swing.border.Border() {
+        int rad = radius;
+
+        @Override
+        public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+            ((Graphics2D) g).setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g.setColor(button.getBackground());
+            g.fillRoundRect(x, y, width - 1, height - 1, rad, rad);
+        }
+
+        @Override
+        public Insets getBorderInsets(Component c) {
+            return new Insets(rad, rad, rad, rad);
+        }
+
+        @Override
+        public boolean isBorderOpaque() {
+            return true;
+        }
+    });
+}*/
+
     
     public String getUsername() {
         return username;

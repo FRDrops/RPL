@@ -72,7 +72,7 @@ public class user_home extends javax.swing.JFrame {
         kirimButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        saranInput = new javax.swing.JTextArea();
         backButton = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         lokerLabel = new javax.swing.JLabel();
@@ -92,9 +92,7 @@ public class user_home extends javax.swing.JFrame {
         logoutButton = new javax.swing.JLabel();
 
         kotakSaran.setBackground(new java.awt.Color(255, 255, 255));
-        kotakSaran.setMaximumSize(new java.awt.Dimension(505, 365));
         kotakSaran.setMinimumSize(new java.awt.Dimension(505, 365));
-        kotakSaran.setPreferredSize(new java.awt.Dimension(505, 365));
         kotakSaran.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -117,20 +115,19 @@ public class user_home extends javax.swing.JFrame {
         jLabel1.setText("Kotak Saran");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
-        jTextArea1.setBackground(new java.awt.Color(249, 248, 242));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(49, 45, 34));
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jTextArea1.setMaximumSize(new java.awt.Dimension(232, 84));
-        jTextArea1.setMinimumSize(new java.awt.Dimension(232, 84));
-        jScrollPane1.setViewportView(jTextArea1);
+        saranInput.setBackground(new java.awt.Color(249, 248, 242));
+        saranInput.setColumns(20);
+        saranInput.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        saranInput.setForeground(new java.awt.Color(49, 45, 34));
+        saranInput.setLineWrap(true);
+        saranInput.setRows(5);
+        saranInput.setBorder(null);
+        saranInput.setMaximumSize(new java.awt.Dimension(232, 84));
+        saranInput.setMinimumSize(new java.awt.Dimension(232, 84));
+        jScrollPane1.setViewportView(saranInput);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 400, 130));
 
-        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton.setText("jLabel2");
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -375,7 +372,6 @@ public class user_home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel judul;
     private javax.swing.JLabel keterangan;
     private javax.swing.JButton kirimButton;
@@ -386,6 +382,7 @@ public class user_home extends javax.swing.JFrame {
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
     private javax.swing.JPanel nav;
+    private javax.swing.JTextArea saranInput;
     private javax.swing.JLabel support;
     // End of variables declaration//GEN-END:variables
 
