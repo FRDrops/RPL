@@ -29,6 +29,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.TableCellRenderer;
 
 /**
@@ -546,7 +548,11 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private void pelamarIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pelamarIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_pelamar().setVisible(true);
+        try {
+            new hrd_pelamar().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_pegawai.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_pelamarIconMouseClicked
 
     private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked

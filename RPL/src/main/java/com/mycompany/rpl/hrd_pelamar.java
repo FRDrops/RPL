@@ -29,9 +29,12 @@ import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
@@ -45,7 +48,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
     /**
      * Creates new form hrd_pelamar
      */
-    public hrd_pelamar() {
+    public hrd_pelamar() throws SQLException {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -72,52 +75,117 @@ public class hrd_pelamar extends javax.swing.JFrame {
         }
     }
 
-    public DefaultTableModel readPelamar(){
+    public DefaultTableModel readPelamar() throws SQLException {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("Nama");
         tableModel.addColumn("Jenis Kelamin");
-        tableModel.addColumn("Tanggal lahir");
+        tableModel.addColumn("Tanggal Lahir");
         tableModel.addColumn("Alamat");
+        tableModel.addColumn("Posisi Lamaran");
         tableModel.addColumn("Tanggal Diajukan");
+
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement statementJM = null;
+        PreparedStatement statementK = null;
+        PreparedStatement statementP = null;
+        ResultSet resultSet = null;
 
         try {
             tableModel.setRowCount(0);
-            Koneksi konek = new Koneksi();
-            Connection koneksi = konek.open();
 
-            String query = "SELECT lowongan_jm.*, data_user.* " +
-                            "FROM lowongan_jm " +
-                            "INNER JOIN data_user ON lowongan_jm.username_user = data_user.username_user";
+            String queryJM = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Juru Masak' AS posisi_lamaran, ljm.tanggal_diajukan " +
+                             "FROM lowongan_jm ljm " +
+                             "INNER JOIN data_user du ON ljm.username_user = du.username_user";
 
-             Statement statement = koneksi.createStatement();
-             ResultSet resultSet = statement.executeQuery(query);
+            String queryK = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Kasir' AS posisi_lamaran, lk.tanggal_diajukan " +
+                            "FROM lowongan_k lk " +
+                            "INNER JOIN data_user du ON lk.username_user = du.username_user";
 
-             while (resultSet.next()) {
-                 Object[] rowData = {
-                     resultSet.getString("nama"),
-                     resultSet.getString("jenis_kelamin"),
-                     resultSet.getDate("tanggal_lahir"),
-                     resultSet.getString("alamat"),
-                     resultSet.getDate("tanggal_diajukan")
-                 };
+            String queryP = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Pelayan' AS posisi_lamaran, lp.tanggal_diajukan " +
+                            "FROM lowongan_p lp " +
+                            "INNER JOIN data_user du ON lp.username_user = du.username_user";
+
+            statementJM = koneksi.prepareStatement(queryJM);
+            resultSet = statementJM.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Juru Masak",
+                    resultSet.getDate("tanggal_diajukan")
+                };
                 tableModel.addRow(rowData);
             }
             resultSet.close();
-            statement.close();
+
+            statementK = koneksi.prepareStatement(queryK);
+            resultSet = statementK.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Kasir",
+                    resultSet.getDate("tanggal_diajukan")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementP = koneksi.prepareStatement(queryP);
+            resultSet = statementP.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Pelayan",
+                    resultSet.getDate("tanggal_diajukan")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
             ex.printStackTrace();
         } catch (Exception e) {
             System.out.println("Kesalahan lain terjadi: " + e.getMessage());
             e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statementJM != null) {
+                    statementJM.close();
+                }
+                if (statementK != null) {
+                    statementK.close();
+                }
+                if (statementP != null) {
+                    statementP.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
         return tableModel;
     }
+
     
-    public void readToTable() {
+    public void readToTable() throws SQLException {
         tablePelamar.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][]{},
-            new String[]{"Nama", "jenis Kelamin", "Tanggal Lahir", "Alamat", "Tanggal Diajukan"}
+            new String[]{"Nama", "jenis Kelamin", "Tanggal Lahir", "Alamat", "Posisi Lamaran", "Tanggal Diajukan"}
         ));
         DefaultTableModel model = readPelamar();
         tablePelamar.setModel(model);
@@ -587,6 +655,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar.setGridColor(new java.awt.Color(215, 204, 185));
         tablePelamar.setRowHeight(30);
         tablePelamar.setSelectionBackground(new java.awt.Color(215, 204, 185));
+        tablePelamar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablePelamarMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablePelamar);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 970, -1));
@@ -672,12 +745,20 @@ public class hrd_pelamar extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
+    private void tablePelamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePelamarMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel sourceModel = (DefaultTableModel) tablePelamar.getModel();
+        int MyIndex = tablePelamar.getSelectedRow();
+        String nama = sourceModel.getValueAt(MyIndex, 0).toString();
+        String posisi = sourceModel.getValueAt(MyIndex, 1).toString();
+    }//GEN-LAST:event_tablePelamarMouseClicked
+
     //table bisa di select per-kotak, terus nanti diarahin ke rincianPelamar dan data pelamar (user) muncul di sana
     
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -704,7 +785,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new hrd_pelamar().setVisible(true);
+                try {
+                    new hrd_pelamar().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         

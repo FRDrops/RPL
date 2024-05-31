@@ -18,6 +18,8 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.*;
 import javax.swing.ImageIcon;
@@ -355,7 +357,11 @@ public class hrd_home extends javax.swing.JFrame {
     private void pelamarIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pelamarIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_pelamar().setVisible(true);
+        try {
+            new hrd_pelamar().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_pelamarIconMouseClicked
 
     private void lokerIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lokerIconMouseClicked
