@@ -16,6 +16,8 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -310,9 +312,51 @@ public class user_home extends javax.swing.JFrame {
     private void kirimButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kirimButtonActionPerformed
         // TODO add your handling code here:
         // IF terkirim,kembali ke home. ElSE, pop up
-        
+        String username = Session.getInstance().getUsername();
+        String isi = saranInput.getText();
+        createSaran(username, isi);
     }//GEN-LAST:event_kirimButtonActionPerformed
 
+    public void createSaran(String username, String isi) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement ps = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "INSERT INTO saran (username_user, isi) VALUES (?, ?)";
+            ps = koneksi.prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2, isi);
+
+            int rowsInserted = ps.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("Saran berhasil ditambahkan.");
+            } else {
+                System.out.println("Gagal menambahkan saran.");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         kotakSaran.dispose();

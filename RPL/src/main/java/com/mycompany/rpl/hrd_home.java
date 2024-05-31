@@ -27,6 +27,8 @@ import javax.swing.border.*;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -37,7 +39,7 @@ public class hrd_home extends javax.swing.JFrame {
     /**
      * Creates new form hrd_home
      */
-    public hrd_home() {
+    public hrd_home() throws SQLException {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -53,6 +55,7 @@ public class hrd_home extends javax.swing.JFrame {
         
         String username = Session.getInstance().getUsername();
         readHrd(username);
+        readToTable();
                 
     }
 
@@ -84,6 +87,150 @@ public class hrd_home extends javax.swing.JFrame {
         hrdLabel.setText("");
     }
     
+    public DefaultTableModel readPelamar() throws SQLException {
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Nama");
+        tableModel.addColumn("Jenis Kelamin");
+        tableModel.addColumn("Tanggal Lahir");
+        tableModel.addColumn("Alamat");
+        tableModel.addColumn("Posisi Lamaran");
+        tableModel.addColumn("Tanggal Diajukan");
+
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement statementJM = null;
+        PreparedStatement statementK = null;
+        PreparedStatement statementP = null;
+        ResultSet resultSet = null;
+
+        try {
+            tableModel.setRowCount(0);
+
+            String queryJM = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Juru Masak' AS posisi_lamaran, ljm.tanggal_diajukan " +
+                             "FROM lowongan_jm ljm " +
+                             "INNER JOIN data_user du ON ljm.username_user = du.username_user " +
+                             "ORDER BY ljm.tanggal_diajukan DESC";
+
+            String queryK = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Kasir' AS posisi_lamaran, lk.tanggal_diajukan " +
+                            "FROM lowongan_k lk " +
+                            "INNER JOIN data_user du ON lk.username_user = du.username_user " +
+                            "ORDER BY lk.tanggal_diajukan DESC";
+
+            String queryP = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Pelayan' AS posisi_lamaran, lp.tanggal_diajukan " +
+                            "FROM lowongan_p lp " +
+                            "INNER JOIN data_user du ON lp.username_user = du.username_user " +
+                            "ORDER BY lp.tanggal_diajukan DESC";
+
+            statementJM = koneksi.prepareStatement(queryJM);
+            resultSet = statementJM.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Juru Masak",
+                    resultSet.getDate("tanggal_diajukan")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementK = koneksi.prepareStatement(queryK);
+            resultSet = statementK.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Kasir",
+                    resultSet.getDate("tanggal_diajukan")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementP = koneksi.prepareStatement(queryP);
+            resultSet = statementP.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Pelayan",
+                    resultSet.getDate("tanggal_diajukan")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statementJM != null) {
+                    statementJM.close();
+                }
+                if (statementK != null) {
+                    statementK.close();
+                }
+                if (statementP != null) {
+                    statementP.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        return tableModel;
+    }
+
+    
+    public void readToTable() throws SQLException {
+        final int MAX_ROWS = 3;  // Misalnya kita membatasi hingga 100 baris
+        pelamarBaru.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"Nama", "Jenis Kelamin", "Tanggal Lahir", "Alamat", "Posisi Lamaran", "Tanggal Diajukan"}
+        ));
+
+        DefaultTableModel model = readPelamar();
+        DefaultTableModel limitedModel = new DefaultTableModel(
+            new String[]{"Nama", "Jenis Kelamin", "Tanggal Lahir", "Alamat", "Posisi Lamaran", "Tanggal Diajukan"},
+            0
+        );
+
+        int rowCount = Math.min(model.getRowCount(), MAX_ROWS);
+        for (int i = 0; i < rowCount; i++) {
+            Object[] rowData = new Object[model.getColumnCount()];
+            for (int j = 0; j < model.getColumnCount(); j++) {
+                rowData[j] = model.getValueAt(i, j);
+            }
+            limitedModel.addRow(rowData);
+        }
+
+        pelamarBaru.setModel(limitedModel);
+        centerAlignTableCells();
+    }
+    
+    private void centerAlignTableCells() {
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+    for (int i = 0; i < pelamarBaru.getColumnCount(); i++) {
+        pelamarBaru.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+    }
+}
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -340,7 +487,7 @@ public class hrd_home extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -367,7 +514,11 @@ public class hrd_home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new hrd_home().setVisible(true);
+                try {
+                    new hrd_home().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(hrd_home.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         
