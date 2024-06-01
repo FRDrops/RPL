@@ -60,7 +60,7 @@ public class hrd_saran extends javax.swing.JFrame {
         readToTable();
     }
 
-    public DefaultTableModel readSaran(String username) throws SQLException{
+    public DefaultTableModel readSaran(String username) throws SQLException {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("Nama");
         tableModel.addColumn("Saran dan Kritik");
@@ -72,22 +72,21 @@ public class hrd_saran extends javax.swing.JFrame {
         try {
             tableModel.setRowCount(0);
 
-            String query = "SELECT du.*, s.* " +
-                       "FROM data_user du " +
-                       "INNER JOIN saran s ON du.username_user = s.username_user " +
-                       "WHERE du.username_user = ?";
+            String query = "SELECT du.nama, s.isi " +
+                           "FROM data_user du " +
+                           "INNER JOIN saran s ON du.username_user = s.username_user " +
+                           "WHERE du.username_user = ?";
 
             statement = koneksi.prepareStatement(query);
             statement.setString(1, username);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Object[] rowData = {
-                    resultSet.getDate("nama"),
-                    resultSet.getDate("isi")
+                    resultSet.getString("nama"),
+                    resultSet.getString("isi")
                 };
                 tableModel.addRow(rowData);
             }
-            resultSet.close();
 
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
@@ -120,10 +119,28 @@ public class hrd_saran extends javax.swing.JFrame {
             new String[]{"Nama", "Saran dan Kritik"}
         ));
         String username = Session.getInstance().getUsername();
-        DefaultTableModel model = readSaran(username);
-        tableSaran.setModel(model);
-        
-        centerAlignTableCells();
+        DefaultTableModel model = null;
+
+        try {
+            model = readSaran(username);
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi saat membaca tabel: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi saat membaca tabel: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        if (model != null) {
+            tableSaran.setModel(model);
+        }
+
+        try {
+            centerAlignTableCells();
+        } catch (Exception e) {
+            System.out.println("Kesalahan saat menyelaraskan tabel: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
     
      private void centerAlignTableCells() {
