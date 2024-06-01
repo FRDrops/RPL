@@ -1033,9 +1033,61 @@ public class hrd_pelamar extends javax.swing.JFrame {
         readBerkas.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         readBerkas.setVisible(true);
         readBerkas.setVisible(true);
+        String nama = judul2.getText();
+        String username = readUsn(nama);
         
     }//GEN-LAST:event_lihatBerkasActionPerformed
 
+    private void lihatBerkasDetail(String username, String berkas) {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = null;
+            PreparedStatement statement = null;
+            ResultSet resultSet = null;
+
+            try {
+            koneksi = konek.open();
+            String query = "SELECT " + berkas + " FROM data_user WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                byte[] imgBytes = resultSet.getBytes(berkas);
+                if (imgBytes != null) {
+                    ByteArrayInputStream bais = new ByteArrayInputStream(imgBytes);
+                    Image img = ImageIO.read(bais);
+                    if (img != null) {
+                        ImageIcon icon = new ImageIcon(img);
+                        label2.setIcon(icon);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Gambar tidak valid", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Tidak ada gambar ditemukan", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Pengguna tidak ditemukan", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (Exception e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }    
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         rincianPelamar.dispose();
@@ -1194,27 +1246,42 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
     private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
         // TODO add your handling code here:
-        
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        String berkas = "cv";
+        this.lihatBerkasDetail(username, berkas);
     }//GEN-LAST:event_cvMouseClicked
 
     private void ktpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ktpMouseClicked
         // TODO add your handling code here:
-        
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        String berkas = "ktp";
+        this.lihatBerkasDetail(username, berkas);
     }//GEN-LAST:event_ktpMouseClicked
 
     private void kkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kkMouseClicked
         // TODO add your handling code here:
-        
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        String berkas = "kk";
+        this.lihatBerkasDetail(username, berkas);
     }//GEN-LAST:event_kkMouseClicked
 
     private void skckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skckMouseClicked
         // TODO add your handling code here:
-        
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        String berkas = "skck";
+        this.lihatBerkasDetail(username, berkas);
     }//GEN-LAST:event_skckMouseClicked
 
     private void ijazahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ijazahMouseClicked
         // TODO add your handling code here:
-        
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        String berkas = "ijazah";
+        this.lihatBerkasDetail(username, berkas);
     }//GEN-LAST:event_ijazahMouseClicked
 
     private void kembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kembaliMouseClicked
