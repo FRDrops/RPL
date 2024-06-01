@@ -59,6 +59,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
         rincianPelamar.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        readBerkas.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));
         pelamarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pelamarWhite.png")));
@@ -341,6 +342,23 @@ public class hrd_pelamar extends javax.swing.JFrame {
         lihatBerkas = new javax.swing.JButton();
         pendInput = new javax.swing.JComboBox<>();
         posisiUser = new javax.swing.JLabel();
+        readBerkas = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        kembali = new javax.swing.JButton();
+        judul3 = new javax.swing.JLabel();
+        nav1 = new RoundedPanel(10, new Color(249, 248, 242));
+        label2 = new javax.swing.JLabel();
+        nav6 = new RoundedPanel(10, new Color(112, 104, 94));
+        cv = new javax.swing.JLabel();
+        nav5 = new RoundedPanel(10, new Color(112, 104, 94));
+        ktp = new javax.swing.JLabel();
+        nav4 = new RoundedPanel(10, new Color(112, 104, 94));
+        kk = new javax.swing.JLabel();
+        nav3 = new RoundedPanel(10, new Color(112, 104, 94));
+        skck = new javax.swing.JLabel();
+        nav2 = new RoundedPanel(10, new Color(112, 104, 94));
+        ijazah = new javax.swing.JLabel();
+        ketCV = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         pegawaiLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -363,6 +381,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar = new javax.swing.JTable();
 
         rincianPelamar.setBackground(new java.awt.Color(255, 255, 255));
+        rincianPelamar.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -588,6 +607,145 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
         rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 190, -1));
+
+        readBerkas.setMaximumSize(new java.awt.Dimension(625, 600));
+        readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
+        readBerkas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setMaximumSize(new java.awt.Dimension(467, 272));
+        jPanel10.setMinimumSize(new java.awt.Dimension(467, 272));
+        jPanel10.setPreferredSize(new java.awt.Dimension(467, 272));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kembali.setBackground(new java.awt.Color(112, 104, 94));
+        kembali.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        kembali.setForeground(new java.awt.Color(255, 255, 255));
+        kembali.setText("Kembali");
+        kembali.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        kembali.setFocusable(false);
+        kembali.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kembaliMouseClicked(evt);
+            }
+        });
+        kembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kembaliActionPerformed(evt);
+            }
+        });
+        jPanel10.add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        judul3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        judul3.setForeground(new java.awt.Color(49, 45, 34));
+        judul3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        judul3.setText("Berkas Pelamar");
+        jPanel10.add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 210, 40));
+
+        nav1.setBackground(new java.awt.Color(255, 255, 255));
+        nav1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        label2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        label2.setForeground(new java.awt.Color(215, 204, 185));
+        label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label2.setText("Autosave");
+        nav1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 190, -1));
+
+        jPanel10.add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, 370));
+
+        nav6.setBackground(new java.awt.Color(249, 248, 242));
+        nav6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nav6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cv.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cv.setForeground(new java.awt.Color(255, 255, 255));
+        cv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cv.setText("CV");
+        cv.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cv.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cvMouseClicked(evt);
+            }
+        });
+        nav6.add(cv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jPanel10.add(nav6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 70, 60));
+
+        nav5.setBackground(new java.awt.Color(249, 248, 242));
+        nav5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ktp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ktp.setForeground(new java.awt.Color(255, 255, 255));
+        ktp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ktp.setText("KTP");
+        ktp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ktp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ktpMouseClicked(evt);
+            }
+        });
+        nav5.add(ktp, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jPanel10.add(nav5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 70, 60));
+
+        nav4.setBackground(new java.awt.Color(249, 248, 242));
+        nav4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        kk.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        kk.setForeground(new java.awt.Color(255, 255, 255));
+        kk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kk.setText("KK");
+        kk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        kk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kkMouseClicked(evt);
+            }
+        });
+        nav4.add(kk, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jPanel10.add(nav4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 70, 60));
+
+        nav3.setBackground(new java.awt.Color(249, 248, 242));
+        nav3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        skck.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        skck.setForeground(new java.awt.Color(255, 255, 255));
+        skck.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        skck.setText("SKCK");
+        skck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        skck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                skckMouseClicked(evt);
+            }
+        });
+        nav3.add(skck, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jPanel10.add(nav3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 70, 60));
+
+        nav2.setBackground(new java.awt.Color(249, 248, 242));
+        nav2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ijazah.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ijazah.setForeground(new java.awt.Color(255, 255, 255));
+        ijazah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ijazah.setText("IJAZAH");
+        ijazah.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ijazah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ijazahMouseClicked(evt);
+            }
+        });
+        nav2.add(ijazah, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 50, 40));
+
+        jPanel10.add(nav2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 70, 60));
+
+        ketCV.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        ketCV.setForeground(new java.awt.Color(169, 42, 13));
+        ketCV.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ketCV.setText("*Klik untuk melihat berkas");
+        jPanel10.add(ketCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 280, 20));
+
+        readBerkas.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 540));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -869,6 +1027,12 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
     private void lihatBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatBerkasActionPerformed
         // TODO add your handling code here:
+        rincianPelamar.dispose();
+        readBerkas.setLocationRelativeTo(null);
+        readBerkas.setSize(625, 600);
+        readBerkas.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        readBerkas.setVisible(true);
+        readBerkas.setVisible(true);
         
     }//GEN-LAST:event_lihatBerkasActionPerformed
 
@@ -1021,6 +1185,47 @@ public class hrd_pelamar extends javax.swing.JFrame {
             Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_acceptMouseClicked
+
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
+        // TODO add your handling code here:
+        readBerkas.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_kembaliActionPerformed
+
+    private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cvMouseClicked
+
+    private void ktpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ktpMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ktpMouseClicked
+
+    private void kkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kkMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_kkMouseClicked
+
+    private void skckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_skckMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_skckMouseClicked
+
+    private void ijazahMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ijazahMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ijazahMouseClicked
+
+    private void kembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kembaliMouseClicked
+        // TODO add your handling code here:
+        readBerkas.dispose();
+        rincianPelamar.setLocationRelativeTo(null);
+        rincianPelamar.setSize(1100, 650);
+        rincianPelamar.getContentPane().setBackground(Color.decode("0xFFFFFF"));
+        rincianPelamar.setVisible(true);
+        rincianPelamar.setVisible(true);
+    }//GEN-LAST:event_kembaliMouseClicked
 
     public String readUsn(String nama) {
         Koneksi konek = new Koneksi();
@@ -1177,9 +1382,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private javax.swing.JTextField alamatInput;
     private javax.swing.JLabel backButton;
     private javax.swing.JLabel copyright;
+    private javax.swing.JLabel cv;
     private javax.swing.JLabel decline;
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
+    private javax.swing.JLabel ijazah;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1187,6 +1394,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1201,12 +1409,24 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private javax.swing.JLabel judul;
     private javax.swing.JLabel judul1;
     private javax.swing.JLabel judul2;
+    private javax.swing.JLabel judul3;
+    private javax.swing.JButton kembali;
+    private javax.swing.JLabel ketCV;
     private javax.swing.JLabel keterangan2;
+    private javax.swing.JLabel kk;
+    private javax.swing.JLabel ktp;
+    private javax.swing.JLabel label2;
     private javax.swing.JButton lihatBerkas;
     private javax.swing.JLabel logoutButton;
     private javax.swing.JLabel lokerIcon;
     private javax.swing.JLabel lokerLabel;
     private javax.swing.JPanel nav;
+    private javax.swing.JPanel nav1;
+    private javax.swing.JPanel nav2;
+    private javax.swing.JPanel nav3;
+    private javax.swing.JPanel nav4;
+    private javax.swing.JPanel nav5;
+    private javax.swing.JPanel nav6;
     private javax.swing.JTextField nikInput;
     private javax.swing.JTextField nomorInput;
     private javax.swing.JLabel pegawaiIcon;
@@ -1215,9 +1435,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private javax.swing.JLabel pelamarLabel;
     private javax.swing.JComboBox<String> pendInput;
     private javax.swing.JLabel posisiUser;
+    private javax.swing.JDialog readBerkas;
     private javax.swing.JDialog rincianPelamar;
     private javax.swing.JLabel saranIcon;
     private javax.swing.JLabel saranLabel;
+    private javax.swing.JLabel skck;
     private javax.swing.JLabel support;
     private javax.swing.JTable tablePelamar;
     private javax.swing.JTextField tanggalInput;
