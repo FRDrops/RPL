@@ -1049,42 +1049,44 @@ public class user_data extends javax.swing.JFrame {
         String tanggal = tanggalInput.getText();
         String alamat = alamatInput.getText();
         String nikText = nikInput.getText();
-        int nik = Integer.parseInt(nikText);
         String nomorText = nomorInput.getText();
-        int nomor = Integer.parseInt(nomorText);
-        String jenis = (String) jenisInput.getSelectedItem();
-        String pend = (String) pendInput.getSelectedItem();
-        
-        updateData(username, jenis, tempat, tanggal, pend, alamat, nik, nomor);
+
+        try {
+            long nik = Long.parseLong(nikText);
+            long nomor = Long.parseLong(nomorText);
+            String jenis = (String) jenisInput.getSelectedItem();
+            String pend = (String) pendInput.getSelectedItem();
+
+            updateData(username, jenis, tempat, tanggal, pend, alamat, nik, nomor);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Input NIK atau nomor telepon tidak valid, masukkan angka yang benar.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_simpanButtonActionPerformed
 
-    public void updateData(String username, String jenis, String tempat, String yyyymmdd, String pend, String alamat, int nik, int nomor) {
+    public void updateData(String username, String jenis, String tempat, String tanggal, String pend, String alamat, long nik, long nomor) {
         try {
             Koneksi konek = new Koneksi();
             Connection koneksi = konek.open();
-            
-            String updateQuery = "UPDATE data_user SET jenis_kelamin = ?, tempat_lahir = ?, tanggal_lahir = ?, pendidikan = ?, telepon = ?, alamat = ?, nik = ? WHERE username_user = ?";
-            PreparedStatement updateStatement = koneksi.prepareStatement(updateQuery);
-            updateStatement.setString(1, jenis);
-            updateStatement.setString(2, tempat);
-            Date tanggal = convertIntToDate(yyyymmdd);
-            updateStatement.setDate(3, tanggal);
-            updateStatement.setString(4, pend);
-            updateStatement.setInt(5, nomor);
-            updateStatement.setString(6, alamat);
-            updateStatement.setInt(7, nik);
-            updateStatement.setString(8, username);
+            String sql = "UPDATE data_user SET jenis_kelamin = ?, tempat_lahir = ?, tanggal_lahir = ?, pendidikan = ?, alamat = ?, nik = ?, telepon = ? WHERE username_user = ?";
+            PreparedStatement statement = koneksi.prepareStatement(sql);
+            statement.setString(1, jenis);
+            statement.setString(2, tempat);
+            statement.setString(3, tanggal);
+            statement.setString(4, pend);
+            statement.setString(5, alamat);
+            statement.setLong(6, nik);
+            statement.setLong(7, nomor);
+            statement.setString(8, username);
 
-            int rowsAffected = updateStatement.executeUpdate();
-
-            if (rowsAffected > 0) {
-                JOptionPane.showMessageDialog(rootPane, "Perubahan berhasil disimpan.");
+            int rowsUpdated = statement.executeUpdate();
+            if (rowsUpdated > 0) {
+                JOptionPane.showMessageDialog(this, "Data berhasil diperbarui!");
             } else {
+                JOptionPane.showMessageDialog(this, "Tidak ada data yang diperbarui.");
             }
-
-            updateStatement.close();
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());  
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
         }
     }
     
