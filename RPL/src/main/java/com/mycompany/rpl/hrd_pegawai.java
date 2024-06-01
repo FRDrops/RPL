@@ -55,8 +55,8 @@ public class hrd_pegawai extends javax.swing.JFrame {
         pegawaiIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pegawaiWhite.png")));
         saranIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/saranBlack.png")));
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
-        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
-        change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
+        change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
     }
 
     /**
