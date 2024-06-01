@@ -939,7 +939,11 @@ public class hrd_loker extends javax.swing.JFrame {
     private void saranIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saranIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_saran().setVisible(true);
+        try {
+            new hrd_saran().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_loker.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_saranIconMouseClicked
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
