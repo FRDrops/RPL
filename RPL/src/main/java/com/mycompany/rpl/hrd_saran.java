@@ -67,32 +67,23 @@ public class hrd_saran extends javax.swing.JFrame {
 
         Koneksi konek = new Koneksi();
         Connection koneksi = konek.open();
-        PreparedStatement statementUser = null;
-        PreparedStatement statementSaran = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
         try {
             tableModel.setRowCount(0);
 
-            String queryUser = "SELECT * FROM data_user WHERE username_user = ?";
-            String querySaran = "SELECT * FROM saran WHERE username_user = ?";
+            String query = "SELECT du.*, s.* " +
+                       "FROM data_user du " +
+                       "INNER JOIN saran s ON du.username_user = s.username_user " +
+                       "WHERE du.username_user = ?";
 
-            statementUser = koneksi.prepareStatement(queryUser);
-            statementUser.setString(1, username);
-            resultSet = statementUser.executeQuery();
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+            resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Object[] rowData = {
-                    resultSet.getDate("nama")
-                };
-                tableModel.addRow(rowData);
-            }
-            resultSet.close();
-
-            statementUser = koneksi.prepareStatement(queryUser);
-            statementUser.setString(1, username);
-            resultSet = statementUser.executeQuery();
-            while (resultSet.next()) {
-                Object[] rowData = {
-                    resultSet.getString("isi")
+                    resultSet.getDate("nama"),
+                    resultSet.getDate("isi")
                 };
                 tableModel.addRow(rowData);
             }
@@ -109,11 +100,8 @@ public class hrd_saran extends javax.swing.JFrame {
                 if (resultSet != null) {
                     resultSet.close();
                 }
-                if (statementUser != null) {
-                    statementUser.close();
-                }
-                if (statementSaran != null) {
-                    statementSaran.close();
+                if (statement != null) {
+                    statement.close();
                 }
                 if (koneksi != null && !koneksi.isClosed()) {
                     koneksi.close();
