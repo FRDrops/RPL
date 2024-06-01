@@ -47,14 +47,16 @@ public class hrd_pegawai extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
         
+        rincianPegawai.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        
         homeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/homeBlack.png")));
         pelamarIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pelamarBlack.png")));
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokersayaBlack.png")));
         pegawaiIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pegawaiWhite.png")));
         saranIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/saranBlack.png")));
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
-        change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
-        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
+        delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
+        change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
     }
 
     /**
@@ -95,8 +97,8 @@ public class hrd_pegawai extends javax.swing.JFrame {
         lihatBerkas = new javax.swing.JButton();
         pendInput = new javax.swing.JComboBox<>();
         posisiUser = new javax.swing.JLabel();
-        change = new javax.swing.JLabel();
         delete = new javax.swing.JLabel();
+        change = new javax.swing.JLabel();
         nav = new RoundedPanel(100, new Color(215, 204, 185));
         pegawaiLabel = new javax.swing.JLabel();
         homeIcon = new javax.swing.JLabel();
@@ -144,7 +146,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 userProfilMouseClicked(evt);
             }
         });
-        rincianPegawai.getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 230, 240));
+        rincianPegawai.getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 230, 240));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,7 +163,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         keterangan2.setText("[User_Email] *non-editable");
         jPanel3.add(keterangan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 770, 30));
 
-        rincianPegawai.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 1030, 130));
+        rincianPegawai.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 1030, 130));
 
         jPanel4.setBackground(new java.awt.Color(249, 248, 242));
         jPanel4.setToolTipText("");
@@ -184,7 +186,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jLabel5.setText("Tempat Lahir:");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 120, 40));
 
-        rincianPegawai.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, 290, 40));
+        rincianPegawai.getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 290, 40));
 
         jPanel6.setBackground(new java.awt.Color(249, 248, 242));
         jPanel6.setToolTipText("");
@@ -207,7 +209,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jLabel7.setText("Alamat:");
         jPanel6.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 70, 40));
 
-        rincianPegawai.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 790, -1));
+        rincianPegawai.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 790, -1));
 
         jPanel5.setBackground(new java.awt.Color(249, 248, 242));
         jPanel5.setToolTipText("");
@@ -230,7 +232,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jLabel6.setText("Tanggal Lahir:");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 130, 40));
 
-        rincianPegawai.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 300, -1, 40));
+        rincianPegawai.getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 280, -1, 40));
 
         jPanel8.setBackground(new java.awt.Color(249, 248, 242));
         jPanel8.setToolTipText("");
@@ -241,7 +243,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jLabel9.setText("Pendidikan:");
         jPanel8.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 110, 40));
 
-        rincianPegawai.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, -1, 40));
+        rincianPegawai.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, -1, 40));
 
         jPanel7.setBackground(new java.awt.Color(249, 248, 242));
         jPanel7.setToolTipText("");
@@ -264,7 +266,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jLabel8.setText("NIK (sesuai KTP):");
         jPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 0, 150, 40));
 
-        rincianPegawai.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 390, 40));
+        rincianPegawai.getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 390, 40));
 
         jPanel11.setBackground(new java.awt.Color(249, 248, 242));
         jPanel11.setToolTipText("");
@@ -287,7 +289,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         });
         jPanel11.add(nomorInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 230, 40));
 
-        rincianPegawai.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 420, -1, 40));
+        rincianPegawai.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, -1, 40));
 
         jenisInput.setBackground(new java.awt.Color(249, 248, 242));
         jenisInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -296,7 +298,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         jenisInput.setBorder(null);
         jenisInput.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jenisInput.setFocusable(false);
-        rincianPegawai.getContentPane().add(jenisInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 140, 40));
+        rincianPegawai.getContentPane().add(jenisInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 140, 40));
 
         lihatBerkas.setBackground(new java.awt.Color(112, 104, 94));
         lihatBerkas.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
@@ -311,7 +313,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 lihatBerkasActionPerformed(evt);
             }
         });
-        rincianPegawai.getContentPane().add(lihatBerkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 190, 40));
+        rincianPegawai.getContentPane().add(lihatBerkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, 190, 40));
 
         pendInput.setBackground(new java.awt.Color(249, 248, 242));
         pendInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -321,27 +323,29 @@ public class hrd_pegawai extends javax.swing.JFrame {
         pendInput.setBorder(null);
         pendInput.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pendInput.setFocusable(false);
-        rincianPegawai.getContentPane().add(pendInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 170, 40));
+        rincianPegawai.getContentPane().add(pendInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 170, 40));
 
         posisiUser.setFont(new java.awt.Font("Segoe UI Black", 0, 30)); // NOI18N
         posisiUser.setForeground(new java.awt.Color(0, 74, 173));
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
-        rincianPegawai.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 130, -1));
+        rincianPegawai.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 130, -1));
 
-        change.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                changeMouseClicked(evt);
-            }
-        });
-        rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 160, 60));
-
+        delete.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdDelete.png")); // NOI18N
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteMouseClicked(evt);
             }
         });
-        rincianPegawai.getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 450, 160, 60));
+        rincianPegawai.getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 70, 60));
+
+        change.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdUpdate.png")); // NOI18N
+        change.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changeMouseClicked(evt);
+            }
+        });
+        rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 430, 160, 60));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1280, 720));
@@ -627,13 +631,13 @@ public class hrd_pegawai extends javax.swing.JFrame {
 
     }//GEN-LAST:event_lihatBerkasActionPerformed
 
-    private void changeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_changeMouseClicked
-
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteMouseClicked
+
+    private void changeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_changeMouseClicked
 
     /**
      * @param args the command line arguments
