@@ -718,7 +718,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private void homeIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_home().setVisible(true);
+        try {
+            new hrd_home().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_homeIconMouseClicked
 
     private void userProfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userProfilMouseClicked

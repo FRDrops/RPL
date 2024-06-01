@@ -315,6 +315,7 @@ public class user_home extends javax.swing.JFrame {
         String username = Session.getInstance().getUsername();
         String isi = saranInput.getText();
         createSaran(username, isi);
+        saranInput.setText("");
     }//GEN-LAST:event_kirimButtonActionPerformed
 
     public void createSaran(String username, String isi) {

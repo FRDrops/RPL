@@ -28,9 +28,14 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
 /**
@@ -42,7 +47,7 @@ public class hrd_saran extends javax.swing.JFrame {
     /**
      * Creates new form hrd_saran
      */
-    public hrd_saran() {
+    public hrd_saran() throws SQLException {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -52,8 +57,96 @@ public class hrd_saran extends javax.swing.JFrame {
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokersayaBlack.png")));
         pegawaiIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/pegawaiBlack.png")));
         saranIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/saranWhite.png")));
+        readToTable();
     }
 
+    public DefaultTableModel readSaran(String username) throws SQLException{
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Nama");
+        tableModel.addColumn("Saran dan Kritik");
+
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement statementUser = null;
+        PreparedStatement statementSaran = null;
+        ResultSet resultSet = null;
+        try {
+            tableModel.setRowCount(0);
+
+            String queryUser = "SELECT * FROM data_user WHERE username_user = ?";
+            String querySaran = "SELECT * FROM saran WHERE username_user = ?";
+
+            statementUser = koneksi.prepareStatement(queryUser);
+            statementUser.setString(1, username);
+            resultSet = statementUser.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getDate("nama")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementUser = koneksi.prepareStatement(queryUser);
+            statementUser.setString(1, username);
+            resultSet = statementUser.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("isi")
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statementUser != null) {
+                    statementUser.close();
+                }
+                if (statementSaran != null) {
+                    statementSaran.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        return tableModel;
+    }
+    
+    public void readToTable() throws SQLException {
+        tableSaran.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"Nama", "Saran dan Kritik"}
+        ));
+        String username = Session.getInstance().getUsername();
+        DefaultTableModel model = readSaran(username);
+        tableSaran.setModel(model);
+        
+        centerAlignTableCells();
+    }
+    
+     private void centerAlignTableCells() {
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+    for (int i = 0; i < tableSaran.getColumnCount(); i++) {
+        tableSaran.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -288,7 +381,11 @@ public class hrd_saran extends javax.swing.JFrame {
     private void homeIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_home().setVisible(true);
+        try {
+            new hrd_home().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_saran.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_homeIconMouseClicked
 
     private void pelamarIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pelamarIconMouseClicked
@@ -361,7 +458,11 @@ public class hrd_saran extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new hrd_saran().setVisible(true);
+                try {
+                    new hrd_saran().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(hrd_saran.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         
