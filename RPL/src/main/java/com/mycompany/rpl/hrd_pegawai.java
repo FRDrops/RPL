@@ -64,7 +64,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         readToTable();
     }
 
-    public DefaultTableModel readPelamar() throws SQLException {
+    public DefaultTableModel readPegawai() throws SQLException {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("Nama");
         tableModel.addColumn("Jenis Kelamin");
@@ -74,66 +74,31 @@ public class hrd_pegawai extends javax.swing.JFrame {
 
         Koneksi konek = new Koneksi();
         Connection koneksi = konek.open();
-        PreparedStatement statementJM = null;
-        PreparedStatement statementK = null;
-        PreparedStatement statementP = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
             tableModel.setRowCount(0);
 
-            String queryJM = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Juru Masak' AS posisi_lamaran, ljm.tanggal_diajukan " +
-                             "FROM lowongan_jm ljm " +
-                             "INNER JOIN data_user du ON ljm.username_user = du.username_user";
-
-            String queryK = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Kasir' AS posisi_lamaran, lk.tanggal_diajukan " +
-                            "FROM lowongan_k lk " +
-                            "INNER JOIN data_user du ON lk.username_user = du.username_user";
-
-            String queryP = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Pelayan' AS posisi_lamaran, lp.tanggal_diajukan " +
-                            "FROM lowongan_p lp " +
-                            "INNER JOIN data_user du ON lp.username_user = du.username_user";
-
-            statementJM = koneksi.prepareStatement(queryJM);
-            resultSet = statementJM.executeQuery();
+            String query = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, p.posisi " +
+                           "FROM data_user du " +
+                           "INNER JOIN pegawai p ON du.username_user = p.username_user ";
+            
+            statement = koneksi.prepareStatement(query);
+            resultSet = statement.executeQuery();
+            
             while (resultSet.next()) {
                 Object[] rowData = {
                     resultSet.getString("nama"),
                     resultSet.getString("jenis_kelamin"),
                     resultSet.getDate("tanggal_lahir"),
                     resultSet.getString("alamat"),
-                    "Juru Masak"
+                    resultSet.getString("posisi")
                 };
                 tableModel.addRow(rowData);
             }
             resultSet.close();
 
-            statementK = koneksi.prepareStatement(queryK);
-            resultSet = statementK.executeQuery();
-            while (resultSet.next()) {
-                Object[] rowData = {
-                    resultSet.getString("nama"),
-                    resultSet.getString("jenis_kelamin"),
-                    resultSet.getDate("tanggal_lahir"),
-                    resultSet.getString("alamat"),
-                    "Kasir"
-                };
-                tableModel.addRow(rowData);
-            }
-            resultSet.close();
-
-            statementP = koneksi.prepareStatement(queryP);
-            resultSet = statementP.executeQuery();
-            while (resultSet.next()) {
-                Object[] rowData = {
-                    resultSet.getString("nama"),
-                    resultSet.getString("jenis_kelamin"),
-                    resultSet.getDate("tanggal_lahir"),
-                    resultSet.getString("alamat"),
-                    "Pelayan"
-                };
-                tableModel.addRow(rowData);
-            }
             resultSet.close();
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
@@ -146,14 +111,8 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 if (resultSet != null) {
                     resultSet.close();
                 }
-                if (statementJM != null) {
-                    statementJM.close();
-                }
-                if (statementK != null) {
-                    statementK.close();
-                }
-                if (statementP != null) {
-                    statementP.close();
+                if (statement != null) {
+                    statement.close();
                 }
                 if (koneksi != null && !koneksi.isClosed()) {
                     koneksi.close();
@@ -172,7 +131,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
             new Object[][]{},
             new String[]{"Nama", "jenis Kelamin", "Tanggal Lahir", "Alamat", "Posisi"}
         ));
-        DefaultTableModel model = readPelamar();
+        DefaultTableModel model = readPegawai();
         tablePegawai.setModel(model);
         
         centerAlignTableCells();
