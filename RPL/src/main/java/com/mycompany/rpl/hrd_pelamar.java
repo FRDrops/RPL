@@ -28,6 +28,10 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,6 +39,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
@@ -190,6 +195,102 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar.setModel(model);
         
         centerAlignTableCells();
+    }
+    
+    private void readUser(String namaPelamar) throws IOException {
+        try {
+            Koneksi konek = new Koneksi();
+            Connection koneksi = konek.open();
+            String sql = "SELECT * FROM data_user WHERE nama = ?";
+            PreparedStatement statement = koneksi.prepareStatement(sql);
+            statement.setString(1, namaPelamar);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (!resultSet.next()) {
+                JOptionPane.showMessageDialog(this, "No data found for username: " + namaPelamar);
+                clearFields();
+                return;
+            }
+            String nama = resultSet.getString("nama") != null ? resultSet.getString("nama") : "";
+            String jenisKelamin = resultSet.getString("jenis_kelamin") != null ? resultSet.getString("jenis_kelamin") : "";
+            String tempatLahir = resultSet.getString("tempat_lahir") != null ? resultSet.getString("tempat_lahir") : "";
+            String tanggalLahir = resultSet.getDate("tanggal_lahir") != null ? resultSet.getDate("tanggal_lahir").toString() : "";
+            String pendidikan = resultSet.getString("pendidikan") != null ? resultSet.getString("pendidikan") : "";
+            String telepon = resultSet.getString("telepon") != null ? resultSet.getString("telepon") : "";
+            String email = resultSet.getString("email") != null ? resultSet.getString("email") : "";
+            String alamat = resultSet.getString("alamat") != null ? resultSet.getString("alamat") : "";
+            String nik = resultSet.getString("nik") != null ? resultSet.getString("nik") : "";
+            Blob fotoBlob = resultSet.getBlob("foto");
+            
+            judul2.setText(nama);
+            jenisInput.setSelectedItem(jenisKelamin);
+            tempatInput.setText(tempatLahir);
+            tanggalInput.setText(tanggalLahir);
+            pendInput.setSelectedItem(pendidikan);
+            nomorInput.setText(telepon);
+            keterangan2.setText(email);
+            alamatInput.setText(alamat);
+            nikInput.setText(nik);
+            
+            if (fotoBlob != null) {
+               /* byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
+                Image image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
+                ImageIcon fotoIcon = new ImageIcon();
+                userProfil.setIcon(fotoIcon);*/
+                byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
+                BufferedImage image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
+                int diameter = 200; // Atur diameter sesuai keinginan
+                BufferedImage roundedImage = makeRoundedCorner(image, diameter);
+                ImageIcon fotoIcon = new ImageIcon(roundedImage);
+                userProfil.setIcon(fotoIcon);
+                
+            } else {
+                //apa hayo
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }
+    }
+
+    private void clearFields() {
+        judul2.setText("");
+        jenisInput.setSelectedItem("");
+        tanggalInput.setText("");
+        pendInput.setSelectedItem("");
+        nomorInput.setText("");
+        keterangan2.setText("");
+        alamatInput.setText("");
+        nikInput.setText("");
+    }
+    
+    private BufferedImage makeRoundedCorner(BufferedImage image, int diameter) {
+        int size = Math.min(image.getWidth(), image.getHeight());
+        BufferedImage squareImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = squareImage.createGraphics();
+        applyQualityRenderingHints(g2);
+        g2.drawImage(image, 0, 0, size, size, null);
+        g2.dispose();
+
+        BufferedImage roundedImage = new BufferedImage(diameter, diameter, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = roundedImage.createGraphics();
+        applyQualityRenderingHints(g2d);
+
+        g2d.setClip(new Ellipse2D.Double(0, 0, diameter, diameter));
+        g2d.drawImage(squareImage, 0, 0, diameter, diameter, null);
+        g2d.dispose();
+
+        return roundedImage;
+    }
+    
+    private void applyQualityRenderingHints(Graphics2D g2d) {
+        g2d.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.setRenderingHint(RenderingHints.KEY_COLOR_RENDERING, RenderingHints.VALUE_COLOR_RENDER_QUALITY);
+        g2d.setRenderingHint(RenderingHints.KEY_DITHERING, RenderingHints.VALUE_DITHER_ENABLE);
+        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+        g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
     }
     
     /**
@@ -462,7 +563,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setForeground(new java.awt.Color(0, 74, 173));
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
-        rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 130, -1));
+        rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 190, -1));
 
         decline.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -768,18 +869,235 @@ public class hrd_pelamar extends javax.swing.JFrame {
         DefaultTableModel sourceModel = (DefaultTableModel) tablePelamar.getModel();
         int MyIndex = tablePelamar.getSelectedRow();
         String nama = sourceModel.getValueAt(MyIndex, 0).toString();
-        String posisi = sourceModel.getValueAt(MyIndex, 1).toString();
+        String posisi = sourceModel.getValueAt(MyIndex, 4).toString();
+        posisiUser.setText(posisi);
+        try {
+            readUser(nama);
+        } catch (IOException ex) {
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dispose();
+        rincianPelamar.setVisible(true);
     }//GEN-LAST:event_tablePelamarMouseClicked
 
     private void declineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_declineMouseClicked
         // TODO add your handling code here:
+        String posisi = posisiUser.getText();
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "";
+
+            if ("Kasir".equalsIgnoreCase(posisi)) {
+                query = "UPDATE lowongan_k SET status = 'Ditolak' WHERE username_user = ?";
+            } else if ("Juru Masak".equalsIgnoreCase(posisi)) {
+                query = "UPDATE lowongan_jm SET status = 'Ditolak' WHERE username_user = ?";
+            } else if ("Pelayan".equalsIgnoreCase(posisi)) {
+                query = "UPDATE lowongan_p SET status = 'Ditolak' WHERE username_user = ?";
+            } else {
+                System.out.println("Posisi tidak valid.");
+                return;
+            }
+
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+            int rowsUpdated = statement.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                System.out.println("Status berhasil diperbarui menjadi ditolak.");
+            } else {
+                System.out.println("Gagal memperbarui status. Mungkin username tidak ditemukan.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        rincianPelamar.dispose();
     }//GEN-LAST:event_declineMouseClicked
 
     private void acceptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_acceptMouseClicked
         // TODO add your handling code here:
+        String posisi = posisiUser.getText();
+        String nama = judul2.getText();
+        String username = readUsn(nama);
+        
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "";
+
+            if ("Kasir".equalsIgnoreCase(posisi)) {
+                query = "UPDATE lowongan_k SET status = 'Diterima' WHERE username_user = ?";
+            } else if ("Juru Masak".equalsIgnoreCase(posisi)) {
+                query = "UPDATE lowongan_jm SET status = 'Diterima' WHERE username_user = ?";
+            } else if ("Pelayan".equalsIgnoreCase(posisi)) {
+                query = "UPDATE lowongan_p SET status = 'Diterima' WHERE username_user = ?";
+            } else {
+                System.out.println("Posisi tidak valid.");
+                return;
+            }
+
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+            int rowsUpdated = statement.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                System.out.println("Status berhasil diperbarui menjadi diterima.");
+            } else {
+                System.out.println("Gagal memperbarui status. Mungkin username tidak ditemukan.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        terimaLamaran(username, posisi);
+        rincianPelamar.dispose();
     }//GEN-LAST:event_acceptMouseClicked
 
-    //table bisa di select per-kotak, terus nanti diarahin ke rincianPelamar dan data pelamar (user) muncul di sana
+    public String readUsn(String nama) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String username = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "SELECT username_user FROM data_user WHERE nama = ?";
+
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, nama);
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                username = resultSet.getString("username_user");
+            } else {
+                System.out.println("Nama tidak ditemukan dalam database.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
+        return username;
+    }
+    
+    public void terimaLamaran(String username, String posisi) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement deleteStatement = null;
+        PreparedStatement insertStatement = null;
+
+        try {
+            koneksi = konek.open();
+
+            String deleteQuery = null;
+            if ("Kasir".equalsIgnoreCase(posisi)) {
+                deleteQuery = "DELETE FROM lowongan_k WHERE username_user = ?";
+            } else if ("Juru Masak".equalsIgnoreCase(posisi)) {
+                deleteQuery = "DELETE FROM lowongan_jm WHERE username_user = ?";
+            } else if ("Pelayan".equalsIgnoreCase(posisi)) {
+                deleteQuery = "DELETE FROM lowongan_p WHERE username_user = ?";
+            }
+
+            if (deleteQuery != null) {
+                deleteStatement = koneksi.prepareStatement(deleteQuery);
+                deleteStatement.setString(1, username);
+                int rowsDeleted = deleteStatement.executeUpdate();
+                System.out.println(rowsDeleted + " rows deleted from the lowongan table for posisi: " + posisi);
+            }
+
+            String insertQuery = "INSERT INTO pegawai (username_user, posisi) VALUES (?, ?)";
+            insertStatement = koneksi.prepareStatement(insertQuery);
+            insertStatement.setString(1, username);
+            insertStatement.setString(2, posisi);
+            int rowsInserted = insertStatement.executeUpdate();
+            System.out.println(rowsInserted + " rows inserted into the pegawai table.");
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (deleteStatement != null) {
+                    deleteStatement.close();
+                }
+                if (insertStatement != null) {
+                    insertStatement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+
     
     /**
      * @param args the command line arguments
