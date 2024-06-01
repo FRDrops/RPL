@@ -952,6 +952,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
             }
         }
         rincianPelamar.dispose();
+        try {
+            new hrd_pelamar().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_declineMouseClicked
 
     private void acceptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_acceptMouseClicked
@@ -1010,6 +1015,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
         }
         terimaLamaran(username, posisi);
         rincianPelamar.dispose();
+        try {
+            new hrd_pelamar().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_acceptMouseClicked
 
     public String readUsn(String nama) {
