@@ -381,7 +381,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar = new javax.swing.JTable();
 
         rincianPelamar.setBackground(new java.awt.Color(255, 255, 255));
-        rincianPelamar.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -608,7 +607,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setText("[Posisi]");
         rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 190, -1));
 
-        readBerkas.setMaximumSize(new java.awt.Dimension(625, 600));
         readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
         readBerkas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -648,7 +646,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         label2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         label2.setForeground(new java.awt.Color(215, 204, 185));
         label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label2.setText("Autosave");
+        label2.setText("Berkas");
         nav1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 190, -1));
 
         jPanel10.add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, 370));
@@ -1033,9 +1031,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         readBerkas.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         readBerkas.setVisible(true);
         readBerkas.setVisible(true);
-        String nama = judul2.getText();
-        String username = readUsn(nama);
-        
+        label2.setText(null);
     }//GEN-LAST:event_lihatBerkasActionPerformed
 
     private void lihatBerkasDetail(String username, String berkas) {
@@ -1242,6 +1238,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         // TODO add your handling code here:
         readBerkas.dispose();
         this.setVisible(true);
+        label2.setText(null);
     }//GEN-LAST:event_kembaliActionPerformed
 
     private void cvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cvMouseClicked
