@@ -65,7 +65,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         readToTable();
     }
     
-    // buat konten tabel rata tengah :)
     private void centerAlignTableCells() {
     DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
     centerRenderer.setHorizontalAlignment(JLabel.CENTER);
@@ -190,7 +189,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         DefaultTableModel model = readPelamar();
         tablePelamar.setModel(model);
         
-        // Set renderer to center align
         centerAlignTableCells();
     }
     

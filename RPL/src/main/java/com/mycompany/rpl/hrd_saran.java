@@ -60,7 +60,7 @@ public class hrd_saran extends javax.swing.JFrame {
         readToTable();
     }
 
-    public DefaultTableModel readSaran(String username) throws SQLException {
+    public DefaultTableModel readSaran() throws SQLException {
         DefaultTableModel tableModel = new DefaultTableModel();
         tableModel.addColumn("Nama");
         tableModel.addColumn("Saran dan Kritik");
@@ -74,11 +74,9 @@ public class hrd_saran extends javax.swing.JFrame {
 
             String query = "SELECT du.nama, s.isi " +
                            "FROM data_user du " +
-                           "INNER JOIN saran s ON du.username_user = s.username_user " +
-                           "WHERE du.username_user = ?";
+                           "INNER JOIN saran s ON du.username_user = s.username_user ";
 
             statement = koneksi.prepareStatement(query);
-            statement.setString(1, username);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Object[] rowData = {
@@ -122,7 +120,7 @@ public class hrd_saran extends javax.swing.JFrame {
         DefaultTableModel model = null;
 
         try {
-            model = readSaran(username);
+            model = readSaran();
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi saat membaca tabel: " + ex.getMessage());
             ex.printStackTrace();
@@ -144,13 +142,13 @@ public class hrd_saran extends javax.swing.JFrame {
     }
     
      private void centerAlignTableCells() {
-    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-    for (int i = 0; i < tableSaran.getColumnCount(); i++) {
-        tableSaran.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        for (int i = 0; i < tableSaran.getColumnCount(); i++) {
+            tableSaran.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            }
         }
-    }
      
     /**
      * This method is called from within the constructor to initialize the form.
