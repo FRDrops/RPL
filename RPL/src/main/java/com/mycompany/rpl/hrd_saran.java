@@ -410,7 +410,11 @@ public class hrd_saran extends javax.swing.JFrame {
     private void pegawaiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pegawaiIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_pegawai().setVisible(true);
+        try {
+            new hrd_pegawai().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_saran.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_pegawaiIconMouseClicked
 
     private void saranIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saranIconMouseClicked
@@ -434,7 +438,7 @@ public class hrd_saran extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

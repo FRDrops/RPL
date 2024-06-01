@@ -461,7 +461,11 @@ public class hrd_home extends javax.swing.JFrame {
     private void pegawaiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pegawaiIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_pegawai().setVisible(true);
+        try {
+            new hrd_pegawai().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_pegawaiIconMouseClicked
 
     private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked

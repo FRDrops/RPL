@@ -102,15 +102,21 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
             String queryJM = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Juru Masak' AS posisi_lamaran, ljm.tanggal_diajukan " +
                              "FROM lowongan_jm ljm " +
-                             "INNER JOIN data_user du ON ljm.username_user = du.username_user";
+                             "INNER JOIN data_user du ON ljm.username_user = du.username_user " +
+                             "WHERE ljm.status IS NULL OR ljm.status = 'ditolak' " +
+                             "ORDER BY ljm.tanggal_diajukan DESC";
 
-            String queryK = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Kasir' AS posisi_lamaran, lk.tanggal_diajukan " +
-                            "FROM lowongan_k lk " +
-                            "INNER JOIN data_user du ON lk.username_user = du.username_user";
+            String queryK =  "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Kasir' AS posisi_lamaran, lk.tanggal_diajukan " +
+                             "FROM lowongan_k lk " +
+                             "INNER JOIN data_user du ON lk.username_user = du.username_user " +
+                             "WHERE lk.status IS NULL OR lk.status = 'ditolak' " +
+                             "ORDER BY lk.tanggal_diajukan DESC";
 
-            String queryP = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Pelayan' AS posisi_lamaran, lp.tanggal_diajukan " +
-                            "FROM lowongan_p lp " +
-                            "INNER JOIN data_user du ON lp.username_user = du.username_user";
+            String queryP =  "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Pelayan' AS posisi_lamaran, lp.tanggal_diajukan " +
+                             "FROM lowongan_p lp " +
+                             "INNER JOIN data_user du ON lp.username_user = du.username_user " +
+                             "WHERE lp.status IS NULL OR lp.status = 'ditolak' " +
+                             "ORDER BY lp.tanggal_diajukan DESC";
 
             statementJM = koneksi.prepareStatement(queryJM);
             resultSet = statementJM.executeQuery();
@@ -357,9 +363,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tablePelamar = new javax.swing.JTable();
 
         rincianPelamar.setBackground(new java.awt.Color(255, 255, 255));
-        rincianPelamar.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.setMinimumSize(new java.awt.Dimension(1100, 650));
-        rincianPelamar.setPreferredSize(new java.awt.Dimension(1100, 650));
         rincianPelamar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         judul1.setFont(new java.awt.Font("Segoe UI Black", 1, 30)); // NOI18N
@@ -386,7 +390,6 @@ public class hrd_pelamar extends javax.swing.JFrame {
         });
         rincianPelamar.getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 230, 240));
 
-        accept.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdAccept.png")); // NOI18N
         accept.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         accept.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -395,14 +398,13 @@ public class hrd_pelamar extends javax.swing.JFrame {
         });
         rincianPelamar.getContentPane().add(accept, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 430, 160, 60));
 
-        decline.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\hrdDelete.png")); // NOI18N
         decline.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         decline.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 declineMouseClicked(evt);
             }
         });
-        rincianPelamar.getContentPane().add(decline, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 60, 60));
+        rincianPelamar.getContentPane().add(decline, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 60, 60));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -799,7 +801,11 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private void pegawaiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pegawaiIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_pegawai().setVisible(true);
+        try {
+            new hrd_pegawai().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_pegawaiIconMouseClicked
 
     private void saranIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saranIconMouseClicked
@@ -1061,7 +1067,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
         try {
             koneksi = konek.open();
-
+            /*
             String deleteQuery = null;
             if ("Kasir".equalsIgnoreCase(posisi)) {
                 deleteQuery = "DELETE FROM lowongan_k WHERE username_user = ?";
@@ -1070,14 +1076,14 @@ public class hrd_pelamar extends javax.swing.JFrame {
             } else if ("Pelayan".equalsIgnoreCase(posisi)) {
                 deleteQuery = "DELETE FROM lowongan_p WHERE username_user = ?";
             }
-
+            
             if (deleteQuery != null) {
                 deleteStatement = koneksi.prepareStatement(deleteQuery);
                 deleteStatement.setString(1, username);
                 int rowsDeleted = deleteStatement.executeUpdate();
                 System.out.println(rowsDeleted + " rows deleted from the lowongan table for posisi: " + posisi);
             }
-
+            */
             String insertQuery = "INSERT INTO pegawai (username_user, posisi) VALUES (?, ?)";
             insertStatement = koneksi.prepareStatement(insertQuery);
             insertStatement.setString(1, username);

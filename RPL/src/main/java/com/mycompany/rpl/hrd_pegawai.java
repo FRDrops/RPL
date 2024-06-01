@@ -28,9 +28,13 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
 /**
@@ -42,7 +46,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
     /**
      * Creates new form hrd_pegawai
      */
-    public hrd_pegawai() {
+    public hrd_pegawai() throws SQLException {
         initComponents();
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -57,8 +61,132 @@ public class hrd_pegawai extends javax.swing.JFrame {
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
         delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
         change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
+        readToTable();
     }
 
+    public DefaultTableModel readPelamar() throws SQLException {
+        DefaultTableModel tableModel = new DefaultTableModel();
+        tableModel.addColumn("Nama");
+        tableModel.addColumn("Jenis Kelamin");
+        tableModel.addColumn("Tanggal Lahir");
+        tableModel.addColumn("Alamat");
+        tableModel.addColumn("Posisi");
+
+        Koneksi konek = new Koneksi();
+        Connection koneksi = konek.open();
+        PreparedStatement statementJM = null;
+        PreparedStatement statementK = null;
+        PreparedStatement statementP = null;
+        ResultSet resultSet = null;
+
+        try {
+            tableModel.setRowCount(0);
+
+            String queryJM = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Juru Masak' AS posisi_lamaran, ljm.tanggal_diajukan " +
+                             "FROM lowongan_jm ljm " +
+                             "INNER JOIN data_user du ON ljm.username_user = du.username_user";
+
+            String queryK = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Kasir' AS posisi_lamaran, lk.tanggal_diajukan " +
+                            "FROM lowongan_k lk " +
+                            "INNER JOIN data_user du ON lk.username_user = du.username_user";
+
+            String queryP = "SELECT du.nama, du.jenis_kelamin, du.tanggal_lahir, du.alamat, 'Pelayan' AS posisi_lamaran, lp.tanggal_diajukan " +
+                            "FROM lowongan_p lp " +
+                            "INNER JOIN data_user du ON lp.username_user = du.username_user";
+
+            statementJM = koneksi.prepareStatement(queryJM);
+            resultSet = statementJM.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Juru Masak"
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementK = koneksi.prepareStatement(queryK);
+            resultSet = statementK.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Kasir"
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+
+            statementP = koneksi.prepareStatement(queryP);
+            resultSet = statementP.executeQuery();
+            while (resultSet.next()) {
+                Object[] rowData = {
+                    resultSet.getString("nama"),
+                    resultSet.getString("jenis_kelamin"),
+                    resultSet.getDate("tanggal_lahir"),
+                    resultSet.getString("alamat"),
+                    "Pelayan"
+                };
+                tableModel.addRow(rowData);
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statementJM != null) {
+                    statementJM.close();
+                }
+                if (statementK != null) {
+                    statementK.close();
+                }
+                if (statementP != null) {
+                    statementP.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        return tableModel;
+    }
+
+    
+    public void readToTable() throws SQLException {
+        tablePegawai.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{"Nama", "jenis Kelamin", "Tanggal Lahir", "Alamat", "Posisi"}
+        ));
+        DefaultTableModel model = readPelamar();
+        tablePegawai.setModel(model);
+        
+        centerAlignTableCells();
+    }
+    
+    private void centerAlignTableCells() {
+    DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+    centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+    for (int i = 0; i < tablePegawai.getColumnCount(); i++) {
+        tablePegawai.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -642,7 +770,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -669,7 +797,11 @@ public class hrd_pegawai extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new hrd_pegawai().setVisible(true);
+                try {
+                    new hrd_pegawai().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(hrd_pegawai.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
         

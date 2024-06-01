@@ -933,7 +933,11 @@ public class hrd_loker extends javax.swing.JFrame {
     private void pegawaiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pegawaiIconMouseClicked
         // TODO add your handling code here:
         dispose();
-        new hrd_pegawai().setVisible(true);
+        try {
+            new hrd_pegawai().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_loker.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_pegawaiIconMouseClicked
 
     private void saranIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saranIconMouseClicked
