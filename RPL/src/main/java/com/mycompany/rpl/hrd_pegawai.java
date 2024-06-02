@@ -952,6 +952,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         String posisi = posisiUser.getText();
         String username = this.readUsn(nama);
         deletePegawai(username, posisi);
+        
     }//GEN-LAST:event_deleteMouseClicked
 
     public void deletePegawai(String username, String posisi) {
@@ -970,6 +971,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
             int rowsDeleted = statement.executeUpdate();
             if (rowsDeleted > 0) {
                 System.out.println("Pegawai berhasil dihapus.");
+                JOptionPane.showMessageDialog(null, "Berhasil menghapus pegawai.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 System.out.println("Pegawai dengan username dan posisi tersebut tidak ditemukan.");
             }
@@ -996,6 +998,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, e);
             }
         }
+        rincianPegawai.dispose();
     }
     
     private void changeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeMouseClicked

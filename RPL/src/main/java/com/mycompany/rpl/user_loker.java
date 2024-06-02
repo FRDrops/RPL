@@ -1313,8 +1313,7 @@ public class user_loker extends javax.swing.JFrame {
                 int count = resultSet.getInt(1);
                 if (count > 0) {
                     lamarButtonJM.setEnabled(false);
-                    lihatHasilJM.setEnabled(true);     
-                    JOptionPane.showMessageDialog(null, "Berhasil melamar pekerjaan.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                    lihatHasilJM.setEnabled(true);                         
                 } else {
                     lamarButtonJM.setEnabled(true);
                     lihatHasilJM.setEnabled(false);
