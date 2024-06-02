@@ -269,7 +269,7 @@ public class user_home extends javax.swing.JFrame {
 
     private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
         // TODO add your handling code here:
-        dispose();
+        //dispose();
         showKotakSaran();
     }//GEN-LAST:event_supportMouseClicked
 
@@ -362,7 +362,7 @@ public class user_home extends javax.swing.JFrame {
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         kotakSaran.dispose();
-        this.setVisible(true);
+        //this.setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
     /**

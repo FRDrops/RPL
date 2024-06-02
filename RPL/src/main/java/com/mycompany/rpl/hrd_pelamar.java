@@ -342,6 +342,8 @@ public class hrd_pelamar extends javax.swing.JFrame {
         lihatBerkas = new javax.swing.JButton();
         pendInput = new javax.swing.JComboBox<>();
         posisiUser = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         readBerkas = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
         kembali = new javax.swing.JButton();
@@ -611,6 +613,14 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
         rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 230, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel1.setText("Tolak");
+        rincianPelamar.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel2.setText("Terima");
+        rincianPelamar.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, -1, -1));
 
         readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
         readBerkas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1030,7 +1040,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
     private void lihatBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatBerkasActionPerformed
         // TODO add your handling code here:
-        rincianPelamar.dispose();
+        //rincianPelamar.dispose();
         readBerkas.setLocationRelativeTo(null);
         readBerkas.setSize(625, 600);
         readBerkas.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -1072,7 +1082,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         rincianPelamar.dispose();
-        this.setVisible(true);
+        //this.setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
     private void tablePelamarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePelamarMouseClicked
@@ -1087,7 +1097,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dispose();
+        //dispose();
         rincianPelamar.setLocationRelativeTo(null);
         rincianPelamar.setSize(1100, 650);
         rincianPelamar.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -1224,7 +1234,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
             }
         }
         terimaLamaran(username, posisi);
-        rincianPelamar.dispose();
+        //rincianPelamar.dispose();
         try {
             new hrd_pelamar().setVisible(true);
         } catch (SQLException ex) {
@@ -1236,7 +1246,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
         readBerkas.dispose();
-        rincianPelamar.setVisible(true);
+        //rincianPelamar.setVisible(true);
         label2.setText(null);
     }//GEN-LAST:event_kembaliActionPerformed
 
@@ -1450,7 +1460,9 @@ public class hrd_pelamar extends javax.swing.JFrame {
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JLabel ijazah;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

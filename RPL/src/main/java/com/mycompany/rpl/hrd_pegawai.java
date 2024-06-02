@@ -192,6 +192,8 @@ public class hrd_pegawai extends javax.swing.JFrame {
         posisiUser = new javax.swing.JLabel();
         delete = new javax.swing.JLabel();
         change = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         readBerkas = new javax.swing.JDialog();
         kembali = new javax.swing.JButton();
         judul3 = new javax.swing.JLabel();
@@ -460,6 +462,14 @@ public class hrd_pegawai extends javax.swing.JFrame {
             }
         });
         rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 430, 160, 60));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel2.setText("Terima");
+        rincianPegawai.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel1.setText("Tolak");
+        rincianPegawai.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
 
         readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
         readBerkas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1331,7 +1341,9 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private javax.swing.JLabel homeIcon;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JLabel ijazah;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

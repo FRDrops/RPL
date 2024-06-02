@@ -1298,7 +1298,7 @@ private boolean isValidDateFormat(String date) {
 
     private void uploadBerkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadBerkasActionPerformed
         // TODO add your handling code here:
-        dispose();
+        //dispose();
         String username = Session.getInstance().getUsername();
         cekBerkas();
         uploadSection.setLocationRelativeTo(null);
@@ -1314,7 +1314,7 @@ private boolean isValidDateFormat(String date) {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         uploadSection.dispose();
-        this.setVisible(true);
+        //this.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void userProfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userProfilMouseClicked
