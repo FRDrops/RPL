@@ -123,7 +123,7 @@ public class user_data extends javax.swing.JFrame {
                 userProfil.setIcon(fotoIcon);*/
                 byte[] fotoBytes = fotoBlob.getBytes(1, (int) fotoBlob.length());
                 BufferedImage image = ImageIO.read(new ByteArrayInputStream(fotoBytes));
-                int diameter = 200; // Atur diameter sesuai keinginan
+                int diameter = 200;
                 BufferedImage roundedImage = makeRoundedCorner(image, diameter);
                 ImageIcon fotoIcon = new ImageIcon(roundedImage);
                 userProfil.setIcon(fotoIcon);

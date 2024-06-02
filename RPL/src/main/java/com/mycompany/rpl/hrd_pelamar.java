@@ -647,7 +647,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         label2.setForeground(new java.awt.Color(215, 204, 185));
         label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label2.setText("Berkas");
-        nav1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 190, -1));
+        nav1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 390, -1));
 
         jPanel10.add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, 370));
 
@@ -1031,7 +1031,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         readBerkas.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         readBerkas.setVisible(true);
         readBerkas.setVisible(true);
-        label2.setText(null);
+        label2.setIcon(null);
     }//GEN-LAST:event_lihatBerkasActionPerformed
 
     private void lihatBerkasDetail(String username, String berkas) {
@@ -1050,40 +1050,20 @@ public class hrd_pelamar extends javax.swing.JFrame {
             if (resultSet.next()) {
                 byte[] imgBytes = resultSet.getBytes(berkas);
                 if (imgBytes != null) {
-                    ByteArrayInputStream bais = new ByteArrayInputStream(imgBytes);
-                    Image img = ImageIO.read(bais);
-                    if (img != null) {
-                        ImageIcon icon = new ImageIcon(img);
-                        label2.setIcon(icon);
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Gambar tidak valid", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+                    ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
+                    ImageIcon icon = new ImageIcon(new ImageIcon(bis.readAllBytes()).getImage().getScaledInstance(300, 350, Image.SCALE_DEFAULT));
+                    label2.setIcon(icon);
+                    label2.setText(null);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Tidak ada gambar ditemukan", "Error", JOptionPane.ERROR_MESSAGE);
+                    label2.setIcon(null);
+                    label2.setText("No image found for this ID.");
                 }
-            } else {
-                JOptionPane.showMessageDialog(this, "Pengguna tidak ditemukan", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (Exception ex) {
-            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
-            ex.printStackTrace();
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (koneksi != null && !koneksi.isClosed()) {
-                    koneksi.close();
-                }
-            } catch (Exception e) {
-                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
-                e.printStackTrace();
-            }
         }
-    }    
+    }   catch (SQLException ex) {    
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         rincianPelamar.dispose();
