@@ -464,11 +464,11 @@ public class hrd_pegawai extends javax.swing.JFrame {
         rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 430, 160, 60));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel2.setText("Terima");
-        rincianPegawai.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, -1, -1));
+        jLabel2.setText("Ubah");
+        rincianPegawai.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 490, 30, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel1.setText("Tolak");
+        jLabel1.setText("Hapus");
         rincianPegawai.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
 
         readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
