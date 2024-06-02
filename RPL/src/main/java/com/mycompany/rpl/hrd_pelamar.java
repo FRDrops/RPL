@@ -1111,6 +1111,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
                 query = "UPDATE lowongan_p SET status = 'Ditolak' WHERE username_user = ?";
             } else {
                 System.out.println("Posisi tidak valid.");
+                JOptionPane.showMessageDialog(null, "Posisi tidak valid.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -1120,16 +1121,20 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
             if (rowsUpdated > 0) {
                 System.out.println("Status berhasil diperbarui menjadi ditolak.");
+                 JOptionPane.showMessageDialog(null, "Pelamar ditolak.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 System.out.println("Gagal memperbarui status. Mungkin username tidak ditemukan.");
+                JOptionPane.showMessageDialog(null, "Gagal memperbarui status. Mungkin username tidak ditemukan.", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
             ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Kesalahan SQL terjadi: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             System.out.println("Kesalahan lain terjadi: " + e.getMessage());
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Kesalahan lain terjadi: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             try {
                 if (statement != null) {
@@ -1141,6 +1146,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
             } catch (SQLException e) {
                 System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Kesalahan saat menutup koneksi atau statement: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         rincianPelamar.dispose();
@@ -1148,6 +1154,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
             new hrd_pelamar().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Kesalahan saat membuka hrd_pelamar: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_declineMouseClicked
 
@@ -1173,6 +1180,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
                 query = "UPDATE lowongan_p SET status = 'Diterima' WHERE username_user = ?";
             } else {
                 System.out.println("Posisi tidak valid.");
+                JOptionPane.showMessageDialog(null, "Posisi tidak valid.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -1182,16 +1190,20 @@ public class hrd_pelamar extends javax.swing.JFrame {
 
             if (rowsUpdated > 0) {
                 System.out.println("Status berhasil diperbarui menjadi diterima.");
+                JOptionPane.showMessageDialog(null, "Pelamar diterima.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 System.out.println("Gagal memperbarui status. Mungkin username tidak ditemukan.");
+                JOptionPane.showMessageDialog(null, "Gagal memperbarui status. Mungkin username tidak ditemukan.", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
             ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Kesalahan SQL terjadi: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             System.out.println("Kesalahan lain terjadi: " + e.getMessage());
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Kesalahan lain terjadi: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } finally {
             try {
                 if (statement != null) {
@@ -1203,6 +1215,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
             } catch (SQLException e) {
                 System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
                 e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Kesalahan saat menutup koneksi atau statement: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         terimaLamaran(username, posisi);
@@ -1211,13 +1224,14 @@ public class hrd_pelamar extends javax.swing.JFrame {
             new hrd_pelamar().setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Kesalahan saat membuka hrd_pelamar: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_acceptMouseClicked
 
     private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         // TODO add your handling code here:
         readBerkas.dispose();
-        this.setVisible(true);
+        rincianPelamar.setVisible(true);
         label2.setText(null);
     }//GEN-LAST:event_kembaliActionPerformed
 

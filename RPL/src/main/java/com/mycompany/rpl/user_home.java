@@ -316,6 +316,7 @@ public class user_home extends javax.swing.JFrame {
         String isi = saranInput.getText();
         createSaran(username, isi);
         saranInput.setText("");
+        JOptionPane.showMessageDialog(null, "Saran Anda sudah terkirim.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_kirimButtonActionPerformed
 
     public void createSaran(String username, String isi) {

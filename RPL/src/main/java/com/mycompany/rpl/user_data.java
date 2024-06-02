@@ -31,6 +31,8 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.Level;
@@ -1057,12 +1059,30 @@ public class user_data extends javax.swing.JFrame {
             String jenis = (String) jenisInput.getSelectedItem();
             String pend = (String) pendInput.getSelectedItem();
 
+            // Validasi format tanggal lahir
+            if (!isValidDateFormat(tanggal)) {
+                JOptionPane.showMessageDialog(this, "Format tanggal lahir tidak valid. Gunakan format YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
             updateData(username, jenis, tempat, tanggal, pend, alamat, nik, nomor);
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Input NIK atau nomor telepon tidak valid, masukkan angka yang benar.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_simpanButtonActionPerformed
 
+    // Metode untuk validasi format tanggal lahir
+private boolean isValidDateFormat(String date) {
+    try {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        sdf.setLenient(false);
+        sdf.parse(date);
+        return true;
+    } catch (ParseException e) {
+        return false;
+    }
+}
+    
     public void updateData(String username, String jenis, String tempat, String tanggal, String pend, String alamat, long nik, long nomor) {
         try {
             Koneksi konek = new Koneksi();
