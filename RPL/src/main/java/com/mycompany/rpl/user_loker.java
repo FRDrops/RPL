@@ -1490,6 +1490,7 @@ public class user_loker extends javax.swing.JFrame {
                     System.out.println(username);
                     createLamaranJM(username);
                     cekDataLowonganJM(username);
+                    JOptionPane.showMessageDialog(null, "Berhasil melamar pekerjaan.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     System.out.println("gagal ges");
                     JOptionPane.showMessageDialog(user_loker.this, "Lengkapi dulu data kamu dan pastikan tidak ada yang kosong.");
@@ -1566,6 +1567,7 @@ public class user_loker extends javax.swing.JFrame {
                     System.out.println(username);
                     createLamaranP(username);
                     cekDataLowonganP(username);
+                    JOptionPane.showMessageDialog(null, "Berhasil melamar pekerjaan.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     System.out.println("gagal ges");
                     JOptionPane.showMessageDialog(user_loker.this, "Lengkapi dulu data kamu dan pastikan tidak ada yang kosong.");
