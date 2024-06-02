@@ -1313,7 +1313,8 @@ public class user_loker extends javax.swing.JFrame {
                 int count = resultSet.getInt(1);
                 if (count > 0) {
                     lamarButtonJM.setEnabled(false);
-                    lihatHasilJM.setEnabled(true);
+                    lihatHasilJM.setEnabled(true);     
+                    JOptionPane.showMessageDialog(null, "Berhasil melamar pekerjaan.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     lamarButtonJM.setEnabled(true);
                     lihatHasilJM.setEnabled(false);
@@ -1517,7 +1518,7 @@ public class user_loker extends javax.swing.JFrame {
             if (rowsAffected > 0) {
                 System.out.println("Lamaran berhasil dibuat untuk user: " + username_user);
             } else {
-                System.out.println("Lamaran gagal dibuat untuk user: " + username_user);
+                System.out.println("Lamaran gagal dibuat untuk user: " + username_user);                
             }
 
         } catch (SQLException ex) {
@@ -1656,6 +1657,7 @@ public class user_loker extends javax.swing.JFrame {
                     System.out.println(username);
                     createLamaranK(username);
                     cekDataLowonganK(username);
+                    JOptionPane.showMessageDialog(null, "Berhasil melamar pekerjaan.", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     System.out.println("gagal ges");
                     JOptionPane.showMessageDialog(user_loker.this, "Lengkapi dulu data kamu dan pastikan tidak ada yang kosong.");

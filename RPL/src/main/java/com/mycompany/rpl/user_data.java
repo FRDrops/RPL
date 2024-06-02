@@ -177,7 +177,7 @@ public class user_data extends javax.swing.JFrame {
             }
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
-            ex.printStackTrace();
+            ex.printStackTrace();            
         } catch (Exception e) {
             System.out.println("Kesalahan lain terjadi: " + e.getMessage());
             e.printStackTrace();
@@ -653,7 +653,7 @@ public class user_data extends javax.swing.JFrame {
                 userProfilMouseClicked(evt);
             }
         });
-        getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 220, 210));
+        getContentPane().add(userProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 220, 220));
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
         nav.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1382,6 +1382,7 @@ private boolean isValidDateFormat(String date) {
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
             ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ukuran berkas terlalu berkas. Maksimal 1 Mb.", "Error", JOptionPane.ERROR_MESSAGE);
         } catch (IOException e) {
             System.out.println("Kesalahan saat membaca file: " + e.getMessage());
             e.printStackTrace();
