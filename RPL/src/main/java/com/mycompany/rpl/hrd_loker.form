@@ -140,6 +140,9 @@
                       <Dimension value="[232, 84]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="ketjJMFocusLost"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

@@ -28,6 +28,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -177,7 +179,6 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan12 = new javax.swing.JLabel();
         EditK = new javax.swing.JButton();
 
-        rincianLokerJM.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianLokerJM.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianLokerJM.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -219,6 +220,11 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjJM.setFocusable(false);
         ketjJM.setMaximumSize(new java.awt.Dimension(232, 84));
         ketjJM.setMinimumSize(new java.awt.Dimension(232, 84));
+        ketjJM.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ketjJMFocusLost(evt);
+            }
+        });
         jScrollPane3.setViewportView(ketjJM);
 
         jPanel7.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 190));
@@ -295,7 +301,6 @@ public class hrd_loker extends javax.swing.JFrame {
 
         rincianLokerJM.getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
-        backButton.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -319,7 +324,6 @@ public class hrd_loker extends javax.swing.JFrame {
         });
         rincianLokerJM.getContentPane().add(simpanJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 500, 190, 40));
 
-        rincianLokerP.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianLokerP.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianLokerP.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -437,7 +441,6 @@ public class hrd_loker extends javax.swing.JFrame {
 
         rincianLokerP.getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
-        backButton1.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -461,7 +464,6 @@ public class hrd_loker extends javax.swing.JFrame {
         });
         rincianLokerP.getContentPane().add(simpanP, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 500, 190, 40));
 
-        rincianLokerK.setMaximumSize(new java.awt.Dimension(1100, 650));
         rincianLokerK.setMinimumSize(new java.awt.Dimension(1100, 650));
         rincianLokerK.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -579,7 +581,6 @@ public class hrd_loker extends javax.swing.JFrame {
 
         rincianLokerK.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 290, 370));
 
-        backButton2.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\back2.png")); // NOI18N
         backButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -609,9 +610,7 @@ public class hrd_loker extends javax.swing.JFrame {
         keterangan23.setText("Berakhir pada:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nav.setBackground(new java.awt.Color(255, 255, 255));
@@ -622,7 +621,6 @@ public class hrd_loker extends javax.swing.JFrame {
         pegawaiLabel.setText("Daftar Pegawai");
         nav.add(pegawaiLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 90, 20));
 
-        homeIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\homeBlack.png")); // NOI18N
         homeIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -636,7 +634,6 @@ public class hrd_loker extends javax.swing.JFrame {
         homeLabel.setText("Home");
         nav.add(homeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 50, 30));
 
-        pelamarIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pelamarBlack.png")); // NOI18N
         pelamarIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pelamarIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -645,7 +642,6 @@ public class hrd_loker extends javax.swing.JFrame {
         });
         nav.add(pelamarIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 170, 160, 70));
 
-        lokerIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\lokersayaWhite.png")); // NOI18N
         lokerIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lokerIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -659,7 +655,6 @@ public class hrd_loker extends javax.swing.JFrame {
         pelamarLabel.setText("Daftar Pelamar");
         nav.add(pelamarLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 90, 20));
 
-        pegawaiIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\pegawaiBlack.png")); // NOI18N
         pegawaiIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pegawaiIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -673,7 +668,6 @@ public class hrd_loker extends javax.swing.JFrame {
         lokerLabel.setText("Loker Saya");
         nav.add(lokerLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 90, 20));
 
-        saranIcon.setIcon(new javax.swing.ImageIcon("D:\\Semua Java Project\\RPL\\RPL\\RPL\\target\\classes\\com\\mycompany\\rpl\\resources\\saranBlack.png")); // NOI18N
         saranIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         saranIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1025,6 +1019,48 @@ public class hrd_loker extends javax.swing.JFrame {
         this.setVisible(true);
     }//GEN-LAST:event_backButton2MouseClicked
 
+    private void ketjJMFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ketjJMFocusLost
+        // TODO add your handling code here:
+        String newKetjJM = ketjJM.getText();
+        saveTextToDatabase(newKetjJM);
+    }//GEN-LAST:event_ketjJMFocusLost
+
+    private void saveTextToDatabase(String newText) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "UPDATE lowongan SET column_name = ? WHERE condition";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, newText);
+
+            int rowsUpdated = statement.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("Perubahan berhasil disimpan.");
+            } else {
+                System.out.println("Gagal menyimpan perubahan.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

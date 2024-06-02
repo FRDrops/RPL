@@ -480,7 +480,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         judul3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         judul3.setForeground(new java.awt.Color(49, 45, 34));
         judul3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        judul3.setText("Berkas Pelamar");
+        judul3.setText("Berkas Pegawai");
         readBerkas.getContentPane().add(judul3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 210, 40));
 
         nav1.setBackground(new java.awt.Color(255, 255, 255));
@@ -490,7 +490,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         view.setForeground(new java.awt.Color(215, 204, 185));
         view.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         view.setText("Autosave");
-        nav1.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 190, -1));
+        nav1.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 420, -1));
 
         readBerkas.getContentPane().add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, 370));
 
@@ -843,6 +843,11 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         rincianPegawai.dispose();
+        try {
+            readToTable();
+        } catch (SQLException ex) {
+            Logger.getLogger(hrd_pegawai.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
@@ -878,7 +883,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         readBerkas.getContentPane().setBackground(Color.decode("0xFFFFFF"));
         readBerkas.setVisible(true);
         readBerkas.setVisible(true);
-
+        view.setIcon(null);
     }//GEN-LAST:event_lihatBerkasActionPerformed
 
     private void lihatBerkasDetail(String username, String berkas) {
@@ -899,15 +904,15 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 if (imgBytes != null) {
                     ByteArrayInputStream bis = new ByteArrayInputStream(imgBytes);
                     ImageIcon icon = new ImageIcon(new ImageIcon(bis.readAllBytes()).getImage().getScaledInstance(300, 350, Image.SCALE_DEFAULT));
-                    userProfil.setIcon(icon);
-                    userProfil.setText(null);
+                    view.setIcon(icon);
+                    view.setText(null);
                 } else {
-                    userProfil.setIcon(null);
-                    userProfil.setText("No image found for this ID.");
+                    view.setIcon(null);
+                    view.setText("No image found for this ID.");
                 }
             } else {
-                userProfil.setIcon(null);
-                userProfil.setText("No image found for this ID.");
+                view.setIcon(null);
+                view.setText("No image found for this ID.");
             }
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
@@ -938,12 +943,113 @@ public class hrd_pegawai extends javax.swing.JFrame {
     
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
         // TODO add your handling code here:
+        String nama = judul2.getText();
+        String posisi = posisiUser.getText();
+        String username = this.readUsn(nama);
+        deletePegawai(username, posisi);
     }//GEN-LAST:event_deleteMouseClicked
 
+    public void deletePegawai(String username, String posisi) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+
+        try {
+            koneksi = konek.open();
+
+            String query = "DELETE FROM pegawai WHERE username_user = ? AND posisi = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, username);
+            statement.setString(2, posisi);
+
+            int rowsDeleted = statement.executeUpdate();
+            if (rowsDeleted > 0) {
+                System.out.println("Pegawai berhasil dihapus.");
+            } else {
+                System.out.println("Pegawai dengan username dan posisi tersebut tidak ditemukan.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Kesalahan tidak terduga", "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+                Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+    }
+    
     private void changeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeMouseClicked
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_changeMouseClicked
 
+    public void updatePosisi(String username, String posisiBaru) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+
+        try {
+            koneksi = konek.open();
+
+            // Memeriksa apakah posisi baru valid
+            if (!posisiBaru.equals("Juru Masak") && !posisiBaru.equals("Pelayan") && !posisiBaru.equals("Kasir")) {
+                throw new IllegalArgumentException("Posisi tidak valid: " + posisiBaru);
+            }
+
+            String query = "UPDATE pegawai SET posisi = ? WHERE username_user = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, posisiBaru);
+            statement.setString(2, username);
+
+            int rowsUpdated = statement.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("Posisi berhasil diperbarui.");
+            } else {
+                System.out.println("Username tidak ditemukan.");
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+            Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Kesalahan input: " + e.getMessage());
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Kesalahan lain terjadi: " + e.getMessage());
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Kesalahan tidak terduga", "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+                Logger.getLogger(hrd_pelamar.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
+    }
+    
     private void kembaliMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kembaliMouseClicked
         // TODO add your handling code here:
         readBerkas.dispose();
