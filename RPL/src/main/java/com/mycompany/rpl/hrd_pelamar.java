@@ -450,6 +450,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tempatInput.setForeground(new java.awt.Color(112, 104, 94));
         tempatInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         tempatInput.setBorder(null);
+        tempatInput.setFocusable(false);
         tempatInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tempatInputActionPerformed(evt);
@@ -473,6 +474,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         alamatInput.setForeground(new java.awt.Color(112, 104, 94));
         alamatInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         alamatInput.setBorder(null);
+        alamatInput.setFocusable(false);
         alamatInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alamatInputActionPerformed(evt);
@@ -496,6 +498,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         tanggalInput.setForeground(new java.awt.Color(112, 104, 94));
         tanggalInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         tanggalInput.setBorder(null);
+        tanggalInput.setFocusable(false);
         tanggalInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tanggalInputActionPerformed(evt);
@@ -530,6 +533,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         nikInput.setForeground(new java.awt.Color(112, 104, 94));
         nikInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         nikInput.setBorder(null);
+        nikInput.setFocusable(false);
         nikInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nikInputActionPerformed(evt);
@@ -558,6 +562,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         nomorInput.setForeground(new java.awt.Color(112, 104, 94));
         nomorInput.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         nomorInput.setBorder(null);
+        nomorInput.setFocusable(false);
         nomorInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomorInputActionPerformed(evt);
@@ -605,7 +610,7 @@ public class hrd_pelamar extends javax.swing.JFrame {
         posisiUser.setForeground(new java.awt.Color(0, 74, 173));
         posisiUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         posisiUser.setText("[Posisi]");
-        rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 190, -1));
+        rincianPelamar.getContentPane().add(posisiUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 230, -1));
 
         readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
         readBerkas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
