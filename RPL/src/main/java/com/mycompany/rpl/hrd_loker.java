@@ -379,6 +379,11 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjP.setFocusable(false);
         ketjP.setMaximumSize(new java.awt.Dimension(232, 84));
         ketjP.setMinimumSize(new java.awt.Dimension(232, 84));
+        ketjP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ketjPMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(ketjP);
 
         jPanel9.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 570, 190));
@@ -397,6 +402,11 @@ public class hrd_loker extends javax.swing.JFrame {
         ketkualP.setFocusable(false);
         ketkualP.setMaximumSize(new java.awt.Dimension(232, 84));
         ketkualP.setMinimumSize(new java.awt.Dimension(232, 84));
+        ketkualP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ketkualPMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(ketkualP);
 
         jPanel9.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 570, 150));
@@ -1068,6 +1078,16 @@ public class hrd_loker extends javax.swing.JFrame {
         // TODO add your handling code here:
         ketjJM.setEditable(true);
     }//GEN-LAST:event_jScrollPane3MouseClicked
+
+    private void ketjPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ketjPMouseClicked
+        // TODO add your handling code here:
+        ketjP.setEditable(true);
+    }//GEN-LAST:event_ketjPMouseClicked
+
+    private void ketkualPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ketkualPMouseClicked
+        // TODO add your handling code here:
+        ketkualP.setEditable(true);
+    }//GEN-LAST:event_ketkualPMouseClicked
 
     private void saveTextToDatabase(String newText1, String newText2, String newText3, String tanggal, String posisi) {
         Koneksi konek = new Koneksi();

@@ -535,6 +535,9 @@
                       <Dimension value="[232, 84]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ketjPMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -583,6 +586,9 @@
                       <Dimension value="[232, 84]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ketkualPMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
