@@ -1004,10 +1004,12 @@ public class hrd_loker extends javax.swing.JFrame {
 
     private void simpanJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanJMActionPerformed
         // TODO add your handling code here:
-        String newKetjJM = ketjJM.getText();
-        String loker = posisi1.getText();
-        String kolom = "text_1";
-        saveTextToDatabase(loker, kolom, newKetjJM);
+        String newKetj = ketjJM.getText();
+        String newKetkual = ketkualJM.getText();
+        String newKetkdes = ketdesJM.getText();
+        String posisi = posisi1.getText();
+        String tanggal = tenggat4.getText();
+        saveTextToDatabase(newKetj, newKetkual, newKetkdes, tanggal, posisi);
     }//GEN-LAST:event_simpanJMActionPerformed
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
@@ -1018,6 +1020,12 @@ public class hrd_loker extends javax.swing.JFrame {
 
     private void simpanPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanPActionPerformed
         // TODO add your handling code here:
+        String newKetj = ketjP.getText();
+        String newKetkual = ketkualP.getText();
+        String newKetkdes = ketdesP.getText();
+        String posisi = posisi2.getText();
+        String tanggal = tenggat5.getText();
+        saveTextToDatabase(newKetj, newKetkual, newKetkdes, tanggal, posisi);
     }//GEN-LAST:event_simpanPActionPerformed
 
     private void backButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton1MouseClicked
@@ -1028,6 +1036,12 @@ public class hrd_loker extends javax.swing.JFrame {
 
     private void simpanKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanKActionPerformed
         // TODO add your handling code here:
+        String newKetj = ketjK.getText();
+        String newKetkual = ketkualK.getText();
+        String newKetkdes = ketdesK.getText();
+        String posisi = posisi3.getText();
+        String tanggal = tenggat6.getText();
+        saveTextToDatabase(newKetj, newKetkual, newKetkdes, tanggal, posisi);
     }//GEN-LAST:event_simpanKActionPerformed
 
     private void backButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButton2MouseClicked
@@ -1051,17 +1065,20 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjJM.setEditable(true);
     }//GEN-LAST:event_jScrollPane3MouseClicked
 
-    private void saveTextToDatabase(String loker, String kolom, String newText) {
+    private void saveTextToDatabase(String newText1, String newText2, String newText3, String tanggal, String posisi) {
         Koneksi konek = new Koneksi();
         Connection koneksi = null;
         PreparedStatement statement = null;
 
         try {
             koneksi = konek.open();
-            String query = "UPDATE loker SET " + kolom + " = ? WHERE nama_loker = ?";
+            String query = "UPDATE loker SET text_1 = ?, text_2 = ?, text_3 = ?, tanggal = ? WHERE nama_loker = ?";
             statement = koneksi.prepareStatement(query);
-            statement.setString(1, newText);
-            statement.setString(2, loker);
+            statement.setString(1, newText1);
+            statement.setString(2, newText2);
+            statement.setString(3, newText3);
+            statement.setString(4, tanggal);
+            statement.setString(5, posisi);
 
             int rowsUpdated = statement.executeUpdate();
             if (rowsUpdated > 0) {
@@ -1069,7 +1086,6 @@ public class hrd_loker extends javax.swing.JFrame {
             } else {
                 System.out.println("Gagal menyimpan perubahan.");
             }
-
         } catch (SQLException ex) {
             System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
             ex.printStackTrace();
