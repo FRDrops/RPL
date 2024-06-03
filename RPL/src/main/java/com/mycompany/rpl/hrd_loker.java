@@ -227,8 +227,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjJM.setAutoscrolls(false);
         ketjJM.setBorder(null);
         ketjJM.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketjJM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketjJM.setFocusable(false);
+        ketjJM.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketjJM.setMaximumSize(new java.awt.Dimension(232, 84));
         ketjJM.setMinimumSize(new java.awt.Dimension(232, 84));
         ketjJM.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -255,8 +254,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketkualJM.setAutoscrolls(false);
         ketkualJM.setBorder(null);
         ketkualJM.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketkualJM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketkualJM.setFocusable(false);
+        ketkualJM.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketkualJM.setMaximumSize(new java.awt.Dimension(232, 84));
         ketkualJM.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane1.setViewportView(ketkualJM);
@@ -307,8 +305,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketdesJM.setAutoscrolls(false);
         ketdesJM.setBorder(null);
         ketdesJM.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketdesJM.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketdesJM.setFocusable(false);
+        ketdesJM.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketdesJM.setMaximumSize(new java.awt.Dimension(232, 84));
         ketdesJM.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane2.setViewportView(ketdesJM);
