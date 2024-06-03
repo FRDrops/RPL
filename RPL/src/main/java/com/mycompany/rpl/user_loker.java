@@ -1283,10 +1283,55 @@ public class user_loker extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rincianDISABLEActionPerformed
 
+    private void readTextFromDatabase(JTextArea jTextArea1, JTextArea jTextArea2, JTextArea jTextArea3, JLabel JLabelTanggal, JLabel jLabelPosisi) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "SELECT text_1, text_2, text_3, tanggal, nama_loker FROM loker WHERE nama_loker = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, jLabelPosisi.getText());
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                jTextArea1.setText(resultSet.getString("text_1"));
+                jTextArea2.setText(resultSet.getString("text_2"));
+                jTextArea3.setText(resultSet.getString("text_3"));
+                JLabelTanggal.setText(resultSet.getString("tanggal"));
+                jLabelPosisi.setText(resultSet.getString("nama_loker"));
+            } else {
+                System.out.println("Data tidak ditemukan.");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
     private void rincianJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rincianJMActionPerformed
         // TODO add your handling code here:
         dispose();
         String username = Session.getInstance().getUsername();
+        readTextFromDatabase(ketjJM, ketkualJM, ketdesJM, tenggat4, posisi1);
         cekDataLowonganJM(username);
         hasilJM.setLocationRelativeTo(null);
         hasilJM.setSize(1100, 650);
@@ -1347,6 +1392,7 @@ public class user_loker extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         String username = Session.getInstance().getUsername();
+        readTextFromDatabase(ketjP, ketkualP, ketdesP, tenggat5, posisi2);
         cekDataLowonganP(username);
         hasilP.setLocationRelativeTo(null);
         hasilP.setSize(1100, 650);
@@ -1407,6 +1453,7 @@ public class user_loker extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
         String username = Session.getInstance().getUsername();
+        readTextFromDatabase(ketjK, ketkualK, ketdesK, tenggat6, posisi3);
         cekDataLowonganK(username);
         hasilK.setLocationRelativeTo(null);
         hasilK.setSize(1100, 650);
