@@ -30,6 +30,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -978,6 +979,7 @@ public class hrd_loker extends javax.swing.JFrame {
     private void editJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editJMActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        this.readTextFromDatabase(ketjJM, ketkualJM, ketdesJM, tenggat4, posisi1);
         rincianLokerJM.setLocationRelativeTo(null);
         rincianLokerJM.setSize(1100, 650);
         rincianLokerJM.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -987,6 +989,7 @@ public class hrd_loker extends javax.swing.JFrame {
     private void EditPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditPActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        this.readTextFromDatabase(ketjP, ketkualP, ketdesP, tenggat5, posisi2);
         rincianLokerP.setLocationRelativeTo(null);
         rincianLokerP.setSize(1100, 650);
         rincianLokerP.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -996,6 +999,7 @@ public class hrd_loker extends javax.swing.JFrame {
     private void EditKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditKActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        this.readTextFromDatabase(ketjK, ketkualK, ketdesK, tenggat6, posisi3);
         rincianLokerK.setLocationRelativeTo(null);
         rincianLokerK.setSize(1100, 650);
         rincianLokerK.getContentPane().setBackground(Color.decode("0xFFFFFF"));
@@ -1091,6 +1095,50 @@ public class hrd_loker extends javax.swing.JFrame {
             ex.printStackTrace();
         } finally {
             try {
+                if (statement != null) {
+                    statement.close();
+                }
+                if (koneksi != null && !koneksi.isClosed()) {
+                    koneksi.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("Kesalahan saat menutup koneksi atau statement: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    private void readTextFromDatabase(JTextArea jTextArea1, JTextArea jTextArea2, JTextArea jTextArea3, JLabel JLabelTanggal, JLabel jLabelPosisi) {
+        Koneksi konek = new Koneksi();
+        Connection koneksi = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            koneksi = konek.open();
+            String query = "SELECT text_1, text_2, text_3, tanggal, nama_loker FROM loker WHERE nama_loker = ?";
+            statement = koneksi.prepareStatement(query);
+            statement.setString(1, jLabelPosisi.getText());
+
+            resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                jTextArea1.setText(resultSet.getString("text_1"));
+                jTextArea2.setText(resultSet.getString("text_2"));
+                jTextArea3.setText(resultSet.getString("text_3"));
+                JLabelTanggal.setText(resultSet.getString("tanggal"));
+                jLabelPosisi.setText(resultSet.getString("nama_loker"));
+            } else {
+                System.out.println("Data tidak ditemukan.");
+            }
+        } catch (SQLException ex) {
+            System.out.println("Kesalahan SQL terjadi: " + ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
                 if (statement != null) {
                     statement.close();
                 }
