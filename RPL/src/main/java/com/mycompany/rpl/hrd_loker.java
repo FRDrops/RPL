@@ -68,6 +68,11 @@ public class hrd_loker extends javax.swing.JFrame {
         jScrollPane7.setBorder(null);
         jScrollPane8.setBorder(null);
         jScrollPane9.setBorder(null);
+        ketjJM.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseClicked(java.awt.event.MouseEvent evt) {
+            ketjJMMouseClicked(evt);
+        }
+    });
     }
 
     /**
@@ -206,6 +211,12 @@ public class hrd_loker extends javax.swing.JFrame {
         tanggungJawabJM.setText("Tanggung Jawab Utama");
         jPanel7.add(tanggungJawabJM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 370, -1));
 
+        jScrollPane3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane3MouseClicked(evt);
+            }
+        });
+
         ketjJM.setBackground(new java.awt.Color(249, 248, 242));
         ketjJM.setColumns(20);
         ketjJM.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
@@ -223,6 +234,11 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjJM.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 ketjJMFocusLost(evt);
+            }
+        });
+        ketjJM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ketjJMMouseClicked(evt);
             }
         });
         jScrollPane3.setViewportView(ketjJM);
@@ -991,6 +1007,10 @@ public class hrd_loker extends javax.swing.JFrame {
 
     private void simpanJMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanJMActionPerformed
         // TODO add your handling code here:
+        String newKetjJM = ketjJM.getText();
+        String loker = posisi1.getText();
+        String kolom = "text_1";
+        saveTextToDatabase(loker, kolom, newKetjJM);
     }//GEN-LAST:event_simpanJMActionPerformed
 
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
@@ -1021,20 +1041,30 @@ public class hrd_loker extends javax.swing.JFrame {
 
     private void ketjJMFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ketjJMFocusLost
         // TODO add your handling code here:
-        String newKetjJM = ketjJM.getText();
-        saveTextToDatabase(newKetjJM);
+        ketjJM.setEditable(false);
     }//GEN-LAST:event_ketjJMFocusLost
 
-    private void saveTextToDatabase(String newText) {
+    private void ketjJMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ketjJMMouseClicked
+        // TODO add your handling code here:
+        ketjJM.setEditable(true);
+    }//GEN-LAST:event_ketjJMMouseClicked
+
+    private void jScrollPane3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane3MouseClicked
+        // TODO add your handling code here:
+        ketjJM.setEditable(true);
+    }//GEN-LAST:event_jScrollPane3MouseClicked
+
+    private void saveTextToDatabase(String loker, String kolom, String newText) {
         Koneksi konek = new Koneksi();
         Connection koneksi = null;
         PreparedStatement statement = null;
 
         try {
             koneksi = konek.open();
-            String query = "UPDATE lowongan SET column_name = ? WHERE condition";
+            String query = "UPDATE loker SET " + kolom + " = ? WHERE nama_loker = ?";
             statement = koneksi.prepareStatement(query);
             statement.setString(1, newText);
+            statement.setString(2, loker);
 
             int rowsUpdated = statement.executeUpdate();
             if (rowsUpdated > 0) {

@@ -504,8 +504,8 @@ public class hrd_pegawai extends javax.swing.JFrame {
         view.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         view.setForeground(new java.awt.Color(215, 204, 185));
         view.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        view.setText("Autosave");
-        nav1.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 420, -1));
+        view.setText("Berkas");
+        nav1.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 420, -1));
 
         readBerkas.getContentPane().add(nav1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 590, 370));
 
