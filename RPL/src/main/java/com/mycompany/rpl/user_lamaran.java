@@ -32,6 +32,10 @@ import javax.swing.JFrame;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  *
  * @author ASUS
@@ -395,6 +399,11 @@ public class user_lamaran extends javax.swing.JFrame {
 
     private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
         // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://linktr.ee/rm.gendhu_roso"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
     }//GEN-LAST:event_aboutMouseClicked
 
     private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked

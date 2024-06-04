@@ -30,6 +30,10 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  *
  * @author ASUS
@@ -786,6 +790,12 @@ public class user_loker extends javax.swing.JFrame {
         noWA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         noWA.setForeground(new java.awt.Color(255, 255, 255));
         noWA.setText("wa.me/+628895411736");
+        noWA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        noWA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                noWAMouseClicked(evt);
+            }
+        });
         jPanel6.add(noWA, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 10, 160, 30));
 
         contactUS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -796,11 +806,23 @@ public class user_loker extends javax.swing.JFrame {
         usnIG.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         usnIG.setForeground(new java.awt.Color(255, 255, 255));
         usnIG.setText("rm.gendhu_roso");
+        usnIG.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        usnIG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usnIGMouseClicked(evt);
+            }
+        });
         jPanel6.add(usnIG, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 120, 30));
 
         blogURL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         blogURL.setForeground(new java.awt.Color(255, 255, 255));
         blogURL.setText("rm-gendhu-roso.blogspot.com");
+        blogURL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        blogURL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                blogURLMouseClicked(evt);
+            }
+        });
         jPanel6.add(blogURL, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 200, 30));
 
         faqUser.getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 1270, 52));
@@ -1258,6 +1280,11 @@ public class user_loker extends javax.swing.JFrame {
 
     private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
         // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://linktr.ee/rm.gendhu_roso"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
     }//GEN-LAST:event_aboutMouseClicked
 
     private void supportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supportMouseClicked
@@ -1791,6 +1818,33 @@ public class user_loker extends javax.swing.JFrame {
         faqUser.dispose();
         this.setVisible(true);
     }//GEN-LAST:event_backButton3MouseClicked
+
+    private void usnIGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usnIGMouseClicked
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://instagram.com/rm.gendu_roso?igshid=OGQ5ZDc2ODk2ZA=="));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_usnIGMouseClicked
+
+    private void blogURLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blogURLMouseClicked
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("http://rm-gendu-roso.blogspot.com/2023/12/tentang-kami.html"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_blogURLMouseClicked
+
+    private void noWAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noWAMouseClicked
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://wa.me/+628895411736"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_noWAMouseClicked
 
     /**
      * @param args the command line arguments

@@ -53,6 +53,8 @@ public class hrd_home extends javax.swing.JFrame {
         /*userProfil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilEmpty.png")));
         userProfil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/profilEmpty.png")));*/
         
+        jScrollPane1.setBorder(null);
+        
         String username = Session.getInstance().getUsername();
         readHrd(username);
         readToTable();
@@ -413,7 +415,7 @@ public class hrd_home extends javax.swing.JFrame {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 890, 160));
 
         pelamarBaru.setBackground(new java.awt.Color(249, 248, 242));
-        pelamarBaru.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        pelamarBaru.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         pelamarBaru.setForeground(new java.awt.Color(112, 104, 94));
         pelamarBaru.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

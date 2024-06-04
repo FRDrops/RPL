@@ -23,6 +23,12 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+
 /**
  *
  * @author ASUS
@@ -234,6 +240,12 @@ public class faqpage extends javax.swing.JFrame {
         noWA.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         noWA.setForeground(new java.awt.Color(255, 255, 255));
         noWA.setText("wa.me/+628895411736");
+        noWA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        noWA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                noWAMouseClicked(evt);
+            }
+        });
         jPanel1.add(noWA, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, 160, 30));
 
         contactUS.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -244,11 +256,26 @@ public class faqpage extends javax.swing.JFrame {
         usnIG.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         usnIG.setForeground(new java.awt.Color(255, 255, 255));
         usnIG.setText("rm.gendhu_roso");
+        usnIG.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        usnIG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usnIGMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                usnIGMouseEntered(evt);
+            }
+        });
         jPanel1.add(usnIG, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 120, 30));
 
         blogURL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         blogURL.setForeground(new java.awt.Color(255, 255, 255));
         blogURL.setText("rm-gendhu-roso.blogspot.com");
+        blogURL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        blogURL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                blogURLMouseClicked(evt);
+            }
+        });
         jPanel1.add(blogURL, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 200, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 635, 1270, 50));
@@ -453,6 +480,37 @@ public class faqpage extends javax.swing.JFrame {
     private void faqButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_faqButton1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_faqButton1MouseClicked
+
+    private void noWAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noWAMouseClicked
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://wa.me/+628895411736"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_noWAMouseClicked
+
+    private void blogURLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blogURLMouseClicked
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("http://rm-gendu-roso.blogspot.com/2023/12/tentang-kami.html"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_blogURLMouseClicked
+
+    private void usnIGMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usnIGMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usnIGMouseEntered
+
+    private void usnIGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usnIGMouseClicked
+        // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://instagram.com/rm.gendu_roso?igshid=OGQ5ZDc2ODk2ZA=="));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
+    }//GEN-LAST:event_usnIGMouseClicked
 
     /**
      * @param args the command line arguments

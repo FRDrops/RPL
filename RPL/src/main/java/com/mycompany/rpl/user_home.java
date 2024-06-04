@@ -12,20 +12,17 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.LayoutManager;
 import java.awt.RenderingHints;
-import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javax.swing.*;
-import javax.swing.ImageIcon;
-import javax.swing.border.*;
 import javax.swing.JPanel;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 /**
@@ -38,6 +35,8 @@ public class user_home extends javax.swing.JFrame {
      * Creates new form user_home
      */
     
+    private user_home userHome;
+               
     public user_home() {
         initComponents();
         setLocationRelativeTo(null);
@@ -51,6 +50,18 @@ public class user_home extends javax.swing.JFrame {
         lokerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/lokerkerjaBlack.png")));
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
         
+        //hyperlink buat about
+        /*setTitle("Hyperlink for About");
+        about.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new URI("https://linktr.ee/rm.gendhu_roso"));
+                } catch (IOException | URISyntaxException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });*/
     }
 
     public void showKotakSaran() {
@@ -275,6 +286,11 @@ public class user_home extends javax.swing.JFrame {
 
     private void aboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMouseClicked
         // TODO add your handling code here:
+        try {
+            Desktop.getDesktop().browse(new URI("https://linktr.ee/rm.gendhu_roso"));
+        } catch (IOException | URISyntaxException e1) {
+            e1.printStackTrace();
+        }
     }//GEN-LAST:event_aboutMouseClicked
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
@@ -362,6 +378,10 @@ public class user_home extends javax.swing.JFrame {
     private void backButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseClicked
         // TODO add your handling code here:
         kotakSaran.dispose();
+        if (userHome == null) {
+            userHome = new user_home(); // Initialize FormB if not already done
+            userHome.setVisible(true); // Show FormB
+        }
         //this.setVisible(true);
     }//GEN-LAST:event_backButtonMouseClicked
 
