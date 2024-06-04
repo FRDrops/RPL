@@ -525,9 +525,8 @@
                       <Color blue="f2" green="f8" red="f9" type="rgb"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Text Cursor"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[232, 84]"/>
                     </Property>
@@ -576,9 +575,8 @@
                       <Color blue="f2" green="f8" red="f9" type="rgb"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Text Cursor"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[232, 84]"/>
                     </Property>
@@ -730,9 +728,8 @@
                       <Color blue="f2" green="f8" red="f9" type="rgb"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Text Cursor"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[232, 84]"/>
                     </Property>
@@ -922,9 +919,8 @@
                       <Color blue="f2" green="f8" red="f9" type="rgb"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Text Cursor"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[232, 84]"/>
                     </Property>
@@ -970,9 +966,8 @@
                       <Color blue="f2" green="f8" red="f9" type="rgb"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Text Cursor"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[232, 84]"/>
                     </Property>
@@ -1121,9 +1116,8 @@
                       <Color blue="f2" green="f8" red="f9" type="rgb"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Text Cursor"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[232, 84]"/>
                     </Property>

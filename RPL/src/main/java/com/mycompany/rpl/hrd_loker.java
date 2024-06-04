@@ -375,8 +375,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjP.setAutoscrolls(false);
         ketjP.setBorder(null);
         ketjP.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketjP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketjP.setFocusable(false);
+        ketjP.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketjP.setMaximumSize(new java.awt.Dimension(232, 84));
         ketjP.setMinimumSize(new java.awt.Dimension(232, 84));
         ketjP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -398,8 +397,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketkualP.setAutoscrolls(false);
         ketkualP.setBorder(null);
         ketkualP.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketkualP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketkualP.setFocusable(false);
+        ketkualP.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketkualP.setMaximumSize(new java.awt.Dimension(232, 84));
         ketkualP.setMinimumSize(new java.awt.Dimension(232, 84));
         ketkualP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -455,8 +453,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketdesP.setAutoscrolls(false);
         ketdesP.setBorder(null);
         ketdesP.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketdesP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketdesP.setFocusable(false);
+        ketdesP.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketdesP.setMaximumSize(new java.awt.Dimension(232, 84));
         ketdesP.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane4.setViewportView(ketdesP);
@@ -525,8 +522,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketjK.setAutoscrolls(false);
         ketjK.setBorder(null);
         ketjK.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketjK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketjK.setFocusable(false);
+        ketjK.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketjK.setMaximumSize(new java.awt.Dimension(232, 84));
         ketjK.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane7.setViewportView(ketjK);
@@ -543,8 +539,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketkualK.setAutoscrolls(false);
         ketkualK.setBorder(null);
         ketkualK.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketkualK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketkualK.setFocusable(false);
+        ketkualK.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketkualK.setMaximumSize(new java.awt.Dimension(232, 84));
         ketkualK.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane8.setViewportView(ketkualK);
@@ -595,8 +590,7 @@ public class hrd_loker extends javax.swing.JFrame {
         ketdesK.setAutoscrolls(false);
         ketdesK.setBorder(null);
         ketdesK.setCaretColor(new java.awt.Color(249, 248, 242));
-        ketdesK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        ketdesK.setFocusable(false);
+        ketdesK.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         ketdesK.setMaximumSize(new java.awt.Dimension(232, 84));
         ketdesK.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane9.setViewportView(ketdesK);
