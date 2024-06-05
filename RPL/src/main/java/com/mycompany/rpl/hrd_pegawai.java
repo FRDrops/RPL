@@ -66,7 +66,7 @@ public class hrd_pegawai extends javax.swing.JFrame {
         saranIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/saranBlack.png")));
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/back2.png")));
         delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdDelete.png")));
-        change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
+        //change.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hrdUpdate.png")));
         readToTable();
     }
 
@@ -191,8 +191,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         pendInput = new javax.swing.JComboBox<>();
         posisiUser = new javax.swing.JLabel();
         delete = new javax.swing.JLabel();
-        change = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         readBerkas = new javax.swing.JDialog();
         kembali = new javax.swing.JButton();
@@ -453,23 +451,11 @@ public class hrd_pegawai extends javax.swing.JFrame {
                 deleteMouseClicked(evt);
             }
         });
-        rincianPegawai.getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 70, 60));
-
-        change.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        change.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                changeMouseClicked(evt);
-            }
-        });
-        rincianPegawai.getContentPane().add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 430, 160, 60));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel2.setText("Ubah");
-        rincianPegawai.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 490, 30, -1));
+        rincianPegawai.getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 70, 60));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel1.setText("Hapus");
-        rincianPegawai.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, -1, -1));
+        rincianPegawai.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
 
         readBerkas.setMinimumSize(new java.awt.Dimension(625, 600));
         readBerkas.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1011,11 +997,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
         rincianPegawai.dispose();
     }
     
-    private void changeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changeMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_changeMouseClicked
-
     public void updatePosisi(String username, String posisiBaru) {
         Koneksi konek = new Koneksi();
         Connection koneksi = null;
@@ -1334,7 +1315,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private javax.swing.JLabel about;
     private javax.swing.JTextField alamatInput;
     private javax.swing.JLabel backButton;
-    private javax.swing.JLabel change;
     private javax.swing.JLabel copyright;
     private javax.swing.JLabel cv;
     private javax.swing.JLabel delete;
@@ -1343,7 +1323,6 @@ public class hrd_pegawai extends javax.swing.JFrame {
     private javax.swing.JLabel ijazah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
